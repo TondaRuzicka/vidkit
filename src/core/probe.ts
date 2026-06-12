@@ -27,9 +27,18 @@ export async function probe(file: File): Promise<ProbeResult> {
         height: video.displayHeight,
         fps,
         frameCount: Math.max(1, Math.round(fps * durationS)),
+        // getAverageBitrate() is often null (not in container metadata);
+        // packet-sampled stats always produce a usable estimate.
+        bitrate: stats.averageBitrate || null,
       },
       audio: audio
-        ? { codec: await audio.getCodec(), bitrate: await audio.getAverageBitrate() }
+        ? {
+            codec: await audio.getCodec(),
+            bitrate:
+              (await audio.getAverageBitrate()) ??
+              (await audio.computePacketStats(200)).averageBitrate ??
+              null,
+          }
         : null,
     };
   } catch (err) {

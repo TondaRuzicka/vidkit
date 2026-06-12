@@ -23,6 +23,7 @@ export interface ProbeResult {
     height: number;
     fps: number;
     frameCount: number;
+    bitrate: number | null;
   };
   audio: {
     codec: string | null;
@@ -72,10 +73,10 @@ export type WorkerToUi =
   | { type: 'error'; code: ErrorCode; detail?: string };
 
 export class CompressError extends Error {
-  constructor(
-    public code: ErrorCode,
-    detail?: string,
-  ) {
+  code: ErrorCode;
+
+  constructor(code: ErrorCode, detail?: string) {
     super(detail ?? code);
+    this.code = code;
   }
 }
