@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- @include head -->
+<title>Compress Video Online — Free, No Upload, No Watermark | {{SITE_NAME}}</title>
+<meta name="description" content="Compress any video right in your browser. Pick an exact target size or a quality level. Files never leave your device — no upload, no sign-up, no watermark." />
+<link rel="canonical" href="{{SITE_URL}}/compress-video/" />
+<meta property="og:title" content="Compress Video Online — Free, No Upload" />
+<meta property="og:description" content="Shrink videos to an exact file size in your browser. Nothing is uploaded." />
+<meta property="og:url" content="{{SITE_URL}}/compress-video/" />
+</head>
+<body>
+<!-- @include header -->
+<main>
+  <h1>Compress video online — without uploading it anywhere</h1>
+  <p class="lead">
+    Shrink a video to an exact file size or a quality level, directly in your
+    browser. Your file is processed on your own device using your browser's
+    built-in video hardware — it is never uploaded, so there's no waiting for
+    a 500&nbsp;MB upload to crawl to a server and back.
+  </p>
+
+  <div id="compressor" data-page="cv">
+    <noscript>
+      <p>
+        This compressor runs entirely in your browser and needs JavaScript to
+        access your video file locally. Enable JavaScript to use it — your
+        video still won't be uploaded anywhere.
+      </p>
+    </noscript>
+  </div>
+
+  <section>
+    <h2>How it works</h2>
+    <p>
+      Drop in a video (MP4, MOV, WebM, MKV or AVI) and choose one of two
+      modes. <strong>Target size</strong> calculates the exact bitrate needed
+      to land your video under a size limit — 8, 10, 16, 25 or 50&nbsp;MB, or
+      any number you type in. It budgets the audio first, gives the rest to
+      video, and automatically lowers resolution or frame rate when a long
+      video has to fit a small target, so you get the best quality the budget
+      allows. <strong>Quality mode</strong> simply re-encodes at high, medium
+      or low quality when you don't care about an exact number.
+    </p>
+    <p>
+      Everything happens on your device. Modern browsers ship a
+      hardware-accelerated video engine (WebCodecs), which {{SITE_NAME}} uses
+      to compress faster than the video plays. For older browsers or unusual
+      formats, a built-in software encoder takes over automatically — slower,
+      but it works. A status line under the progress bar shows you which
+      engine is running.
+    </p>
+    <p>
+      The result is a standard MP4 (H.264 video, AAC audio) that plays
+      everywhere: Discord, WhatsApp, email clients, iPhones, Androids, smart
+      TVs. You preview the compressed video side by side with the original
+      before downloading, so you never download a result you haven't seen.
+    </p>
+  </section>
+
+  <section>
+    <h2>Frequently asked questions</h2>
+    <details class="faq-item">
+      <summary>Is my video really not uploaded?</summary>
+      <div>
+        Really. The compression runs in your browser using your computer's
+        own processor — there is no upload, and the site has no server that
+        could even receive your file. You can verify this yourself: open your
+        browser's developer tools, watch the Network tab while compressing,
+        and you'll see zero requests carrying file data.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Is there a file size limit?</summary>
+      <div>
+        On a modern browser (Chrome, Edge) files up to 2&nbsp;GB are
+        supported. Very large files in older browsers may be refused with a
+        clear message rather than crashing — if that happens, try Chrome.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Will there be a watermark?</summary>
+      <div>
+        No. The output is your video, just smaller — no watermark, no outro,
+        no branding, free.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>How much quality will I lose?</summary>
+      <div>
+        That depends on how hard the video is squeezed. Halving a file's size
+        is usually invisible. Fitting a 10-minute video into 10&nbsp;MB means
+        visible quality loss — the tool lowers resolution and frame rate
+        gracefully instead of producing a blocky mess, and tells you the
+        output dimensions before you download.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>What formats can I compress?</summary>
+      <div>
+        Input: MP4, MOV, WebM, MKV and AVI, with H.264, H.265/HEVC, VP8, VP9
+        and most common codecs. Output is always MP4 with H.264 video and AAC
+        audio — the most compatible combination there is.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Does it work on a phone?</summary>
+      <div>
+        Yes — Chrome on Android and Safari on iOS both work. Phones have less
+        memory than laptops, so very large files are more likely to need a
+        desktop browser.
+      </div>
+    </details>
+  </section>
+</main>
+<!-- @include footer -->
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

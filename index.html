@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- @include head -->
+<title>{{SITE_NAME}} — Free Video Tools That Run in Your Browser</title>
+<meta name="description" content="Free online video tools with a difference: your files never leave your device. Compress videos to exact sizes — no upload, no sign-up, no watermark." />
+<link rel="canonical" href="{{SITE_URL}}/" />
+<meta property="og:title" content="{{SITE_NAME}} — Free Video Tools That Run in Your Browser" />
+<meta property="og:description" content="Compress videos to exact sizes without uploading them anywhere." />
+<meta property="og:url" content="{{SITE_URL}}/" />
+</head>
+<body>
+<!-- @include header -->
+<main>
+  <h1>Video tools that never see your videos</h1>
+  <p class="lead">
+    {{SITE_NAME}} is a set of free video tools that run entirely in your
+    browser. There is no upload step because there is no server — your file
+    is processed by your own device, which makes it faster, free to run, and
+    genuinely private. No sign-up, no watermark, no file-count limits.
+  </p>
+
+  <section>
+    <h2>Tools</h2>
+    <ul class="tool-grid">
+      <li>
+        <a href="/compress-video/">
+          <h3>Compress video</h3>
+          <p>Shrink any video to an exact file size or quality level. The full toolbox.</p>
+        </a>
+      </li>
+      <li>
+        <a href="/compress-video-to-25mb/">
+          <h3>Compress to 25 MB</h3>
+          <p>For Gmail and Outlook attachments and Discord Nitro Basic.</p>
+        </a>
+      </li>
+      <li>
+        <a href="/compress-video-to-10mb/">
+          <h3>Compress to 10 MB</h3>
+          <p>For Discord's free upload limit. Verified under, every time.</p>
+        </a>
+      </li>
+      <li>
+        <a href="/compress-video-for-whatsapp/">
+          <h3>Compress for WhatsApp</h3>
+          <p>Fit the 16 MB media limit — before WhatsApp's compressor smears it.</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Why your files never leave your device</h2>
+    <p>
+      Every other "online video compressor" works the same way: you upload
+      your video to their server, their server does the work, you download
+      the result. That means waiting through a full upload, trusting a
+      stranger's server with your video, and tools that throttle or
+      watermark you to sell a subscription.
+    </p>
+    <p>
+      {{SITE_NAME}} uses the video engine already built into your browser
+      (WebCodecs) to do the same work locally, hardware-accelerated, on your
+      machine. The site you load is static files — there is no backend that
+      could receive your video even by accident. Skeptical? Open your
+      browser's developer tools, watch the Network tab while a video
+      compresses, and count the zero bytes uploaded.
+    </p>
+  </section>
+</main>
+<!-- @include footer -->
+</body>
+</html>

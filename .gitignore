@@ -1,0 +1,6 @@
+node_modules/
+dist/
+test-videos/
+public/ffmpeg/
+.DS_Store
+*.local
