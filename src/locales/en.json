@@ -43,7 +43,7 @@
   "error.cancelled": "Compression cancelled.",
   "error.notVideo": "That file doesn't look like a video we can read. Try an MP4, MOV, WebM, MKV or AVI file.",
   "error.targetTooSmall": "That target is too small for a video this long — the result would be unwatchable. Try a larger target size.",
-  "error.fileTooLargeForFallback": "This file is too large for the compatibility engine in this browser. Try Chrome or Edge, which can handle files up to 2 GB.",
+  "error.fileTooLargeForFallback": "This file needs the compatibility engine (because of its format or this browser), which can't process files over 1.5 GB. Convert it to MP4 first, or use Chrome or Edge for large MP4, MOV, WebM and MKV files.",
   "error.noEngine": "Your browser can't run the compressor. Please update to a current version of Chrome, Firefox, Safari or Edge.",
   "error.decode": "This video couldn't be decoded. The file may be damaged or use an unsupported codec.",
   "error.encode": "Encoding failed unexpectedly. Try reloading the page, or a different browser.",

@@ -133,7 +133,8 @@ export function buildPlan(
   }
 
   const targetBytes = Math.round(options.targetMB * 1_000_000);
-  const frameEstimate = video.frameCount + Math.round(durationS * 44); // + audio packets
+  const frameEstimate =
+    video.frameCount + (audio ? Math.round(durationS * 44) : 0); // + audio packets
   const overhead =
     OVERHEAD_PER_FRAME_BYTES * frameEstimate + OVERHEAD_FIXED_BYTES;
   const usableBits = (targetBytes - overhead) * 8 * SAFETY_FACTOR;
