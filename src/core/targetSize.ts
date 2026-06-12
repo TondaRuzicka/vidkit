@@ -125,7 +125,8 @@ export function buildPlan(
       height,
       fps,
       videoBps: Math.round(QUALITY_BPP[options.level] * width * height * fps),
-      audioBps: null, // quality mode always passes audio through
+      // AAC passes through; anything else re-encodes (output is always AAC)
+      audioBps: audio && audio.codec !== 'aac' ? 128_000 : null,
       keyFrameIntervalS: 2,
       targetBytes: null,
     };

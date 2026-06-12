@@ -1,18 +1,12 @@
 /// <reference lib="webworker" />
-import { compress, type SelectedEngine } from '../core/compress';
-import { CompressError, type ProbeResult, type UiToWorker, type WorkerToUi } from '../core/types';
-import { webcodecsEngine } from '../engines/webcodecs';
+import { compress } from '../core/compress';
+import { CompressError, type UiToWorker, type WorkerToUi } from '../core/types';
 
 const post = (msg: WorkerToUi) =>
   (self as DedicatedWorkerGlobalScope).postMessage(msg);
 
 const abort = new AbortController();
 let started = false;
-
-// Engine selection matrix lands in a later phase; WebCodecs only for now.
-async function selectEngine(_meta: ProbeResult): Promise<SelectedEngine> {
-  return { name: 'webcodecs', engine: webcodecsEngine };
-}
 
 self.onmessage = async (event: MessageEvent<UiToWorker>) => {
   const msg = event.data;
@@ -32,7 +26,6 @@ self.onmessage = async (event: MessageEvent<UiToWorker>) => {
     const { blob, stats } = await compress(
       msg.file,
       msg.options,
-      selectEngine,
       {
         onProbe: (meta) => {
           frameCount = meta.video.frameCount;

@@ -6,7 +6,8 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const srcDir = join(root, 'node_modules', '@ffmpeg', 'core', 'dist', 'umd');
+// esm flavor: @ffmpeg/ffmpeg's worker loads the core via dynamic import()
+const srcDir = join(root, 'node_modules', '@ffmpeg', 'core', 'dist', 'esm');
 const destDir = join(root, 'public', 'ffmpeg');
 
 try {
