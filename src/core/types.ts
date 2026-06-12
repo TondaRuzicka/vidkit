@@ -67,7 +67,7 @@ export type WorkerToUi =
       framesDone: number;
       framesTotal: number;
       etaMs: number | null;
-      stage: 'probe' | 'encode' | 'retry' | 'finalize';
+      stage: 'probe' | 'encode' | 'retry';
     }
   | { type: 'done'; blob: Blob; stats: ResultStats }
   | { type: 'error'; code: ErrorCode; detail?: string };

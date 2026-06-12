@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+/* hidden must win over any display: set on a class */
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);
