@@ -1,5 +1,5 @@
-import { CompressError, type ProbeResult } from '../core/types';
-import type { Engine } from './types';
+import { CompressError, type ProbeResult } from '../core/types.ts';
+import type { Engine } from './types.ts';
 
 /**
  * ffmpeg.wasm fallback engine. Everything here is lazy: the ~31 MB wasm core

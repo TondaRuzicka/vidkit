@@ -32,7 +32,9 @@ export interface BudgetPlan extends EncodePlan {
 const QUALITY_BPP = { high: 0.12, medium: 0.08, low: 0.05 } as const;
 const QUALITY_MAX_LONG_EDGE = { high: Infinity, medium: 1920, low: 1920 } as const;
 
-const even = (n: number) => Math.max(2, 2 * Math.round(n / 2));
+// Round DOWN to even: rounding up could exceed the source dimension
+// (e.g. a 103px source planning a 104px output = accidental upscale).
+const even = (n: number) => Math.max(2, 2 * Math.floor(n / 2));
 
 /** Scale source dims so the longer edge equals `longEdge`, preserving AR. */
 export function fitToLongEdge(

@@ -33,8 +33,9 @@ const probe = (over: {
 });
 
 test('fitToLongEdge preserves aspect and rounds to even', () => {
-  assert.deepEqual(fitToLongEdge(1920, 1080, 720), { width: 720, height: 406 });
-  assert.deepEqual(fitToLongEdge(1080, 1920, 720), { width: 406, height: 720 });
+  // height rounds DOWN to even (405 -> 404): never exceeds the ideal scale
+  assert.deepEqual(fitToLongEdge(1920, 1080, 720), { width: 720, height: 404 });
+  assert.deepEqual(fitToLongEdge(1080, 1920, 720), { width: 404, height: 720 });
   // never upscales
   assert.deepEqual(fitToLongEdge(640, 360, 1080), { width: 640, height: 360 });
 });

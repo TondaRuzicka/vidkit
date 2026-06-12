@@ -1,6 +1,6 @@
 /// <reference lib="webworker" />
-import { compress } from '../core/compress';
-import { CompressError, type UiToWorker, type WorkerToUi } from '../core/types';
+import { compress } from '../core/compress.ts';
+import { CompressError, type UiToWorker, type WorkerToUi } from '../core/types.ts';
 
 const post = (msg: WorkerToUi) =>
   (self as DedicatedWorkerGlobalScope).postMessage(msg);

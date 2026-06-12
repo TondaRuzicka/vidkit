@@ -1,4 +1,4 @@
-import type { EncodePlan } from '../core/types';
+import type { EncodePlan } from '../core/types.ts';
 
 export interface EngineRunCallbacks {
   /** progress in [0, 1] over the encode stage */

@@ -5,8 +5,8 @@ import {
   VIDEO_CODECS,
   type VideoCodec,
 } from 'mediabunny';
-import type { BudgetPlan } from './targetSize';
-import type { EngineName, ProbeResult } from './types';
+import type { BudgetPlan } from './targetSize.ts';
+import type { EngineName, ProbeResult } from './types.ts';
 
 export interface EngineDecision {
   name: EngineName;

@@ -9,8 +9,8 @@ import {
   StreamTarget,
   type StreamTargetChunk,
 } from 'mediabunny';
-import { CompressError } from '../core/types';
-import type { Engine } from './types';
+import { CompressError } from '../core/types.ts';
+import type { Engine } from './types.ts';
 
 /**
  * Collects the muxer's positioned writes and assembles them into a Blob

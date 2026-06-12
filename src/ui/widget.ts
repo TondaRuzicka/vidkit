@@ -72,7 +72,12 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
     updateNotice();
     setState('ready');
   };
+  // 'input' as well as 'change': if the notice only updated on change (i.e.
+  // on blur), clicking Compress right after typing a custom target would
+  // hide the notice mid-click — the button shifts up under the pointer and
+  // the user's click lands on nothing.
   controls.el.addEventListener('change', updateNotice);
+  controls.el.addEventListener('input', updateNotice);
 
   startBtn.addEventListener('click', () => {
     if (!file || state === 'working') return;

@@ -1,5 +1,38 @@
 # TESTING — Milestone 1
 
+## Automated test suite
+
+Three layers, split by determinism (run dates: 2026-06-12, all green):
+
+1. **Pure math** — `npm run test:unit` (~0.5 s, 30 tests). Example-based
+   unit tests plus fast-check property tests (2000 random cases per
+   invariant) over `src/core/targetSize.ts`: planned bits never exceed the
+   target, never upscale, bpp stays above the floor, no bitrate inflation
+   past the source, audio floors respected, looser floors never make a
+   feasible job infeasible, the ladder is monotone in bitrate.
+2. **Orchestration** — same command, fake engines via `createCompress(deps)`
+   in `src/core/compress.test.ts`: verify-retry shrink loop, retry
+   exhaustion on WebCodecs falls back to ffmpeg (both exhausting errors,
+   never ships over target), decode-failure reroutes once, ffmpeg failures
+   and cancellations never reroute, audio-floor infeasibility switches
+   engines, quality mode skips the verify loop.
+3. **Browsers** — `npm run test:e2e` (Playwright, Chromium + Firefox,
+   ~5.5 min, 34 tests). Real files through the real widget via
+   `setInputFiles`: format matrix (MP4/MOV/MKV/WebM/H.265/AVI) with
+   engine-routing assertions where stable, output ≤ target + playback/seek
+   validation, cancel/try-again/compress-another flows, keyboard-only run
+   with focus assertions, **privacy gate** (any request leaving the origin
+   or carrying a body fails the suite; no cookies/storage), zero console
+   errors. Fixtures auto-generate via `scripts/gen-e2e-fixtures.mjs`
+   (needs the ffmpeg CLI); formats that route to single-threaded
+   ffmpeg.wasm use 4 s fixtures — 10 s of 1080p takes ~4 min through wasm
+   in Firefox.
+
+Bugs this suite caught on its first runs: a 1 px upscale from even-rounding
+(`even()` rounded up past the source dimension), and a dead first click on
+the Compress button after typing a custom target (blur-time notice update
+shifted the layout mid-click).
+
 Test date: 2026-06-12. Machine: Apple Silicon MacBook Pro, macOS 25.5
 (Darwin), Chrome (embedded Chromium preview). Fixtures generated with the
 ffmpeg CLI into `test-videos/` (untracked); commands below.
@@ -121,9 +154,9 @@ These need a human or hardware this environment doesn't expose:
 1. **Safari (real)** — full flow incl. AudioEncoder AAC behavior and
    @ffmpeg/ffmpeg's nested worker. Automation was blocked (Safari
    AppleScript permissions); needs a manual run.
-2. **Firefox** — H.265 input should route to ffmpeg.wasm via
-   `canDecodeVideo` returning false (capability check, not UA sniff);
-   Firefox isn't installed on this machine.
+2. ~~Firefox~~ — now covered by the Playwright suite (format matrix,
+   privacy gate and flows all pass; note Playwright Firefox ≈ release
+   Firefox, unlike its WebKit≠Safari situation).
 3. **QuickTime / VLC playback** of an output file (Chrome playback and
    container re-parse both pass; QuickTime is the pickiest player).
 4. **Real iPhone .mov (rotation metadata) and a VFR screen recording** —

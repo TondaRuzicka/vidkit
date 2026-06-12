@@ -1,5 +1,5 @@
 import { ALL_FORMATS, BlobSource, Input } from 'mediabunny';
-import { CompressError, type ProbeResult } from './types';
+import { CompressError, type ProbeResult } from './types.ts';
 
 /**
  * Reads container headers only — cheap even for multi-GB files because
