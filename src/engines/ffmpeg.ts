@@ -37,15 +37,31 @@ async function getFFmpeg(): Promise<FFmpegInstance> {
   try {
     // blob: URLs keep the core's inner import() out of the bundler's hands.
     // Same-origin fetch — the core is self-hosted under /ffmpeg/.
+    // The wasm ships gzipped (~9.7 MB) so it clears Cloudflare Pages' 25 MiB
+    // per-file limit; we inflate it here before handing it to the loader.
     await ffmpeg.load({
       coreURL: await toBlobURL('/ffmpeg/ffmpeg-core.js', 'text/javascript'),
-      wasmURL: await toBlobURL('/ffmpeg/ffmpeg-core.wasm', 'application/wasm'),
+      wasmURL: await gunzipToBlobURL('/ffmpeg/ffmpeg-core.wasm.bin', 'application/wasm'),
     });
   } catch (err) {
     throw new CompressError('noEngine', `ffmpeg load failed: ${err}`);
   }
   instance = ffmpeg;
   return ffmpeg;
+}
+
+/**
+ * Fetch a gzip-compressed asset (same-origin), inflate it with the platform
+ * DecompressionStream, and hand back a blob: URL — same contract as
+ * @ffmpeg/util's toBlobURL, but for the compressed core. Used so the 31 MB
+ * wasm can ship as a <10 MB file and stay under Cloudflare's per-file limit.
+ */
+async function gunzipToBlobURL(url: string, mime: string): Promise<string> {
+  const res = await fetch(url);
+  if (!res.ok || !res.body) throw new Error(`fetch ${url}: ${res.status}`);
+  const stream = res.body.pipeThrough(new DecompressionStream('gzip'));
+  const buf = await new Response(stream).arrayBuffer();
+  return URL.createObjectURL(new Blob([buf], { type: mime }));
 }
 
 async function mountInput(ffmpeg: FFmpegInstance, file: File): Promise<string> {
