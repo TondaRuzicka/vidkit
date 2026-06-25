@@ -11,62 +11,158 @@
 </head>
 <body>
 <!-- @include header -->
-<main>
-  <h1>Video tools that never see your videos</h1>
-  <p class="lead">
-    {{SITE_NAME}} is a set of free video tools that run entirely in your
-    browser. There is no upload step because there is no server — your file
-    is processed by your own device, which makes it faster, free to run, and
-    genuinely private. No sign-up, no watermark, no file-count limits.
-  </p>
-
-  <section>
-    <h2>Tools</h2>
-    <ul class="tool-grid">
-      <li>
-        <a href="/compress-video/">
-          <h3>Compress video</h3>
-          <p>Shrink any video to an exact file size or quality level. The full toolbox.</p>
-        </a>
-      </li>
-      <li>
-        <a href="/compress-video-to-25mb/">
-          <h3>Compress to 25 MB</h3>
-          <p>For Gmail and Outlook attachments and Discord Nitro Basic.</p>
-        </a>
-      </li>
-      <li>
-        <a href="/compress-video-to-10mb/">
-          <h3>Compress to 10 MB</h3>
-          <p>For Discord's free upload limit. Verified under, every time.</p>
-        </a>
-      </li>
-      <li>
-        <a href="/compress-video-for-whatsapp/">
-          <h3>Compress for WhatsApp</h3>
-          <p>Fit the 16 MB media limit — before WhatsApp's compressor smears it.</p>
-        </a>
-      </li>
-    </ul>
+<main id="main">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <p class="eyebrow">100% on-device · WebCodecs &amp; WebAssembly</p>
+        <h1>Video tools that <em>never see</em> your videos</h1>
+        <p class="hero__lead">
+          {{SITE_NAME}} is a set of free video tools that run entirely in your
+          browser. There's no upload step because there's no server — your file
+          is processed by your own device, which makes it faster, free to run,
+          and genuinely private. No sign-up, no watermark, no file-count limits.
+        </p>
+        <div class="hero__actions">
+          <a class="button-primary button-lg" href="/compress-video/">
+            Compress a video
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="button-ghost button-lg" href="#how">See how it works</a>
+        </div>
+        <ul class="trust-strip">
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> No upload</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> No sign-up</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> No watermark</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Hardware-accelerated</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>Why your files never leave your device</h2>
-    <p>
-      Every other "online video compressor" works the same way: you upload
-      your video to their server, their server does the work, you download
-      the result. That means waiting through a full upload, trusting a
-      stranger's server with your video, and tools that throttle or
-      watermark you to sell a subscription.
-    </p>
-    <p>
-      {{SITE_NAME}} uses the video engine already built into your browser
-      (WebCodecs) to do the same work locally, hardware-accelerated, on your
-      machine. The site you load is static files — there is no backend that
-      could receive your video even by accident. Skeptical? Open your
-      browser's developer tools, watch the Network tab while a video
-      compresses, and count the zero bytes uploaded.
-    </p>
+  <!-- Tools -->
+  <section class="section section--tint" id="tools">
+    <div class="container">
+      <div class="section-head">
+        <h2>Compression tools</h2>
+        <p>Pick a tool and start in one drop. Each runs entirely in your browser.</p>
+      </div>
+      <ul class="tool-grid">
+        <li><a class="tool-card" href="/compress-video/">
+          <span class="tool-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 4H5a1 1 0 0 0-1 1v4M15 4h4a1 1 0 0 1 1 1v4M9 20H5a1 1 0 0 1-1-1v-4M15 20h4a1 1 0 0 0 1-1v-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="m9 9 6 6m0-6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          <h3>Compress video</h3>
+          <p>Shrink any video to an exact file size or quality level. The full toolbox.</p>
+          <span class="tool-card__cta">Open tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a class="tool-card" href="/compress-video-to-25mb/">
+          <span class="tool-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 8 8 5 8-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Compress to 25&nbsp;MB</h3>
+          <p>For Gmail and Outlook attachments and Discord Nitro Basic.</p>
+          <span class="tool-card__cta">Open tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a class="tool-card" href="/compress-video-to-10mb/">
+          <span class="tool-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Compress to 10&nbsp;MB</h3>
+          <p>For Discord's free upload limit. Verified under, every time.</p>
+          <span class="tool-card__cta">Open tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a class="tool-card" href="/compress-video-for-whatsapp/">
+          <span class="tool-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19l1.3-3.9A7 7 0 1 1 9 17.7L5 19Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Compress for WhatsApp</h3>
+          <p>Fit the 16&nbsp;MB media limit — before WhatsApp's compressor smears it.</p>
+          <span class="tool-card__cta">Open tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Privacy explainer -->
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="explainer">
+        <div class="explainer__copy">
+          <p class="eyebrow">Why your files never leave</p>
+          <h2>Your video stays on your device — start to finish</h2>
+          <p>
+            Every other "online video compressor" uploads your footage to a
+            server you'll never see, does the work there, and sends it back.
+            {{SITE_NAME}} doesn't have a server. The compression engine — your
+            browser's built-in WebCodecs, or a WebAssembly build of FFmpeg as a
+            fallback — runs against the file locally. Nothing is transmitted,
+            stored, or logged.
+          </p>
+          <ul class="explainer__list">
+            <li>
+              <span class="n">1</span>
+              <span><strong>You pick a file</strong><span>It's read straight from disk into the page — no network call.</span></span>
+            </li>
+            <li>
+              <span class="n">2</span>
+              <span><strong>It's processed in your browser</strong><span>Your CPU/GPU does the encoding, hardware-accelerated where possible.</span></span>
+            </li>
+            <li>
+              <span class="n">3</span>
+              <span><strong>You download the result</strong><span>The output is created in memory and saved locally. Close the tab and it's gone.</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="device-diagram" role="img" aria-label="A browser window processing a video on-device, with cloud upload disabled.">
+          <div class="no-cloud">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 9.5 4 4 0 0 0 7 18Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 3l18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            no upload
+          </div>
+          <div class="device" aria-hidden="true">
+            <div class="device__bar"><i></i><i></i><i></i></div>
+            <div class="device__body">
+              <div class="device__row device__row--accent"></div>
+              <div class="device__row device__row--w70"></div>
+              <div class="device__row device__row--w40"></div>
+              <div class="device__lock">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V8a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                processed locally
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section section--tint" id="how">
+    <div class="container">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>Three steps, zero accounts. Most clips are done before a normal site would finish uploading.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Drop your video</h3>
+          <p>Drag a file in or browse for one. It loads instantly because it never leaves the page.</p>
+        </div>
+        <div class="step">
+          <h3>Choose a target</h3>
+          <p>Pick an exact size for email or a platform, or dial in a quality level.</p>
+        </div>
+        <div class="step">
+          <h3>Download</h3>
+          <p>Compare before and after, then save. No watermark, no waiting room, no email gate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section">
+    <div class="container container--prose" style="text-align:center;">
+      <h2 style="font-size:var(--fs-800);">Compress your first video now</h2>
+      <p style="color:var(--color-text-muted); margin:var(--space-3) auto 0; max-width:42ch;">It's free, there's nothing to install, and your file never touches our servers — because we don't have any.</p>
+      <div class="hero__actions" style="justify-content:center; margin-top:var(--space-4);">
+        <a class="button-primary button-lg" href="/compress-video/">Open the compressor</a>
+      </div>
+    </div>
   </section>
 </main>
 <!-- @include footer -->

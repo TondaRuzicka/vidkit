@@ -1,11 +1,18 @@
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-  <nav class="site-nav" aria-label="Main">
-    <a class="site-logo" href="/">{{SITE_NAME}}</a>
-    <ul class="site-nav-links">
-      <li><a href="/compress-video/">Compress video</a></li>
-      <li><a href="/compress-video-to-25mb/">To 25&nbsp;MB</a></li>
-      <li><a href="/compress-video-to-10mb/">To 10&nbsp;MB</a></li>
-      <li><a href="/compress-video-for-whatsapp/">For WhatsApp</a></li>
-    </ul>
-  </nav>
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="{{SITE_NAME}} home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 6.5v11l9-5.5-9-5.5Z" fill="currentColor"/></svg>
+      </span>
+      <span><b>{{SITE_NAME}}</b></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/compress-video/">Compress</a>
+      <a href="/compress-video-to-25mb/">To&nbsp;25&nbsp;MB</a>
+      <a href="/compress-video-to-10mb/">To&nbsp;10&nbsp;MB</a>
+      <a href="/compress-video-for-whatsapp/">WhatsApp</a>
+      <a class="button-ghost" href="/compress-video/">Open compressor</a>
+    </nav>
+  </div>
 </header>

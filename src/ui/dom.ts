@@ -16,6 +16,19 @@ export function h<K extends keyof HTMLElementTagNameMap>(
   return el;
 }
 
+/**
+ * Build an inline SVG node from markup. <template> parses SVG in its correct
+ * namespace, so the result is a real SVGElement (createElement can't do this).
+ * Icons are inline + decorative — callers mark them aria-hidden.
+ */
+export function icon(markup: string): SVGElement {
+  const tpl = document.createElement('template');
+  tpl.innerHTML = markup.trim();
+  const node = tpl.content.firstElementChild as SVGElement;
+  node.setAttribute('aria-hidden', 'true');
+  return node;
+}
+
 export function formatBytes(bytes: number): string {
   if (bytes >= 1e9) return (bytes / 1e9).toFixed(2) + ' GB';
   if (bytes >= 1e6) return (bytes / 1e6).toFixed(1) + ' MB';

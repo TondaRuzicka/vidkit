@@ -1,6 +1,6 @@
-import type { ErrorCode, UiToWorker, WorkerToUi } from '../core/types';
+import type { EngineName, ErrorCode, UiToWorker, WorkerToUi } from '../core/types';
 import { createControls } from './controls';
-import { h } from './dom';
+import { h, icon } from './dom';
 import { createDropzone } from './dropzone';
 import { t } from './i18n';
 import { createProgress } from './progress';
@@ -13,11 +13,28 @@ export interface WidgetConfig {
 
 type State = 'idle' | 'ready' | 'working' | 'done' | 'error';
 
+const ERROR_ICON = `<svg viewBox="0 0 24 24" fill="none"><path d="M12 8.5v4.5M12 16.5v.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`;
+
+const ENGINE_SHORT: Record<EngineName, string> = {
+  webcodecs: 'WebCodecs',
+  ffmpeg: 'FFmpeg',
+};
+
 export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
   const dropzone = createDropzone();
   const controls = createControls(config);
   const progress = createProgress();
   const result = createResult();
+
+  // Header chip — decorative status, distinct from the .progress-engine line
+  // the e2e suite reads.
+  const engineStatus = h('span', {}, t('widget.status.ready'));
+  const head = h(
+    'div',
+    { class: 'compressor__head' },
+    h('span', { class: 'compressor__title' }, t('widget.title')),
+    h('span', { class: 'compressor__engine' }, h('span', { class: 'dot' }), engineStatus),
+  );
 
   const startBtn = h(
     'button',
@@ -25,17 +42,36 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
     t('controls.start'),
   );
   const notice = h('p', { class: 'widget-notice', hidden: true });
-  const errorBox = h('div', { class: 'widget-error', role: 'alert', hidden: true });
+
   const errorText = h('p', {});
   const retryBtn = h('button', { type: 'button', class: 'button-secondary' }, t('error.tryAgain'));
-  errorBox.append(h('h3', {}, t('error.heading')), errorText, retryBtn);
+  const errorBox = h(
+    'div',
+    { class: 'widget-error error-state', role: 'alert', hidden: true },
+    h('span', { class: 'error-state__icon' }, icon(ERROR_ICON)),
+    h('h3', {}, t('error.heading')),
+    errorText,
+    retryBtn,
+  );
 
-  const setupSection = h('div', { class: 'widget-setup' }, dropzone.el, controls.el, notice, startBtn);
-  root.append(setupSection, progress.el, result.el, errorBox);
+  const setupSection = h(
+    'div',
+    { class: 'widget-setup' },
+    dropzone.el,
+    controls.el,
+    notice,
+    h('div', { class: 'control-foot' }, startBtn),
+  );
+  const body = h('div', { class: 'compressor__body' }, setupSection, progress.el, result.el, errorBox);
+  root.append(head, body);
 
   let state: State = 'idle';
   let file: File | null = null;
   let worker: Worker | null = null;
+
+  function setEngineStatus(text: string): void {
+    engineStatus.textContent = text;
+  }
 
   function setState(next: State): void {
     state = next;
@@ -45,6 +81,7 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
     errorBox.hidden = next !== 'error';
     startBtn.disabled = next !== 'ready';
     controls.setDisabled(next === 'working');
+    if (next === 'idle' || next === 'ready') setEngineStatus(t('widget.status.ready'));
   }
 
   function updateNotice(): void {
@@ -97,6 +134,7 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
           break;
         case 'engine':
           progress.setEngine(msg.engine);
+          setEngineStatus(ENGINE_SHORT[msg.engine]);
           break;
         case 'progress':
           progress.setStage(msg.stage);
