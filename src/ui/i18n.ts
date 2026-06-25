@@ -1,15 +1,25 @@
-import strings from '../locales/en.json';
+import en from '../locales/en.json';
+import cs from '../locales/cs.json';
 
-type StringKey = keyof typeof strings;
+type StringKey = keyof typeof en;
 
-// Build-time import keeps this synchronous and bundle-only. When locales are
-// added, swap the import for a lookup keyed off the URL prefix — call sites
-// stay unchanged.
+// All locale dictionaries ship in the same widget bundle (a handful of KB
+// each) and are selected at runtime by the page's <html lang>. Every locale
+// must define the same keys as en.json — the `Record<StringKey, string>`
+// annotation makes a missing key a build-time type error.
+const DICTS: Record<string, Record<StringKey, string>> = { en, cs };
+
+function activeStrings(): Record<StringKey, string> {
+  const lang =
+    typeof document !== 'undefined' ? document.documentElement.lang : 'en';
+  return DICTS[lang] ?? en;
+}
+
 export function t(
   key: StringKey,
   params?: Record<string, string | number>,
 ): string {
-  let s: string = strings[key];
+  let s: string = activeStrings()[key];
   if (params) {
     for (const [name, value] of Object.entries(params)) {
       s = s.replaceAll(`{${name}}`, String(value));

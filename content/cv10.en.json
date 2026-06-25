@@ -1,0 +1,23 @@
+{
+  "meta.title": "Compress Video to 10 MB Online — Free, No Upload | {{SITE_NAME}}",
+  "meta.description": "Shrink any video to under 10 MB for Discord's free upload limit. Runs in your browser — your video never leaves your device.",
+  "og.title": "Compress Video to 10 MB — Free, No Upload",
+  "og.description": "Fit any video under Discord's 10 MB free limit, in your browser.",
+  "hero.eyebrow": "Preset · 10 MB target",
+  "hero.title": "Compress a video to 10 MB",
+  "hero.lead": "Discord's free upload limit is 10&nbsp;MB. Drop your clip below and it will be squeezed to just under 10&nbsp;MB right on your device — no upload, no Nitro, no watermark.",
+  "prose.h2": "Fitting a video into Discord's free limit",
+  "prose.p1": "Discord checks the exact byte count, so 10.2&nbsp;MB fails where 9.9&nbsp;MB sails through. This tool works out exactly how much to compress so your video's length fits the limit, reserves space for audio, compresses, then verifies the final size — re-encoding automatically if the first pass came out even slightly over. You always get a file Discord will accept.",
+  "prose.p2": "Be realistic about what 10&nbsp;MB holds: a 20–30&nbsp;second gameplay clip still looks sharp; a 2-minute clip lands around 540–720p and looks fine in chat; a 10-minute video at 10&nbsp;MB is heavily compressed by any tool's math — for those, consider whether a trimmed highlight says it better. When space gets tight, the tool lowers resolution and frame rate in sensible steps instead of smearing every frame into blocks. The sound is kept clear enough not to crackle, because viewers forgive soft pixels faster than broken audio.",
+  "prose.p3": "Everything runs right in your browser, using your device's own power, so compressing is usually faster than watching the clip — and your video is never uploaded anywhere.",
+  "faq.q1": "Will Discord definitely accept the file?",
+  "faq.a1": "Yes — the output is verified to be under 10,000,000 bytes, which is the limit Discord enforces for free accounts. The tool re-encodes automatically if the first attempt lands over.",
+  "faq.q2": "Is my clip uploaded while compressing?",
+  "faq.a2": "No. The whole process runs in your browser on your machine. Nothing is sent to a server — there isn't one.",
+  "faq.q3": "Why does my long video look bad at 10 MB?",
+  "faq.a3": "10&nbsp;MB is a fixed budget of data shared across every second of video. A 30-second clip gets over 2&nbsp;Mbps — plenty. A 10-minute video gets under 100&nbsp;kbps — barely anything, whatever tool you use. Shorter clips simply look better at fixed sizes.",
+  "faq.q4": "Does sound count against the 10 MB?",
+  "faq.a4": "Yes — audio is part of the file. The tool sets aside a sensible amount for sound first and gives everything else to the picture. Muted videos squeeze noticeably more visual quality into the same 10&nbsp;MB.",
+  "faq.q5": "What about Nitro's higher limits?",
+  "faq.a5": "Nitro Basic raises the cap to 25&nbsp;MB — use the <a href=\"{{url.cv25}}\">25&nbsp;MB compressor</a> for that. Full Nitro allows 500&nbsp;MB, which rarely needs compressing."
+}

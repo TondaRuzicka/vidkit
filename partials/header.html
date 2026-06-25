@@ -1,18 +1,19 @@
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{{header.skip}}</a>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="brand" href="/" aria-label="{{SITE_NAME}} home">
+    <a class="brand" href="{{url.home}}" aria-label="{{brand.home}}">
       <span class="brand__mark" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none"><path d="M8 6.5v11l9-5.5-9-5.5Z" fill="currentColor"/></svg>
       </span>
       <span><b>{{SITE_NAME}}</b></span>
     </a>
     <nav class="site-nav" aria-label="Main">
-      <a href="/compress-video/">Compress</a>
-      <a href="/compress-video-to-25mb/">To&nbsp;25&nbsp;MB</a>
-      <a href="/compress-video-to-10mb/">To&nbsp;10&nbsp;MB</a>
-      <a href="/compress-video-for-whatsapp/">WhatsApp</a>
-      <a class="button-ghost" href="/compress-video/">Open compressor</a>
+      <a href="{{url.cv}}">{{nav.compress}}</a>
+      <a href="{{url.cv25}}">{{nav.to25}}</a>
+      <a href="{{url.cv10}}">{{nav.to10}}</a>
+      <a href="{{url.cvwa}}">{{nav.whatsapp}}</a>
+      <a class="button-ghost" href="{{url.cv}}">{{nav.open}}</a>
+      <!-- @langswitch -->
     </nav>
   </div>
 </header>

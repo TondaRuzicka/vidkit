@@ -1,0 +1,142 @@
+<main id="main">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <p class="eyebrow">{{hero.eyebrow}}</p>
+        <h1>{{hero.title}}</h1>
+        <p class="hero__lead">{{hero.lead}}</p>
+        <div class="hero__actions">
+          <a class="button-primary button-lg" href="{{url.cv}}">
+            {{hero.cta.primary}}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="button-ghost button-lg" href="#how">{{hero.cta.secondary}}</a>
+        </div>
+        <ul class="trust-strip">
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> {{trust.1}}</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> {{trust.2}}</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> {{trust.3}}</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> {{trust.4}}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section section--tint" id="tools">
+    <div class="container">
+      <div class="section-head">
+        <h2>{{tools.title}}</h2>
+        <p>{{tools.sub}}</p>
+      </div>
+      <ul class="tool-grid">
+        <li><a class="tool-card" href="{{url.cv}}">
+          <span class="tool-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 4H5a1 1 0 0 0-1 1v4M15 4h4a1 1 0 0 1 1 1v4M9 20H5a1 1 0 0 1-1-1v-4M15 20h4a1 1 0 0 0 1-1v-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="m9 9 6 6m0-6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          <h3>{{tools.cv.title}}</h3>
+          <p>{{tools.cv.desc}}</p>
+          <span class="tool-card__cta">{{tools.cta}} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a class="tool-card" href="{{url.cv25}}">
+          <span class="tool-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 8 8 5 8-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>{{tools.cv25.title}}</h3>
+          <p>{{tools.cv25.desc}}</p>
+          <span class="tool-card__cta">{{tools.cta}} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a class="tool-card" href="{{url.cv10}}">
+          <span class="tool-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>{{tools.cv10.title}}</h3>
+          <p>{{tools.cv10.desc}}</p>
+          <span class="tool-card__cta">{{tools.cta}} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a class="tool-card" href="{{url.cvwa}}">
+          <span class="tool-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19l1.3-3.9A7 7 0 1 1 9 17.7L5 19Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>{{tools.cvwa.title}}</h3>
+          <p>{{tools.cvwa.desc}}</p>
+          <span class="tool-card__cta">{{tools.cta}} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Privacy explainer -->
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="explainer">
+        <div class="explainer__copy">
+          <p class="eyebrow">{{privacy.eyebrow}}</p>
+          <h2>{{privacy.title}}</h2>
+          <p>{{privacy.body}}</p>
+          <ul class="explainer__list">
+            <li>
+              <span class="n">1</span>
+              <span><strong>{{privacy.step1.title}}</strong><span>{{privacy.step1.body}}</span></span>
+            </li>
+            <li>
+              <span class="n">2</span>
+              <span><strong>{{privacy.step2.title}}</strong><span>{{privacy.step2.body}}</span></span>
+            </li>
+            <li>
+              <span class="n">3</span>
+              <span><strong>{{privacy.step3.title}}</strong><span>{{privacy.step3.body}}</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="device-diagram" role="img" aria-label="{{privacy.diagram.alt}}">
+          <div class="no-cloud">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 9.5 4 4 0 0 0 7 18Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 3l18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            {{privacy.nocloud}}
+          </div>
+          <div class="device" aria-hidden="true">
+            <div class="device__bar"><i></i><i></i><i></i></div>
+            <div class="device__body">
+              <div class="device__row device__row--accent"></div>
+              <div class="device__row device__row--w70"></div>
+              <div class="device__row device__row--w40"></div>
+              <div class="device__lock">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V8a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                {{privacy.processed}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section section--tint" id="how">
+    <div class="container">
+      <div class="section-head">
+        <h2>{{how.title}}</h2>
+        <p>{{how.sub}}</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>{{how.step1.title}}</h3>
+          <p>{{how.step1.body}}</p>
+        </div>
+        <div class="step">
+          <h3>{{how.step2.title}}</h3>
+          <p>{{how.step2.body}}</p>
+        </div>
+        <div class="step">
+          <h3>{{how.step3.title}}</h3>
+          <p>{{how.step3.body}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section">
+    <div class="container container--prose" style="text-align:center;">
+      <h2 style="font-size:var(--fs-800);">{{cta.title}}</h2>
+      <p style="color:var(--color-text-muted); margin:var(--space-3) auto 0; max-width:42ch;">{{cta.body}}</p>
+      <div class="hero__actions" style="justify-content:center; margin-top:var(--space-4);">
+        <a class="button-primary button-lg" href="{{url.cv}}">{{cta.button}}</a>
+      </div>
+    </div>
+  </section>
+</main>

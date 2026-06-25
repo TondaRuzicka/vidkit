@@ -1,0 +1,22 @@
+{
+  "meta.title": "Compress Video to 25 MB Online — Free, No Upload | {{SITE_NAME}}",
+  "meta.description": "Shrink any video to under 25 MB for Discord Nitro Basic, Gmail and Outlook attachments. Runs in your browser — your video is never uploaded.",
+  "og.title": "Compress Video to 25 MB — Free, No Upload",
+  "og.description": "Fit any video under 25 MB in your browser. Nothing is uploaded.",
+  "hero.eyebrow": "Preset · 25 MB target",
+  "hero.title": "Compress a video to 25 MB",
+  "hero.lead": "25&nbsp;MB is the magic number for Gmail and Outlook attachments and Discord's classic Nitro upload limit. Drop your video below and it will be compressed to just under 25&nbsp;MB on your own device — no upload, no account, no watermark.",
+  "prose.h2": "Why 25 MB, and what to expect",
+  "prose.p1": "Gmail and Outlook both cap attachments at 25&nbsp;MB, and Discord's Nitro Basic tier uses the same limit. Most services check the exact byte count, so a \"25.1&nbsp;MB\" file bounces. This tool always lands <em>under</em> the limit: it works out exactly how much to compress so the video fits, leaves room for the audio, then checks the result and compresses again if the first pass came out a touch too big. You'll typically get a file between 22 and 25&nbsp;MB — never over.",
+  "prose.p2": "What quality fits in 25&nbsp;MB depends entirely on length. A 30-second clip stays crisp 1080p. A 5-minute video lands around 720p and still looks good on a phone. A 20-minute screen recording will be visibly compressed — at some point the tool lowers resolution and frame rate rather than smearing every frame. The compression runs locally in your browser, so a 300&nbsp;MB source doesn't need a 300&nbsp;MB upload before work even starts.",
+  "faq.q1": "Will the file really be under 25 MB?",
+  "faq.a1": "Yes. The tool checks the final size and automatically compresses a little more if needed. It never hands you a file over the target.",
+  "faq.q2": "Is the video uploaded to a server?",
+  "faq.a2": "No. Compression happens in your browser on your own device. There is no upload and no server-side processing — which is also why it's fast and free.",
+  "faq.q3": "Why does Gmail still reject my 25 MB file?",
+  "faq.a3": "Email encodes attachments in a format that adds roughly 33% overhead, so Gmail's effective limit for attachments is lower than 25&nbsp;MB of file. If your compressed file is close to 25&nbsp;MB and still bounces, compress to a custom target of 18&nbsp;MB on the <a href=\"{{url.cv}}\">generic compressor</a> instead.",
+  "faq.q4": "How long does it take?",
+  "faq.a4": "On a typical laptop in Chrome, faster than the video's own duration — a 4-minute video compresses in under 4 minutes, usually much less, because it uses your device's own video hardware.",
+  "faq.q5": "Can I pick a different size?",
+  "faq.a5": "Yes — use the <a href=\"{{url.cv}}\">full compressor</a>, which has 8, 10, 16, 25 and 50&nbsp;MB presets plus a custom field."
+}

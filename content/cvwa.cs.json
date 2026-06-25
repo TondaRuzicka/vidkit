@@ -1,0 +1,23 @@
+{
+  "meta.title": "Komprese videa pro WhatsApp online — zdarma, bez nahrávání | {{SITE_NAME}}",
+  "meta.description": "Zmenšete videa pro odeslání na WhatsApp bez rozmazání. Zkomprimujte na 16 MB v prohlížeči — vaše video nikdy neopustí vaše zařízení.",
+  "og.title": "Komprese videa pro WhatsApp — zdarma, bez nahrávání",
+  "og.description": "Vejděte se s videi pod limity WhatsAppu přímo v prohlížeči. Nic se nenahrává.",
+  "hero.eyebrow": "Předvolba · cíl 16 MB",
+  "hero.title": "Komprese videa pro WhatsApp",
+  "hero.lead": "WhatsApp v mnoha regionech omezuje videa odeslaná jako média na 16&nbsp;MB — a jeho vlastní automatická komprese může klipy zanechat rozmazané. Zkomprimujte nejprve tady, na svém zařízení, a pošlete soubor, který WhatsApp nezničí. Bez nahrávání, bez vodoznaku.",
+  "prose.h2": "Proč komprimovat před odesláním na WhatsApp",
+  "prose.p1": "Když pošlete video jako médium, WhatsApp ho ve vašem telefonu agresivně překomprimuje univerzálním nastavením — odtud to rozmazání. Pokud je vaše video už pod limitem velikosti a efektivně zakódované, má WhatsApp mnohem menší důvod ho drtit. Komprese tady nejprve znamená, že o kompromisu rozhodujete <em>vy</em>, řádným dvoukrokovým postupem: spočítat přesně, jak moc komprimovat, aby se vešlo 16&nbsp;MB, provést to, zkontrolovat velikost a v případě potřeby automaticky zkomprimovat znovu.",
+  "prose.p2": "Výstupem je standardní MP4 — přesně to, co WhatsApp, iPhony a Androidy preferují. Minuta videa se vejde do 16&nbsp;MB ve velmi koukatelné kvalitě; několik minut se sníží na nižší rozlišení, které pořád vypadá záměrně, ne zmrzačeně. U delších videí můžete komprimovaný soubor poslat i jako <em>dokument</em> ve WhatsAppu — dokumenty se vůbec nepřekomprimovávají a mají mnohem vyšší limit velikosti (2&nbsp;GB).",
+  "prose.p3": "Vše běží ve vašem prohlížeči. Rodinná videa, klipy dětí, lékařské konzultace — nic se nenahrává na ničí server, včetně našeho. Žádný tu není.",
+  "faq.q1": "Jaký je skutečný limit velikosti videa na WhatsAppu?",
+  "faq.a1": "Odeslané jako médium 16&nbsp;MB ve většině regionů (některé verze povolují víc). Odeslané jako dokument až 2&nbsp;GB. Tato stránka cílí na limit 16&nbsp;MB pro média, aby se vaše video v chatu zobrazovalo a přehrávalo inline.",
+  "faq.q2": "Zkomprimuje WhatsApp moje video znovu?",
+  "faq.a2": "WhatsApp může média stále zpracovávat, ale efektivně zakódované MP4 pod limitem projde s malým nebo žádným dalším viditelným poškozením. Chcete-li zpracování WhatsAppu úplně přeskočit, pošlete komprimovaný soubor jako dokument.",
+  "faq.q3": "Je moje video soukromé?",
+  "faq.a3": "Ano. Komprese běží výhradně ve vašem prohlížeči na vašem zařízení. Soubor se nikdy nenahrává — můžete sledovat záložku Síť ve vývojářských nástrojích prohlížeče a přesvědčit se sami.",
+  "faq.q4": "Jaký formát WhatsApp chce?",
+  "faq.a4": "MP4 s videem H.264 a zvukem AAC — přesně to, co tento nástroj vytváří. Přehrává se inline na iPhonu i Androidu bez převodu.",
+  "faq.q5": "Můžu komprimovat na jinou velikost?",
+  "faq.a5": "Ano — <a href=\"{{url.cv}}\">plný kompresor</a> vám umožní zvolit 8, 10, 16, 25 nebo 50&nbsp;MB, nebo zadat libovolný vlastní cíl."
+}

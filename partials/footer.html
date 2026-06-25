@@ -2,33 +2,33 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="/" aria-label="{{SITE_NAME}} home">
+        <a class="brand" href="{{url.home}}" aria-label="{{brand.home}}">
           <span class="brand__mark" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M8 6.5v11l9-5.5-9-5.5Z" fill="currentColor"/></svg>
           </span>
           <span><b>{{SITE_NAME}}</b></span>
         </a>
-        <p>Free, private, browser-based video tools — built for people who'd rather not upload their footage to a stranger's server.</p>
+        <p>{{footer.tagline}}</p>
       </div>
       <div class="footer-col">
-        <h4>Tools</h4>
-        <a href="/compress-video/">Compress video</a>
-        <a href="/compress-video-to-25mb/">Compress to 25&nbsp;MB</a>
-        <a href="/compress-video-to-10mb/">Compress to 10&nbsp;MB</a>
-        <a href="/compress-video-for-whatsapp/">Compress for WhatsApp</a>
+        <h4>{{footer.tools}}</h4>
+        <a href="{{url.cv}}">{{footer.cv}}</a>
+        <a href="{{url.cv25}}">{{footer.cv25}}</a>
+        <a href="{{url.cv10}}">{{footer.cv10}}</a>
+        <a href="{{url.cvwa}}">{{footer.cvwa}}</a>
       </div>
       <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="/#how">How it works</a>
-        <a href="/#privacy">Privacy model</a>
-        <a href="/">Home</a>
+        <h4>{{footer.learn}}</h4>
+        <a href="{{url.home}}#how">{{footer.how}}</a>
+        <a href="{{url.home}}#privacy">{{footer.privacy}}</a>
+        <a href="{{url.home}}">{{footer.home}}</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>{{SITE_NAME}} runs entirely in your browser — no cookies, no trackers, no accounts.</span>
+      <span>{{footer.bottom}}</span>
       <span class="badge">
         <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V8a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        Runs 100% on your device
+        {{footer.badge}}
       </span>
     </div>
   </div>
