@@ -1,3 +1,4 @@
+import type { FormatId } from '../core/formats';
 import type { EngineName, ErrorCode, UiToWorker, WorkerToUi } from '../core/types';
 import { createControls } from './controls';
 import { h, icon } from './dom';
@@ -9,6 +10,9 @@ import { createResult } from './result';
 export interface WidgetConfig {
   lockedTargetMB: number | null;
   defaultTargetMB: number;
+  lockedFormat: FormatId | null;
+  defaultFormat: FormatId;
+  formatChoices: readonly FormatId[] | null;
 }
 
 type State = 'idle' | 'ready' | 'working' | 'done' | 'error';

@@ -1,3 +1,4 @@
+import type { FormatId } from '../core/formats';
 import type { CompressOptions } from '../core/types';
 import { h } from './dom';
 import { t } from './i18n';
@@ -6,7 +7,18 @@ export interface ControlsConfig {
   /** Page preset; non-null locks target mode to this value. */
   lockedTargetMB: number | null;
   defaultTargetMB: number;
+  /** Conversion pages fix the output format; null = user-selectable. */
+  lockedFormat: FormatId | null;
+  /** Initial output format when a selector is shown. */
+  defaultFormat: FormatId;
+  /** Formats offered in the selector; null/≤1 entries = no selector shown. */
+  formatChoices: readonly FormatId[] | null;
 }
+
+/** Short display label for a format (universal, not translated). */
+const FORMAT_LABEL: Record<FormatId, string> = {
+  mp4: 'MP4', webm: 'WebM', mov: 'MOV', mkv: 'MKV', m4a: 'M4A', mp3: 'MP3', gif: 'GIF',
+};
 
 export interface Controls {
   el: HTMLElement;
@@ -29,7 +41,11 @@ export function createControls(config: ControlsConfig): Controls {
     );
     return {
       el,
-      getOptions: () => ({ mode: 'target', targetMB: config.lockedTargetMB! }),
+      getOptions: () => ({
+        format: config.lockedFormat ?? config.defaultFormat,
+        mode: 'target',
+        targetMB: config.lockedTargetMB!,
+      }),
       setDisabled: () => {},
     };
   }
@@ -37,6 +53,7 @@ export function createControls(config: ControlsConfig): Controls {
   let mode: 'target' | 'quality' = 'target';
   let targetMB = config.defaultTargetMB;
   let quality: 'high' | 'medium' | 'low' = 'medium';
+  let format: FormatId = config.lockedFormat ?? config.defaultFormat;
 
   const radio = (
     name: string,
@@ -124,14 +141,45 @@ export function createControls(config: ControlsConfig): Controls {
     ),
   );
 
-  const el = h('div', { class: 'controls' }, modeFieldset, targetFieldset, qualityFieldset);
+  // Output-format selector — shown only when the page offers a choice and
+  // doesn't lock the format. Conversion landing pages lock it instead.
+  const showFormatSelector =
+    config.lockedFormat === null &&
+    config.formatChoices !== null &&
+    config.formatChoices.length > 1;
+
+  const formatFieldset = showFormatSelector
+    ? h(
+        'fieldset',
+        { class: 'control-group control-format' },
+        h('legend', {}, t('controls.format.legend')),
+        h(
+          'div',
+          { class: 'control-pills' },
+          ...config.formatChoices!.map((id) =>
+            radio('output-format', id, FORMAT_LABEL[id], id === format, () => {
+              format = id;
+            }),
+          ),
+        ),
+      )
+    : null;
+
+  const el = h(
+    'div',
+    { class: 'controls' },
+    ...(formatFieldset ? [formatFieldset] : []),
+    modeFieldset,
+    targetFieldset,
+    qualityFieldset,
+  );
 
   return {
     el,
     getOptions: () =>
       mode === 'target'
-        ? { mode: 'target', targetMB }
-        : { mode: 'quality', level: quality },
+        ? { format, mode: 'target', targetMB }
+        : { format, mode: 'quality', level: quality },
     setDisabled(disabled) {
       for (const input of el.querySelectorAll('input')) input.disabled = disabled;
     },

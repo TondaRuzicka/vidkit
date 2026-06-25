@@ -1,3 +1,4 @@
+import { FORMATS } from '../core/formats';
 import type { ResultStats } from '../core/types';
 import { formatBytes, h, icon } from './dom';
 import { t } from './i18n';
@@ -124,9 +125,11 @@ export function createResult(): ResultView {
         fps: Math.round(stats.fps),
       });
       const stamp = new Date().toISOString().slice(0, 10);
+      const ext = FORMATS[stats.format].ext;
+      downloadLink.textContent = t('result.download', { format: ext.toUpperCase() });
       (downloadLink as HTMLAnchorElement).href = urlCompressed;
       (downloadLink as HTMLAnchorElement).download =
-        originalFile.name.replace(/\.\w+$/, '') + `-compressed-${stamp}.mp4`;
+        originalFile.name.replace(/\.\w+$/, '') + `-vidkit-${stamp}.${ext}`;
       el.hidden = false;
       heading.focus();
     },

@@ -162,6 +162,7 @@ export const ffmpegEngine: Engine = {
         ? ['-c:a', 'copy']
         : ['-c:a', 'aac', '-b:a', String(plan.audioBps), '-ac', '2'];
 
+    const outName = `out.${plan.output.ext}`;
     try {
       const code = await ffmpeg.exec(
         [
@@ -177,7 +178,7 @@ export const ffmpegEngine: Engine = {
           '-g', String(plan.fps * plan.keyFrameIntervalS),
           '-pix_fmt', 'yuv420p',
           ...audioArgs,
-          '-y', 'out.mp4',
+          '-y', outName,
         ],
         undefined,
         { signal },
@@ -189,9 +190,9 @@ export const ffmpegEngine: Engine = {
           `ffmpeg exited ${code}: ${logBuffer.slice(-5).join(' | ')}`,
         );
       }
-      const data = (await ffmpeg.readFile('out.mp4')) as Uint8Array;
-      await ffmpeg.deleteFile('out.mp4');
-      return new Blob([data as BlobPart], { type: 'video/mp4' });
+      const data = (await ffmpeg.readFile(outName)) as Uint8Array;
+      await ffmpeg.deleteFile(outName);
+      return new Blob([data as BlobPart], { type: plan.output.mime });
     } catch (err) {
       if (signal.aborted || err instanceof CompressError) {
         throw signal.aborted ? new CompressError('cancelled') : err;

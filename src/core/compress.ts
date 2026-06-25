@@ -179,6 +179,7 @@ export function createCompress(deps: CompressDeps) {
       stats: {
         inBytes: file.size,
         outBytes: blob.size,
+        format: plan.output.id,
         width: plan.width,
         height: plan.height,
         fps: plan.fps,
