@@ -46,6 +46,15 @@ export const PAGES: readonly PageDef[] = [
     locales: ['en', 'cs'],
     slugs: { en: 'compress-video-for-whatsapp', cs: 'zmensit-video-pro-whatsapp' },
   },
+  // Conversion landing pages — all share the `convert` template; the target
+  // output format is set per page via content (convert.format → data-locked-format).
+  { id: 'mov2mp4', template: 'convert', locales: ['en', 'cs'], slugs: { en: 'mov-to-mp4', cs: 'mov-na-mp4' } },
+  { id: 'webm2mp4', template: 'convert', locales: ['en', 'cs'], slugs: { en: 'webm-to-mp4', cs: 'webm-na-mp4' } },
+  { id: 'mkv2mp4', template: 'convert', locales: ['en', 'cs'], slugs: { en: 'mkv-to-mp4', cs: 'mkv-na-mp4' } },
+  { id: 'avi2mp4', template: 'convert', locales: ['en', 'cs'], slugs: { en: 'avi-to-mp4', cs: 'avi-na-mp4' } },
+  { id: 'mp42webm', template: 'convert', locales: ['en', 'cs'], slugs: { en: 'mp4-to-webm', cs: 'mp4-na-webm' } },
+  { id: 'mp42mp3', template: 'convert', locales: ['en', 'cs'], slugs: { en: 'mp4-to-mp3', cs: 'mp4-na-mp3' } },
+  { id: 'mp42gif', template: 'convert', locales: ['en', 'cs'], slugs: { en: 'mp4-to-gif', cs: 'mp4-na-gif' } },
 ];
 
 // English-only pages still authored as standalone HTML (none right now). Listed

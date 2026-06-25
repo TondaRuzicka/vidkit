@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert MP4 to MP3 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Extract the audio from .mp4 video to an .mp3 file right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert MP4 to MP3 — Free, No Upload",
+  "og.description": "Pull the audio out of an .mp4 into .mp3, locally in your browser.",
+  "hero.eyebrow": "Convert · MP4 → MP3",
+  "hero.title": "Convert MP4 to MP3 — right in your browser",
+  "hero.lead": "Drop an .mp4 video and pull out just the audio as an .mp3 — for podcasts, music, lectures or voice notes. It's extracted on your own device, so the file is never uploaded.",
+  "convert.format": "mp3",
+  "prose.h2": "Why convert MP4 to MP3?",
+  "prose.p1": "Sometimes you only want the sound: a song, an interview, a lecture, a voice memo. Extracting to MP3 drops the video entirely and keeps just the audio in a small file that plays in every music app and on every device.",
+  "prose.p2": "Most converters upload your video to a server first. {{SITE_NAME}} doesn't — the audio is extracted locally in your browser, so nothing is stored or logged, and even long recordings don't need a slow upload.",
+  "faq.q1": "Is my video uploaded anywhere?",
+  "faq.a1": "No. The extraction happens entirely in your browser, on your own device. There's no server that could receive the file — check your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "What MP3 quality do I get?",
+  "faq.a2": "You can pick the bitrate before converting — from 128&nbsp;kbps (small) up to 320&nbsp;kbps (best quality). 192&nbsp;kbps is a good default for speech and most music.",
+  "faq.q3": "Can it handle a long video?",
+  "faq.a3": "Yes. Audio is tiny compared with video, so even hour-long recordings extract quickly and stay small."
+}

@@ -1,0 +1,19 @@
+{
+  "meta.title": "Převod MP4 na GIF — zdarma, v prohlížeči, bez nahrávání | {{SITE_NAME}}",
+  "meta.description": "Vytvořte z videa .mp4 animovaný .gif přímo v prohlížeči. Nic se nenahrává — soubor nikdy neopustí vaše zařízení. Zdarma, bez registrace, bez vodoznaku.",
+  "og.title": "Převod MP4 na GIF — zdarma, bez nahrávání",
+  "og.description": "Vytvořte animovaný GIF z .mp4 lokálně v prohlížeči.",
+  "hero.eyebrow": "Převod · MP4 → GIF",
+  "hero.title": "Převeďte MP4 na GIF — přímo v prohlížeči",
+  "hero.lead": "Přetáhněte krátké .mp4 a udělejte z něj animovaný .gif do chatů, reakcí a dokumentace. Vytváří se na vašem zařízení, klip se nikdy nenahrává.",
+  "convert.format": "gif",
+  "prose.h2": "Proč převádět MP4 na GIF?",
+  "prose.p1": "GIFy se přehrávají automaticky ve smyčce, fungují všude bez přehrávače — ideální na reakce, krátké ukázky a návody v chatech, issue a dokumentaci. Volte jen pár sekund: GIF nemá zvuk a rychle roste do velikosti.",
+  "prose.p2": "Většina převodníků nejdřív nahraje klip na server. {{SITE_NAME}} ne — GIF se vytváří lokálně v prohlížeči, takže se nic neukládá ani neloguje. Šířkou a počtem snímků za sekundu vyvážíte plynulost a velikost souboru.",
+  "faq.q1": "Nahrává se moje video někam?",
+  "faq.a1": "Ne. GIF se vytváří celý ve vašem prohlížeči, na vašem zařízení. Neexistuje server, který by soubor mohl přijmout — sledujte v prohlížeči záložku Síť a uvidíte, že neodejdou žádná data.",
+  "faq.q2": "Proč je můj GIF tak velký?",
+  "faq.a2": "GIF je starý formát, který ukládá snímky neúsporně, takže i krátké klipy mohou mít několik megabajtů. Menší šířka a nižší počet snímků za sekundu velikost sníží.",
+  "faq.q3": "Jak dlouhý klip může být?",
+  "faq.a3": "Technicky jakkoli, ale GIF rychle bobtná — ideální je pár sekund. Pro delší záběry bude MP4 nebo WebM vypadat lépe a vážit mnohem méně."
+}

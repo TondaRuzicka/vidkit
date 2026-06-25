@@ -4,3 +4,8 @@
 /cs/compress-video-to-25mb/ /cs/zmensit-video-na-25-mb/ 301
 /cs/compress-video-to-10mb/ /cs/zmensit-video-na-10-mb/ 301
 /cs/compress-video-for-whatsapp/ /cs/zmensit-video-pro-whatsapp/ 301
+
+# Generic conversion queries → the canonical input→output landing page.
+/video-to-mp3/ /mp4-to-mp3/ 301
+/video-to-gif/ /mp4-to-gif/ 301
+/convert-to-webm/ /mp4-to-webm/ 301

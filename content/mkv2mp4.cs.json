@@ -1,0 +1,19 @@
+{
+  "meta.title": "Převod MKV na MP4 — zdarma, v prohlížeči, bez nahrávání | {{SITE_NAME}}",
+  "meta.description": "Převeďte video .mkv (Matroska) na .mp4 přímo v prohlížeči. Nic se nenahrává — soubor nikdy neopustí vaše zařízení. Zdarma, bez registrace, bez vodoznaku.",
+  "og.title": "Převod MKV na MP4 — zdarma, bez nahrávání",
+  "og.description": "Změňte .mkv na .mp4 lokálně v prohlížeči. Nic neopustí vaše zařízení.",
+  "hero.eyebrow": "Převod · MKV → MP4",
+  "hero.title": "Převeďte MKV na MP4 — přímo v prohlížeči",
+  "hero.lead": "Přetáhněte soubor .mkv (Matroska) a získejte standardní .mp4, které přehrajete na telefonech, chytrých televizích i v editorech, které MKV odmítají. Převod běží na vašem zařízení a nic se nenahrává.",
+  "convert.format": "mp4",
+  "prose.h2": "Proč převádět MKV na MP4?",
+  "prose.p1": "MKV je flexibilní kontejner oblíbený pro kvalitní video, ale spousta telefonů, televizí, prohlížečů a editorů ho neotevře. MP4 (H.264) je univerzální standard, takže po převodu se stejné video přehraje téměř všude.",
+  "prose.p2": "Většina převodníků nejdřív nahraje klip na server. {{SITE_NAME}} ne — převod běží lokálně v prohlížeči, takže ani velké MKV soubory nemusí čekat na pomalé nahrávání a nic se neukládá ani neloguje.",
+  "faq.q1": "Nahrává se můj .mkv soubor někam?",
+  "faq.a1": "Ne. Převod probíhá celý ve vašem prohlížeči, na vašem zařízení. Neexistuje server, který by soubor mohl přijmout — sledujte v prohlížeči záložku Síť a uvidíte, že neodejdou žádná data.",
+  "faq.q2": "Ztratí MP4 kvalitu?",
+  "faq.a2": "Převod video překóduje, takže dojde k mírné ztrátě, ale ve výchozím nastavení je téměř neznatelná. Před převodem můžete zvolit cílovou velikost nebo úroveň kvality.",
+  "faq.q3": "Co velké filmové MKV soubory?",
+  "faq.a3": "V prohlížeči Chrome nebo Edge zvládne soubory do zhruba 2&nbsp;GB. Větší soubory mohou být v jiných prohlížečích odmítnuty se srozumitelnou hláškou — pro největší soubory zkuste Chrome."
+}

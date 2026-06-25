@@ -1,0 +1,19 @@
+{
+  "meta.title": "Převod MP4 na MP3 — zdarma, v prohlížeči, bez nahrávání | {{SITE_NAME}}",
+  "meta.description": "Vytáhněte zvuk z videa .mp4 do souboru .mp3 přímo v prohlížeči. Nic se nenahrává — soubor nikdy neopustí vaše zařízení. Zdarma, bez registrace, bez vodoznaku.",
+  "og.title": "Převod MP4 na MP3 — zdarma, bez nahrávání",
+  "og.description": "Vytáhněte zvuk z .mp4 do .mp3 lokálně v prohlížeči.",
+  "hero.eyebrow": "Převod · MP4 → MP3",
+  "hero.title": "Převeďte MP4 na MP3 — přímo v prohlížeči",
+  "hero.lead": "Přetáhněte video .mp4 a vytáhněte z něj jen zvuk jako .mp3 — pro podcasty, hudbu, přednášky nebo hlasové poznámky. Zvuk se získá na vašem zařízení, soubor se nikdy nenahrává.",
+  "convert.format": "mp3",
+  "prose.h2": "Proč převádět MP4 na MP3?",
+  "prose.p1": "Někdy chcete jen zvuk: písničku, rozhovor, přednášku, hlasovou poznámku. Extrakce do MP3 úplně zahodí obraz a ponechá jen zvuk v malém souboru, který přehrajete v každé hudební aplikaci a na každém zařízení.",
+  "prose.p2": "Většina převodníků nejdřív nahraje video na server. {{SITE_NAME}} ne — zvuk se vytahuje lokálně v prohlížeči, takže se nic neukládá ani neloguje a ani dlouhé nahrávky nemusí čekat na pomalé nahrávání.",
+  "faq.q1": "Nahrává se moje video někam?",
+  "faq.a1": "Ne. Extrakce probíhá celá ve vašem prohlížeči, na vašem zařízení. Neexistuje server, který by soubor mohl přijmout — zkontrolujte si v prohlížeči záložku Síť a uvidíte, že neodejdou žádná data.",
+  "faq.q2": "Jakou kvalitu MP3 dostanu?",
+  "faq.a2": "Před převodem si zvolíte datový tok — od 128&nbsp;kbps (malý soubor) až po 320&nbsp;kbps (nejlepší kvalita). 192&nbsp;kbps je dobrá výchozí volba pro řeč i většinu hudby.",
+  "faq.q3": "Zvládne to dlouhé video?",
+  "faq.a3": "Ano. Zvuk je proti videu drobný, takže i hodinové nahrávky se vytáhnou rychle a zůstanou malé."
+}

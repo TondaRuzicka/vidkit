@@ -32,6 +32,31 @@ test.describe('format conversion → container', () => {
   }
 });
 
+// Phase 3: conversion landing pages lock the output format (no selector) and
+// must produce that format from whatever is dropped.
+test.describe('conversion landing pages (locked format)', () => {
+  const CASES = [
+    { path: '/mov-to-mp4/', ext: '.mp4', engine: 'fast mode', slow: false },
+    { path: '/mp4-to-mp3/', ext: '.mp3', engine: 'compatibility mode', slow: true },
+  ];
+  for (const { path, ext, engine, slow } of CASES) {
+    test(`${path} outputs ${ext}`, async ({ page }) => {
+      if (slow) test.slow();
+      await page.goto(path);
+      // No format selector on locked pages.
+      await expect(page.locator('input[name="output-format"]')).toHaveCount(0);
+      await page.setInputFiles('#compressor input[type=file]', fixture('e2e-4s.mp4'));
+      // mp4 output keeps the size control; audio hides it and uses defaults.
+      const target = page.locator('input[name="target-mb"][value="8"]');
+      if (await target.isVisible()) await target.check();
+      await page.getByRole('button', { name: 'Compress video' }).click();
+      const out = await awaitResult(page, slow ? 600_000 : 150_000);
+      expect(out.engineLine).toContain(engine);
+      expect((await downloadInfo(page)).name.endsWith(ext)).toBe(true);
+    });
+  }
+});
+
 // Phase 2: codecs WebCodecs can't encode → software (ffmpeg.wasm). Slow, so a
 // 4s fixture. WebM re-encodes video; m4a/mp3 extract audio; gif rasterises.
 test.describe('format conversion → ffmpeg formats', () => {
