@@ -1,9 +1,9 @@
 {
   "url.home": "/cs/",
-  "url.cv": "/cs/compress-video/",
-  "url.cv25": "/cs/compress-video-to-25mb/",
-  "url.cv10": "/cs/compress-video-to-10mb/",
-  "url.cvwa": "/cs/compress-video-for-whatsapp/",
+  "url.cv": "/cs/zmensit-video/",
+  "url.cv25": "/cs/zmensit-video-na-25-mb/",
+  "url.cv10": "/cs/zmensit-video-na-10-mb/",
+  "url.cvwa": "/cs/zmensit-video-pro-whatsapp/",
   "faq.heading": "Časté dotazy",
   "widget.noscript": "Tento kompresor běží výhradně ve vašem prohlížeči a pro lokální přístup k vašemu video souboru potřebuje JavaScript. Povolte JavaScript a můžete ho používat — vaše video se ani tak nikam nenahraje.",
   "header.skip": "Přejít na obsah",

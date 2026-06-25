@@ -1,0 +1,6 @@
+# Czech tool pages moved to localized slugs (compress-video -> zmensit-video).
+# 301 the short-lived English-slug URLs so nothing that was briefly live 404s.
+/cs/compress-video/ /cs/zmensit-video/ 301
+/cs/compress-video-to-25mb/ /cs/zmensit-video-na-25-mb/ 301
+/cs/compress-video-to-10mb/ /cs/zmensit-video-na-10-mb/ 301
+/cs/compress-video-for-whatsapp/ /cs/zmensit-video-pro-whatsapp/ 301

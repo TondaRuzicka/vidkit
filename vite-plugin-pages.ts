@@ -8,7 +8,7 @@ import {
   PAGES,
   SITE_NAME,
   SITE_URL,
-  pathFor,
+  pagePath,
   type Locale,
   type PageDef,
 } from './src/config';
@@ -53,14 +53,14 @@ function findPage(id: string): PageDef | undefined {
 // <title>, description, canonical, og tags and hreflang alternates for a page.
 // Values stay as {{placeholders}} — filled by the later substitute() pass.
 function metaBlock(page: PageDef, locale: Locale): string {
-  const self = `${SITE_URL}${pathFor(page.slug, locale)}`;
+  const self = `${SITE_URL}${pagePath(page, locale)}`;
   const alternates = page.locales
     .map(
       (l) =>
-        `<link rel="alternate" hreflang="${l}" href="${SITE_URL}${pathFor(page.slug, l)}" />`,
+        `<link rel="alternate" hreflang="${l}" href="${SITE_URL}${pagePath(page, l)}" />`,
     )
     .join('\n');
-  const xDefault = `<link rel="alternate" hreflang="x-default" href="${SITE_URL}${pathFor(page.slug, DEFAULT_LOCALE)}" />`;
+  const xDefault = `<link rel="alternate" hreflang="x-default" href="${SITE_URL}${pagePath(page, DEFAULT_LOCALE)}" />`;
   return [
     `<title>{{meta.title}}</title>`,
     `<meta name="description" content="{{meta.description}}" />`,
@@ -77,7 +77,7 @@ function metaBlock(page: PageDef, locale: Locale): string {
 function langSwitch(page: PageDef, current: Locale): string {
   const links = page.locales
     .map((l) => {
-      const href = pathFor(page.slug, l);
+      const href = pagePath(page, l);
       const label = l.toUpperCase();
       const aria = l === current ? ' aria-current="true"' : '';
       return `<a hreflang="${l}" lang="${l}" href="${href}"${aria}>${label}</a>`;
@@ -145,7 +145,7 @@ function render(rawHtml: string): string {
 }
 
 const allPaths = (): string[] => [
-  ...PAGES.flatMap((p) => p.locales.map((l) => pathFor(p.slug, l))),
+  ...PAGES.flatMap((p) => p.locales.map((l) => pagePath(p, l))),
   ...LEGACY_EN_PATHS,
 ];
 
