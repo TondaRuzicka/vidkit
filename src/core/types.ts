@@ -2,7 +2,11 @@ import type { FormatId, OutputFormat } from './formats.ts';
 
 export type CompressOptions =
   | { format?: FormatId; mode: 'target'; targetMB: number }
-  | { format?: FormatId; mode: 'quality'; level: 'high' | 'medium' | 'low' };
+  | { format?: FormatId; mode: 'quality'; level: 'high' | 'medium' | 'low' }
+  // Audio extraction (m4a/mp3): a fixed audio bitrate, no video budget.
+  | { format: FormatId; mode: 'audio'; audioKbps: number }
+  // Animated GIF: width (long-edge cap) + frame rate; size is a result.
+  | { format: FormatId; mode: 'gif'; width: number; fps: number };
 
 export type EngineName = 'webcodecs' | 'ffmpeg';
 

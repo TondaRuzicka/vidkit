@@ -63,6 +63,11 @@ export function createResult(): ResultView {
   );
   const compareHint = h('p', { class: 'compare-hint' }, t('result.compare.hint'));
 
+  // Audio-only and GIF outputs can't use the video compare — show a fitting
+  // single preview instead.
+  const audioPreview = h('audio', { class: 'result-audio', controls: true, hidden: true });
+  const gifPreview = h('img', { class: 'result-gif', alt: t('result.compressed'), hidden: true });
+
   const downloadLink = h('a', { class: 'button-primary result-download' }, t('result.download'));
   const playBtn = h('button', { type: 'button', class: 'button-secondary' }, t('result.play'));
   const againBtn = h('button', { type: 'button', class: 'button-secondary' }, t('result.again'));
@@ -74,6 +79,8 @@ export function createResult(): ResultView {
     sizes,
     sizeCompare,
     compareWrap,
+    audioPreview,
+    gifPreview,
     dims,
     compareHint,
     h('div', { class: 'result-actions' }, downloadLink, playBtn, againBtn),
@@ -102,13 +109,35 @@ export function createResult(): ResultView {
     el,
     show(originalFile, blob, stats) {
       api.reset();
+      const kind = FORMATS[stats.format].kind;
       const urlOriginal = URL.createObjectURL(originalFile);
       const urlCompressed = URL.createObjectURL(blob);
       urls = [urlOriginal, urlCompressed];
-      videoOriginal.src = urlOriginal;
-      videoCompressed.src = urlCompressed;
-      slider.value = '50';
-      applyClip();
+
+      // Choose the preview that fits the output: video A/B compare, an audio
+      // player, or a still GIF image. Unused previews stay hidden.
+      compareWrap.hidden = kind !== 'video';
+      compareHint.hidden = kind !== 'video';
+      playBtn.hidden = kind !== 'video';
+      dims.hidden = kind !== 'video';
+      audioPreview.hidden = kind !== 'audio';
+      gifPreview.hidden = kind !== 'animation';
+
+      if (kind === 'video') {
+        videoOriginal.src = urlOriginal;
+        videoCompressed.src = urlCompressed;
+        slider.value = '50';
+        applyClip();
+        dims.textContent = t('result.dimensions', {
+          width: stats.width,
+          height: stats.height,
+          fps: Math.round(stats.fps),
+        });
+      } else if (kind === 'audio') {
+        (audioPreview as HTMLAudioElement).src = urlCompressed;
+      } else {
+        (gifPreview as HTMLImageElement).src = urlCompressed;
+      }
 
       const saved = Math.max(0, Math.round(100 * (1 - stats.outBytes / stats.inBytes)));
       sizes.textContent = t('result.sizes', {
@@ -119,11 +148,6 @@ export function createResult(): ResultView {
       beforeVal.textContent = formatBytes(stats.inBytes);
       afterVal.textContent = formatBytes(stats.outBytes);
       savedVal.textContent = `−${saved}%`;
-      dims.textContent = t('result.dimensions', {
-        width: stats.width,
-        height: stats.height,
-        fps: Math.round(stats.fps),
-      });
       const stamp = new Date().toISOString().slice(0, 10);
       const ext = FORMATS[stats.format].ext;
       downloadLink.textContent = t('result.download', { format: ext.toUpperCase() });
@@ -137,6 +161,8 @@ export function createResult(): ResultView {
       setPlaying(false);
       videoOriginal.removeAttribute('src');
       videoCompressed.removeAttribute('src');
+      audioPreview.removeAttribute('src');
+      gifPreview.removeAttribute('src');
       for (const url of urls) URL.revokeObjectURL(url);
       urls = [];
       el.hidden = true;

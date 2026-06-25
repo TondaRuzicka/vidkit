@@ -119,6 +119,35 @@ export function buildPlan(
   const { durationS, video, audio } = probe;
   const output = formatOf(options.format);
 
+  // Audio extraction: fixed bitrate, no video, no verify loop.
+  if (options.mode === 'audio') {
+    return {
+      output,
+      width: 0,
+      height: 0,
+      fps: 0,
+      videoBps: 0,
+      audioBps: options.audioKbps * 1000,
+      keyFrameIntervalS: 2,
+      targetBytes: null,
+    };
+  }
+
+  // Animated GIF: width is a long-edge cap; fps is throttled to the source.
+  if (options.mode === 'gif') {
+    const { width, height } = fitToLongEdge(video.width, video.height, options.width);
+    return {
+      output,
+      width,
+      height,
+      fps: Math.min(video.fps, options.fps),
+      videoBps: 0,
+      audioBps: null,
+      keyFrameIntervalS: 2,
+      targetBytes: null,
+    };
+  }
+
   if (options.mode === 'quality') {
     const maxEdge = QUALITY_MAX_LONG_EDGE[options.level];
     const longEdge = Math.min(Math.max(video.width, video.height), maxEdge);

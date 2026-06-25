@@ -31,3 +31,37 @@ test.describe('format conversion → container', () => {
     });
   }
 });
+
+// Phase 2: codecs WebCodecs can't encode → software (ffmpeg.wasm). Slow, so a
+// 4s fixture. WebM re-encodes video; m4a/mp3 extract audio; gif rasterises.
+test.describe('format conversion → ffmpeg formats', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/compress-video/');
+  });
+
+  const CASES: { fmt: string; ext: string; magic: number[] | null; video: boolean }[] = [
+    { fmt: 'webm', ext: '.webm', magic: [0x1a, 0x45, 0xdf, 0xa3], video: true }, // EBML
+    { fmt: 'm4a', ext: '.m4a', magic: null, video: false },
+    { fmt: 'mp3', ext: '.mp3', magic: null, video: false },
+    { fmt: 'gif', ext: '.gif', magic: [0x47, 0x49, 0x46, 0x38], video: false }, // "GIF8"
+  ];
+
+  for (const { fmt, ext, magic, video } of CASES) {
+    test(`MP4 → ${fmt.toUpperCase()} (ffmpeg)`, async ({ page }) => {
+      test.slow(); // wasm encode path
+      await page.setInputFiles('#compressor input[type=file]', fixture('e2e-4s.mp4'));
+      await selectFormat(page, fmt);
+      // video formats keep the size control; audio/gif use their own defaults.
+      if (video) await page.locator('input[name="target-mb"][value="8"]').check();
+      await page.getByRole('button', { name: 'Compress video' }).click();
+
+      const out = await awaitResult(page, 600_000);
+      expect(out.engineLine).toContain('compatibility mode');
+      expect(out.outBytes).toBeGreaterThan(1000);
+
+      const info = await downloadInfo(page);
+      expect(info.name.endsWith(ext), `download name ${info.name}`).toBe(true);
+      if (magic) expect(info.magic).toEqual(magic);
+    });
+  }
+});
