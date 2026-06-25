@@ -36,6 +36,7 @@ export function createProgress(): Progress {
   // Stage changes are announced; per-frame counts are visible but not live
   // (4 updates/second would spam screen readers).
   const stageText = h('p', { class: 'progress-stage', 'aria-live': 'polite' }, t('status.probing'));
+  const pct = h('span', { class: 'progress__pct' }, '0%');
   const frames = h('p', { class: 'progress-frames' });
   const eta = h('p', { class: 'progress-eta' });
   const engineLine = h('p', { class: 'progress-engine' });
@@ -44,7 +45,7 @@ export function createProgress(): Progress {
   const el = h(
     'div',
     { class: 'progress', hidden: true },
-    stageText,
+    h('div', { class: 'progress__head' }, stageText, pct),
     barTrack,
     h('div', { class: 'progress-meta' }, frames, eta),
     engineLine,
@@ -65,15 +66,17 @@ export function createProgress(): Progress {
             : t('progress.stage.encode');
     },
     update(framesDone, framesTotal, etaMs) {
-      const pct = framesTotal > 0 ? Math.min(100, Math.round((100 * framesDone) / framesTotal)) : 0;
-      bar.style.width = pct + '%';
-      barTrack.setAttribute('aria-valuenow', String(pct));
+      const p = framesTotal > 0 ? Math.min(100, Math.round((100 * framesDone) / framesTotal)) : 0;
+      bar.style.width = p + '%';
+      pct.textContent = p + '%';
+      barTrack.setAttribute('aria-valuenow', String(p));
       frames.textContent = t('progress.frames', { done: framesDone, total: framesTotal });
       eta.textContent =
         etaMs === null ? t('progress.eta.calculating') : t('progress.eta', { time: formatEta(etaMs) });
     },
     reset() {
       bar.style.width = '0%';
+      pct.textContent = '0%';
       barTrack.setAttribute('aria-valuenow', '0');
       frames.textContent = '';
       eta.textContent = '';

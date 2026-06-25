@@ -79,24 +79,28 @@ export function createControls(config: ControlsConfig): Controls {
     if (Number.isFinite(n) && n >= CUSTOM_MIN) targetMB = Math.min(n, CUSTOM_MAX);
     else customInput.focus();
   });
+  customRadio.classList.add('control-pill--custom');
   customRadio.append(customInput);
 
   const targetFieldset = h(
     'fieldset',
     { class: 'control-group' },
     h('legend', {}, t('controls.target.legend')),
-    ...presetRadios,
-    customRadio,
+    h('div', { class: 'control-pills' }, ...presetRadios, customRadio),
   );
 
   const qualityFieldset = h(
     'fieldset',
     { class: 'control-group', hidden: true },
     h('legend', {}, t('controls.quality.legend')),
-    ...(['high', 'medium', 'low'] as const).map((level) =>
-      radio('quality-level', level, t(`controls.quality.${level}`), level === quality, () => {
-        quality = level;
-      }),
+    h(
+      'div',
+      { class: 'control-pills' },
+      ...(['high', 'medium', 'low'] as const).map((level) =>
+        radio('quality-level', level, t(`controls.quality.${level}`), level === quality, () => {
+          quality = level;
+        }),
+      ),
     ),
   );
 
@@ -104,16 +108,20 @@ export function createControls(config: ControlsConfig): Controls {
     'fieldset',
     { class: 'control-group control-mode' },
     h('legend', {}, t('controls.mode.legend')),
-    radio('mode', 'target', t('controls.mode.target'), true, () => {
-      mode = 'target';
-      targetFieldset.hidden = false;
-      qualityFieldset.hidden = true;
-    }),
-    radio('mode', 'quality', t('controls.mode.quality'), false, () => {
-      mode = 'quality';
-      targetFieldset.hidden = true;
-      qualityFieldset.hidden = false;
-    }),
+    h(
+      'div',
+      { class: 'control-pills' },
+      radio('mode', 'target', t('controls.mode.target'), true, () => {
+        mode = 'target';
+        targetFieldset.hidden = false;
+        qualityFieldset.hidden = true;
+      }),
+      radio('mode', 'quality', t('controls.mode.quality'), false, () => {
+        mode = 'quality';
+        targetFieldset.hidden = true;
+        qualityFieldset.hidden = false;
+      }),
+    ),
   );
 
   const el = h('div', { class: 'controls' }, modeFieldset, targetFieldset, qualityFieldset);

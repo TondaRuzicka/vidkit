@@ -1,4 +1,6 @@
 {
+  "widget.title": "Video compressor",
+  "widget.status.ready": "ready",
   "dropzone.label": "Drop a video here or browse files",
   "dropzone.hint": "MP4, MOV, WebM, MKV or AVI — stays on your device",
   "dropzone.selected": "{name} — {size}",
