@@ -34,7 +34,7 @@ test.describe('format matrix → 8 MB target', () => {
       expect(out.outBytes).toBeGreaterThan(targetMB * 100_000); // sanity: not a stub
       expect(out.sizesText).toMatch(/smaller/);
       if (engine === 'webcodecs') {
-        expect(out.engineLine).toContain('hardware-accelerated');
+        expect(out.engineLine).toContain('fast mode');
       } else if (engine === 'ffmpeg') {
         expect(out.engineLine).toContain('compatibility mode');
       }
