@@ -44,10 +44,10 @@
         Gmail and Outlook both cap attachments at 25&nbsp;MB, and Discord's
         Nitro Basic tier uses the same limit. Most services check the exact
         byte count, so a "25.1&nbsp;MB" file bounces. This tool always lands
-        <em>under</em> the limit: it calculates the precise video bitrate that
-        fits, reserves room for audio and container overhead, then verifies the
-        result and re-encodes if a hardware encoder overshot. You'll typically
-        get a file between 22 and 25&nbsp;MB — never over.
+        <em>under</em> the limit: it works out exactly how much to compress so
+        the video fits, leaves room for the audio, then checks the result and
+        compresses again if the first pass came out a touch too big. You'll
+        typically get a file between 22 and 25&nbsp;MB — never over.
       </p>
       <p>
         What quality fits in 25&nbsp;MB depends entirely on length. A 30-second
@@ -68,9 +68,8 @@
         <details class="faq-item">
           <summary>Will the file really be under 25 MB?<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
           <div>
-            Yes. The tool verifies the output size and automatically re-encodes
-            at a lower bitrate if needed. It never hands you a file over the
-            target.
+            Yes. The tool checks the final size and automatically compresses a
+            little more if needed. It never hands you a file over the target.
           </div>
         </details>
         <details class="faq-item">
@@ -96,7 +95,7 @@
           <div>
             On a typical laptop in Chrome, faster than the video's own duration —
             a 4-minute video compresses in under 4 minutes, usually much less,
-            thanks to hardware acceleration.
+            because it uses your device's own video hardware.
           </div>
         </details>
         <details class="faq-item">

@@ -16,7 +16,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero__inner">
-        <p class="eyebrow">100% on-device · WebCodecs &amp; WebAssembly</p>
+        <p class="eyebrow">100% private · Runs in your browser · Nothing uploaded</p>
         <h1>Video tools that <em>never see</em> your videos</h1>
         <p class="hero__lead">
           {{SITE_NAME}} is a set of free video tools that run entirely in your
@@ -35,7 +35,7 @@
           <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> No upload</li>
           <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> No sign-up</li>
           <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> No watermark</li>
-          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Hardware-accelerated</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Fast</li>
         </ul>
       </div>
     </div>
@@ -87,10 +87,9 @@
           <p>
             Every other "online video compressor" uploads your footage to a
             server you'll never see, does the work there, and sends it back.
-            {{SITE_NAME}} doesn't have a server. The compression engine — your
-            browser's built-in WebCodecs, or a WebAssembly build of FFmpeg as a
-            fallback — runs against the file locally. Nothing is transmitted,
-            stored, or logged.
+            {{SITE_NAME}} doesn't have a server. All the compressing happens
+            right here in your browser, using the video tools your browser and
+            device already have built in. Nothing is uploaded, stored, or logged.
           </p>
           <ul class="explainer__list">
             <li>
@@ -99,7 +98,7 @@
             </li>
             <li>
               <span class="n">2</span>
-              <span><strong>It's processed in your browser</strong><span>Your CPU/GPU does the encoding, hardware-accelerated where possible.</span></span>
+              <span><strong>It's processed in your browser</strong><span>Your own device does the work — using the same chip that plays videos, so it's quick.</span></span>
             </li>
             <li>
               <span class="n">3</span>

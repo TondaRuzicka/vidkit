@@ -41,8 +41,8 @@
       <h2>Fitting a video into Discord's free limit</h2>
       <p>
         Discord checks the exact byte count, so 10.2&nbsp;MB fails where
-        9.9&nbsp;MB sails through. This tool computes the precise bitrate that
-        fits your video's length into the limit, reserves space for audio,
+        9.9&nbsp;MB sails through. This tool works out exactly how much to
+        compress so your video's length fits the limit, reserves space for audio,
         compresses, then verifies the final size — re-encoding automatically if
         the first pass came out even slightly over. You always get a file
         Discord will accept.
@@ -52,14 +52,14 @@
         clip still looks sharp; a 2-minute clip lands around 540–720p and looks
         fine in chat; a 10-minute video at 10&nbsp;MB is heavily compressed by
         any tool's math — for those, consider whether a trimmed highlight says
-        it better. When the bit budget gets tight, the tool lowers resolution
+        it better. When space gets tight, the tool lowers resolution
         and frame rate in sensible steps instead of smearing every frame into
-        blocks. Audio is kept at a bitrate that doesn't crackle, because
-        viewers forgive soft pixels faster than broken sound.
+        blocks. The sound is kept clear enough not to crackle, because
+        viewers forgive soft pixels faster than broken audio.
       </p>
       <p>
-        Everything runs locally in your browser with hardware acceleration
-        where available, so compressing is usually faster than watching the
+        Everything runs right in your browser, using your device's own power,
+        so compressing is usually faster than watching the
         clip — and your video is never uploaded anywhere.
       </p>
     </div>
@@ -96,9 +96,10 @@
         <details class="faq-item">
           <summary>Does sound count against the 10 MB?<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
           <div>
-            Yes — audio is part of the file. The tool reserves a sensible audio
-            bitrate first and gives everything else to the picture. Muted videos
-            squeeze noticeably more visual quality into the same 10&nbsp;MB.
+            Yes — audio is part of the file. The tool sets aside a sensible
+            amount for sound first and gives everything else to the picture.
+            Muted videos squeeze noticeably more visual quality into the same
+            10&nbsp;MB.
           </div>
         </details>
         <details class="faq-item">
