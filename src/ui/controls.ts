@@ -1,3 +1,4 @@
+import { FORMATS, type FormatId } from '../core/formats';
 import type { CompressOptions } from '../core/types';
 import { h } from './dom';
 import { t } from './i18n';
@@ -6,7 +7,18 @@ export interface ControlsConfig {
   /** Page preset; non-null locks target mode to this value. */
   lockedTargetMB: number | null;
   defaultTargetMB: number;
+  /** Conversion pages fix the output format; null = user-selectable. */
+  lockedFormat: FormatId | null;
+  /** Initial output format when a selector is shown. */
+  defaultFormat: FormatId;
+  /** Formats offered in the selector; null/≤1 entries = no selector shown. */
+  formatChoices: readonly FormatId[] | null;
 }
+
+/** Short display label for a format (universal, not translated). */
+const FORMAT_LABEL: Record<FormatId, string> = {
+  mp4: 'MP4', webm: 'WebM', mov: 'MOV', mkv: 'MKV', m4a: 'M4A', mp3: 'MP3', gif: 'GIF',
+};
 
 export interface Controls {
   el: HTMLElement;
@@ -17,6 +29,9 @@ export interface Controls {
 const PRESETS_MB = [8, 10, 16, 25, 50];
 const CUSTOM_MIN = 2;
 const CUSTOM_MAX = 512;
+const AUDIO_KBPS = [320, 256, 192, 128];
+const GIF_WIDTHS = [480, 320, 240];
+const GIF_FPS = [15, 12, 10];
 
 export function createControls(config: ControlsConfig): Controls {
   if (config.lockedTargetMB !== null) {
@@ -29,7 +44,11 @@ export function createControls(config: ControlsConfig): Controls {
     );
     return {
       el,
-      getOptions: () => ({ mode: 'target', targetMB: config.lockedTargetMB! }),
+      getOptions: () => ({
+        format: config.lockedFormat ?? config.defaultFormat,
+        mode: 'target',
+        targetMB: config.lockedTargetMB!,
+      }),
       setDisabled: () => {},
     };
   }
@@ -37,6 +56,10 @@ export function createControls(config: ControlsConfig): Controls {
   let mode: 'target' | 'quality' = 'target';
   let targetMB = config.defaultTargetMB;
   let quality: 'high' | 'medium' | 'low' = 'medium';
+  let format: FormatId = config.lockedFormat ?? config.defaultFormat;
+  let audioKbps = 192;
+  let gifWidth = GIF_WIDTHS[0]!;
+  let gifFps = GIF_FPS[1]!;
 
   const radio = (
     name: string,
@@ -104,6 +127,46 @@ export function createControls(config: ControlsConfig): Controls {
     ),
   );
 
+  const audioFieldset = h(
+    'fieldset',
+    { class: 'control-group', hidden: true },
+    h('legend', {}, t('controls.audio.legend')),
+    h(
+      'div',
+      { class: 'control-pills' },
+      ...AUDIO_KBPS.map((kbps) =>
+        radio('audio-kbps', String(kbps), t('controls.audio.preset', { kbps }), kbps === audioKbps, () => {
+          audioKbps = kbps;
+        }),
+      ),
+    ),
+  );
+
+  const gifFieldset = h(
+    'fieldset',
+    { class: 'control-group', hidden: true },
+    h('legend', {}, t('controls.gif.width')),
+    h(
+      'div',
+      { class: 'control-pills' },
+      ...GIF_WIDTHS.map((w) =>
+        radio('gif-width', String(w), t('controls.gif.widthPreset', { w }), w === gifWidth, () => {
+          gifWidth = w;
+        }),
+      ),
+    ),
+    h('legend', {}, t('controls.gif.fps')),
+    h(
+      'div',
+      { class: 'control-pills' },
+      ...GIF_FPS.map((f) =>
+        radio('gif-fps', String(f), t('controls.gif.fpsPreset', { fps: f }), f === gifFps, () => {
+          gifFps = f;
+        }),
+      ),
+    ),
+  );
+
   const modeFieldset = h(
     'fieldset',
     { class: 'control-group control-mode' },
@@ -124,14 +187,63 @@ export function createControls(config: ControlsConfig): Controls {
     ),
   );
 
-  const el = h('div', { class: 'controls' }, modeFieldset, targetFieldset, qualityFieldset);
+  // Output-format selector — shown only when the page offers a choice and
+  // doesn't lock the format. Conversion landing pages lock it instead.
+  const showFormatSelector =
+    config.lockedFormat === null &&
+    config.formatChoices !== null &&
+    config.formatChoices.length > 1;
+
+  // Show only the control groups relevant to the chosen format's kind.
+  const applyKind = () => {
+    const kind = FORMATS[format].kind;
+    modeFieldset.hidden = kind !== 'video';
+    targetFieldset.hidden = kind !== 'video' || mode !== 'target';
+    qualityFieldset.hidden = kind !== 'video' || mode !== 'quality';
+    audioFieldset.hidden = kind !== 'audio';
+    gifFieldset.hidden = kind !== 'animation';
+  };
+
+  const formatFieldset = showFormatSelector
+    ? h(
+        'fieldset',
+        { class: 'control-group control-format' },
+        h('legend', {}, t('controls.format.legend')),
+        h(
+          'div',
+          { class: 'control-pills' },
+          ...config.formatChoices!.map((id) =>
+            radio('output-format', id, FORMAT_LABEL[id], id === format, () => {
+              format = id;
+              applyKind();
+            }),
+          ),
+        ),
+      )
+    : null;
+
+  const el = h(
+    'div',
+    { class: 'controls' },
+    ...(formatFieldset ? [formatFieldset] : []),
+    modeFieldset,
+    targetFieldset,
+    qualityFieldset,
+    audioFieldset,
+    gifFieldset,
+  );
+  applyKind(); // honour the initial (possibly locked) format
 
   return {
     el,
-    getOptions: () =>
-      mode === 'target'
-        ? { mode: 'target', targetMB }
-        : { mode: 'quality', level: quality },
+    getOptions: (): CompressOptions => {
+      const kind = FORMATS[format].kind;
+      if (kind === 'audio') return { format, mode: 'audio', audioKbps };
+      if (kind === 'animation') return { format, mode: 'gif', width: gifWidth, fps: gifFps };
+      return mode === 'target'
+        ? { format, mode: 'target', targetMB }
+        : { format, mode: 'quality', level: quality };
+    },
     setDisabled(disabled) {
       for (const input of el.querySelectorAll('input')) input.disabled = disabled;
     },

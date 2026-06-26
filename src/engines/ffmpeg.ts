@@ -1,5 +1,53 @@
-import { CompressError, type ProbeResult } from '../core/types.ts';
+import { CompressError, type EncodePlan, type ProbeResult } from '../core/types.ts';
 import type { Engine } from './types.ts';
+
+/** ffmpeg.wasm exec args for one plan, branched by output kind/codec. */
+function buildArgs(plan: EncodePlan, inPath: string, outName: string): string[] {
+  const o = plan.output;
+  const base = ['-hide_banner', '-i', inPath];
+
+  if (o.kind === 'audio') {
+    const codec = o.audioCodec === 'mp3' ? 'libmp3lame' : 'aac';
+    return [
+      ...base, '-vn',
+      '-c:a', codec, '-b:a', String(plan.audioBps ?? 128_000), '-ac', '2',
+      '-y', outName,
+    ];
+  }
+
+  if (o.kind === 'animation') {
+    // Two-pass palette in one graph: best-quality GIF, no audio track.
+    const vf =
+      `fps=${plan.fps},scale=${plan.width}:-1:flags=lanczos,` +
+      `split[s0][s1];[s0]palettegen=max_colors=256[p];[s1][p]paletteuse=dither=bayer`;
+    return [...base, '-an', '-vf', vf, '-loop', '0', '-y', outName];
+  }
+
+  // Video: VP9 for WebM, otherwise H.264.
+  const videoArgs =
+    o.videoCodec === 'vp9'
+      ? // libvpx-vp9 crashes the single-thread wasm core (OOB); VP8 is stable
+        // and still WebM. realtime+cpu-used keeps the software encode bearable.
+        ['-c:v', 'libvpx', '-b:v', String(plan.videoBps), '-deadline', 'realtime', '-cpu-used', '8', '-pix_fmt', 'yuv420p']
+      : ['-c:v', 'libx264', '-preset', 'veryfast', '-b:v', String(plan.videoBps),
+         '-maxrate', String(Math.floor(plan.videoBps * 1.05)), '-bufsize', String(plan.videoBps * 2),
+         '-pix_fmt', 'yuv420p'];
+  const audioArgs =
+    plan.audioBps === null
+      ? ['-c:a', 'copy']
+      : o.audioCodec === 'opus'
+        ? ['-c:a', 'libopus', '-b:a', String(plan.audioBps)]
+        : ['-c:a', 'aac', '-b:a', String(plan.audioBps), '-ac', '2'];
+  return [
+    ...base,
+    ...videoArgs,
+    '-vf', `scale=${plan.width}:${plan.height}:flags=bicubic`,
+    '-r', String(plan.fps),
+    '-g', String(plan.fps * plan.keyFrameIntervalS),
+    ...audioArgs,
+    '-y', outName,
+  ];
+}
 
 /**
  * ffmpeg.wasm fallback engine. Everything here is lazy: the ~31 MB wasm core
@@ -157,28 +205,10 @@ export const ffmpegEngine: Engine = {
       onProgress(Math.min(Math.max(progress, 0), 1));
     ffmpeg.on('progress', onProgressEvent);
 
-    const audioArgs =
-      plan.audioBps === null
-        ? ['-c:a', 'copy']
-        : ['-c:a', 'aac', '-b:a', String(plan.audioBps), '-ac', '2'];
-
+    const outName = `out.${plan.output.ext}`;
     try {
       const code = await ffmpeg.exec(
-        [
-          '-hide_banner',
-          '-i', path,
-          '-c:v', 'libx264',
-          '-preset', 'veryfast',
-          '-b:v', String(plan.videoBps),
-          '-maxrate', String(Math.floor(plan.videoBps * 1.05)),
-          '-bufsize', String(plan.videoBps * 2),
-          '-vf', `scale=${plan.width}:${plan.height}:flags=bicubic`,
-          '-r', String(plan.fps),
-          '-g', String(plan.fps * plan.keyFrameIntervalS),
-          '-pix_fmt', 'yuv420p',
-          ...audioArgs,
-          '-y', 'out.mp4',
-        ],
+        buildArgs(plan, path, outName),
         undefined,
         { signal },
       );
@@ -189,9 +219,9 @@ export const ffmpegEngine: Engine = {
           `ffmpeg exited ${code}: ${logBuffer.slice(-5).join(' | ')}`,
         );
       }
-      const data = (await ffmpeg.readFile('out.mp4')) as Uint8Array;
-      await ffmpeg.deleteFile('out.mp4');
-      return new Blob([data as BlobPart], { type: 'video/mp4' });
+      const data = (await ffmpeg.readFile(outName)) as Uint8Array;
+      await ffmpeg.deleteFile(outName);
+      return new Blob([data as BlobPart], { type: plan.output.mime });
     } catch (err) {
       if (signal.aborted || err instanceof CompressError) {
         throw signal.aborted ? new CompressError('cancelled') : err;

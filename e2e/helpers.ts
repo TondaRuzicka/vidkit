@@ -30,6 +30,23 @@ export async function startCompress(
   await page.getByRole('button', { name: 'Compress video' }).click();
 }
 
+/** Choose an output format pill (no-op if the selector isn't present). */
+export async function selectFormat(page: Page, formatId: string): Promise<void> {
+  const pill = page.locator(`input[name="output-format"][value="${formatId}"]`);
+  if (await pill.count()) await pill.check();
+}
+
+/** The download link's filename and first bytes — for container assertions. */
+export async function downloadInfo(
+  page: Page,
+): Promise<{ name: string; magic: number[] }> {
+  return page.locator('a.result-download').evaluate(async (a) => {
+    const el = a as HTMLAnchorElement;
+    const buf = await (await fetch(el.href)).arrayBuffer();
+    return { name: el.download, magic: [...new Uint8Array(buf).slice(0, 4)] };
+  });
+}
+
 export interface CompressOutcome {
   outBytes: number;
   engineLine: string;

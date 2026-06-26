@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert AVI to MP4 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert old .avi video to modern .mp4 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert AVI to MP4 — Free, No Upload",
+  "og.description": "Change .avi to .mp4 locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · AVI → MP4",
+  "hero.title": "Convert AVI to MP4 — right in your browser",
+  "hero.lead": "Drop an old .avi file and get a modern .mp4 that plays on phones, the web and current editors. It's converted on your own device, so the file is never uploaded.",
+  "convert.format": "mp4",
+  "prose.h2": "Why convert AVI to MP4?",
+  "prose.p1": "AVI is an older container — reliable, but bulky and often rejected by phones, browsers and modern editors. MP4 (H.264) is smaller and plays nearly everywhere, so converting both shrinks the file and fixes compatibility.",
+  "prose.p2": "Most converters upload your clip to a server first. {{SITE_NAME}} doesn't — the conversion runs locally in your browser, so nothing is stored or logged. (AVI uses the built-in software engine, so it's a little slower than newer formats.)",
+  "faq.q1": "Is my .avi file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — check your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Why is AVI a bit slower to convert?",
+  "faq.a2": "AVI isn't handled by the fast hardware path, so it runs through a built-in software encoder in your browser. It still works fully offline — it just takes a little longer than MP4 or MOV.",
+  "faq.q3": "Will the MP4 be smaller?",
+  "faq.a3": "Usually, yes — MP4 with H.264 is far more efficient than most AVI files, so you often get a smaller file at similar quality. You can also set a target size before converting."
+}

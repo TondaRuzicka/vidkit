@@ -4,13 +4,34 @@ import {
   Conversion,
   ConversionCanceledError,
   Input,
+  MkvOutputFormat,
+  MovOutputFormat,
   Mp4OutputFormat,
   Output,
+  type OutputFormat as MediabunnyOutputFormat,
   StreamTarget,
   type StreamTargetChunk,
+  WebMOutputFormat,
 } from 'mediabunny';
+import type { OutputFormat } from '../core/formats.ts';
 import { CompressError } from '../core/types.ts';
 import type { Engine } from './types.ts';
+
+/** Map our output descriptor to the mediabunny muxer for its container. */
+function muxerFor(output: OutputFormat): MediabunnyOutputFormat {
+  switch (output.container) {
+    case 'mp4':
+      return new Mp4OutputFormat({ fastStart: false });
+    case 'mov':
+      return new MovOutputFormat();
+    case 'mkv':
+      return new MkvOutputFormat();
+    case 'webm':
+      return new WebMOutputFormat();
+    default:
+      throw new CompressError('encode', `webcodecs cannot output ${output.container}`);
+  }
+}
 
 /**
  * Collects the muxer's positioned writes and assembles them into a Blob
@@ -78,18 +99,20 @@ export const webcodecsEngine: Engine = {
     });
     const collector = new BlobChunkCollector();
     const output = new Output({
-      format: new Mp4OutputFormat({ fastStart: false }),
+      format: muxerFor(plan.output),
       // chunked: accumulate ~16 MiB before emitting, keeps chunk count low
       target: new StreamTarget(collector.writable(), { chunked: true }),
     });
 
+    const videoCodec = plan.output.videoCodec ?? 'avc';
+    const audioCodec = plan.output.audioCodec ?? 'aac';
     let conversion: Conversion;
     try {
       conversion = await Conversion.init({
         input,
         output,
         video: {
-          codec: 'avc',
+          codec: videoCodec,
           width: plan.width,
           height: plan.height,
           fit: 'contain',
@@ -101,7 +124,7 @@ export const webcodecsEngine: Engine = {
         audio:
           plan.audioBps === null
             ? {} // copy packets unchanged when the container allows it
-            : { codec: 'aac', bitrate: plan.audioBps, forceTranscode: true },
+            : { codec: audioCodec, bitrate: plan.audioBps, forceTranscode: true },
         showWarnings: false,
       });
     } catch (err) {
@@ -140,7 +163,7 @@ export const webcodecsEngine: Engine = {
 
     try {
       await Promise.race([conversion.execute(), aborted]);
-      return collector.toBlob('video/mp4');
+      return collector.toBlob(plan.output.mime);
     } catch (err) {
       if (
         err instanceof CompressError ||

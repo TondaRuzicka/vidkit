@@ -1,6 +1,12 @@
+import type { FormatId, OutputFormat } from './formats.ts';
+
 export type CompressOptions =
-  | { mode: 'target'; targetMB: number }
-  | { mode: 'quality'; level: 'high' | 'medium' | 'low' };
+  | { format?: FormatId; mode: 'target'; targetMB: number }
+  | { format?: FormatId; mode: 'quality'; level: 'high' | 'medium' | 'low' }
+  // Audio extraction (m4a/mp3): a fixed audio bitrate, no video budget.
+  | { format: FormatId; mode: 'audio'; audioKbps: number }
+  // Animated GIF: width (long-edge cap) + frame rate; size is a result.
+  | { format: FormatId; mode: 'gif'; width: number; fps: number };
 
 export type EngineName = 'webcodecs' | 'ffmpeg';
 
@@ -33,6 +39,8 @@ export interface ProbeResult {
 
 /** Everything an engine needs to produce one output file. */
 export interface EncodePlan {
+  /** Target container + codecs. Engines read this to know what to produce. */
+  output: OutputFormat;
   width: number;
   height: number;
   fps: number;
@@ -45,6 +53,8 @@ export interface EncodePlan {
 export interface ResultStats {
   inBytes: number;
   outBytes: number;
+  /** Output format id — drives the download filename/extension and labels. */
+  format: FormatId;
   width: number;
   height: number;
   fps: number;

@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert MOV to MP4 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Turn QuickTime .mov files into universal .mp4 right in your browser. Nothing is uploaded — your video never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert MOV to MP4 — Free, No Upload",
+  "og.description": "Change .mov to .mp4 locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · MOV → MP4",
+  "hero.title": "Convert MOV to MP4 — right in your browser",
+  "hero.lead": "Drop a QuickTime .mov file and get a universal .mp4 that plays everywhere — phones, Discord, email, editors. It's converted on your own device, so the file is never uploaded.",
+  "convert.format": "mp4",
+  "prose.h2": "Why convert MOV to MP4?",
+  "prose.p1": ".mov is Apple's QuickTime format — great on Macs and iPhones, but plenty of apps, websites and Windows tools would rather have .mp4. Converting to MP4 (H.264) gives you a file that plays virtually anywhere, with no codec surprises.",
+  "prose.p2": "Most converters upload your clip to a server first. {{SITE_NAME}} doesn't — the conversion runs locally using your browser's built-in video engine, so even large recordings convert without a slow upload, and nothing is stored or logged.",
+  "faq.q1": "Is my .mov file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Will the MP4 lose quality?",
+  "faq.a2": "Converting re-encodes the video, so there's some loss, but at the default settings it's hard to spot. You can also pick a target size or a quality level before converting.",
+  "faq.q3": "Does it work for long iPhone recordings?",
+  "faq.a3": "Yes. On Chrome or Edge, files up to about 2&nbsp;GB are supported. Very large files on other browsers may be declined with a clear message rather than failing silently."
+}

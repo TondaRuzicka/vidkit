@@ -1,0 +1,19 @@
+{
+  "meta.title": "Převod WebM na MP4 — zdarma, v prohlížeči, bez nahrávání | {{SITE_NAME}}",
+  "meta.description": "Převeďte video .webm na .mp4 přímo v prohlížeči. Nic se nenahrává — soubor nikdy neopustí vaše zařízení. Zdarma, bez registrace, bez vodoznaku.",
+  "og.title": "Převod WebM na MP4 — zdarma, bez nahrávání",
+  "og.description": "Změňte .webm na .mp4 lokálně v prohlížeči. Nic neopustí vaše zařízení.",
+  "hero.eyebrow": "Převod · WebM → MP4",
+  "hero.title": "Převeďte WebM na MP4 — přímo v prohlížeči",
+  "hero.lead": "Přetáhněte soubor .webm — nahrávku obrazovky nebo stažený klip — a získejte standardní .mp4, které funguje na telefonech, v editorech i na sociálních sítích. Převod běží na vašem zařízení a nic se nenahrává.",
+  "convert.format": "mp4",
+  "prose.h2": "Proč převádět WebM na MP4?",
+  "prose.p1": "WebM je běžný pro webové video a nahrávky obrazovky, ale mnoho video editorů ho neotevře a na některých telefonech a televizích se nepřehraje. MP4 (H.264) je nejlépe podporovaný formát, takže převod vyřeší většinu problémů „video nejde otevřít“.",
+  "prose.p2": "Většina převodníků nejdřív nahraje klip na server. {{SITE_NAME}} ne — převod běží lokálně v prohlížeči, takže se nic neukládá ani neloguje, a ani velké klipy nemusí čekat na pomalé nahrávání.",
+  "faq.q1": "Nahrává se můj .webm soubor někam?",
+  "faq.a1": "Ne. Převod probíhá celý ve vašem prohlížeči, na vašem zařízení. Neexistuje server, který by soubor mohl přijmout — zkontrolujte si v prohlížeči záložku Síť a uvidíte, že neodejdou žádná data.",
+  "faq.q2": "Bude MP4 vypadat stejně?",
+  "faq.a2": "Převod video překóduje, takže dojde k mírné ztrátě, ale ve výchozím nastavení je téměř neznatelná. Před převodem můžete zvolit cílovou velikost nebo úroveň kvality.",
+  "faq.q3": "Zvládne to dlouhé nahrávky obrazovky?",
+  "faq.a3": "Ano. V prohlížeči Chrome nebo Edge zvládne soubory do zhruba 2&nbsp;GB. Velmi velké soubory mohou být v jiných prohlížečích odmítnuty se srozumitelnou hláškou."
+}

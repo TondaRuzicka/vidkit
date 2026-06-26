@@ -26,6 +26,11 @@ export async function selectEngine(
   meta: ProbeResult,
   plan: BudgetPlan,
 ): Promise<EngineDecision> {
+  // Formats whose codecs WebCodecs can't encode (vp9/opus/mp3, gif, audio-only)
+  // go straight to the software engine.
+  if (plan.output.engine === 'ffmpeg') {
+    return { name: 'ffmpeg', reason: `format ${plan.output.id} needs ffmpeg` };
+  }
   if (!hasWebCodecs()) {
     return { name: 'ffmpeg', reason: 'no WebCodecs API' };
   }

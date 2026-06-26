@@ -1,3 +1,4 @@
+import { formatOf } from './formats.ts';
 import { CompressError, type CompressOptions, type EncodePlan, type ProbeResult } from './types.ts';
 
 // All tunables in one place — adjust here after measuring real encoders.
@@ -116,6 +117,36 @@ export function buildPlan(
   minAudioBps: number = WEBCODECS_MIN_AUDIO_BPS,
 ): BudgetPlan {
   const { durationS, video, audio } = probe;
+  const output = formatOf(options.format);
+
+  // Audio extraction: fixed bitrate, no video, no verify loop.
+  if (options.mode === 'audio') {
+    return {
+      output,
+      width: 0,
+      height: 0,
+      fps: 0,
+      videoBps: 0,
+      audioBps: options.audioKbps * 1000,
+      keyFrameIntervalS: 2,
+      targetBytes: null,
+    };
+  }
+
+  // Animated GIF: width is a long-edge cap; fps is throttled to the source.
+  if (options.mode === 'gif') {
+    const { width, height } = fitToLongEdge(video.width, video.height, options.width);
+    return {
+      output,
+      width,
+      height,
+      fps: Math.min(video.fps, options.fps),
+      videoBps: 0,
+      audioBps: null,
+      keyFrameIntervalS: 2,
+      targetBytes: null,
+    };
+  }
 
   if (options.mode === 'quality') {
     const maxEdge = QUALITY_MAX_LONG_EDGE[options.level];
@@ -123,12 +154,14 @@ export function buildPlan(
     const { width, height } = fitToLongEdge(video.width, video.height, longEdge);
     const fps = Math.min(video.fps, 60);
     return {
+      output,
       width,
       height,
       fps,
       videoBps: Math.round(QUALITY_BPP[options.level] * width * height * fps),
-      // AAC passes through; anything else re-encodes (output is always AAC)
-      audioBps: audio && audio.codec !== 'aac' ? 128_000 : null,
+      // Source audio passes through only when it already matches the output
+      // codec; otherwise re-encode at 128k.
+      audioBps: audio && audio.codec !== output.audioCodec ? 128_000 : null,
       keyFrameIntervalS: 2,
       targetBytes: null,
     };
@@ -149,7 +182,7 @@ export function buildPlan(
   if (audio) {
     const audioShareBits = usableBits * MAX_AUDIO_BUDGET_SHARE;
     if (
-      audio.codec === 'aac' &&
+      audio.codec === output.audioCodec &&
       audio.bitrate !== null &&
       audio.bitrate * durationS <= audioShareBits
     ) {
@@ -185,6 +218,7 @@ export function buildPlan(
     video.bitrate,
   );
   return {
+    output,
     ...rung,
     videoBps,
     audioBps,
