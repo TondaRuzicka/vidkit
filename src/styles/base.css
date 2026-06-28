@@ -421,7 +421,7 @@ a { color: inherit; }
 
 /* 9. Footer --------------------------------------------------------------- */
 .site-footer { border-top: 1px solid var(--color-border); background: var(--color-bg-tint); padding-block: var(--space-6) var(--space-5); }
-.footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: var(--space-5); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: var(--space-5); }
 .footer-brand p { color: var(--color-text-muted); font-size: var(--fs-400); margin-top: var(--space-3); max-width: 26ch; }
 .footer-col h4 { font-family: var(--font-mono); font-size: var(--fs-300); text-transform: uppercase; letter-spacing: var(--tracking-eyebrow); color: var(--color-text-faint); margin-bottom: var(--space-3); }
 .footer-col a { display: block; color: var(--color-text-muted); text-decoration: none; font-size: var(--fs-400); padding: 0.28rem 0; }

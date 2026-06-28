@@ -41,5 +41,22 @@
   "footer.privacy": "Privacy model",
   "footer.home": "Home",
   "footer.bottom": "{{SITE_NAME}} runs entirely in your browser — no cookies, no trackers, no accounts.",
-  "footer.badge": "Runs 100% on your device"
+  "footer.badge": "Runs 100% on your device",
+  "url.video2mp3": "/video-to-mp3/",
+  "audio.video2mp3": "Video to MP3",
+  "url.m4a2mp3": "/m4a-to-mp3/",
+  "audio.m4a2mp3": "M4A to MP3",
+  "url.wav2mp3": "/wav-to-mp3/",
+  "audio.wav2mp3": "WAV to MP3",
+  "url.mov2mp3": "/mov-to-mp3/",
+  "audio.mov2mp3": "MOV to MP3",
+  "url.mkv2mp3": "/mkv-to-mp3/",
+  "audio.mkv2mp3": "MKV to MP3",
+  "url.webm2mp3": "/webm-to-mp3/",
+  "audio.webm2mp3": "WebM to MP3",
+  "url.extractaudio": "/extract-audio-from-video/",
+  "audio.extractaudio": "Extract audio from video",
+  "audio.heading": "Extract audio",
+  "audio.title": "Extract audio from video",
+  "audio.sub": "Only need the sound? Pull the audio out of any video — in your browser, nothing uploaded."
 }

@@ -292,8 +292,10 @@ decodable input). So every audio page = `mp3`, every `*-to-mp4` page = `mp4`, et
 | extractaudio | extract-audio-from-video | mp3 | 260 | 19 | ✅ **shipped** (audio hub) |
 
 **Batch 1 complete (2026-06-26):** all 8 audio-extraction pages live (7 new + existing `mp4-to-mp3`),
-English-only, build-clean, in sitemap. Audio-only-input engine support landed + live-verified. Not yet
-linked from footer/hubs (Phase 3) and not committed.
+English-only, build-clean, in sitemap. Audio-only-input engine support landed + live-verified.
+**Internal linking done:** a 5th footer column "Extract audio" (global, all pages incl. cs) + a homepage
+"Extract audio" section link the whole cluster. Dedicated `/video-tools/` + `/convert-video/` hub pages
+(Phase 3) still pending. Committed on branch `seo/audio-extraction-pages`.
 
 ### Batch 2 — Trivial pairs + input long-tail (no engine work; all KD ≤ 6)
 | id | slug | convert.format | CZ vol | KD |
