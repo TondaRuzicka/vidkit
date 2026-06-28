@@ -1,10 +1,10 @@
 {
-  "meta.title": "Komprese videa na 10 MB online — zdarma, bez nahrávání | {{SITE_NAME}}",
+  "meta.title": "Zmenšit video na 10 MB online — zdarma, bez nahrávání | {{SITE_NAME}}",
   "meta.description": "Zmenšete jakékoli video pod 10 MB pro limit nahrávání zdarma na Discordu. Běží v prohlížeči — vaše video nikdy neopustí vaše zařízení.",
-  "og.title": "Komprese videa na 10 MB — zdarma, bez nahrávání",
+  "og.title": "Zmenšit video na 10 MB — zdarma, bez nahrávání",
   "og.description": "Vejděte se s jakýmkoli videem pod 10MB limit Discordu zdarma, přímo v prohlížeči.",
   "hero.eyebrow": "Předvolba · cíl 10 MB",
-  "hero.title": "Komprese videa na 10 MB",
+  "hero.title": "Zmenšit video na 10 MB",
   "hero.lead": "Limit nahrávání zdarma na Discordu je 10&nbsp;MB. Přetáhněte klip níže a stlačí se těsně pod 10&nbsp;MB přímo ve vašem zařízení — bez nahrávání, bez Nitra, bez vodoznaku.",
   "prose.h2": "Jak vejít video do limitu Discordu zdarma",
   "prose.p1": "Discord kontroluje přesný počet bajtů, takže 10,2&nbsp;MB selže tam, kde 9,9&nbsp;MB hladce projde. Tento nástroj spočítá přesně, jak moc komprimovat, aby délka vašeho videa vešla do limitu, vyhradí místo pro zvuk, zkomprimuje a pak ověří výslednou velikost — automaticky překóduje, pokud první průchod vyšel byť jen mírně přes. Vždy dostanete soubor, který Discord přijme.",

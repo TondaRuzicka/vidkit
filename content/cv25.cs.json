@@ -1,10 +1,10 @@
 {
-  "meta.title": "Komprese videa na 25 MB online — zdarma, bez nahrávání | {{SITE_NAME}}",
+  "meta.title": "Zmenšit video na 25 MB online — zdarma, bez nahrávání | {{SITE_NAME}}",
   "meta.description": "Zmenšete jakékoli video pod 25 MB pro Discord Nitro Basic a přílohy v Gmailu a Outlooku. Běží v prohlížeči — vaše video se nikdy nenahrává.",
-  "og.title": "Komprese videa na 25 MB — zdarma, bez nahrávání",
+  "og.title": "Zmenšit video na 25 MB — zdarma, bez nahrávání",
   "og.description": "Vejděte se s jakýmkoli videem pod 25 MB přímo v prohlížeči. Nic se nenahrává.",
   "hero.eyebrow": "Předvolba · cíl 25 MB",
-  "hero.title": "Komprese videa na 25 MB",
+  "hero.title": "Zmenšit video na 25 MB",
   "hero.lead": "25&nbsp;MB je kouzelné číslo pro přílohy v Gmailu a Outlooku i pro klasický limit nahrávání Discord Nitro. Přetáhněte video níže a zkomprimuje se těsně pod 25&nbsp;MB přímo ve vašem zařízení — bez nahrávání, bez účtu, bez vodoznaku.",
   "prose.h2": "Proč 25 MB a co očekávat",
   "prose.p1": "Gmail i Outlook omezují přílohy na 25&nbsp;MB a tier Discord Nitro Basic používá stejný limit. Většina služeb kontroluje přesný počet bajtů, takže soubor „25,1&nbsp;MB\" se odrazí. Tento nástroj se vždy vejde <em>pod</em> limit: spočítá přesně, jak moc komprimovat, aby se video vešlo, ponechá místo pro zvuk, pak zkontroluje výsledek a komprimuje znovu, pokud první průchod vyšel o kousek příliš velký. Obvykle dostanete soubor mezi 22 a 25&nbsp;MB — nikdy víc.",
