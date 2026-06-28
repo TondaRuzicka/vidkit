@@ -7,6 +7,7 @@ import { t } from './i18n';
 import { intentOf, wl } from './labels';
 import { createProgress } from './progress';
 import { createResult } from './result';
+import { track } from './track';
 
 export interface WidgetConfig {
   lockedTargetMB: number | null;
@@ -114,6 +115,7 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
     dropzone.setFile(picked);
     updateNotice();
     setState('ready');
+    track('compressor_file_selected'); // earliest "tried to use it" signal
   };
   // 'input' as well as 'change': if the notice only updated on change (i.e.
   // on blur), clicking Compress right after typing a custom target would
@@ -124,8 +126,11 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
 
   startBtn.addEventListener('click', () => {
     if (!file || state === 'working') return;
+    const options = controls.getOptions();
     setState('working');
     progress.reset();
+    // Tool choices only — no file data. Counts how many actually start a job.
+    track('compressor_started', { format: options.format ?? 'mp4', mode: options.mode });
     let frameTotal = 0;
 
     worker = new Worker(new URL('../workers/compress.worker.ts', import.meta.url), {
@@ -151,10 +156,12 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
           cleanupWorker();
           setState('done');
           result.show(file!, msg.blob, msg.stats);
+          track('compressor_completed', { format: msg.stats.format, engine: msg.stats.engine });
           break;
         case 'error':
           cleanupWorker();
           showError(msg.code);
+          track('compressor_failed', { code: msg.code });
           break;
       }
     };
@@ -165,7 +172,7 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
     worker.postMessage({
       type: 'start',
       file,
-      options: controls.getOptions(),
+      options,
     } satisfies UiToWorker);
   });
 
