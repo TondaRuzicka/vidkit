@@ -4,6 +4,7 @@ import { createControls } from './controls';
 import { h, icon } from './dom';
 import { createDropzone } from './dropzone';
 import { t } from './i18n';
+import { intentOf, wl } from './labels';
 import { createProgress } from './progress';
 import { createResult } from './result';
 
@@ -25,10 +26,11 @@ const ENGINE_SHORT: Record<EngineName, string> = {
 };
 
 export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
-  const dropzone = createDropzone();
+  const intent = intentOf(config.lockedFormat);
+  const dropzone = createDropzone(intent);
   const controls = createControls(config);
-  const progress = createProgress();
-  const result = createResult();
+  const progress = createProgress(intent);
+  const result = createResult(intent);
 
   // Header chip — decorative status, distinct from the .progress-engine line
   // the e2e suite reads.
@@ -36,14 +38,14 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
   const head = h(
     'div',
     { class: 'compressor__head' },
-    h('span', { class: 'compressor__title' }, t('widget.title')),
+    h('span', { class: 'compressor__title' }, wl(intent, 'title')),
     h('span', { class: 'compressor__engine' }, h('span', { class: 'dot' }), engineStatus),
   );
 
   const startBtn = h(
     'button',
     { type: 'button', class: 'button-primary', disabled: true },
-    t('controls.start'),
+    wl(intent, 'start'),
   );
   const notice = h('p', { class: 'widget-notice', hidden: true });
 

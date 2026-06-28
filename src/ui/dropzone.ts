@@ -1,5 +1,6 @@
 import { formatBytes, h, icon } from './dom';
 import { t } from './i18n';
+import { wl, type Intent } from './labels';
 
 export interface Dropzone {
   el: HTMLElement;
@@ -15,20 +16,23 @@ const UPLOAD_ICON = `<svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0L
  * wrapper accepts drag-and-drop. The file input itself stays visually
  * hidden but functional.
  */
-export function createDropzone(): Dropzone {
+export function createDropzone(intent: Intent): Dropzone {
   const input = h('input', {
     type: 'file',
-    accept: 'video/*,.mkv,.avi,.mov,.webm,.mp4',
+    accept:
+      intent === 'audio'
+        ? 'video/*,audio/*,.mkv,.avi,.mov,.webm,.mp4,.m4a,.wav,.mp3'
+        : 'video/*,.mkv,.avi,.mov,.webm,.mp4',
     class: 'visually-hidden',
     'aria-hidden': 'true',
     tabindex: '-1',
   });
   const iconEl = h('span', { class: 'dropzone__icon' }, icon(UPLOAD_ICON));
-  const hint = h('p', { class: 'dropzone__hint', id: 'dropzone-hint' }, t('dropzone.hint'));
+  const hint = h('p', { class: 'dropzone__hint', id: 'dropzone-hint' }, wl(intent, 'hint'));
   const button = h(
     'button',
     { type: 'button', class: 'dropzone-button', 'aria-describedby': 'dropzone-hint' },
-    t('dropzone.label'),
+    wl(intent, 'dropLabel'),
   );
   const selected = h('p', { class: 'dropzone-selected', hidden: true });
   const el = h('div', { class: 'dropzone' }, iconEl, button, hint, selected, input);
@@ -42,10 +46,10 @@ export function createDropzone(): Dropzone {
           name: file.name,
           size: formatBytes(file.size),
         });
-        button.textContent = t('dropzone.replace');
+        button.textContent = wl(intent, 'dropAgain');
       } else {
         selected.hidden = true;
-        button.textContent = t('dropzone.label');
+        button.textContent = wl(intent, 'dropLabel');
         input.value = '';
       }
     },

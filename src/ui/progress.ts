@@ -1,6 +1,7 @@
 import type { EngineName } from '../core/types';
 import { h } from './dom';
 import { t } from './i18n';
+import { wl, type Intent } from './labels';
 
 export interface Progress {
   el: HTMLElement;
@@ -19,7 +20,7 @@ function formatEta(etaMs: number): string {
   return t('time.seconds', { s: Math.max(1, totalS) });
 }
 
-export function createProgress(): Progress {
+export function createProgress(intent: Intent): Progress {
   const bar = h('div', { class: 'progress-bar-fill' });
   const barTrack = h(
     'div',
@@ -35,7 +36,7 @@ export function createProgress(): Progress {
   );
   // Stage changes are announced; per-frame counts are visible but not live
   // (4 updates/second would spam screen readers).
-  const stageText = h('p', { class: 'progress-stage', 'aria-live': 'polite' }, t('status.probing'));
+  const stageText = h('p', { class: 'progress-stage', 'aria-live': 'polite' }, wl(intent, 'probing'));
   const pct = h('span', { class: 'progress__pct' }, '0%');
   const frames = h('p', { class: 'progress-frames' });
   const eta = h('p', { class: 'progress-eta' });
@@ -60,10 +61,10 @@ export function createProgress(): Progress {
     setStage(stage) {
       stageText.textContent =
         stage === 'probe'
-          ? t('status.probing')
+          ? wl(intent, 'probing')
           : stage === 'retry'
             ? t('progress.stage.retry')
-            : t('progress.stage.encode');
+            : wl(intent, 'stage');
     },
     update(framesDone, framesTotal, etaMs) {
       const p = framesTotal > 0 ? Math.min(100, Math.round((100 * framesDone) / framesTotal)) : 0;
@@ -81,7 +82,7 @@ export function createProgress(): Progress {
       frames.textContent = '';
       eta.textContent = '';
       engineLine.textContent = '';
-      stageText.textContent = t('status.probing');
+      stageText.textContent = wl(intent, 'probing');
     },
     onCancel: () => {},
   };
