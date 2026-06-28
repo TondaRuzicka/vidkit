@@ -1,0 +1,19 @@
+{
+  "meta.title": "Převod MP4 na WebM — zdarma, v prohlížeči, bez nahrávání | {{SITE_NAME}}",
+  "meta.description": "Převeďte video .mp4 na .webm přímo v prohlížeči. Menší soubory pro web, nic se nenahrává — video nikdy neopustí vaše zařízení. Zdarma, bez vodoznaku.",
+  "og.title": "Převod MP4 na WebM — zdarma, bez nahrávání",
+  "og.description": "Změňte .mp4 na .webm lokálně v prohlížeči. Nic neopustí vaše zařízení.",
+  "hero.eyebrow": "Převod · MP4 → WebM",
+  "hero.title": "Převeďte MP4 na WebM — přímo v prohlížeči",
+  "hero.lead": "Přetáhněte .mp4 a získejte .webm — otevřený formát pro web, často menší při stejné kvalitě. Převod běží na vašem zařízení a nic se nenahrává.",
+  "convert.format": "webm",
+  "prose.h2": "Proč převádět MP4 na WebM?",
+  "prose.p1": "WebM je otevřený formát bez licenčních poplatků navržený pro web. Bývá menší než MP4 při podobné kvalitě a hodí se na videa na pozadí, HTML5 přehrávání i tam, kde chcete lehký soubor bez licencí.",
+  "prose.p2": "Většina převodníků nejdřív nahraje klip na server. {{SITE_NAME}} ne — převod běží lokálně v prohlížeči. WebM používá vestavěný softwarový engine, takže je pomalejší než rychlá cesta pro MP4, ale nic se nikdy neukládá ani neloguje.",
+  "faq.q1": "Nahrává se můj .mp4 soubor někam?",
+  "faq.a1": "Ne. Převod probíhá celý ve vašem prohlížeči, na vašem zařízení. Neexistuje server, který by soubor mohl přijmout — sledujte v prohlížeči záložku Síť a uvidíte, že neodejdou žádná data.",
+  "faq.q2": "Proč WebM trvá déle?",
+  "faq.a2": "WebM používá softwarový kodér, který prohlížeče pro výstup hardwarově neakcelerují, takže je pomalejší než převod na MP4. Pro nejrychlejší výsledek volte kratší klipy.",
+  "faq.q3": "Přehraje se všude?",
+  "faq.a3": "WebM se přehraje ve všech moderních prohlížečích a na Androidu, ale ne na každém starším zařízení nebo v některých editorech. Pokud potřebujete maximální kompatibilitu, převeďte raději na MP4."
+}

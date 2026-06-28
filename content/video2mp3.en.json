@@ -1,0 +1,19 @@
+{
+  "meta.title": "Video to MP3 — Free Audio Extractor, No Upload | {{SITE_NAME}}",
+  "meta.description": "Turn any video into an .mp3 right in your browser — MP4, MOV, MKV, WebM, AVI and more. Nothing is uploaded; your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Video to MP3 — Free, No Upload",
+  "og.description": "Extract the audio from any video into .mp3, locally in your browser.",
+  "hero.eyebrow": "Convert · Video → MP3",
+  "hero.title": "Video to MP3 — extract the audio in your browser",
+  "hero.lead": "Drop any video — MP4, MOV, MKV, WebM, AVI — and pull out just the audio as an .mp3. It's extracted on your own device, so the file is never uploaded.",
+  "convert.format": "mp3",
+  "prose.h2": "Turn any video into an MP3",
+  "prose.p1": "Sometimes you only need the sound from a video: the music, an interview, a lecture, a voice note, the audio of a livestream you recorded. Extracting to MP3 drops the picture entirely and keeps just the audio in a small file that plays in every music app, podcast player and car stereo.",
+  "prose.p2": "Most online extractors upload your whole video to a server first — slow for big files, and it hands your footage to a stranger. {{SITE_NAME}} doesn't: the audio is extracted locally in your browser, so nothing is stored or logged and even a long recording starts instantly with no upload.",
+  "faq.q1": "Which video formats can I use?",
+  "faq.a1": "Most common ones — MP4, MOV, MKV, WebM and AVI, among others. Whatever your browser can read is decoded locally and the audio is written out as a standard .mp3.",
+  "faq.q2": "Is my video uploaded anywhere?",
+  "faq.a2": "No. The extraction happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q3": "What MP3 quality do I get?",
+  "faq.a3": "You choose the bitrate before converting — from 128&nbsp;kbps (small) up to 320&nbsp;kbps (best quality). 192&nbsp;kbps is a good default for speech and most music."
+}

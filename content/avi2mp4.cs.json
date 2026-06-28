@@ -1,0 +1,19 @@
+{
+  "meta.title": "Převod AVI na MP4 — zdarma, v prohlížeči, bez nahrávání | {{SITE_NAME}}",
+  "meta.description": "Převeďte staré video .avi na moderní .mp4 přímo v prohlížeči. Nic se nenahrává — soubor nikdy neopustí vaše zařízení. Zdarma, bez registrace, bez vodoznaku.",
+  "og.title": "Převod AVI na MP4 — zdarma, bez nahrávání",
+  "og.description": "Změňte .avi na .mp4 lokálně v prohlížeči. Nic neopustí vaše zařízení.",
+  "hero.eyebrow": "Převod · AVI → MP4",
+  "hero.title": "Převeďte AVI na MP4 — přímo v prohlížeči",
+  "hero.lead": "Přetáhněte starý soubor .avi a získejte moderní .mp4, které funguje na telefonech, na webu i v současných editorech. Převod běží na vašem zařízení, soubor se nikdy nenahrává.",
+  "convert.format": "mp4",
+  "prose.h2": "Proč převádět AVI na MP4?",
+  "prose.p1": "AVI je starší kontejner — spolehlivý, ale objemný a často odmítaný telefony, prohlížeči i moderními editory. MP4 (H.264) je menší a přehraje se téměř všude, takže převod zmenší soubor a zároveň vyřeší kompatibilitu.",
+  "prose.p2": "Většina převodníků nejdřív nahraje klip na server. {{SITE_NAME}} ne — převod běží lokálně v prohlížeči, takže se nic neukládá ani neloguje. (AVI používá vestavěný softwarový engine, takže je o něco pomalejší než novější formáty.)",
+  "faq.q1": "Nahrává se můj .avi soubor někam?",
+  "faq.a1": "Ne. Převod probíhá celý ve vašem prohlížeči, na vašem zařízení. Neexistuje server, který by soubor mohl přijmout — zkontrolujte si v prohlížeči záložku Síť a uvidíte, že neodejdou žádná data.",
+  "faq.q2": "Proč je AVI o něco pomalejší?",
+  "faq.a2": "AVI nezvládá rychlá hardwarová cesta, takže běží přes vestavěný softwarový kodér v prohlížeči. Stále funguje plně offline — jen to trvá o něco déle než u MP4 nebo MOV.",
+  "faq.q3": "Bude MP4 menší?",
+  "faq.a3": "Obvykle ano — MP4 s H.264 je mnohem úspornější než většina AVI souborů, takže často získáte menší soubor při podobné kvalitě. Před převodem můžete nastavit i cílovou velikost."
+}

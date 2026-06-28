@@ -1,0 +1,23 @@
+{
+  "meta.title": "Compress Video for WhatsApp Online — Free, No Upload | {{SITE_NAME}}",
+  "meta.description": "Shrink videos to send on WhatsApp without the blur. Compress to 16 MB in your browser — your video never leaves your device.",
+  "og.title": "Compress Video for WhatsApp — Free, No Upload",
+  "og.description": "Fit videos under WhatsApp's limits in your browser. Nothing is uploaded.",
+  "hero.eyebrow": "Preset · 16 MB target",
+  "hero.title": "Compress a video for WhatsApp",
+  "hero.lead": "WhatsApp limits videos sent as media to 16&nbsp;MB in many regions — and its own automatic compression can leave clips looking smeared. Compress here first, on your own device, and send a file WhatsApp won't mangle. No upload, no watermark.",
+  "prose.h2": "Why compress before sending on WhatsApp",
+  "prose.p1": "When you send a video as media, WhatsApp re-compresses it aggressively on your phone with one-size-fits-all settings — that's where the blur comes from. If your video is already under the size limit and encoded efficiently, WhatsApp has far less reason to crush it. Compressing here first means <em>you</em> decide the trade-off, with a proper two-step process: work out exactly how much to compress to fit 16&nbsp;MB, do it, check the size, and compress again automatically if needed.",
+  "prose.p2": "The output is a standard MP4 — exactly what WhatsApp, iPhones and Androids prefer. A minute of video fits in 16&nbsp;MB at very watchable quality; several minutes will step down to a lower resolution that still looks intentional rather than mangled. For longer videos, you can also send the compressed file as a <em>document</em> in WhatsApp — documents aren't re-compressed at all and have a much higher size limit (2&nbsp;GB).",
+  "prose.p3": "Everything runs in your browser. Family videos, kids' clips, medical consultations — nothing is uploaded to anyone's server, including ours. There isn't one.",
+  "faq.q1": "What is WhatsApp's actual video size limit?",
+  "faq.a1": "Sent as media, 16&nbsp;MB in most regions (some builds allow more). Sent as a document, up to 2&nbsp;GB. This page targets the 16&nbsp;MB media limit so your video previews and plays inline in the chat.",
+  "faq.q2": "Will WhatsApp compress my video again?",
+  "faq.a2": "WhatsApp may still process media, but an efficiently encoded, under-limit MP4 passes through with little or no further visible damage. To skip WhatsApp's processing entirely, send the compressed file as a document.",
+  "faq.q3": "Is my video private?",
+  "faq.a3": "Yes. Compression runs entirely in your browser on your own device. The file is never uploaded — you can watch the network tab in your browser's developer tools and see for yourself.",
+  "faq.q4": "What format does WhatsApp want?",
+  "faq.a4": "MP4 with H.264 video and AAC audio — exactly what this tool outputs. It plays inline on both iPhone and Android without conversion.",
+  "faq.q5": "Can I compress to a different size?",
+  "faq.a5": "Yes — the <a href=\"{{url.cv}}\">full compressor</a> lets you choose 8, 10, 16, 25 or 50&nbsp;MB, or type any custom target."
+}

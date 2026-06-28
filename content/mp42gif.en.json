@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert MP4 to GIF — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Turn an .mp4 video into an animated .gif right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert MP4 to GIF — Free, No Upload",
+  "og.description": "Make an animated GIF from an .mp4, locally in your browser.",
+  "hero.eyebrow": "Convert · MP4 → GIF",
+  "hero.title": "Convert MP4 to GIF — right in your browser",
+  "hero.lead": "Drop a short .mp4 and turn it into an animated .gif for chats, reactions and docs. It's made on your own device, so the clip is never uploaded.",
+  "convert.format": "gif",
+  "prose.h2": "Why convert MP4 to GIF?",
+  "prose.p1": "GIFs loop automatically, play inline everywhere, and need no player — perfect for reactions, short demos and how-to snippets in chats, issues and docs. Keep clips to a few seconds: GIFs have no real audio and get large fast.",
+  "prose.p2": "Most converters upload your clip to a server first. {{SITE_NAME}} doesn't — the GIF is built locally in your browser, so nothing is stored or logged. Pick a width and frame rate to balance smoothness against file size.",
+  "faq.q1": "Is my video uploaded anywhere?",
+  "faq.a1": "No. The GIF is created entirely in your browser, on your own device. There's no server that could receive the file — watch your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Why is my GIF so big?",
+  "faq.a2": "GIF is an old format that stores frames inefficiently, so even short clips can be several megabytes. Use a smaller width and a lower frame rate to bring the size down.",
+  "faq.q3": "How long can the clip be?",
+  "faq.a3": "Technically any length, but GIFs balloon quickly — a few seconds is ideal. For anything longer, an MP4 or WebM will look better and weigh far less."
+}

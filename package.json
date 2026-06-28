@@ -1,0 +1,31 @@
+{
+  "name": "vidkit",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "npm run test:unit",
+    "postinstall": "node scripts/copy-ffmpeg-core.mjs",
+    "test:unit": "node --test --experimental-strip-types src/core/*.test.ts",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
+    "mediabunny": "^1.46.0"
+  },
+  "devDependencies": {
+    "@ffmpeg/core": "^0.12.10",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.3",
+    "fast-check": "^4.8.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.5"
+  },
+  "allowScripts": {
+    "esbuild@0.27.7": true
+  }
+}

@@ -1,0 +1,147 @@
+/* ==========================================================================
+   tokens.css — VidKit design tokens
+   --------------------------------------------------------------------------
+   - Accent is an owned TEAL, defined in oklch so light/dark variants stay
+     perceptually matched. Teal reads "private / safe / local" and separates
+     VidKit from the sea of blue "online compressor" clones.
+   - A monospace token (system stack, zero network requests) is used for all
+     numeric/technical data: file sizes, ETA, speed, engine.
+   - Spacing, radius, shadow and typography are a full token scale so the rest
+     of the CSS never hardcodes values.
+   - Dark mode is the SAME tokens re-bound under prefers-color-scheme.
+   ========================================================================== */
+
+:root {
+  /* ---- Color: surfaces & ink (light) ------------------------------------ */
+  --color-bg:            #ffffff;
+  --color-bg-tint:       #f7f9fb;  /* hero / alt-section wash */
+  --color-surface:       #f3f6f9;  /* cards, inset panels */
+  --color-surface-2:     #ffffff;  /* raised cards on tinted bg */
+  --color-border:        #dde4ec;
+  --color-border-strong: #c4ccd6;
+  --color-text:          #101a24;
+  --color-text-muted:    #586573;
+  --color-text-faint:    #8a96a3;
+
+  /* ---- Color: brand accent (teal) --------------------------------------- */
+  /* oklch keeps these on one chroma/lightness family; only hue is "owned". */
+  --color-accent:          oklch(0.60 0.094 192);   /* ~#0c8e84 */
+  --color-accent-hover:    oklch(0.54 0.094 192);   /* ~#0a7a71 */
+  --color-accent-press:    oklch(0.48 0.090 192);
+  --color-accent-contrast: #ffffff;
+  --color-accent-soft:     oklch(0.60 0.094 192 / 0.10); /* tint fills */
+  --color-accent-softer:   oklch(0.60 0.094 192 / 0.05);
+  --color-accent-ring:     oklch(0.60 0.094 192 / 0.40); /* focus glow */
+  --color-accent-line:     oklch(0.60 0.094 192 / 0.28); /* hairlines */
+
+  /* ---- Color: semantic state -------------------------------------------- */
+  --color-success:    #117a4a;
+  --color-success-bg: #e9f7ef;
+  --color-error:      #b91c1c;
+  --color-error-bg:   #fef2f2;
+  --color-error-line: #f3c4c4;
+  --color-warning:    #9a6700;
+
+  /* ---- Typography -------------------------------------------------------- */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+               sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "SFMono-Regular", "Menlo",
+               "Cascadia Mono", "Roboto Mono", Consolas, monospace;
+
+  --fs-300: 0.8125rem;  /* 13px — meta, eyebrows */
+  --fs-400: 0.9375rem;  /* 15px — body small */
+  --fs-500: 1.0625rem;  /* 17px — body / lead-small */
+  --fs-600: 1.25rem;    /* 20px — card titles */
+  --fs-700: 1.625rem;   /* 26px — h2 */
+  --fs-800: 2.25rem;    /* 36px — section h1 */
+  --fs-900: clamp(2.5rem, 1.6rem + 3.4vw, 3.875rem); /* hero h1 */
+
+  --lh-tight: 1.12;
+  --lh-snug:  1.3;
+  --lh-body:  1.6;
+
+  --tracking-tight: -0.02em;
+  --tracking-eyebrow: 0.08em;
+
+  /* ---- Spacing (0.25/0.5/1/1.5/2.5/4 scale, named) --------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  /* ---- Radius / shape ---------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius:    10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+
+  /* ---- Elevation --------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.06);
+  --shadow:    0 1px 3px rgb(16 24 40 / 0.08), 0 1px 2px rgb(16 24 40 / 0.04);
+  --shadow-md: 0 6px 16px rgb(16 24 40 / 0.08), 0 2px 6px rgb(16 24 40 / 0.05);
+  --shadow-lg: 0 18px 40px rgb(16 24 40 / 0.12), 0 6px 14px rgb(16 24 40 / 0.06);
+  --shadow-accent: 0 10px 30px oklch(0.60 0.094 192 / 0.22);
+
+  /* ---- Layout ------------------------------------------------------------ */
+  --content-width: 46rem;   /* prose measure */
+  --max-width:     72rem;    /* shell container */
+  --header-h:      4rem;
+
+  /* ---- Motion ------------------------------------------------------------ */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 360ms;
+
+  /* ---- Decorative -------------------------------------------------------- */
+  --grid-line: rgb(16 24 40 / 0.035);  /* hero blueprint grid */
+  color-scheme: light;
+}
+
+/* ==========================================================================
+   Dark mode — same tokens, re-bound. Accent brightens so it pops on near-black
+   and its contrast text flips to dark ink (keeps button text AA).
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:            #0b1014;
+    --color-bg-tint:       #0f161c;
+    --color-surface:       #131c23;
+    --color-surface-2:     #16212a;
+    --color-border:        #233039;
+    --color-border-strong: #32424d;
+    --color-text:          #e8eef4;
+    --color-text-muted:    #9aa7b4;
+    --color-text-faint:    #6c7a87;
+
+    --color-accent:          oklch(0.74 0.115 188);   /* brighter teal */
+    --color-accent-hover:    oklch(0.80 0.115 188);
+    --color-accent-press:    oklch(0.70 0.110 188);
+    --color-accent-contrast: #04201d;                 /* dark ink on teal */
+    --color-accent-soft:     oklch(0.74 0.115 188 / 0.14);
+    --color-accent-softer:   oklch(0.74 0.115 188 / 0.07);
+    --color-accent-ring:     oklch(0.74 0.115 188 / 0.45);
+    --color-accent-line:     oklch(0.74 0.115 188 / 0.30);
+
+    --color-success:    #34d399;
+    --color-success-bg: #0f2a20;
+    --color-error:      #f87171;
+    --color-error-bg:   #2a1414;
+    --color-error-line: #5a2626;
+    --color-warning:    #e5b567;
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow:    0 1px 3px rgb(0 0 0 / 0.45);
+    --shadow-md: 0 6px 16px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 18px 44px rgb(0 0 0 / 0.6);
+    --shadow-accent: 0 10px 30px oklch(0.74 0.115 188 / 0.20);
+
+    --grid-line: rgb(255 255 255 / 0.04);
+    color-scheme: dark;
+  }
+}

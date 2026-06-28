@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert MKV to MP4 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert .mkv (Matroska) video to .mp4 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert MKV to MP4 — Free, No Upload",
+  "og.description": "Change .mkv to .mp4 locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · MKV → MP4",
+  "hero.title": "Convert MKV to MP4 — right in your browser",
+  "hero.lead": "Drop an .mkv (Matroska) file and get a standard .mp4 that plays on phones, smart TVs and in editors that refuse MKV. It's converted on your own device and never uploaded.",
+  "convert.format": "mp4",
+  "prose.h2": "Why convert MKV to MP4?",
+  "prose.p1": "MKV is a flexible container popular for high-quality video, but lots of phones, TVs, browsers and editors won't open it. MP4 (H.264) is the universal default, so converting makes the same video play almost everywhere.",
+  "prose.p2": "Most converters upload your clip to a server first. {{SITE_NAME}} doesn't — the conversion runs locally in your browser, so even large MKV files convert without a slow upload, and nothing is stored or logged.",
+  "faq.q1": "Is my .mkv file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — watch your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Will the MP4 lose quality?",
+  "faq.a2": "Converting re-encodes the video, so there's some loss, but at the default settings it's hard to spot. You can also choose a target size or a quality level before converting.",
+  "faq.q3": "What about big movie-length MKV files?",
+  "faq.a3": "On Chrome or Edge, files up to about 2&nbsp;GB are supported. Larger files on other browsers may be declined with a clear message rather than failing silently — try Chrome for the biggest files."
+}

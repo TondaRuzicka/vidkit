@@ -1,0 +1,22 @@
+{
+  "meta.title": "Zmenšit video na 25 MB online — zdarma, bez nahrávání | {{SITE_NAME}}",
+  "meta.description": "Zmenšete jakékoli video pod 25 MB pro Discord Nitro Basic a přílohy v Gmailu a Outlooku. Běží v prohlížeči — vaše video se nikdy nenahrává.",
+  "og.title": "Zmenšit video na 25 MB — zdarma, bez nahrávání",
+  "og.description": "Vejděte se s jakýmkoli videem pod 25 MB přímo v prohlížeči. Nic se nenahrává.",
+  "hero.eyebrow": "Předvolba · cíl 25 MB",
+  "hero.title": "Zmenšit video na 25 MB",
+  "hero.lead": "25&nbsp;MB je kouzelné číslo pro přílohy v Gmailu a Outlooku i pro klasický limit nahrávání Discord Nitro. Přetáhněte video níže a zkomprimuje se těsně pod 25&nbsp;MB přímo ve vašem zařízení — bez nahrávání, bez účtu, bez vodoznaku.",
+  "prose.h2": "Proč 25 MB a co očekávat",
+  "prose.p1": "Gmail i Outlook omezují přílohy na 25&nbsp;MB a tier Discord Nitro Basic používá stejný limit. Většina služeb kontroluje přesný počet bajtů, takže soubor „25,1&nbsp;MB\" se odrazí. Tento nástroj se vždy vejde <em>pod</em> limit: spočítá přesně, jak moc komprimovat, aby se video vešlo, ponechá místo pro zvuk, pak zkontroluje výsledek a komprimuje znovu, pokud první průchod vyšel o kousek příliš velký. Obvykle dostanete soubor mezi 22 a 25&nbsp;MB — nikdy víc.",
+  "prose.p2": "Jaká kvalita se vejde do 25&nbsp;MB, závisí výhradně na délce. 30sekundový klip zůstane ostrý v 1080p. 5minutové video se dostane kolem 720p a na telefonu pořád vypadá dobře. 20minutová nahrávka obrazovky bude viditelně komprimovaná — nástroj v určitém okamžiku raději sníží rozlišení a snímkovou frekvenci, než aby rozmazal každý snímek. Komprese běží lokálně ve vašem prohlížeči, takže zdroj o 300&nbsp;MB nepotřebuje před začátkem práce 300&nbsp;MB nahrávání.",
+  "faq.q1": "Bude soubor opravdu pod 25 MB?",
+  "faq.a1": "Ano. Nástroj zkontroluje výslednou velikost a v případě potřeby automaticky zkomprimuje o něco víc. Nikdy vám nepředá soubor nad cílovou velikost.",
+  "faq.q2": "Nahrává se video na server?",
+  "faq.a2": "Ne. Komprese probíhá ve vašem prohlížeči na vašem zařízení. Žádné nahrávání ani zpracování na serveru — i proto je to rychlé a zdarma.",
+  "faq.q3": "Proč Gmail můj 25MB soubor přesto odmítá?",
+  "faq.a3": "E-mail kóduje přílohy do formátu, který přidává zhruba 33% režii, takže efektivní limit Gmailu pro přílohy je nižší než 25&nbsp;MB souboru. Pokud je váš komprimovaný soubor blízko 25&nbsp;MB a přesto se odráží, zkomprimujte ho na vlastní cíl 18&nbsp;MB v <a href=\"{{url.cv}}\">obecném kompresoru</a>.",
+  "faq.q4": "Jak dlouho to trvá?",
+  "faq.a4": "Na běžném notebooku v Chrome rychleji, než trvá samotné video — 4minutové video se zkomprimuje do 4 minut, obvykle mnohem rychleji, protože využívá video hardware vašeho zařízení.",
+  "faq.q5": "Můžu zvolit jinou velikost?",
+  "faq.a5": "Ano — použijte <a href=\"{{url.cv}}\">plný kompresor</a>, který má předvolby 8, 10, 16, 25 a 50&nbsp;MB plus vlastní pole."
+}

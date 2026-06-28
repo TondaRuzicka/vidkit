@@ -1,0 +1,23 @@
+{
+  "meta.title": "Zmenšit video na 10 MB online — zdarma, bez nahrávání | {{SITE_NAME}}",
+  "meta.description": "Zmenšete jakékoli video pod 10 MB pro limit nahrávání zdarma na Discordu. Běží v prohlížeči — vaše video nikdy neopustí vaše zařízení.",
+  "og.title": "Zmenšit video na 10 MB — zdarma, bez nahrávání",
+  "og.description": "Vejděte se s jakýmkoli videem pod 10MB limit Discordu zdarma, přímo v prohlížeči.",
+  "hero.eyebrow": "Předvolba · cíl 10 MB",
+  "hero.title": "Zmenšit video na 10 MB",
+  "hero.lead": "Limit nahrávání zdarma na Discordu je 10&nbsp;MB. Přetáhněte klip níže a stlačí se těsně pod 10&nbsp;MB přímo ve vašem zařízení — bez nahrávání, bez Nitra, bez vodoznaku.",
+  "prose.h2": "Jak vejít video do limitu Discordu zdarma",
+  "prose.p1": "Discord kontroluje přesný počet bajtů, takže 10,2&nbsp;MB selže tam, kde 9,9&nbsp;MB hladce projde. Tento nástroj spočítá přesně, jak moc komprimovat, aby délka vašeho videa vešla do limitu, vyhradí místo pro zvuk, zkomprimuje a pak ověří výslednou velikost — automaticky překóduje, pokud první průchod vyšel byť jen mírně přes. Vždy dostanete soubor, který Discord přijme.",
+  "prose.p2": "Buďte realističtí v tom, co se do 10&nbsp;MB vejde: 20–30sekundový herní klip pořád vypadá ostře; 2minutový klip se dostane kolem 540–720p a v chatu vypadá fajn; 10minutové video v 10&nbsp;MB je matematikou jakéhokoli nástroje silně komprimované — u těch zvažte, zda to lépe neřekne sestříhaný sestřih. Když začne být místa málo, nástroj snižuje rozlišení a snímkovou frekvenci v rozumných krocích, místo aby každý snímek rozmazal do kostek. Zvuk se udržuje dostatečně čistý, aby nepraskal, protože diváci odpustí měkké pixely rychleji než pokažený zvuk.",
+  "prose.p3": "Vše běží přímo ve vašem prohlížeči s využitím výkonu vašeho zařízení, takže komprese je obvykle rychlejší než sledování klipu — a vaše video se nikam nenahrává.",
+  "faq.q1": "Přijme Discord soubor určitě?",
+  "faq.a1": "Ano — výstup je ověřen, že je pod 10 000 000 bajtů, což je limit, který Discord vynucuje pro účty zdarma. Nástroj automaticky překóduje, pokud první pokus vyjde přes.",
+  "faq.q2": "Nahrává se můj klip během komprese?",
+  "faq.a2": "Ne. Celý proces běží ve vašem prohlížeči na vašem počítači. Na server se nic neposílá — žádný tu není.",
+  "faq.q3": "Proč moje dlouhé video vypadá v 10 MB špatně?",
+  "faq.a3": "10&nbsp;MB je pevný rozpočet dat sdílený mezi každou sekundu videa. 30sekundový klip dostane přes 2&nbsp;Mbps — spousta. 10minutové video dostane pod 100&nbsp;kbps — sotva něco, ať použijete jakýkoli nástroj. Kratší klipy prostě vypadají při pevné velikosti lépe.",
+  "faq.q4": "Počítá se zvuk do 10 MB?",
+  "faq.a4": "Ano — zvuk je součástí souboru. Nástroj nejprve vyhradí rozumné množství pro zvuk a vše ostatní dá obrazu. Videa bez zvuku vměstnají do stejných 10&nbsp;MB znatelně více obrazové kvality.",
+  "faq.q5": "Co vyšší limity Nitra?",
+  "faq.a5": "Nitro Basic zvyšuje limit na 25&nbsp;MB — k tomu použijte <a href=\"{{url.cv25}}\">kompresor na 25&nbsp;MB</a>. Plné Nitro povoluje 500&nbsp;MB, což jen zřídka potřebuje kompresi."
+}

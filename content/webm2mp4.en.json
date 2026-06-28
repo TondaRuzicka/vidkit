@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert WebM to MP4 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert .webm video to .mp4 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert WebM to MP4 — Free, No Upload",
+  "og.description": "Change .webm to .mp4 locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · WebM → MP4",
+  "hero.title": "Convert WebM to MP4 — right in your browser",
+  "hero.lead": "Drop a .webm file — a screen recording, a downloaded clip — and get a standard .mp4 that plays on phones, in editors and on social apps. It's converted on your own device and never uploaded.",
+  "convert.format": "mp4",
+  "prose.h2": "Why convert WebM to MP4?",
+  "prose.p1": "WebM is common for web video and screen recordings, but it won't import into many video editors and won't play on some phones and TVs. MP4 (H.264) is the most widely supported format there is, so converting fixes most \"this video won't open\" problems.",
+  "prose.p2": "Most converters upload your clip to a server first. {{SITE_NAME}} doesn't — the conversion runs locally in your browser, so even large clips convert without a slow upload, and nothing is stored or logged.",
+  "faq.q1": "Is my .webm file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — check your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Will the MP4 look the same?",
+  "faq.a2": "Converting re-encodes the video, so there's some loss, but at the default settings it's hard to spot. You can also choose a target size or a quality level before converting.",
+  "faq.q3": "Can it convert long screen recordings?",
+  "faq.a3": "Yes. On Chrome or Edge, files up to about 2&nbsp;GB are supported. Very large files on other browsers may be declined with a clear message rather than failing silently."
+}

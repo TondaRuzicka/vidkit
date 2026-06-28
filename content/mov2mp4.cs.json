@@ -1,0 +1,19 @@
+{
+  "meta.title": "Převod MOV na MP4 — zdarma, v prohlížeči, bez nahrávání | {{SITE_NAME}}",
+  "meta.description": "Převeďte soubory QuickTime .mov na univerzální .mp4 přímo v prohlížeči. Nic se nenahrává — video nikdy neopustí vaše zařízení. Zdarma, bez registrace, bez vodoznaku.",
+  "og.title": "Převod MOV na MP4 — zdarma, bez nahrávání",
+  "og.description": "Změňte .mov na .mp4 lokálně v prohlížeči. Nic neopustí vaše zařízení.",
+  "hero.eyebrow": "Převod · MOV → MP4",
+  "hero.title": "Převeďte MOV na MP4 — přímo v prohlížeči",
+  "hero.lead": "Přetáhněte soubor QuickTime .mov a získejte univerzální .mp4, které přehrajete všude — na telefonu, v Discordu, e-mailu i editorech. Převod běží na vašem zařízení, soubor se nikdy nenahrává.",
+  "convert.format": "mp4",
+  "prose.h2": "Proč převádět MOV na MP4?",
+  "prose.p1": ".mov je formát QuickTime od Applu — skvělý na Macu a iPhonu, ale řada aplikací, webů a nástrojů ve Windows dává přednost .mp4. Převod na MP4 (H.264) vytvoří soubor, který přehrajete prakticky kdekoli.",
+  "prose.p2": "Většina převodníků nejdřív nahraje klip na server. {{SITE_NAME}} ne — převod běží lokálně v prohlížeči pomocí vestavěného video enginu, takže se nic neukládá ani neloguje.",
+  "faq.q1": "Nahrává se můj .mov soubor někam?",
+  "faq.a1": "Ne. Převod probíhá celý ve vašem prohlížeči, na vašem zařízení. Neexistuje server, který by soubor mohl přijmout — otevřete si v prohlížeči záložku Síť a uvidíte, že neodejdou žádná data.",
+  "faq.q2": "Ztratí MP4 kvalitu?",
+  "faq.a2": "Převod video překóduje, takže dojde k mírné ztrátě, ale ve výchozím nastavení je téměř neznatelná. Před převodem můžete zvolit i cílovou velikost nebo úroveň kvality.",
+  "faq.q3": "Funguje to na dlouhá videa z iPhonu?",
+  "faq.a3": "Ano. V prohlížeči Chrome nebo Edge zvládne soubory do zhruba 2&nbsp;GB. Velmi velké soubory mohou být v jiných prohlížečích odmítnuty se srozumitelnou hláškou."
+}

@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert MP4 to WebM — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert .mp4 video to .webm right in your browser. Smaller files for the web, nothing uploaded — your video never leaves your device. Free, no watermark.",
+  "og.title": "Convert MP4 to WebM — Free, No Upload",
+  "og.description": "Change .mp4 to .webm locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · MP4 → WebM",
+  "hero.title": "Convert MP4 to WebM — right in your browser",
+  "hero.lead": "Drop an .mp4 and get a .webm — the open format built for the web, often smaller at the same quality. It's converted on your own device and never uploaded.",
+  "convert.format": "webm",
+  "prose.h2": "Why convert MP4 to WebM?",
+  "prose.p1": "WebM is the open, royalty-free format designed for the web. It tends to be smaller than MP4 at similar quality and is ideal for background videos, HTML5 <code>&lt;video&gt;</code> and places where you want a lightweight, license-free file.",
+  "prose.p2": "Most converters upload your clip to a server first. {{SITE_NAME}} doesn't — the conversion runs locally in your browser. WebM uses the built-in software engine, so it's slower than the MP4 fast path, but nothing is ever stored or logged.",
+  "faq.q1": "Is my .mp4 file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — watch your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Why does WebM take longer?",
+  "faq.a2": "WebM uses a software encoder that browsers can't hardware-accelerate for output, so it's slower than converting to MP4. Keep clips short for the quickest results.",
+  "faq.q3": "Will it play everywhere?",
+  "faq.a3": "WebM plays in all modern browsers and on Android, but not on every older device or in some editors. If you need maximum compatibility instead, convert to MP4."
+}

@@ -1,0 +1,17 @@
+node_modules/
+dist/
+test-videos/
+public/ffmpeg/
+test-results/
+playwright-report/
+.DS_Store
+*.local
+*.tsbuildinfo
+
+# Internal / working docs — kept locally, not published
+CLAUDE.md
+BRIEF-milestone-1.md
+SEO-PLAN.md
+SUGGESTIONS-milestone-2.md
+TESTING.md
+.claude/

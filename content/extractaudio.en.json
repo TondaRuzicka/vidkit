@@ -1,0 +1,19 @@
+{
+  "meta.title": "Extract Audio from Video — Free, No Upload | {{SITE_NAME}}",
+  "meta.description": "Extract the audio track from any video and save it as MP3, right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Extract Audio from Video — Free, No Upload",
+  "og.description": "Save the soundtrack of any video as an .mp3, locally in your browser.",
+  "hero.eyebrow": "Audio · Extract from video",
+  "hero.title": "Extract audio from a video — in your browser",
+  "hero.lead": "Drop a video and save its audio track as an .mp3 — the music, the speech, the soundtrack. It's pulled out on your own device, so the file is never uploaded.",
+  "convert.format": "mp3",
+  "prose.h2": "Pull the sound out of any video",
+  "prose.p1": "Whether it's a song from a music video, the dialogue from a clip, the audio of a recorded call or the soundtrack of a film, extracting the audio gives you a small file you can listen to anywhere — no video to carry around, no app to install. The result is a standard MP3 that plays on every device.",
+  "prose.p2": "Most tools that do this upload your video to a server first, which is slow and means trusting them with your footage. {{SITE_NAME}} extracts the audio locally in your browser instead, so nothing is stored or logged, there's no size limit, and your video never leaves your device.",
+  "faq.q1": "Is my video uploaded anywhere?",
+  "faq.a1": "No. The extraction happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "What format is the extracted audio?",
+  "faq.a2": "MP3, at a bitrate you choose (128–320&nbsp;kbps). It's the most widely compatible audio format, so the file plays in any music app, podcast player or car stereo.",
+  "faq.q3": "Which video formats work?",
+  "faq.a3": "Most common ones — MP4, MOV, MKV, WebM and AVI among them. The audio track is decoded and written out as a standard .mp3 entirely on your device."
+}
