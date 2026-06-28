@@ -1,0 +1,7 @@
+# Security policy for vidkit.eu
+# https://www.rfc-editor.org/rfc/rfc9116
+
+Contact: https://github.com/TondaRuzicka/vidkit/security/advisories/new
+Expires: 2027-06-28T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://vidkit.eu/.well-known/security.txt
