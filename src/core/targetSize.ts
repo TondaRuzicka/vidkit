@@ -133,6 +133,10 @@ export function buildPlan(
     };
   }
 
+  // Every mode below needs a video track. Audio-only inputs only make sense
+  // for the audio mode handled above; reject them here rather than NPE.
+  if (!video) throw new CompressError('notVideo', 'this output needs a video track');
+
   // Animated GIF: width is a long-edge cap; fps is throttled to the source.
   if (options.mode === 'gif') {
     const { width, height } = fitToLongEdge(video.width, video.height, options.width);

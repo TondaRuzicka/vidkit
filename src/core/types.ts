@@ -23,6 +23,7 @@ export type ErrorCode =
 export interface ProbeResult {
   container: string;
   durationS: number;
+  /** null for audio-only inputs (.m4a, .wav, .mp3) — valid for audio→audio jobs. */
   video: {
     codec: string | null;
     width: number;
@@ -30,7 +31,7 @@ export interface ProbeResult {
     fps: number;
     frameCount: number;
     bitrate: number | null;
-  };
+  } | null;
   audio: {
     codec: string | null;
     bitrate: number | null;

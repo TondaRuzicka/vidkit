@@ -174,3 +174,34 @@ test('quality mode sets bpp-derived bitrate and no target', () => {
   const bpp = plan.videoBps / (plan.width * plan.height * plan.fps);
   assert.ok(Math.abs(bpp - 0.08) < 0.001);
 });
+
+// Audio-only inputs (.m4a, .wav …): video:null. Valid for audio output,
+// rejected for any output that needs a video track.
+const audioOnlyProbe: ProbeResult = {
+  container: 'm4a',
+  durationS: 90,
+  video: null,
+  audio: { codec: 'aac', bitrate: 192_000 },
+};
+
+test('audio mode plans from an audio-only input (video:null)', () => {
+  const plan = buildPlan({ format: 'mp3', mode: 'audio', audioKbps: 192 }, audioOnlyProbe);
+  assert.equal(plan.output.id, 'mp3');
+  assert.equal(plan.audioBps, 192_000);
+  assert.equal(plan.videoBps, 0);
+  assert.equal(plan.targetBytes, null);
+});
+
+test('non-audio mode on an audio-only input throws notVideo', () => {
+  for (const opts of [
+    { mode: 'target', targetMB: 10 } as const,
+    { mode: 'quality', level: 'medium' } as const,
+    { format: 'gif', mode: 'gif', width: 480, fps: 15 } as const,
+  ]) {
+    assert.throws(
+      () => buildPlan(opts, audioOnlyProbe),
+      (e) => e instanceof CompressError && e.code === 'notVideo',
+      `expected notVideo for mode ${opts.mode}`,
+    );
+  }
+});

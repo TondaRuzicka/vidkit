@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert MOV to MP3 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Extract the audio from a .mov video to an .mp3 file right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert MOV to MP3 — Free, No Upload",
+  "og.description": "Pull the audio out of a .mov (QuickTime) video into .mp3, locally in your browser.",
+  "hero.eyebrow": "Convert · MOV → MP3",
+  "hero.title": "Convert MOV to MP3 — right in your browser",
+  "hero.lead": "Drop a .mov video — an iPhone clip, a screen recording, an interview — and pull out just the audio as an .mp3. It's extracted on your own device, so the file is never uploaded.",
+  "convert.format": "mp3",
+  "prose.h2": "Why convert MOV to MP3?",
+  "prose.p1": "MOV is the QuickTime video format your iPhone and Mac record in. When you only need the sound — the dialogue from a clip, the music from a recording, the audio of a lecture or interview — extracting to MP3 drops the video entirely and leaves a small file that plays in any music app, car stereo or podcast player.",
+  "prose.p2": "Most converters upload your whole video to a server first, which is slow for large .mov files and means handing over your footage. {{SITE_NAME}} doesn't — the audio is extracted locally in your browser, so nothing is stored or logged and even a big recording starts instantly with no upload.",
+  "faq.q1": "Is my video uploaded anywhere?",
+  "faq.a1": "No. The extraction happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "What MP3 quality do I get?",
+  "faq.a2": "You can pick the bitrate before converting — from 128&nbsp;kbps (small) up to 320&nbsp;kbps (best quality). 192&nbsp;kbps is a good default for speech and most music.",
+  "faq.q3": "Can it handle a long or large MOV?",
+  "faq.a3": "Yes. Audio is tiny next to video, so even a long .mov extracts quickly and the resulting MP3 stays small — and because nothing uploads, file size isn't limited by a server."
+}

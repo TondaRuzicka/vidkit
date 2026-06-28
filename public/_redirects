@@ -6,6 +6,6 @@
 /cs/compress-video-for-whatsapp/ /cs/zmensit-video-pro-whatsapp/ 301
 
 # Generic conversion queries → the canonical input→output landing page.
-/video-to-mp3/ /mp4-to-mp3/ 301
+# (video-to-mp3 is now its own page — redirect removed.)
 /video-to-gif/ /mp4-to-gif/ 301
 /convert-to-webm/ /mp4-to-webm/ 301

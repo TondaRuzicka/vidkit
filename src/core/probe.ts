@@ -10,10 +10,26 @@ export async function probe(file: File): Promise<ProbeResult> {
   try {
     const format = await input.getFormat();
     const video = await input.getPrimaryVideoTrack();
-    if (!video) throw new CompressError('notVideo', 'no video track');
-
-    const audio = await input.getPrimaryAudioTrack();
+    const audioTrack = await input.getPrimaryAudioTrack();
     const durationS = await input.computeDuration();
+
+    const audio = audioTrack
+      ? {
+          codec: await audioTrack.getCodec(),
+          bitrate:
+            (await audioTrack.getAverageBitrate()) ??
+            (await audioTrack.computePacketStats(200)).averageBitrate ??
+            null,
+        }
+      : null;
+
+    // Audio-only input (.m4a, .wav, .mp3 …): no video track, but valid for
+    // audio→audio jobs. Reject only when there's neither video nor audio.
+    if (!video) {
+      if (!audio) throw new CompressError('notVideo', 'no video or audio track');
+      return { container: format.name, durationS, video: null, audio };
+    }
+
     // Sample packets for fps/frame-count estimates without scanning the file.
     const stats = await video.computePacketStats(200);
     const fps = stats.averagePacketRate || 30;
@@ -31,15 +47,7 @@ export async function probe(file: File): Promise<ProbeResult> {
         // packet-sampled stats always produce a usable estimate.
         bitrate: stats.averageBitrate || null,
       },
-      audio: audio
-        ? {
-            codec: await audio.getCodec(),
-            bitrate:
-              (await audio.getAverageBitrate()) ??
-              (await audio.computePacketStats(200)).averageBitrate ??
-              null,
-          }
-        : null,
+      audio,
     };
   } catch (err) {
     if (err instanceof CompressError) throw err;

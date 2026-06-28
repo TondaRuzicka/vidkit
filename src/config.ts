@@ -55,6 +55,17 @@ export const PAGES: readonly PageDef[] = [
   { id: 'mp42webm', template: 'convert', locales: ['en', 'cs'], slugs: { en: 'mp4-to-webm', cs: 'mp4-na-webm' } },
   { id: 'mp42mp3', template: 'convert', locales: ['en', 'cs'], slugs: { en: 'mp4-to-mp3', cs: 'mp4-na-mp3' } },
   { id: 'mp42gif', template: 'convert', locales: ['en', 'cs'], slugs: { en: 'mp4-to-gif', cs: 'mp4-na-gif' } },
+  // Audio-extraction cluster — English-only (CZ keyword data: Czech converter
+  // slugs have ~0 volume; English pages serve Czech + global searchers).
+  { id: 'mov2mp3', template: 'convert', locales: ['en'], slugs: { en: 'mov-to-mp3', cs: 'mov-to-mp3' } },
+  // Audio-only inputs — supported since the probe accepts no-video-track files.
+  { id: 'm4a2mp3', template: 'convert', locales: ['en'], slugs: { en: 'm4a-to-mp3', cs: 'm4a-to-mp3' } },
+  { id: 'wav2mp3', template: 'convert', locales: ['en'], slugs: { en: 'wav-to-mp3', cs: 'wav-to-mp3' } },
+  // Video→mp3 (audio extraction). video-to-mp3 replaces the old 301 to mp4-to-mp3.
+  { id: 'mkv2mp3', template: 'convert', locales: ['en'], slugs: { en: 'mkv-to-mp3', cs: 'mkv-to-mp3' } },
+  { id: 'webm2mp3', template: 'convert', locales: ['en'], slugs: { en: 'webm-to-mp3', cs: 'webm-to-mp3' } },
+  { id: 'video2mp3', template: 'convert', locales: ['en'], slugs: { en: 'video-to-mp3', cs: 'video-to-mp3' } },
+  { id: 'extractaudio', template: 'convert', locales: ['en'], slugs: { en: 'extract-audio-from-video', cs: 'extract-audio-from-video' } },
 ];
 
 // English-only pages still authored as standalone HTML (none right now). Listed

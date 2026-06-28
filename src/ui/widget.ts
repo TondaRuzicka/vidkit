@@ -133,7 +133,8 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
       const msg = e.data;
       switch (msg.type) {
         case 'probe':
-          frameTotal = msg.meta.video.frameCount;
+          frameTotal =
+            msg.meta.video?.frameCount ?? Math.max(1, Math.round(msg.meta.durationS * 30));
           progress.update(0, frameTotal, null);
           break;
         case 'engine':

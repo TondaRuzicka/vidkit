@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert M4A to MP3 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert .m4a audio to .mp3 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark, no quality cap.",
+  "og.title": "Convert M4A to MP3 — Free, No Upload",
+  "og.description": "Turn .m4a (Apple AAC) audio into a universal .mp3, locally in your browser.",
+  "hero.eyebrow": "Convert · M4A → MP3",
+  "hero.title": "Convert M4A to MP3 — right in your browser",
+  "hero.lead": "Drop an .m4a file — a voice memo, a song, a recording from your phone — and get a plain .mp3 that plays everywhere. It's converted on your own device, so the audio is never uploaded.",
+  "convert.format": "mp3",
+  "prose.h2": "Why convert M4A to MP3?",
+  "prose.p1": "M4A is Apple's audio container — it's what iPhone Voice Memos, Apple Music downloads and GarageBand exports use. It's a fine format, but plenty of older car stereos, media players, DJ software and Bluetooth speakers still expect MP3. Converting to MP3 trades a sliver of efficiency for the format that genuinely plays on everything.",
+  "prose.p2": "Most converters upload your audio to a server first. {{SITE_NAME}} doesn't — the conversion runs locally in your browser, so nothing is stored or logged, there's no file-size limit and no queue, and a private recording stays private.",
+  "faq.q1": "Is my audio uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "What MP3 quality do I get?",
+  "faq.a2": "You can pick the bitrate before converting — from 128&nbsp;kbps (small) up to 320&nbsp;kbps (best quality). Since M4A is already compressed, 192&nbsp;kbps or higher keeps the result indistinguishable for most ears.",
+  "faq.q3": "Does it keep the title and artist tags?",
+  "faq.a3": "The audio itself is converted faithfully. Some metadata may not carry across every container, so if exact ID3 tags matter, double-check them in your music app afterwards."
+}

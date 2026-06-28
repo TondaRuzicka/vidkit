@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert WAV to MP3 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert .wav audio to .mp3 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark, no size limit.",
+  "og.title": "Convert WAV to MP3 — Free, No Upload",
+  "og.description": "Shrink big uncompressed .wav files to a portable .mp3, locally in your browser.",
+  "hero.eyebrow": "Convert · WAV → MP3",
+  "hero.title": "Convert WAV to MP3 — right in your browser",
+  "hero.lead": "Drop a .wav file — a recording, a mixdown, a sound effect — and get a much smaller .mp3 that plays anywhere. It's converted on your own device, so the audio is never uploaded.",
+  "convert.format": "mp3",
+  "prose.h2": "Why convert WAV to MP3?",
+  "prose.p1": "WAV is uncompressed audio — pristine, but huge: a few minutes can run to tens of megabytes, which is awkward to email, upload or store on a phone. MP3 compresses that down by roughly ten times with no audible difference for most listening, and it plays on every device, player and app there is.",
+  "prose.p2": "Because WAV files are so large, the usual upload-to-a-server converters are slow and hand your recording to a stranger. {{SITE_NAME}} doesn't upload anything — the conversion runs locally in your browser, so even a big .wav starts instantly, stays private, and isn't capped by a server's file-size limit.",
+  "faq.q1": "Is my audio uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "How much smaller will the MP3 be?",
+  "faq.a2": "Usually around a tenth of the WAV's size. You pick the bitrate first — 320&nbsp;kbps stays closest to the original, while 192&nbsp;kbps is a good balance of size and quality for most audio.",
+  "faq.q3": "Will I lose audio quality?",
+  "faq.a3": "MP3 is lossy, so there is some loss in theory, but at 192&nbsp;kbps and above it's transparent to most ears. For archival masters keep the WAV; for everyday listening and sharing, MP3 is ideal."
+}

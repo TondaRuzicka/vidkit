@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert WebM to MP3 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Extract the audio from a .webm video to an .mp3 file right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert WebM to MP3 — Free, No Upload",
+  "og.description": "Pull the audio out of a .webm video into a universal .mp3, locally in your browser.",
+  "hero.eyebrow": "Convert · WebM → MP3",
+  "hero.title": "Convert WebM to MP3 — right in your browser",
+  "hero.lead": "Drop a .webm video and pull out just the audio as an .mp3 that plays everywhere. It's extracted on your own device, so the file is never uploaded.",
+  "convert.format": "mp3",
+  "prose.h2": "Why convert WebM to MP3?",
+  "prose.p1": "WebM is the format the web uses for video — it's what many browser recordings and saved web clips come out as. It's efficient online, but plenty of music players, car stereos and editing apps don't accept it. Extracting to MP3 gives you just the sound in a format that genuinely plays on everything.",
+  "prose.p2": "Most converters upload your video to a server first. {{SITE_NAME}} doesn't — the audio is extracted locally in your browser using your own processor, so nothing is stored or logged and the file never leaves your device.",
+  "faq.q1": "Is my video uploaded anywhere?",
+  "faq.a1": "No. The extraction happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "What MP3 quality do I get?",
+  "faq.a2": "You can pick the bitrate before converting — from 128&nbsp;kbps (small) up to 320&nbsp;kbps (best quality). 192&nbsp;kbps is a good default for speech and most music.",
+  "faq.q3": "Does the WebM's audio codec matter?",
+  "faq.a3": "No. WebM audio is usually Opus or Vorbis; either way it's decoded and re-encoded to MP3 locally, so you get a standard .mp3 that any player will accept."
+}

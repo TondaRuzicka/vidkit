@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert MKV to MP3 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Extract the audio from a .mkv video to an .mp3 file right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert MKV to MP3 — Free, No Upload",
+  "og.description": "Pull the audio out of a .mkv (Matroska) video into .mp3, locally in your browser.",
+  "hero.eyebrow": "Convert · MKV → MP3",
+  "hero.title": "Convert MKV to MP3 — right in your browser",
+  "hero.lead": "Drop a .mkv video and pull out just the audio as an .mp3 — the music, the dialogue, the soundtrack. It's extracted on your own device, so the file is never uploaded.",
+  "convert.format": "mp3",
+  "prose.h2": "Why convert MKV to MP3?",
+  "prose.p1": "MKV (Matroska) is the container of choice for films, episodes and high-quality downloads — flexible, but big, and not every player handles it. When you only want the sound, extracting to MP3 leaves a small file that plays in any music app, on any phone or in the car, with no need to carry the whole video around.",
+  "prose.p2": "MKV files are often very large, so the upload-to-a-server converters are slow and hand over your footage. {{SITE_NAME}} doesn't upload anything — the audio is extracted locally in your browser, so even a multi-gigabyte .mkv starts instantly and stays private.",
+  "faq.q1": "Is my video uploaded anywhere?",
+  "faq.a1": "No. The extraction happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "My MKV has several audio tracks — which one?",
+  "faq.a2": "The primary (default) audio track is extracted. If your file has multiple languages or commentary tracks, the one marked default in the container is the one you'll get.",
+  "faq.q3": "Can it handle a large movie file?",
+  "faq.a3": "Yes. Audio is tiny next to video, so even a full-length .mkv extracts quickly and the resulting MP3 stays small — and because nothing uploads, file size isn't limited by a server."
+}

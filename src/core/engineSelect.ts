@@ -35,6 +35,12 @@ export async function selectEngine(
     return { name: 'ffmpeg', reason: 'no WebCodecs API' };
   }
 
+  // Audio-only input can't use the WebCodecs video path. (Audio outputs are
+  // already ffmpeg above; this guards a video output fed an audio-only file.)
+  if (!meta.video) {
+    return { name: 'ffmpeg', reason: 'audio-only input' };
+  }
+
   const codec = meta.video.codec;
   if (!codec || !(VIDEO_CODECS as readonly string[]).includes(codec)) {
     return { name: 'ffmpeg', reason: `unknown codec ${codec}` };

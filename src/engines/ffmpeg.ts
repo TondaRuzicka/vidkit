@@ -154,28 +154,35 @@ export async function ffmpegProbe(file: File): Promise<ProbeResult> {
   const video = log.match(
     /Stream #[^\n]*Video:\s*(\w+)[^\n]*?\s(\d{2,5})x(\d{2,5})[^\n]*/,
   );
-  if (!dur || !video) {
+  const audio = log.match(/Stream #[^\n]*Audio:\s*(\w+)[^\n]*/);
+  // Accept audio-only inputs (.m4a, .wav …): reject only when neither stream
+  // is identifiable. Duration is still required to plan anything.
+  if (!dur || (!video && !audio)) {
     throw new CompressError('notVideo', 'ffmpeg could not identify streams');
   }
   const durationS =
     Number(dur[1]) * 3600 + Number(dur[2]) * 60 + Number(dur[3]);
-  const fpsMatch = video[0]!.match(/(\d+(?:\.\d+)?)\s*fps/);
-  const vBitrateMatch = video[0]!.match(/(\d+)\s*kb\/s/);
-  const audio = log.match(/Stream #[^\n]*Audio:\s*(\w+)[^\n]*/);
   const aBitrateMatch = audio?.[0]?.match(/(\d+)\s*kb\/s/);
-  const fps = fpsMatch ? Number(fpsMatch[1]) : 30;
 
-  return {
-    container: 'ffmpeg:' + (file.name.match(/\.(\w+)$/)?.[1] ?? 'unknown'),
-    durationS,
-    video: {
+  let videoMeta: ProbeResult['video'] = null;
+  if (video) {
+    const fpsMatch = video[0]!.match(/(\d+(?:\.\d+)?)\s*fps/);
+    const vBitrateMatch = video[0]!.match(/(\d+)\s*kb\/s/);
+    const fps = fpsMatch ? Number(fpsMatch[1]) : 30;
+    videoMeta = {
       codec: video[1] ?? null,
       width: Number(video[2]),
       height: Number(video[3]),
       fps,
       frameCount: Math.max(1, Math.round(fps * durationS)),
       bitrate: vBitrateMatch ? Number(vBitrateMatch[1]) * 1000 : null,
-    },
+    };
+  }
+
+  return {
+    container: 'ffmpeg:' + (file.name.match(/\.(\w+)$/)?.[1] ?? 'unknown'),
+    durationS,
+    video: videoMeta,
     audio: audio
       ? {
           codec: audio[1] ?? null,

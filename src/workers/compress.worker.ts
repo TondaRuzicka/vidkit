@@ -28,7 +28,10 @@ self.onmessage = async (event: MessageEvent<UiToWorker>) => {
       msg.options,
       {
         onProbe: (meta) => {
-          frameCount = meta.video.frameCount;
+          // Audio-only inputs have no video frames — fall back to a
+          // duration-based denominator so the progress fraction still maps.
+          frameCount =
+            meta.video?.frameCount ?? Math.max(1, Math.round(meta.durationS * 30));
           post({ type: 'probe', meta });
         },
         onEngine: (engine) => post({ type: 'engine', engine }),
