@@ -17,7 +17,7 @@
   "faq.q3": "Will there be a watermark?",
   "faq.a3": "No. The output is your video, just smaller — no watermark, no outro, no branding, free.",
   "faq.q4": "How much quality will I lose?",
-  "faq.a4": "That depends on how hard the video is squeezed. Halving a file's size is usually invisible. Fitting a 10-minute video into 10&nbsp;MB means visible quality loss — the tool lowers resolution and frame rate gracefully instead of producing a blocky mess, and tells you the output dimensions before you download.",
+  "faq.a4": "That depends on how hard the video is squeezed. Halving a file's size is usually invisible. Fitting a 10-minute video into 10&nbsp;MB means visible quality loss — the tool lowers resolution and frame rate gracefully instead of producing a blocky mess, and tells you the output dimensions before you download. To estimate it up front, the <a href=\"{{url.calc}}\">bitrate calculator</a> shows the video bitrate and resolution a given size and length will produce.",
   "faq.q5": "What formats can I compress?",
   "faq.a5": "Input: MP4, MOV, WebM, MKV and AVI, with H.264, H.265/HEVC, VP8, VP9 and most common codecs. Output is always MP4 with H.264 video and AAC audio — the most compatible combination there is.",
   "faq.q6": "Does it work on a phone?",

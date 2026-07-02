@@ -17,6 +17,7 @@
   "form.noscript": "This calculator needs JavaScript to compute live. The formula is simple, though: total bitrate = file size in bits ÷ clip length in seconds, minus the audio bitrate. See \"How the math works\" below.",
   "out.video": "Video bitrate",
   "out.total": "Total bitrate",
+  "out.note": "You don't type this bitrate into {{SITE_NAME}} — just compress to your target size and it's worked out and applied for you. The number is here for other encoders like OBS, HandBrake or ffmpeg, which do ask for a bitrate.",
   "prose.h2": "How the math works",
   "prose.p1": "File size is just bitrate multiplied by time. Flip that around and the bitrate you can afford is the target size (converted from bytes to bits — multiply by 8) divided by the clip's length in seconds. Whatever the audio track uses comes off the top first, and a small slice goes to container overhead — the index tables and headers an MP4 needs to be seekable. What's left is your video bitrate.",
   "prose.p2": "Bitrate alone doesn't tell you how good it looks — that depends on how many pixels it has to cover. The telling number is bits per pixel: video bitrate divided by (width × height × frame rate). Above roughly 0.1 the picture stays crisp; below about 0.045 H.264 starts to smear. That's why this calculator recommends a resolution instead of just handing you a number: 2 Mbps is plenty for 480p, tight for 720p, and soft for 1080p. When a bitrate is too low for a resolution, dropping to the next size down looks better than keeping the resolution and starving it of data.",
