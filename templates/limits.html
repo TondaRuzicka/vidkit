@@ -11,190 +11,80 @@
     <div class="container container--prose prose">
       <p>{{intro.p1}}</p>
 
-      <!-- The tables below are reference DATA, not UI copy, so they live here
-           rather than in content/ JSON. This page is English-only; a future
-           /cs/ version gets its own template. Limits verified against official
-           docs July 2026 — re-verify before editing, sources in git history
-           and the research notes of the PR/commit that touched a row. -->
+      <!-- Table TEXT lives in content/limits.<locale>.json (per-cell keys), so
+           the same table structure serves every locale. Limits verified against
+           official docs July 2026 — re-verify before editing a value; sources
+           are in the git history of the commit that touched each row. -->
 
-      <h2 id="messaging">Messaging &amp; chat apps</h2>
+      <h2 id="messaging">{{sec.messaging}}</h2>
       <div class="table-scroll">
         <table class="ref-table">
-          <caption>Verified against official documentation · July 2026</caption>
+          <caption>{{cap.default}}</caption>
           <thead>
-            <tr><th>App</th><th>Max video / file size</th><th>Notes</th></tr>
+            <tr><th>{{th.app}}</th><th>{{th.size}}</th><th>{{th.notes}}</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Discord</td>
-              <td><span class="num">10&nbsp;MB</span> free · <span class="num">50&nbsp;MB</span> Nitro Basic · <span class="num">500&nbsp;MB</span> Nitro</td>
-              <td>Lowered from 25&nbsp;MB in September 2024 — most guides still show the old number. Over it? <a href="{{url.cv10}}">Compress to 10&nbsp;MB</a>.</td>
-            </tr>
-            <tr>
-              <td>WhatsApp</td>
-              <td><span class="num">2&nbsp;GB</span> per file</td>
-              <td>The 2&nbsp;GB limit applies when you send the video <em>as a document</em>. Sent from the gallery, it gets recompressed hard and looks worse — <a href="{{url.cvwa}}">compress it yourself first</a> to control the quality.</td>
-            </tr>
-            <tr>
-              <td>Telegram</td>
-              <td><span class="num">2&nbsp;GB</span> free · <span class="num">4&nbsp;GB</span> Premium</td>
-              <td>The most generous mainstream chat app; unchanged since 2022.</td>
-            </tr>
-            <tr>
-              <td>Signal</td>
-              <td><span class="num">100&nbsp;MB</span> per attachment</td>
-              <td>Not officially documented; confirmed in Signal's open-source issue tracker. Long videos can fail transcoding even under the cap — <a href="{{url.cv}}">compress to well under 100&nbsp;MB</a>.</td>
-            </tr>
-            <tr>
-              <td>iMessage</td>
-              <td><span class="num">~100&nbsp;MB</span> (unofficial)</td>
-              <td>Apple publishes no number; ~100&nbsp;MB is the practical iMessage-to-iMessage ceiling. If the recipient isn't on iMessage it falls back to MMS at roughly 1–3.5&nbsp;MB.</td>
-            </tr>
-            <tr>
-              <td>Facebook Messenger</td>
-              <td><span class="num">100&nbsp;MB</span> per file</td>
-              <td>Raised from 25&nbsp;MB in April 2024.</td>
-            </tr>
+            <tr><td>Discord</td><td>{{msg.discord.size}}</td><td>{{msg.discord.note}}</td></tr>
+            <tr><td>WhatsApp</td><td>{{msg.whatsapp.size}}</td><td>{{msg.whatsapp.note}}</td></tr>
+            <tr><td>Telegram</td><td>{{msg.telegram.size}}</td><td>{{msg.telegram.note}}</td></tr>
+            <tr><td>Signal</td><td>{{msg.signal.size}}</td><td>{{msg.signal.note}}</td></tr>
+            <tr><td>iMessage</td><td>{{msg.imessage.size}}</td><td>{{msg.imessage.note}}</td></tr>
+            <tr><td>Facebook Messenger</td><td>{{msg.messenger.size}}</td><td>{{msg.messenger.note}}</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="email">Email providers</h2>
+      <h2 id="email">{{sec.email}}</h2>
       <div class="table-scroll">
         <table class="ref-table">
-          <caption>Verified against official documentation · July 2026</caption>
+          <caption>{{cap.default}}</caption>
           <thead>
-            <tr><th>Provider</th><th>Attachment limit</th><th>Notes</th></tr>
+            <tr><th>{{th.provider}}</th><th>{{th.attachment}}</th><th>{{th.notes}}</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Gmail</td>
-              <td><span class="num">25&nbsp;MB</span></td>
-              <td>Encoding overhead means only a ~18&nbsp;MB file reliably fits — <a href="{{url.cv25}}">compress to 25&nbsp;MB</a> or set 18&nbsp;MB in the <a href="{{url.cv}}">full compressor</a>. Larger sends switch to a Google Drive link automatically.</td>
-            </tr>
-            <tr>
-              <td>Outlook.com / Microsoft&nbsp;365</td>
-              <td><span class="num">25&nbsp;MB</span> web · <span class="num">20&nbsp;MB</span> desktop app</td>
-              <td>Microsoft 365 work accounts default to <span class="num">35&nbsp;MB</span> (raised from 25&nbsp;MB in 2026). Attaching from OneDrive allows up to 2&nbsp;GB as a link.</td>
-            </tr>
-            <tr>
-              <td>Yahoo Mail</td>
-              <td><span class="num">25&nbsp;MB</span></td>
-              <td>Same effective ~18&nbsp;MB ceiling as Gmail.</td>
-            </tr>
-            <tr>
-              <td>iCloud Mail</td>
-              <td><span class="num">20&nbsp;MB</span></td>
-              <td>Mail Drop hands off attachments up to <span class="num">5&nbsp;GB</span> as a 30-day download link.</td>
-            </tr>
-            <tr>
-              <td>Proton Mail</td>
-              <td><span class="num">25&nbsp;MB</span></td>
-              <td>Per message, across all attachments (up to 100 files); receiving caps at 50&nbsp;MB.</td>
-            </tr>
+            <tr><td>Gmail</td><td>{{mail.gmail.size}}</td><td>{{mail.gmail.note}}</td></tr>
+            <tr><td>Outlook.com / Microsoft&nbsp;365</td><td>{{mail.outlook.size}}</td><td>{{mail.outlook.note}}</td></tr>
+            <tr><td>Yahoo Mail</td><td>{{mail.yahoo.size}}</td><td>{{mail.yahoo.note}}</td></tr>
+            <tr><td>iCloud Mail</td><td>{{mail.icloud.size}}</td><td>{{mail.icloud.note}}</td></tr>
+            <tr><td>Proton Mail</td><td>{{mail.proton.size}}</td><td>{{mail.proton.note}}</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="social">Social media platforms</h2>
+      <h2 id="social">{{sec.social}}</h2>
       <div class="table-scroll">
         <table class="ref-table">
-          <caption>Verified against official documentation · July 2026 · Instagram, TikTok and Snapchat publish no official size figures — those are best-available estimates</caption>
+          <caption>{{cap.social}}</caption>
           <thead>
-            <tr><th>Platform</th><th>Max size</th><th>Max duration</th><th>Notes</th></tr>
+            <tr><th>{{th.platform}}</th><th>{{th.maxsize}}</th><th>{{th.duration}}</th><th>{{th.notes}}</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>YouTube</td>
-              <td><span class="num">256&nbsp;GB</span></td>
-              <td><span class="num">12&nbsp;h</span></td>
-              <td>Whichever is smaller. Unverified accounts are capped at 15 minutes.</td>
-            </tr>
-            <tr>
-              <td>X (Twitter)</td>
-              <td><span class="num">512&nbsp;MB</span> free · <span class="num">16&nbsp;GB</span> Premium</td>
-              <td><span class="num">2:20</span> free · <span class="num">4&nbsp;h</span> Premium</td>
-              <td>Premium videos over 2&nbsp;hours drop to 720p. Android app uploads cap at 10 minutes even with Premium.</td>
-            </tr>
-            <tr>
-              <td>Instagram (Reels)</td>
-              <td><span class="num">~4&nbsp;GB</span> (unofficial)</td>
-              <td><span class="num">20&nbsp;min</span></td>
-              <td>Feed videos are Reels now. Limit rose from 3 to 20 minutes during 2025, but Reels over 3 minutes get less recommendation reach. Stories: 60-second segments.</td>
-            </tr>
-            <tr>
-              <td>TikTok</td>
-              <td><span class="num">~72&nbsp;MB</span> Android · <span class="num">~288&nbsp;MB</span> iOS · <span class="num">~10&nbsp;GB</span> web (unofficial)</td>
-              <td><span class="num">60&nbsp;min</span></td>
-              <td>Upload from tiktok.com to bypass the tight app limits. 60-minute uploads are still rolling out account by account.</td>
-            </tr>
-            <tr>
-              <td>Facebook</td>
-              <td><span class="num">10&nbsp;GB</span></td>
-              <td><span class="num">240&nbsp;min</span></td>
-              <td>Via Meta Business tools; the classic composer historically capped at 4&nbsp;GB. Stories: 120 seconds.</td>
-            </tr>
-            <tr>
-              <td>LinkedIn</td>
-              <td><span class="num">5&nbsp;GB</span></td>
-              <td><span class="num">15&nbsp;min</span></td>
-              <td>Native feed video. Minimum 3 seconds.</td>
-            </tr>
-            <tr>
-              <td>Reddit</td>
-              <td><span class="num">1&nbsp;GB</span></td>
-              <td><span class="num">15&nbsp;min</span> · <span class="num">30&nbsp;min</span> Premium</td>
-              <td>MP4 or MOV. Videos in comments cap at 3 minutes.</td>
-            </tr>
-            <tr>
-              <td>Snapchat</td>
-              <td><span class="num">~1&nbsp;GB</span> (unofficial)</td>
-              <td><span class="num">60&nbsp;s</span></td>
-              <td>Story uploads from the web: 5–60 seconds, 9:16. Snapchat publishes no file-size figure.</td>
-            </tr>
-            <tr>
-              <td>Vimeo</td>
-              <td><span class="num">1&nbsp;GB</span> lifetime (free)</td>
-              <td>—</td>
-              <td>Free accounts created since June 2024 get 1&nbsp;GB of total storage, ever — it doesn't reset. <a href="{{url.cv}}">Compressing before upload</a> stretches it a long way.</td>
-            </tr>
+            <tr><td>YouTube</td><td>{{soc.youtube.size}}</td><td>{{soc.youtube.dur}}</td><td>{{soc.youtube.note}}</td></tr>
+            <tr><td>X (Twitter)</td><td>{{soc.x.size}}</td><td>{{soc.x.dur}}</td><td>{{soc.x.note}}</td></tr>
+            <tr><td>Instagram (Reels)</td><td>{{soc.instagram.size}}</td><td>{{soc.instagram.dur}}</td><td>{{soc.instagram.note}}</td></tr>
+            <tr><td>TikTok</td><td>{{soc.tiktok.size}}</td><td>{{soc.tiktok.dur}}</td><td>{{soc.tiktok.note}}</td></tr>
+            <tr><td>Facebook</td><td>{{soc.facebook.size}}</td><td>{{soc.facebook.dur}}</td><td>{{soc.facebook.note}}</td></tr>
+            <tr><td>LinkedIn</td><td>{{soc.linkedin.size}}</td><td>{{soc.linkedin.dur}}</td><td>{{soc.linkedin.note}}</td></tr>
+            <tr><td>Reddit</td><td>{{soc.reddit.size}}</td><td>{{soc.reddit.dur}}</td><td>{{soc.reddit.note}}</td></tr>
+            <tr><td>Snapchat</td><td>{{soc.snapchat.size}}</td><td>{{soc.snapchat.dur}}</td><td>{{soc.snapchat.note}}</td></tr>
+            <tr><td>Vimeo</td><td>{{soc.vimeo.size}}</td><td>{{soc.vimeo.dur}}</td><td>{{soc.vimeo.note}}</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="work">Work, school &amp; file transfer</h2>
+      <h2 id="work">{{sec.work}}</h2>
       <div class="table-scroll">
         <table class="ref-table">
-          <caption>Verified against official documentation · July 2026</caption>
+          <caption>{{cap.default}}</caption>
           <thead>
-            <tr><th>Service</th><th>Max file size</th><th>Notes</th></tr>
+            <tr><th>{{th.service}}</th><th>{{th.maxfile}}</th><th>{{th.notes}}</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Slack</td>
-              <td><span class="num">1&nbsp;GB</span></td>
-              <td>All plans. On the free plan, files older than a year are deleted.</td>
-            </tr>
-            <tr>
-              <td>Microsoft Teams</td>
-              <td><span class="num">250&nbsp;GB</span></td>
-              <td>For files shared via SharePoint/OneDrive storage; Microsoft's docs list chat attachments at 100&nbsp;MB.</td>
-            </tr>
-            <tr>
-              <td>Google Drive</td>
-              <td><span class="num">5&nbsp;TB</span></td>
-              <td>Per file, bounded by your storage quota and a 750&nbsp;GB/day upload cap. Google Classroom attachments inherit these limits.</td>
-            </tr>
-            <tr>
-              <td>Canvas LMS</td>
-              <td><span class="num">5&nbsp;GB</span></td>
-              <td>Per file, but the default course storage quota is only 500&nbsp;MB and many schools cap submissions lower — <a href="{{url.cv}}">compressing a screen recording</a> is often the only way in.</td>
-            </tr>
-            <tr>
-              <td>WeTransfer</td>
-              <td><span class="num">3&nbsp;GB</span> free</td>
-              <td>And max 10 transfers per rolling 30 days since the 2024 plan change; links expire in 3 days.</td>
-            </tr>
+            <tr><td>Slack</td><td>{{work.slack.size}}</td><td>{{work.slack.note}}</td></tr>
+            <tr><td>Microsoft Teams</td><td>{{work.teams.size}}</td><td>{{work.teams.note}}</td></tr>
+            <tr><td>Google Drive</td><td>{{work.drive.size}}</td><td>{{work.drive.note}}</td></tr>
+            <tr><td>Canvas LMS</td><td>{{work.canvas.size}}</td><td>{{work.canvas.note}}</td></tr>
+            <tr><td>WeTransfer</td><td>{{work.wetransfer.size}}</td><td>{{work.wetransfer.note}}</td></tr>
           </tbody>
         </table>
       </div>

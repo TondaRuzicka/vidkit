@@ -41,9 +41,11 @@ export default defineConfig({
         webm2mp3: resolve(import.meta.dirname,'webm-to-mp3/index.html'),
         video2mp3: resolve(import.meta.dirname,'video-to-mp3/index.html'),
         extractaudio: resolve(import.meta.dirname,'extract-audio-from-video/index.html'),
-        // Reference content (English-only)
+        // Reference content (en + cs)
         limits: resolve(import.meta.dirname,'video-upload-size-limits/index.html'),
         calc: resolve(import.meta.dirname,'video-bitrate-calculator/index.html'),
+        limits_cs: resolve(import.meta.dirname,'cs/limity-velikosti-videa/index.html'),
+        calc_cs: resolve(import.meta.dirname,'cs/kalkulacka-datoveho-toku/index.html'),
       },
     },
   },
