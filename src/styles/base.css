@@ -85,6 +85,44 @@ a { color: inherit; }
   max-width: 42rem;
 }
 
+/* Reference tables (limits page) ------------------------------------------ */
+.table-scroll { overflow-x: auto; margin-block: var(--space-4); }
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-400);
+  line-height: var(--lh-snug);
+}
+.ref-table caption {
+  text-align: left;
+  font-size: var(--fs-300);
+  color: var(--color-text-faint);
+  padding-block: var(--space-2);
+  caption-side: bottom;
+}
+.ref-table th, .ref-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+.ref-table thead th {
+  font-size: var(--fs-300);
+  font-weight: 600;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  border-bottom: 1px solid var(--color-border-strong);
+}
+.ref-table td:first-child { font-weight: 600; color: var(--color-text); white-space: nowrap; }
+.ref-table td { color: var(--color-text-muted); }
+.ref-table .num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-400);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
 /* 2. Buttons & links ------------------------------------------------------ */
 .button-primary,
 .button-ghost {

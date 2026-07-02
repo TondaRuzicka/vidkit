@@ -66,6 +66,8 @@ export const PAGES: readonly PageDef[] = [
   { id: 'webm2mp3', template: 'convert', locales: ['en'], slugs: { en: 'webm-to-mp3', cs: 'webm-to-mp3' } },
   { id: 'video2mp3', template: 'convert', locales: ['en'], slugs: { en: 'video-to-mp3', cs: 'video-to-mp3' } },
   { id: 'extractaudio', template: 'convert', locales: ['en'], slugs: { en: 'extract-audio-from-video', cs: 'extract-audio-from-video' } },
+  // Reference content (linkable assets) — no tool widget, English-only.
+  { id: 'limits', template: 'limits', locales: ['en'], slugs: { en: 'video-upload-size-limits', cs: 'video-upload-size-limits' } },
 ];
 
 // English-only pages still authored as standalone HTML (none right now). Listed

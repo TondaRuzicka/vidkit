@@ -56,6 +56,8 @@
   "audio.webm2mp3": "WebM na MP3",
   "url.extractaudio": "/extract-audio-from-video/",
   "audio.extractaudio": "Získat zvuk z videa",
+  "url.limits": "/video-upload-size-limits/",
+  "footer.limits": "Limity velikosti videí",
   "audio.heading": "Zvuk z videa",
   "audio.title": "Získat zvuk z videa",
   "audio.sub": "Potřebujete jen zvuk? Vytáhněte ho z jakéhokoli videa — v prohlížeči, nic se nenahrává."

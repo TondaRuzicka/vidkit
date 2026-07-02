@@ -56,6 +56,8 @@
   "audio.webm2mp3": "WebM to MP3",
   "url.extractaudio": "/extract-audio-from-video/",
   "audio.extractaudio": "Extract audio from video",
+  "url.limits": "/video-upload-size-limits/",
+  "footer.limits": "Video upload size limits",
   "audio.heading": "Extract audio",
   "audio.title": "Extract audio from video",
   "audio.sub": "Only need the sound? Pull the audio out of any video — in your browser, nothing uploaded."
