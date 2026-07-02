@@ -123,6 +123,104 @@ a { color: inherit; }
   white-space: nowrap;
 }
 
+/* Bitrate calculator ------------------------------------------------------ */
+.calc {
+  margin-block: var(--space-4);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.calc-form { padding: var(--space-4); }
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+.calc-field { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.calc-label {
+  font-size: var(--fs-300);
+  font-weight: 600;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+.calc-input-wrap {
+  display: flex; align-items: center; min-width: 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  padding-inline: var(--space-3);
+}
+.calc-input-wrap:focus-within { border-color: var(--color-accent); box-shadow: 0 0 0 3px var(--color-accent-ring); }
+.calc-input-wrap input {
+  flex: 1; width: 100%; min-width: 0;
+  border: none; background: none; outline: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-500);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+  padding-block: 0.6rem;
+  -moz-appearance: textfield;
+}
+.calc-input-wrap input::-webkit-outer-spin-button,
+.calc-input-wrap input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.calc-unit {
+  font-family: var(--font-mono); font-size: var(--fs-400);
+  color: var(--color-text-faint); padding-left: var(--space-2);
+}
+.calc-duration { display: flex; gap: var(--space-2); min-width: 0; }
+.calc-duration .calc-input-wrap { flex: 1 1 0; min-width: 0; }
+.calc-select-wrap {
+  display: block; position: relative; min-width: 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+}
+.calc-select-wrap:focus-within { border-color: var(--color-accent); box-shadow: 0 0 0 3px var(--color-accent-ring); }
+.calc-select-wrap::after {
+  content: ""; position: absolute; right: var(--space-3); top: 50%;
+  width: 8px; height: 8px; border-right: 2px solid var(--color-text-faint);
+  border-bottom: 2px solid var(--color-text-faint);
+  transform: translateY(-70%) rotate(45deg); pointer-events: none;
+}
+.calc-select-wrap select {
+  width: 100%; border: none; background: none; outline: none; cursor: pointer;
+  font-family: var(--font-sans); font-size: var(--fs-500); color: var(--color-text);
+  padding: 0.62rem var(--space-4) 0.62rem var(--space-3);
+  -webkit-appearance: none; appearance: none;
+}
+
+.calc-result { border-top: 1px solid var(--color-border); padding: var(--space-4); background: var(--color-bg-tint); }
+.calc-figures { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-3); }
+.calc-fig {
+  flex: 1; min-width: 8rem;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+}
+.calc-fig--primary { border-color: var(--color-accent-line); background: var(--color-accent-softer); }
+.calc-fig-k {
+  display: block; font-family: var(--font-mono); font-size: var(--fs-300);
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-faint);
+}
+.calc-fig-v {
+  display: block; margin-top: 2px;
+  font-family: var(--font-mono); font-size: var(--fs-800); font-weight: 600;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.calc-fig--primary .calc-fig-v { color: var(--color-accent); }
+.calc-verdict { color: var(--color-text-muted); margin-bottom: var(--space-4); }
+.calc-verdict[data-verdict="tight"], .calc-verdict[data-verdict="tooSmall"] { color: var(--color-warning); }
+.calc-cta { margin-left: 0; }
+.calc-noscript { padding: var(--space-4); color: var(--color-text-muted); border-top: 1px solid var(--color-border); }
+
+@media (max-width: 34rem) {
+  .calc-grid { grid-template-columns: 1fr; }
+}
+
 /* 2. Buttons & links ------------------------------------------------------ */
 .button-primary,
 .button-ghost {

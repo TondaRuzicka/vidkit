@@ -81,5 +81,13 @@
   "status.probing.audio": "Reading file…",
   "dropzone.label.audio": "Drop a file here or browse files",
   "dropzone.replace.audio": "Choose a different file",
-  "dropzone.hint.audio": "MP4, MOV, M4A, WAV, MKV — stays on your device"
+  "dropzone.hint.audio": "MP4, MOV, M4A, WAV, MKV — stays on your device",
+  "calc.unit.kbps": "{n} kbps",
+  "calc.unit.mbps": "{n} Mbps",
+  "calc.verdict.ok": "That's enough for crisp video up to {res} at {fps} fps. Higher resolutions will still encode, just a little softer.",
+  "calc.verdict.soft": "Enough for about 360p. Larger resolutions will look visibly soft at this bitrate — shorten the clip or allow a bigger file for HD.",
+  "calc.verdict.tight": "Even 360p would look blocky at this bitrate. Trim the clip, drop the audio, or allow a larger file.",
+  "calc.verdict.tooSmall": "This size is too small to hold the audio and container for a clip this long. Increase the size or shorten the clip.",
+  "calc.cta": "Compress a video to {mb} MB",
+  "calc.cta.generic": "Open the compressor"
 }

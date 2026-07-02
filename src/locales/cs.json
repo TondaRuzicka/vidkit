@@ -81,5 +81,13 @@
   "status.probing.audio": "Čtu soubor…",
   "dropzone.label.audio": "Přetáhněte soubor sem nebo procházejte",
   "dropzone.replace.audio": "Vyberte jiný soubor",
-  "dropzone.hint.audio": "MP4, MOV, M4A, WAV, MKV — zůstává ve vašem zařízení"
+  "dropzone.hint.audio": "MP4, MOV, M4A, WAV, MKV — zůstává ve vašem zařízení",
+  "calc.unit.kbps": "{n} kbps",
+  "calc.unit.mbps": "{n} Mbps",
+  "calc.verdict.ok": "To stačí na ostré video až do {res} při {fps} fps. Vyšší rozlišení se také zakódují, jen budou o něco měkčí.",
+  "calc.verdict.soft": "Stačí zhruba na 360p. Vyšší rozlišení bude při tomto datovém toku viditelně měkké — zkraťte klip nebo povolte větší soubor pro HD.",
+  "calc.verdict.tight": "I 360p by při tomto datovém toku bylo kostrbaté. Zkraťte klip, vypněte zvuk nebo povolte větší soubor.",
+  "calc.verdict.tooSmall": "Tato velikost je pro takto dlouhý klip příliš malá i na zvuk a kontejner. Zvětšete velikost nebo zkraťte klip.",
+  "calc.cta": "Zmenšit video na {mb} MB",
+  "calc.cta.generic": "Otevřít kompresor"
 }

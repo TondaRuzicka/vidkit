@@ -1,0 +1,127 @@
+<main id="main">
+  <section class="hero hero--tool">
+    <div class="container container--prose">
+      <p class="eyebrow">{{hero.eyebrow}}</p>
+      <h1>{{hero.title}}</h1>
+      <p class="lead">{{hero.lead}}</p>
+    </div>
+  </section>
+
+  <div class="container container--prose">
+    <div
+      id="bitrate-calc"
+      class="calc"
+      data-url-cv="{{url.cv}}"
+      data-url-cv10="{{url.cv10}}"
+      data-url-cv25="{{url.cv25}}"
+    >
+      <form class="calc-form" novalidate>
+        <div class="calc-grid">
+          <div class="calc-field">
+            <label class="calc-label" for="calc-size">{{form.size}}</label>
+            <span class="calc-input-wrap">
+              <input id="calc-size" name="size-mb" type="number" inputmode="decimal" min="0" step="1" value="10" />
+              <span class="calc-unit">MB</span>
+            </span>
+          </div>
+
+          <div class="calc-field">
+            <span class="calc-label" id="calc-dur-label">{{form.duration}}</span>
+            <span class="calc-duration" role="group" aria-labelledby="calc-dur-label">
+              <span class="calc-input-wrap">
+                <input name="dur-min" type="number" inputmode="numeric" min="0" step="1" value="5" aria-label="minutes" />
+                <span class="calc-unit">min</span>
+              </span>
+              <span class="calc-input-wrap">
+                <input name="dur-sec" type="number" inputmode="numeric" min="0" max="59" step="1" value="0" aria-label="seconds" />
+                <span class="calc-unit">sec</span>
+              </span>
+            </span>
+          </div>
+
+          <div class="calc-field">
+            <label class="calc-label" for="calc-audio">{{form.audio}}</label>
+            <span class="calc-select-wrap">
+              <select id="calc-audio" name="audio-kbps">
+                <option value="128">{{form.audio.128}}</option>
+                <option value="96">{{form.audio.96}}</option>
+                <option value="64">{{form.audio.64}}</option>
+                <option value="0">{{form.audio.none}}</option>
+              </select>
+            </span>
+          </div>
+
+          <div class="calc-field">
+            <label class="calc-label" for="calc-fps">{{form.fps}}</label>
+            <span class="calc-select-wrap">
+              <select id="calc-fps" name="fps">
+                <option value="24">24 fps</option>
+                <option value="30" selected>30 fps</option>
+                <option value="60">60 fps</option>
+              </select>
+            </span>
+          </div>
+        </div>
+      </form>
+
+      <div class="calc-result" hidden>
+        <div class="calc-figures">
+          <div class="calc-fig calc-fig--primary">
+            <span class="calc-fig-k">{{out.video}}</span>
+            <span class="calc-fig-v" data-out="video">—</span>
+          </div>
+          <div class="calc-fig">
+            <span class="calc-fig-k">{{out.total}}</span>
+            <span class="calc-fig-v" data-out="total">—</span>
+          </div>
+        </div>
+        <p class="calc-verdict" data-out="verdict" role="status" aria-live="polite"></p>
+        <a class="button-primary calc-cta" data-out="cta" href="{{url.cv}}">{{cta.h2}}</a>
+      </div>
+
+      <noscript>
+        <p class="calc-noscript">{{form.noscript}}</p>
+      </noscript>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container container--prose prose">
+      <h2>{{prose.h2}}</h2>
+      <p>{{prose.p1}}</p>
+      <p>{{prose.p2}}</p>
+      <p>{{prose.p3}}</p>
+
+      <h2>{{cta.h2}}</h2>
+      <p>{{cta.p1}}</p>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><h2>{{faq.heading}}</h2></div>
+      <div class="faq">
+        <details class="faq-item">
+          <summary>{{faq.q1}}<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+          <div>{{faq.a1}}</div>
+        </details>
+        <details class="faq-item">
+          <summary>{{faq.q2}}<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+          <div>{{faq.a2}}</div>
+        </details>
+        <details class="faq-item">
+          <summary>{{faq.q3}}<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+          <div>{{faq.a3}}</div>
+        </details>
+        <details class="faq-item">
+          <summary>{{faq.q4}}<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+          <div>{{faq.a4}}</div>
+        </details>
+        <details class="faq-item">
+          <summary>{{faq.q5}}<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+          <div>{{faq.a5}}</div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>

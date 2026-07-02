@@ -58,6 +58,8 @@
   "audio.extractaudio": "Získat zvuk z videa",
   "url.limits": "/video-upload-size-limits/",
   "footer.limits": "Limity velikosti videí",
+  "url.calc": "/video-bitrate-calculator/",
+  "footer.calc": "Kalkulačka datového toku",
   "audio.heading": "Zvuk z videa",
   "audio.title": "Získat zvuk z videa",
   "audio.sub": "Potřebujete jen zvuk? Vytáhněte ho z jakéhokoli videa — v prohlížeči, nic se nenahrává."

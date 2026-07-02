@@ -58,6 +58,8 @@
   "audio.extractaudio": "Extract audio from video",
   "url.limits": "/video-upload-size-limits/",
   "footer.limits": "Video upload size limits",
+  "url.calc": "/video-bitrate-calculator/",
+  "footer.calc": "Video bitrate calculator",
   "audio.heading": "Extract audio",
   "audio.title": "Extract audio from video",
   "audio.sub": "Only need the sound? Pull the audio out of any video — in your browser, nothing uploaded."

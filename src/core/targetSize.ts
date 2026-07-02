@@ -8,7 +8,7 @@ export const MAX_ATTEMPTS = 3; // 1 encode + 2 retries
 // Floor on average video bitrate; quality is governed by FLOOR_BPP (the
 // ladder shrinks resolution first), so this only rejects absurd budgets.
 const MIN_VIDEO_BPS = 50_000;
-const MIN_BPP = 0.045; // below this H.264 turns to mush
+export const MIN_BPP = 0.045; // below this H.264 turns to mush; also the calculator's watchable floor
 const FLOOR_BPP = 0.03; // refuse outright below this at the floor rung
 const AUDIO_LADDER_BPS = [128_000, 96_000, 64_000, 48_000, 32_000];
 const MAX_AUDIO_BUDGET_SHARE = 0.15;
@@ -22,8 +22,8 @@ export const WEBCODECS_MIN_AUDIO_BPS = 96_000;
 const LONG_EDGE_LADDER = [2160, 1440, 1080, 864, 720, 640, 540, 480, 426, 320];
 const FPS_LADDER = [24, 20, 15];
 /** Per-frame container overhead (sample tables in moov) plus fixed boxes. */
-const OVERHEAD_PER_FRAME_BYTES = 12;
-const OVERHEAD_FIXED_BYTES = 4096;
+export const OVERHEAD_PER_FRAME_BYTES = 12;
+export const OVERHEAD_FIXED_BYTES = 4096;
 
 export interface BudgetPlan extends EncodePlan {
   targetBytes: number | null; // null in quality mode (no verify loop)

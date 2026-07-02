@@ -43,6 +43,7 @@ export default defineConfig({
         extractaudio: resolve(import.meta.dirname,'extract-audio-from-video/index.html'),
         // Reference content (English-only)
         limits: resolve(import.meta.dirname,'video-upload-size-limits/index.html'),
+        calc: resolve(import.meta.dirname,'video-bitrate-calculator/index.html'),
       },
     },
   },
