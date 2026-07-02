@@ -6,6 +6,15 @@ never leaves your machine.
 
 🔗 **Live:** https://vidkit.eu
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-teal.svg)](LICENSE)
+[![Processing: 100% client-side](https://img.shields.io/badge/processing-100%25%20client--side-0c8e84.svg)](https://vidkit.eu/#privacy)
+[![Privacy: enforced by e2e test](https://img.shields.io/badge/no%20upload-enforced%20by%20e2e%20test-0c8e84.svg)](e2e/privacy.spec.ts)
+
+![Compressing a 36 MB video to an 8 MB target directly in the browser — done in seconds, nothing uploaded](docs/demo.gif)
+
+*A 36 MB clip compressed to a target size in seconds, on-device via WebCodecs.
+Try it at [vidkit.eu/compress-video](https://vidkit.eu/compress-video/).*
+
 ## Why it's private
 
 Every other "online video compressor" uploads your video to a server, processes
@@ -31,6 +40,9 @@ your file. All processing runs **locally in your browser**:
   MP3 / M4A and animated GIF.
 - Side-by-side before/after preview before you download.
 - English and Czech, with a non-intrusive language suggestion (no auto-redirect).
+- A maintained reference of
+  [video upload size limits for every platform](https://vidkit.eu/video-upload-size-limits/)
+  (Discord, WhatsApp, Gmail, TikTok, …), verified against official docs.
 
 ## How it works
 
