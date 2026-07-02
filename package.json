@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "test": "npm run test:unit",
     "postinstall": "node scripts/copy-ffmpeg-core.mjs",
+    "og:gen": "node scripts/gen-og-images.mjs",
     "test:unit": "node --test --experimental-strip-types src/core/*.test.ts",
     "test:e2e": "playwright test"
   },
