@@ -24,6 +24,12 @@ export interface Controls {
   el: HTMLElement;
   getOptions(): CompressOptions;
   setDisabled(disabled: boolean): void;
+  /**
+   * Programmatically select a target size (used by the "compress to X MB
+   * instead" suggestion). No-op on locked pages — their target is the page's
+   * promise.
+   */
+  setTargetMB(mb: number): void;
 }
 
 const PRESETS_MB = [8, 10, 16, 25, 50];
@@ -50,6 +56,7 @@ export function createControls(config: ControlsConfig): Controls {
         targetMB: config.lockedTargetMB!,
       }),
       setDisabled: () => {},
+      setTargetMB: () => {},
     };
   }
 
@@ -256,6 +263,18 @@ export function createControls(config: ControlsConfig): Controls {
     },
     setDisabled(disabled) {
       for (const input of el.querySelectorAll('input')) input.disabled = disabled;
+    },
+    setTargetMB(mb) {
+      targetMB = Math.min(Math.max(Math.round(mb), CUSTOM_MIN), CUSTOM_MAX);
+      const preset = el.querySelector<HTMLInputElement>(
+        `input[name="target-mb"][value="${targetMB}"]`,
+      );
+      if (preset) {
+        preset.checked = true;
+      } else {
+        customRadio.querySelector('input')!.checked = true;
+        customInput.value = String(targetMB);
+      }
     },
   };
 }

@@ -4,6 +4,7 @@ import { CompressError, type ProbeResult } from './types.ts';
 import {
   buildPlan,
   fitToLongEdge,
+  minFeasibleTargetMB,
   pickLadderRung,
   retryVideoBps,
 } from './targetSize.ts';
@@ -97,6 +98,30 @@ test('20min into 8MB is refused rather than producing mush', () => {
     (err: unknown) =>
       err instanceof CompressError && err.code === 'targetTooSmall',
   );
+});
+
+test('minFeasibleTargetMB finds the exact feasibility boundary', () => {
+  const p = probe({ durationS: 1200 });
+  const mb = minFeasibleTargetMB(p, 24_000);
+  assert.ok(mb !== null && mb > 8, `suggested ${mb} MB`);
+  // Feasible at the suggestion, infeasible one MB below — a true boundary.
+  assert.doesNotThrow(() =>
+    buildPlan({ mode: 'target', targetMB: mb! }, p, undefined, 24_000),
+  );
+  assert.throws(() =>
+    buildPlan({ mode: 'target', targetMB: mb! - 1 }, p, undefined, 24_000),
+  );
+});
+
+test('minFeasibleTargetMB is small for short clips', () => {
+  const mb = minFeasibleTargetMB(probe({ durationS: 10 }), 24_000);
+  assert.ok(mb !== null && mb <= 2, `suggested ${mb} MB`);
+});
+
+test('minFeasibleTargetMB returns null when nothing under the cap works', () => {
+  // 100 hours: even the audio floor alone exceeds the 512 MB search cap.
+  const mb = minFeasibleTargetMB(probe({ durationS: 360_000 }), 24_000);
+  assert.equal(mb, null);
 });
 
 test('high-bitrate audio gets re-encoded down, passthrough when it fits', () => {

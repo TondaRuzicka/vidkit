@@ -55,6 +55,8 @@
   "error.cancelled": "Komprese zrušena.",
   "error.notVideo": "Tento soubor nevypadá jako video, které umíme načíst. Zkuste soubor MP4, MOV, WebM, MKV nebo AVI.",
   "error.targetTooSmall": "Tento cíl je pro takto dlouhé video příliš malý — výsledek by byl nekoukatelný. Zvolte větší cílovou velikost.",
+  "error.targetTooSmall.suggest": "Tento cíl je pro takto dlouhé video příliš malý — výsledek by byl nekoukatelný. Toto video potřebuje alespoň zhruba {mb} MB.",
+  "error.useSuggested": "Komprimovat na {mb} MB",
   "error.fileTooLargeForFallback": "Tento soubor vyžaduje engine kompatibility (kvůli svému formátu nebo tomuto prohlížeči), který nezvládne soubory nad 1,5 GB. Převeďte ho nejprve do MP4, nebo pro velké soubory MP4, MOV, WebM a MKV použijte Chrome či Edge.",
   "error.noEngine": "Váš prohlížeč neumí kompresor spustit. Aktualizujte prosím na aktuální verzi Chrome, Firefox, Safari nebo Edge.",
   "error.decode": "Toto video se nepodařilo otevřít. Soubor může být poškozený nebo v formátu, který tento nástroj neumí načíst.",

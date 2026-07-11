@@ -1,6 +1,13 @@
 /// <reference lib="webworker" />
 import { compress } from '../core/compress.ts';
-import { CompressError, type UiToWorker, type WorkerToUi } from '../core/types.ts';
+import { minFeasibleTargetMB, WEBCODECS_MIN_AUDIO_BPS } from '../core/targetSize.ts';
+import {
+  CompressError,
+  type ProbeResult,
+  type UiToWorker,
+  type WorkerToUi,
+} from '../core/types.ts';
+import { FFMPEG_MAX_INPUT_BYTES, FFMPEG_MIN_AUDIO_BPS } from '../engines/ffmpeg.ts';
 
 const post = (msg: WorkerToUi) =>
   (self as DedicatedWorkerGlobalScope).postMessage(msg);
@@ -21,6 +28,7 @@ self.onmessage = async (event: MessageEvent<UiToWorker>) => {
   let frameCount = 1;
   let etaMs: number | null = null;
   let lastPost = 0;
+  let probed: ProbeResult | null = null;
 
   try {
     const { blob, stats } = await compress(
@@ -28,6 +36,7 @@ self.onmessage = async (event: MessageEvent<UiToWorker>) => {
       msg.options,
       {
         onProbe: (meta) => {
+          probed = meta;
           // Audio-only inputs have no video frames — fall back to a
           // duration-based denominator so the progress fraction still maps.
           frameCount =
@@ -59,7 +68,25 @@ self.onmessage = async (event: MessageEvent<UiToWorker>) => {
     post({ type: 'done', blob, stats });
   } catch (err) {
     if (err instanceof CompressError) {
-      post({ type: 'error', code: err.code, detail: err.message });
+      // An infeasible target is the most common real-world failure. Compute
+      // the smallest target this exact video CAN hit (using the most
+      // permissive engine that could take the file) so the UI can offer it.
+      let suggestedTargetMB: number | undefined;
+      // TS can't see the onProbe-closure assignment, so widen explicitly.
+      const meta = probed as ProbeResult | null;
+      if (
+        err.code === 'targetTooSmall' &&
+        msg.options.mode === 'target' &&
+        meta?.video
+      ) {
+        const minAudioBps =
+          msg.file.size <= FFMPEG_MAX_INPUT_BYTES
+            ? FFMPEG_MIN_AUDIO_BPS
+            : WEBCODECS_MIN_AUDIO_BPS;
+        const mb = minFeasibleTargetMB(meta, minAudioBps, msg.options.format);
+        if (mb !== null && mb > msg.options.targetMB) suggestedTargetMB = mb;
+      }
+      post({ type: 'error', code: err.code, detail: err.message, suggestedTargetMB });
     } else {
       post({ type: 'error', code: 'unknown', detail: String(err) });
     }

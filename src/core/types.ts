@@ -81,7 +81,13 @@ export type WorkerToUi =
       stage: 'probe' | 'encode' | 'retry';
     }
   | { type: 'done'; blob: Blob; stats: ResultStats }
-  | { type: 'error'; code: ErrorCode; detail?: string };
+  | {
+      type: 'error';
+      code: ErrorCode;
+      detail?: string;
+      /** For targetTooSmall: smallest whole-MB target this video can hit. */
+      suggestedTargetMB?: number;
+    };
 
 export class CompressError extends Error {
   code: ErrorCode;

@@ -52,13 +52,16 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
 
   const errorText = h('p', {});
   const retryBtn = h('button', { type: 'button', class: 'button-secondary' }, t('error.tryAgain'));
+  // One-click recovery for targetTooSmall: pre-set the smallest feasible
+  // target and restart. Hidden unless the worker sent a suggestion.
+  const suggestBtn = h('button', { type: 'button', class: 'button-primary', hidden: true });
   const errorBox = h(
     'div',
     { class: 'widget-error error-state', role: 'alert', hidden: true },
     h('span', { class: 'error-state__icon' }, icon(ERROR_ICON)),
     h('h3', {}, t('error.heading')),
     errorText,
-    retryBtn,
+    h('div', { class: 'error-actions' }, suggestBtn, retryBtn),
   );
 
   const setupSection = h(
@@ -160,7 +163,7 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
           break;
         case 'error':
           cleanupWorker();
-          showError(msg.code);
+          showError(msg.code, msg.suggestedTargetMB);
           track('compressor_failed', { code: msg.code });
           break;
       }
@@ -188,10 +191,30 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
     }, 2000);
   };
 
-  function showError(code: ErrorCode): void {
-    errorText.textContent = t(`error.${code}`);
+  let suggestedMB: number | null = null;
+
+  function showError(code: ErrorCode, suggestMB?: number): void {
+    suggestedMB = suggestMB ?? null;
+    // Locked pages keep their promised target — show the explanation but not
+    // the switch-target action.
+    const canApply = suggestedMB !== null && config.lockedTargetMB === null;
+    errorText.textContent =
+      suggestedMB !== null
+        ? t('error.targetTooSmall.suggest', { mb: suggestedMB })
+        : t(`error.${code}`);
+    suggestBtn.hidden = !canApply;
+    if (canApply) suggestBtn.textContent = t('error.useSuggested', { mb: suggestedMB! });
     setState('error');
   }
+
+  suggestBtn.addEventListener('click', () => {
+    if (suggestedMB === null || !file) return;
+    controls.setTargetMB(suggestedMB);
+    updateNotice();
+    setState('ready');
+    track('compressor_suggestion_used');
+    startBtn.click();
+  });
 
   retryBtn.addEventListener('click', () => {
     setState(file ? 'ready' : 'idle');

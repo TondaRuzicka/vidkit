@@ -30,6 +30,12 @@ const jobs = [
   [join(dir, 'e2e-10s.mkv'), ['-i', BASE_10, '-c', 'copy']],
   [join(dir, 'e2e-10s.mov'), ['-i', BASE_10, '-c', 'copy']],
   [join(dir, 'e2e-not-a-video.mp4'), ['-f', 'lavfi', '-i', 'color=red:size=64x64:duration=0.04', '-frames:v', '1', '-f', 'mjpeg']],
+  // Long but tiny: at 240s a 2 MB target is infeasible (the audio floor alone
+  // eats the budget), which exercises the targetTooSmall suggestion path.
+  // Low res keeps generation and any follow-up encode fast.
+  [join(dir, 'e2e-240s.mp4'), ['-f', 'lavfi', '-i', 'testsrc2=duration=240:size=320x180:rate=30',
+             '-f', 'lavfi', '-i', 'sine=frequency=440:duration=240',
+             '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-b:v', '500k', '-c:a', 'aac', '-b:a', '96k', '-shortest']],
 ];
 
 for (const [out, args] of jobs) {

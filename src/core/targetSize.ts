@@ -1,4 +1,4 @@
-import { formatOf } from './formats.ts';
+import { formatOf, type FormatId } from './formats.ts';
 import { CompressError, type CompressOptions, type EncodePlan, type ProbeResult } from './types.ts';
 
 // All tunables in one place — adjust here after measuring real encoders.
@@ -240,4 +240,35 @@ export function retryVideoBps(
   return Math.floor(
     plan.videoBps * (plan.targetBytes / actualBytes) * RETRY_SHRINK,
   );
+}
+
+/**
+ * Smallest whole-MB target for which buildPlan accepts this video, or null if
+ * even `maxMB` is infeasible. Used to turn a targetTooSmall refusal into a
+ * concrete suggestion ("this video needs at least ~X MB"). Binary search over
+ * buildPlan itself, so it can never drift from the real feasibility rules.
+ */
+export function minFeasibleTargetMB(
+  probe: ProbeResult,
+  minAudioBps: number,
+  format?: FormatId,
+  maxMB = 512,
+): number | null {
+  const feasible = (targetMB: number): boolean => {
+    try {
+      buildPlan({ format, mode: 'target', targetMB }, probe, undefined, minAudioBps);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+  if (!feasible(maxMB)) return null;
+  let lo = 1;
+  let hi = maxMB;
+  while (lo < hi) {
+    const mid = (lo + hi) >> 1;
+    if (feasible(mid)) hi = mid;
+    else lo = mid + 1;
+  }
+  return lo;
 }

@@ -311,6 +311,10 @@
 .error-state__icon svg { width: 24px; height: 24px; }
 .widget-error.error-state h3 { font-size: var(--fs-600); color: var(--color-error); margin: 0; }
 .widget-error.error-state p { font-size: var(--fs-400); color: var(--color-text-muted); max-width: 42ch; margin: 0; }
+.error-actions {
+  display: flex; flex-wrap: wrap; gap: var(--space-3);
+  justify-content: center; margin-top: var(--space-2);
+}
 
 /* Responsive -------------------------------------------------------------- */
 @media (max-width: 34rem) {
