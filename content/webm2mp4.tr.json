@@ -1,0 +1,19 @@
+{
+  "meta.title": "WebM MP4 Dönüştürücü — Ücretsiz, Tarayıcıda, Yükleme Yok | {{SITE_NAME}}",
+  "meta.description": ".webm videosunu doğrudan tarayıcınızda .mp4'e dönüştürün. Hiçbir şey yüklenmez — dosyanız cihazınızdan asla çıkmaz. Ücretsiz, kayıt yok, filigran yok.",
+  "og.title": "WebM'i MP4'e Dönüştür — Ücretsiz, Yükleme Yok",
+  "og.description": ".webm'i tarayıcınızda yerel olarak .mp4'e dönüştürün. Hiçbir şey cihazınızdan çıkmaz.",
+  "hero.eyebrow": "Dönüştür · WebM → MP4",
+  "hero.title": "WebM'i MP4'e dönüştürün — tam tarayıcınızda",
+  "hero.lead": "Bir .webm dosyası bırakın — bir ekran kaydı, indirilmiş bir klip — ve telefonlarda, editörlerde ve sosyal uygulamalarda oynatılan standart bir .mp4 alın. Kendi cihazınızda dönüştürülür ve asla yüklenmez.",
+  "convert.format": "mp4",
+  "prose.h2": "Neden WebM'i MP4'e dönüştürmeli?",
+  "prose.p1": "WebM, web videoları ve ekran kayıtları için yaygındır, ancak birçok video editörüne aktarılmaz ve bazı telefonlarda ve TV'lerde oynatılmaz. MP4 (H.264) var olan en yaygın desteklenen biçimdir, dolayısıyla dönüştürmek çoğu \"bu video açılmıyor\" sorununu çözer.",
+  "prose.p2": "Çoğu dönüştürücü, klibinizi önce bir sunucuya yükler. {{SITE_NAME}} yüklemez — dönüştürme yerel olarak tarayıcınızda çalışır, böylece büyük klipler bile yavaş bir yükleme olmadan dönüşür ve hiçbir şey saklanmaz veya kaydedilmez.",
+  "faq.q1": ".webm dosyam bir yere yükleniyor mu?",
+  "faq.a1": "Hayır. Dönüştürme tamamen tarayıcınızda, kendi cihazınızda gerçekleşir. Dosyayı alabilecek bir sunucu yoktur — çalışırken tarayıcınızın Ağ (Network) sekmesini kontrol edin ve sıfır baytın çıktığını görün.",
+  "faq.q2": "MP4 aynı görünecek mi?",
+  "faq.a2": "Dönüştürme videoyu yeniden kodlar, dolayısıyla bir miktar kayıp olur, ancak varsayılan ayarlarda fark etmek zordur. Dönüştürmeden önce bir hedef boyut ya da kalite düzeyi de seçebilirsiniz.",
+  "faq.q3": "Uzun ekran kayıtlarını dönüştürebilir mi?",
+  "faq.a3": "Evet. Chrome veya Edge'de yaklaşık 2&nbsp;GB'ye kadar dosyalar desteklenir. Diğer tarayıcılardaki çok büyük dosyalar, sessizce başarısız olmak yerine net bir mesajla reddedilebilir."
+}

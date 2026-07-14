@@ -1,0 +1,19 @@
+{
+  "meta.title": "MKV MP4 Dönüştürücü — Ücretsiz, Tarayıcıda, Yükleme Yok | {{SITE_NAME}}",
+  "meta.description": ".mkv (Matroska) videosunu doğrudan tarayıcınızda .mp4'e dönüştürün. Hiçbir şey yüklenmez — dosyanız cihazınızdan asla çıkmaz. Ücretsiz, kayıt yok, filigran yok.",
+  "og.title": "MKV'yi MP4'e Dönüştür — Ücretsiz, Yükleme Yok",
+  "og.description": ".mkv'yi tarayıcınızda yerel olarak .mp4'e dönüştürün. Hiçbir şey cihazınızdan çıkmaz.",
+  "hero.eyebrow": "Dönüştür · MKV → MP4",
+  "hero.title": "MKV'yi MP4'e dönüştürün — tam tarayıcınızda",
+  "hero.lead": "Bir .mkv (Matroska) dosyası bırakın ve telefonlarda, akıllı TV'lerde ve MKV'yi reddeden editörlerde oynatılan standart bir .mp4 alın. Kendi cihazınızda dönüştürülür ve asla yüklenmez.",
+  "convert.format": "mp4",
+  "prose.h2": "Neden MKV'yi MP4'e dönüştürmeli?",
+  "prose.p1": "MKV, yüksek kaliteli video için popüler, esnek bir kapsayıcıdır, ancak birçok telefon, TV, tarayıcı ve editör onu açmaz. MP4 (H.264) evrensel varsayılandır, dolayısıyla dönüştürmek aynı videonun neredeyse her yerde oynatılmasını sağlar.",
+  "prose.p2": "Çoğu dönüştürücü, klibinizi önce bir sunucuya yükler. {{SITE_NAME}} yüklemez — dönüştürme yerel olarak tarayıcınızda çalışır, böylece büyük MKV dosyaları bile yavaş bir yükleme olmadan dönüşür ve hiçbir şey saklanmaz veya kaydedilmez.",
+  "faq.q1": ".mkv dosyam bir yere yükleniyor mu?",
+  "faq.a1": "Hayır. Dönüştürme tamamen tarayıcınızda, kendi cihazınızda gerçekleşir. Dosyayı alabilecek bir sunucu yoktur — çalışırken tarayıcınızın Ağ (Network) sekmesini izleyin ve sıfır baytın çıktığını görün.",
+  "faq.q2": "MP4 kalite kaybeder mi?",
+  "faq.a2": "Dönüştürme videoyu yeniden kodlar, dolayısıyla bir miktar kayıp olur, ancak varsayılan ayarlarda fark etmek zordur. Dönüştürmeden önce bir hedef boyut ya da kalite düzeyi de seçebilirsiniz.",
+  "faq.q3": "Film uzunluğundaki büyük MKV dosyaları ne olacak?",
+  "faq.a3": "Chrome veya Edge'de yaklaşık 2&nbsp;GB'ye kadar dosyalar desteklenir. Diğer tarayıcılardaki daha büyük dosyalar, sessizce başarısız olmak yerine net bir mesajla reddedilebilir — en büyük dosyalar için Chrome'u deneyin."
+}

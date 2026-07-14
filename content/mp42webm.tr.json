@@ -1,0 +1,19 @@
+{
+  "meta.title": "MP4 WebM Dönüştürücü — Ücretsiz, Tarayıcıda, Yükleme Yok | {{SITE_NAME}}",
+  "meta.description": ".mp4 videosunu doğrudan tarayıcınızda .webm'e dönüştürün. Web için daha küçük dosyalar, hiçbir şey yüklenmez — videonuz cihazınızdan asla çıkmaz. Ücretsiz, filigran yok.",
+  "og.title": "MP4'ü WebM'e Dönüştür — Ücretsiz, Yükleme Yok",
+  "og.description": ".mp4'ü tarayıcınızda yerel olarak .webm'e dönüştürün. Hiçbir şey cihazınızdan çıkmaz.",
+  "hero.eyebrow": "Dönüştür · MP4 → WebM",
+  "hero.title": "MP4'ü WebM'e dönüştürün — tam tarayıcınızda",
+  "hero.lead": "Bir .mp4 bırakın ve bir .webm alın — web için tasarlanmış açık biçim, aynı kalitede genellikle daha küçük. Kendi cihazınızda dönüştürülür ve asla yüklenmez.",
+  "convert.format": "webm",
+  "prose.h2": "Neden MP4'ü WebM'e dönüştürmeli?",
+  "prose.p1": "WebM, web için tasarlanmış açık, telifsiz biçimdir. Benzer kalitede MP4'ten daha küçük olma eğilimindedir ve arka plan videoları, HTML5 <code>&lt;video&gt;</code> ve hafif, lisanssız bir dosya istediğiniz yerler için idealdir.",
+  "prose.p2": "Çoğu dönüştürücü, klibinizi önce bir sunucuya yükler. {{SITE_NAME}} yüklemez — dönüştürme yerel olarak tarayıcınızda çalışır. WebM dahili yazılım motorunu kullanır, dolayısıyla MP4 hızlı yolundan daha yavaştır ama hiçbir şey asla saklanmaz veya kaydedilmez.",
+  "faq.q1": ".mp4 dosyam bir yere yükleniyor mu?",
+  "faq.a1": "Hayır. Dönüştürme tamamen tarayıcınızda, kendi cihazınızda gerçekleşir. Dosyayı alabilecek bir sunucu yoktur — çalışırken tarayıcınızın Ağ (Network) sekmesini izleyin ve sıfır baytın çıktığını görün.",
+  "faq.q2": "WebM neden daha uzun sürüyor?",
+  "faq.a2": "WebM, tarayıcıların çıktı için donanım hızlandırması yapamadığı bir yazılım kodlayıcısı kullanır, dolayısıyla MP4'e dönüştürmekten daha yavaştır. En hızlı sonuçlar için klipleri kısa tutun.",
+  "faq.q3": "Her yerde oynatılır mı?",
+  "faq.a3": "WebM tüm modern tarayıcılarda ve Android'de oynatılır, ancak her eski cihazda ya da bazı editörlerde oynatılmaz. Bunun yerine maksimum uyumluluğa ihtiyacınız varsa MP4'e dönüştürün."
+}

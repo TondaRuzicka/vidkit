@@ -1,0 +1,22 @@
+{
+  "meta.title": "Video 25 MB'ye Sıkıştırma — Ücretsiz, Yükleme Yok | {{SITE_NAME}}",
+  "meta.description": "Herhangi bir videoyu Discord Nitro Basic, Gmail ve Outlook ekleri için 25 MB'nin altına küçültün. Tarayıcınızda çalışır — videonuz asla yüklenmez.",
+  "og.title": "Video 25 MB'ye Sıkıştır — Ücretsiz, Yükleme Yok",
+  "og.description": "Herhangi bir videoyu tarayıcınızda 25 MB'nin altına sığdırın. Hiçbir şey yüklenmez.",
+  "hero.eyebrow": "Hazır ayar · 25 MB hedef",
+  "hero.title": "Bir videoyu 25 MB'ye sıkıştırın",
+  "hero.lead": "25&nbsp;MB, Gmail ve Outlook ekleri ile Discord'un klasik Nitro yükleme sınırı için sihirli sayıdır. Videonuzu aşağıya bırakın; kendi cihazınızda 25&nbsp;MB'nin hemen altına sıkıştırılsın — yükleme yok, hesap yok, filigran yok.",
+  "prose.h2": "Neden 25 MB ve ne beklemeli",
+  "prose.p1": "Gmail ve Outlook ekleri 25&nbsp;MB ile sınırlar ve Discord'un Nitro Basic katmanı da aynı sınırı kullanır. Çoğu hizmet tam bayt sayısını kontrol eder, bu yüzden \"25,1&nbsp;MB\"lik bir dosya geri döner. Bu araç her zaman sınırın <em>altına</em> iner: videonun sığması için tam olarak ne kadar sıkıştırılacağını hesaplar, ses için pay bırakır, ardından sonucu kontrol eder ve ilk geçiş biraz büyük çıktıysa yeniden sıkıştırır. Genellikle 22 ile 25&nbsp;MB arasında bir dosya alırsınız — asla üstünde değil.",
+  "prose.p2": "25&nbsp;MB'ye hangi kalitenin sığacağı tamamen uzunluğa bağlıdır. 30 saniyelik bir klip net 1080p kalır. 5 dakikalık bir video 720p civarına iner ve telefonda hâlâ iyi görünür. 20 dakikalık bir ekran kaydı gözle görülür şekilde sıkıştırılmış olur — bir noktada araç, her kareyi bulanıklaştırmak yerine çözünürlüğü ve kare hızını düşürür. Başlamadan önce bilmek ister misiniz? <a href=\"{{url.calc}}\">Bitrate hesaplayıcı</a>, 25&nbsp;MB'nin klibinize vereceği tam video bit hızını ve en iyi çözünürlüğü gösterir. Sıkıştırma yerel olarak tarayıcınızda çalışır, bu nedenle 300&nbsp;MB'lik bir kaynak, iş başlamadan önce 300&nbsp;MB'lik bir yüklemeye ihtiyaç duymaz.",
+  "faq.q1": "Dosya gerçekten 25 MB'nin altında mı olacak?",
+  "faq.a1": "Evet. Araç, son boyutu kontrol eder ve gerekirse biraz daha otomatik olarak sıkıştırır. Size asla hedefin üstünde bir dosya vermez.",
+  "faq.q2": "Video bir sunucuya yüklenir mi?",
+  "faq.a2": "Hayır. Sıkıştırma, kendi cihazınızda, tarayıcınızda gerçekleşir. Yükleme ya da sunucu tarafında işleme yoktur — bu aynı zamanda neden hızlı ve ücretsiz olduğunun da nedenidir.",
+  "faq.q3": "Gmail neden hâlâ 25 MB'lik dosyamı reddediyor?",
+  "faq.a3": "E-posta, ekleri yaklaşık %33 ek yük getiren bir biçimde kodlar, bu nedenle Gmail'in ekler için geçerli sınırı 25&nbsp;MB'lik dosyadan daha düşüktür. Sıkıştırılmış dosyanız 25&nbsp;MB'ye yakınsa ve hâlâ geri dönüyorsa, bunun yerine <a href=\"{{url.cv}}\">genel sıkıştırıcıda</a> 18&nbsp;MB'lik özel bir hedefe sıkıştırın.",
+  "faq.q4": "Ne kadar sürer?",
+  "faq.a4": "Chrome'da tipik bir dizüstü bilgisayarda, videonun kendi süresinden daha hızlı — 4 dakikalık bir video 4 dakikadan kısa sürede, genellikle çok daha az sürede sıkışır, çünkü cihazınızın kendi video donanımını kullanır.",
+  "faq.q5": "Farklı bir boyut seçebilir miyim?",
+  "faq.a5": "Evet — 8, 10, 16, 25 ve 50&nbsp;MB hazır ayarları ile bir özel alan içeren <a href=\"{{url.cv}}\">tam sıkıştırıcıyı</a> kullanın."
+}

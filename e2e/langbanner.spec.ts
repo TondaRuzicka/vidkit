@@ -85,6 +85,25 @@ test.describe('language banner — German browser', () => {
   });
 });
 
+test.describe('language banner — Turkish browser', () => {
+  test.use({ locale: 'tr-TR' });
+
+  test('offers Turkish on an English page and switches on click', async ({ page }) => {
+    await page.goto('/');
+    const banner = page.locator('.lang-banner');
+    await expect(banner).toBeVisible();
+    const sw = banner.locator('.lang-banner__switch');
+    await expect(sw).toHaveAttribute('href', '/tr/');
+    await sw.click();
+    await expect(page).toHaveURL(/\/tr\/$/);
+  });
+
+  test('no banner when the page already matches the browser language', async ({ page }) => {
+    await page.goto('/tr/');
+    await expect(page.locator('.lang-banner')).toHaveCount(0);
+  });
+});
+
 test.describe('language banner — English browser', () => {
   test.use({ locale: 'en-US' });
 

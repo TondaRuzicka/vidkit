@@ -1,0 +1,19 @@
+{
+  "meta.title": "MP4 GIF Dönüştürücü — Ücretsiz, Tarayıcıda, Yükleme Yok | {{SITE_NAME}}",
+  "meta.description": "Bir .mp4 videosunu doğrudan tarayıcınızda animasyonlu bir .gif'e dönüştürün. Hiçbir şey yüklenmez — dosyanız cihazınızdan asla çıkmaz. Ücretsiz, kayıt yok, filigran yok.",
+  "og.title": "MP4'ü GIF'e Dönüştür — Ücretsiz, Yükleme Yok",
+  "og.description": "Bir .mp4'ten tarayıcınızda yerel olarak animasyonlu bir GIF oluşturun.",
+  "hero.eyebrow": "Dönüştür · MP4 → GIF",
+  "hero.title": "MP4'ü GIF'e dönüştürün — tam tarayıcınızda",
+  "hero.lead": "Kısa bir .mp4 bırakın ve sohbetler, tepkiler ve belgeler için animasyonlu bir .gif'e dönüştürün. Kendi cihazınızda oluşturulur, dolayısıyla klip asla yüklenmez.",
+  "convert.format": "gif",
+  "prose.h2": "Neden MP4'ü GIF'e dönüştürmeli?",
+  "prose.p1": "GIF'ler otomatik döner, her yerde satır içi oynatılır ve oynatıcı gerektirmez — sohbetlerdeki, konulardaki ve belgelerdeki tepkiler, kısa demolar ve nasıl-yapılır parçacıkları için mükemmeldir. Klipleri birkaç saniyeyle sınırlı tutun: GIF'lerin gerçek sesi yoktur ve boyutları hızla büyür.",
+  "prose.p2": "Çoğu dönüştürücü, klibinizi önce bir sunucuya yükler. {{SITE_NAME}} yüklemez — GIF yerel olarak tarayıcınızda oluşturulur, böylece hiçbir şey saklanmaz veya kaydedilmez. Akıcılık ile dosya boyutunu dengelemek için bir genişlik ve kare hızı seçin.",
+  "faq.q1": "Videom bir yere yükleniyor mu?",
+  "faq.a1": "Hayır. GIF tamamen tarayıcınızda, kendi cihazınızda oluşturulur. Dosyayı alabilecek bir sunucu yoktur — çalışırken tarayıcınızın Ağ (Network) sekmesini izleyin ve sıfır baytın çıktığını görün.",
+  "faq.q2": "GIF'im neden bu kadar büyük?",
+  "faq.a2": "GIF, kareleri verimsiz şekilde depolayan eski bir biçimdir, dolayısıyla kısa klipler bile birkaç megabayt olabilir. Boyutu düşürmek için daha küçük bir genişlik ve daha düşük bir kare hızı kullanın.",
+  "faq.q3": "Klip ne kadar uzun olabilir?",
+  "faq.a3": "Teknik olarak herhangi bir uzunlukta olabilir, ancak GIF'ler hızla şişer — birkaç saniye idealdir. Daha uzun bir şey için MP4 veya WebM daha iyi görünür ve çok daha az yer kaplar."
+}

@@ -1,0 +1,19 @@
+{
+  "meta.title": "MP4 MP3 Dönüştürücü — Ücretsiz, Tarayıcıda, Yükleme Yok | {{SITE_NAME}}",
+  "meta.description": ".mp4 videosundaki sesi doğrudan tarayıcınızda bir .mp3 dosyasına çıkarın. Hiçbir şey yüklenmez — dosyanız cihazınızdan asla çıkmaz. Ücretsiz, kayıt yok, filigran yok.",
+  "og.title": "MP4'ü MP3'e Dönüştür — Ücretsiz, Yükleme Yok",
+  "og.description": "Bir .mp4'ün sesini tarayıcınızda yerel olarak .mp3'e çıkarın.",
+  "hero.eyebrow": "Dönüştür · MP4 → MP3",
+  "hero.title": "MP4'ü MP3'e dönüştürün — tam tarayıcınızda",
+  "hero.lead": "Bir .mp4 videosu bırakın ve yalnızca sesi bir .mp3 olarak çıkarın — podcast'ler, müzik, dersler veya sesli notlar için. Kendi cihazınızda çıkarılır, dolayısıyla dosya asla yüklenmez.",
+  "convert.format": "mp3",
+  "prose.h2": "Neden MP4'ü MP3'e dönüştürmeli?",
+  "prose.p1": "Bazen yalnızca sesi istersiniz: bir şarkı, bir röportaj, bir ders, bir sesli not. MP3'e çıkarmak videoyu tamamen atar ve yalnızca sesi, her müzik uygulamasında ve her cihazda oynatılan küçük bir dosyada tutar.",
+  "prose.p2": "Çoğu dönüştürücü, videonuzu önce bir sunucuya yükler. {{SITE_NAME}} yüklemez — ses yerel olarak tarayıcınızda çıkarılır, böylece hiçbir şey saklanmaz veya kaydedilmez ve uzun kayıtlar bile yavaş bir yükleme gerektirmez.",
+  "faq.q1": "Videom bir yere yükleniyor mu?",
+  "faq.a1": "Hayır. Çıkarma tamamen tarayıcınızda, kendi cihazınızda gerçekleşir. Dosyayı alabilecek bir sunucu yoktur — çalışırken tarayıcınızın Ağ (Network) sekmesini kontrol edin ve sıfır baytın çıktığını görün.",
+  "faq.q2": "Hangi MP3 kalitesini alırım?",
+  "faq.a2": "Dönüştürmeden önce bit hızını seçebilirsiniz — 128&nbsp;kbps'den (küçük) 320&nbsp;kbps'ye (en iyi kalite) kadar. Konuşma ve çoğu müzik için 192&nbsp;kbps iyi bir varsayılandır.",
+  "faq.q3": "Uzun bir videoyu işleyebilir mi?",
+  "faq.a3": "Evet. Ses, videoya kıyasla çok küçüktür, dolayısıyla saatlerce süren kayıtlar bile hızla çıkarılır ve küçük kalır."
+}

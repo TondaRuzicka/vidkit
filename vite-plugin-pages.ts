@@ -62,6 +62,7 @@ const OG_LOCALE: Record<Locale, string> = {
   es: 'es_ES',
   pt: 'pt_BR',
   de: 'de_DE',
+  tr: 'tr_TR',
 };
 
 // <title>, description, canonical, og/twitter tags and hreflang alternates
@@ -94,17 +95,34 @@ function metaBlock(page: PageDef, locale: Locale): string {
   ].join('\n');
 }
 
-// Language switcher: links to this page in every available locale.
+// Full native language names, keyed by locale so adding a locale is a
+// type-checked one-line edit (a missing entry fails the build).
+const NATIVE_NAMES: Record<Locale, string> = {
+  en: 'English',
+  cs: 'Čeština',
+  es: 'Español',
+  pt: 'Português',
+  de: 'Deutsch',
+  tr: 'Türkçe',
+};
+
+// Language switcher: a native <details> dropdown that works fully with
+// JavaScript disabled. The <summary> shows a globe + the current locale code;
+// the menu lists every available locale for this page by its native name.
+// langbanner.ts adds optional outside-click / Escape closing on top of this.
 function langSwitch(page: PageDef, current: Locale): string {
-  const links = page.locales
+  const globe =
+    '<svg class="lang-menu__globe" viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.4 2.6 2.4 15.4 0 18M12 3c-2.4 2.6-2.4 15.4 0 18" stroke="currentColor" stroke-width="1.6"/></svg>';
+  const chevron =
+    '<svg class="lang-menu__chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const items = page.locales
     .map((l) => {
       const href = pagePath(page, l);
-      const label = l.toUpperCase();
       const aria = l === current ? ' aria-current="true"' : '';
-      return `<a hreflang="${l}" lang="${l}" href="${href}"${aria}>${label}</a>`;
+      return `<li><a hreflang="${l}" lang="${l}" href="${href}"${aria}>${NATIVE_NAMES[l]}</a></li>`;
     })
     .join('');
-  return `<div class="lang-switch" role="group" aria-label="Language">${links}</div>`;
+  return `<details class="lang-menu"><summary aria-label="Language — ${NATIVE_NAMES[current]}">${globe}<span class="lang-menu__code">${current.toUpperCase()}</span>${chevron}</summary><ul>${items}</ul></details>`;
 }
 
 const stripTags = (s: string) =>

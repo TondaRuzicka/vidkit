@@ -6,7 +6,7 @@
 // The choice is remembered in localStorage — a functional preference, exempt
 // from EU cookie consent.
 
-const SUPPORTED = ['en', 'cs', 'es', 'pt', 'de'] as const;
+const SUPPORTED = ['en', 'cs', 'es', 'pt', 'de', 'tr'] as const;
 type Locale = (typeof SUPPORTED)[number];
 const isLocale = (s: string): s is Locale =>
   (SUPPORTED as readonly string[]).includes(s);
@@ -39,6 +39,11 @@ const COPY: Record<Locale, { msg: string; action: string; dismiss: string }> = {
     msg: 'Diese Seite gibt es auch auf Deutsch.',
     action: 'Zu Deutsch wechseln',
     dismiss: 'Auf Englisch bleiben',
+  },
+  tr: {
+    msg: 'Bu sayfa Türkçe olarak da mevcut.',
+    action: 'Türkçeye geç',
+    dismiss: 'İngilizce devam et',
   },
 };
 
@@ -120,3 +125,23 @@ function init(): void {
 }
 
 init();
+
+// Progressive enhancement for the header language dropdown (a native
+// <details class="lang-menu">): close it on an outside click or Escape. The
+// dropdown is fully usable with JS disabled — this only adds the niceties a
+// user expects from a menu. No storage, no network.
+function enhanceLangMenu(): void {
+  const menu = document.querySelector<HTMLDetailsElement>('details.lang-menu');
+  if (!menu) return;
+  document.addEventListener('click', (e) => {
+    if (menu.open && !menu.contains(e.target as Node)) menu.open = false;
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.open) {
+      menu.open = false;
+      menu.querySelector('summary')?.focus();
+    }
+  });
+}
+
+enhanceLangMenu();

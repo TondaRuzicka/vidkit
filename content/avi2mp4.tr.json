@@ -1,0 +1,19 @@
+{
+  "meta.title": "AVI MP4 Dönüştürücü — Ücretsiz, Tarayıcıda, Yükleme Yok | {{SITE_NAME}}",
+  "meta.description": "Eski .avi videosunu doğrudan tarayıcınızda modern .mp4'e dönüştürün. Hiçbir şey yüklenmez — dosyanız cihazınızdan asla çıkmaz. Ücretsiz, kayıt yok, filigran yok.",
+  "og.title": "AVI'yi MP4'e Dönüştür — Ücretsiz, Yükleme Yok",
+  "og.description": ".avi'yi tarayıcınızda yerel olarak .mp4'e dönüştürün. Hiçbir şey cihazınızdan çıkmaz.",
+  "hero.eyebrow": "Dönüştür · AVI → MP4",
+  "hero.title": "AVI'yi MP4'e dönüştürün — tam tarayıcınızda",
+  "hero.lead": "Eski bir .avi dosyası bırakın ve telefonlarda, web'de ve güncel editörlerde oynatılan modern bir .mp4 alın. Kendi cihazınızda dönüştürülür, dolayısıyla dosya asla yüklenmez.",
+  "convert.format": "mp4",
+  "prose.h2": "Neden AVI'yi MP4'e dönüştürmeli?",
+  "prose.p1": "AVI daha eski bir kapsayıcıdır — güvenilir ama hantal ve genellikle telefonlar, tarayıcılar ve modern editörler tarafından reddedilir. MP4 (H.264) daha küçüktür ve neredeyse her yerde oynatılır, dolayısıyla dönüştürmek hem dosyayı küçültür hem de uyumluluğu düzeltir.",
+  "prose.p2": "Çoğu dönüştürücü, klibinizi önce bir sunucuya yükler. {{SITE_NAME}} yüklemez — dönüştürme yerel olarak tarayıcınızda çalışır, böylece hiçbir şey saklanmaz veya kaydedilmez. (AVI dahili yazılım motorunu kullanır, dolayısıyla yeni biçimlerden biraz daha yavaştır.)",
+  "faq.q1": ".avi dosyam bir yere yükleniyor mu?",
+  "faq.a1": "Hayır. Dönüştürme tamamen tarayıcınızda, kendi cihazınızda gerçekleşir. Dosyayı alabilecek bir sunucu yoktur — çalışırken tarayıcınızın Ağ (Network) sekmesini kontrol edin ve sıfır baytın çıktığını görün.",
+  "faq.q2": "AVI'yi dönüştürmek neden biraz daha yavaş?",
+  "faq.a2": "AVI, hızlı donanım yolu tarafından işlenmez, dolayısıyla tarayıcınızdaki dahili bir yazılım kodlayıcısı üzerinden çalışır. Yine de tamamen çevrimdışı çalışır — sadece MP4 veya MOV'dan biraz daha uzun sürer.",
+  "faq.q3": "MP4 daha küçük olacak mı?",
+  "faq.a3": "Genellikle evet — H.264'lü MP4, çoğu AVI dosyasından çok daha verimlidir, dolayısıyla benzer kalitede sıklıkla daha küçük bir dosya alırsınız. Dönüştürmeden önce bir hedef boyut da ayarlayabilirsiniz."
+}

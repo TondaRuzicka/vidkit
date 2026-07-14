@@ -1,0 +1,23 @@
+{
+  "meta.title": "Video 10 MB'ye Sıkıştırma — Ücretsiz, Yükleme Yok | {{SITE_NAME}}",
+  "meta.description": "Herhangi bir videoyu Discord'un ücretsiz yükleme sınırı için 10 MB'nin altına küçültün. Tarayıcınızda çalışır — videonuz cihazınızdan asla çıkmaz.",
+  "og.title": "Video 10 MB'ye Sıkıştır — Ücretsiz, Yükleme Yok",
+  "og.description": "Herhangi bir videoyu Discord'un 10 MB ücretsiz sınırının altına, tarayıcınızda sığdırın.",
+  "hero.eyebrow": "Hazır ayar · 10 MB hedef",
+  "hero.title": "Bir videoyu 10 MB'ye sıkıştırın",
+  "hero.lead": "Discord'un ücretsiz yükleme sınırı 10&nbsp;MB'dir. Klibinizi aşağıya bırakın; tam cihazınızda 10&nbsp;MB'nin hemen altına sıkıştırılsın — yükleme yok, Nitro yok, filigran yok.",
+  "prose.h2": "Bir videoyu Discord'un ücretsiz sınırına sığdırmak",
+  "prose.p1": "Discord tam bayt sayısını kontrol eder, bu yüzden 10,2&nbsp;MB başarısız olurken 9,9&nbsp;MB sorunsuz geçer. Bu araç, videonuzun uzunluğunun sınıra sığması için tam olarak ne kadar sıkıştırılacağını hesaplar, ses için yer ayırır, sıkıştırır, ardından son boyutu doğrular — ilk geçiş biraz bile büyük çıktıysa otomatik olarak yeniden kodlar. Her zaman Discord'un kabul edeceği bir dosya alırsınız.",
+  "prose.p2": "10&nbsp;MB'nin neyi tutabileceği konusunda gerçekçi olun: 20–30&nbsp;saniyelik bir oyun klibi hâlâ net görünür; 2 dakikalık bir klip 540–720p civarına iner ve sohbette iyi görünür; 10&nbsp;MB'deki 10 dakikalık bir video, herhangi bir aracın matematiğiyle ağır şekilde sıkıştırılır — bunlar için kırpılmış bir öne çıkan bölümün daha iyi anlatıp anlatmayacağını düşünün. Yer sıkıştığında araç, her kareyi bloklara bulaştırmak yerine çözünürlüğü ve kare hızını mantıklı adımlarla düşürür. Ses, çıtırdamayacak kadar net tutulur çünkü izleyiciler yumuşak pikselleri, bozuk sesten daha çabuk affeder.",
+  "prose.p3": "Her şey tam tarayıcınızda, cihazınızın kendi gücünü kullanarak çalışır; bu yüzden sıkıştırmak genellikle klibi izlemekten daha hızlıdır — ve videonuz asla hiçbir yere yüklenmez.",
+  "faq.q1": "Discord dosyayı kesinlikle kabul edecek mi?",
+  "faq.a1": "Evet — çıktının, Discord'un ücretsiz hesaplar için uyguladığı sınır olan 10.000.000 baytın altında olduğu doğrulanır. İlk deneme üstte çıkarsa araç otomatik olarak yeniden kodlar.",
+  "faq.q2": "Sıkıştırırken klibim yükleniyor mu?",
+  "faq.a2": "Hayır. Tüm süreç tarayıcınızda, kendi makinenizde çalışır. Hiçbir şey bir sunucuya gönderilmez — zaten sunucu yok.",
+  "faq.q3": "Uzun videom 10 MB'de neden kötü görünüyor?",
+  "faq.a3": "10&nbsp;MB, videonun her saniyesi arasında paylaşılan sabit bir veri bütçesidir. 30 saniyelik bir klip 2&nbsp;Mbps'nin üzerinde alır — bolca. 10 dakikalık bir video 100&nbsp;kbps'nin altında alır — hangi aracı kullanırsanız kullanın, neredeyse hiç. Daha kısa klipler sabit boyutlarda basitçe daha iyi görünür. <a href=\"{{url.calc}}\">Bitrate hesaplayıcı</a>, klibinizin uzunluğu için tam rakamı hesaplar.",
+  "faq.q4": "Ses 10 MB'den sayılır mı?",
+  "faq.a4": "Evet — ses dosyanın bir parçasıdır. Araç önce ses için mantıklı bir miktar ayırır ve geri kalan her şeyi görüntüye verir. Sesi kapalı videolar aynı 10&nbsp;MB'ye gözle görülür şekilde daha fazla görsel kaliteyi sığdırır.",
+  "faq.q5": "Nitro'nun daha yüksek sınırları ne olacak?",
+  "faq.a5": "Nitro Basic sınırı 25&nbsp;MB'ye çıkarır — bunun için <a href=\"{{url.cv25}}\">25&nbsp;MB sıkıştırıcıyı</a> kullanın. Tam Nitro 500&nbsp;MB'ye izin verir, bu da nadiren sıkıştırma gerektirir."
+}

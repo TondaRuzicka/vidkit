@@ -1,0 +1,23 @@
+{
+  "meta.title": "WhatsApp için Video Sıkıştırma — Ücretsiz, Yükleme Yok | {{SITE_NAME}}",
+  "meta.description": "Videoları bulanıklık olmadan WhatsApp'ta göndermek için küçültün. Tarayıcınızda 16 MB'ye sıkıştırın — videonuz cihazınızdan asla çıkmaz.",
+  "og.title": "WhatsApp için Video Sıkıştır — Ücretsiz, Yükleme Yok",
+  "og.description": "Videoları WhatsApp'ın sınırlarının altına tarayıcınızda sığdırın. Hiçbir şey yüklenmez.",
+  "hero.eyebrow": "Hazır ayar · 16 MB hedef",
+  "hero.title": "WhatsApp için bir video sıkıştırın",
+  "hero.lead": "WhatsApp, medya olarak gönderilen videoları birçok bölgede 16&nbsp;MB ile sınırlar — ve kendi otomatik sıkıştırması klipleri bulanık bırakabilir. Önce burada, kendi cihazınızda sıkıştırın ve WhatsApp'ın bozamayacağı bir dosya gönderin. Yükleme yok, filigran yok.",
+  "prose.h2": "WhatsApp'ta göndermeden önce neden sıkıştırmalı",
+  "prose.p1": "Bir videoyu medya olarak gönderdiğinizde WhatsApp, onu telefonunuzda herkese uyan tek bir ayarla agresif şekilde yeniden sıkıştırır — bulanıklık işte buradan gelir. Videonuz zaten boyut sınırının altındaysa ve verimli şekilde kodlanmışsa, WhatsApp'ın onu ezmek için çok daha az nedeni olur. Önce burada sıkıştırmak, ödünleşimi <em>sizin</em> belirlemeniz demektir; düzgün bir iki adımlı süreçle: 16&nbsp;MB'ye sığmak için tam olarak ne kadar sıkıştırılacağını hesaplar, sıkıştırır, boyutu kontrol eder ve gerekirse otomatik olarak yeniden sıkıştırır.",
+  "prose.p2": "Çıktı standart bir MP4'tür — tam da WhatsApp'ın, iPhone'ların ve Android'lerin tercih ettiği şey. Bir dakikalık video, çok izlenebilir bir kalitede 16&nbsp;MB'ye sığar; birkaç dakikalık bir video, bozuk değil kasıtlı görünen daha düşük bir çözünürlüğe iner. Daha uzun videolar için, sıkıştırılmış dosyayı WhatsApp'ta <em>belge</em> olarak da gönderebilirsiniz — belgeler hiç yeniden sıkıştırılmaz ve çok daha yüksek bir boyut sınırına sahiptir (2&nbsp;GB).",
+  "prose.p3": "Her şey tarayıcınızda çalışır. Aile videoları, çocuk klipleri, tıbbi görüşmeler — hiçbir şey, bizimki de dahil, hiç kimsenin sunucusuna yüklenmez. Zaten sunucu yok.",
+  "faq.q1": "WhatsApp'ın gerçek video boyutu sınırı nedir?",
+  "faq.a1": "Medya olarak gönderildiğinde, çoğu bölgede 16&nbsp;MB (bazı sürümler daha fazlasına izin verir). Belge olarak gönderildiğinde 2&nbsp;GB'ye kadar. Bu sayfa, videonuzun sohbette satır içi önizlenmesi ve oynatılması için 16&nbsp;MB medya sınırını hedefler.",
+  "faq.q2": "WhatsApp videomu tekrar sıkıştıracak mı?",
+  "faq.a2": "WhatsApp medyayı yine de işleyebilir, ancak verimli kodlanmış, sınırın altında bir MP4 çok az veya hiç görünür hasar olmadan geçer. WhatsApp'ın işlemesini tamamen atlamak için sıkıştırılmış dosyayı belge olarak gönderin.",
+  "faq.q3": "Videom gizli mi?",
+  "faq.a3": "Evet. Sıkıştırma tamamen tarayıcınızda, kendi cihazınızda çalışır. Dosya asla yüklenmez — tarayıcınızın geliştirici araçlarındaki ağ sekmesini izleyip kendiniz görebilirsiniz.",
+  "faq.q4": "WhatsApp hangi biçimi ister?",
+  "faq.a4": "H.264 video ve AAC ses içeren MP4 — tam olarak bu aracın ürettiği şey. Hem iPhone'da hem de Android'de dönüştürme olmadan satır içi oynatılır.",
+  "faq.q5": "Farklı bir boyuta sıkıştırabilir miyim?",
+  "faq.a5": "Evet — <a href=\"{{url.cv}}\">tam sıkıştırıcı</a>, 8, 10, 16, 25 veya 50&nbsp;MB seçmenize ya da herhangi bir özel hedef yazmanıza olanak tanır."
+}

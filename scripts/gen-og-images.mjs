@@ -19,6 +19,7 @@ const PILLS = {
   es: ['100% en tu navegador', 'Nada se sube', 'Gratis · Sin registro'],
   pt: ['100% no seu navegador', 'Nada é enviado', 'Grátis · Sem cadastro'],
   de: ['100% in deinem Browser', 'Nichts wird hochgeladen', 'Kostenlos · Ohne Anmeldung'],
+  tr: ['%100 tarayıcınızda', 'Hiçbir şey yüklenmez', 'Ücretsiz · Kayıt yok'],
 };
 
 const readJson = (file) => JSON.parse(readFileSync(join(ROOT, 'content', file), 'utf8'));
