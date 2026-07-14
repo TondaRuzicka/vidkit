@@ -6,7 +6,7 @@
 // The choice is remembered in localStorage — a functional preference, exempt
 // from EU cookie consent.
 
-const SUPPORTED = ['en', 'cs'] as const;
+const SUPPORTED = ['en', 'cs', 'es', 'pt', 'de'] as const;
 type Locale = (typeof SUPPORTED)[number];
 const isLocale = (s: string): s is Locale =>
   (SUPPORTED as readonly string[]).includes(s);
@@ -24,6 +24,21 @@ const COPY: Record<Locale, { msg: string; action: string; dismiss: string }> = {
     msg: 'This page is also available in English.',
     action: 'Switch to English',
     dismiss: 'Dismiss',
+  },
+  es: {
+    msg: 'Esta página también está disponible en español.',
+    action: 'Cambiar a español',
+    dismiss: 'Seguir en inglés',
+  },
+  pt: {
+    msg: 'Esta página também está disponível em português.',
+    action: 'Mudar para português',
+    dismiss: 'Continuar em inglês',
+  },
+  de: {
+    msg: 'Diese Seite gibt es auch auf Deutsch.',
+    action: 'Zu Deutsch wechseln',
+    dismiss: 'Auf Englisch bleiben',
   },
 };
 

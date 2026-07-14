@@ -1,0 +1,19 @@
+{
+  "meta.title": "MKV in MP4 umwandeln — gratis, im Browser, ohne Upload | {{SITE_NAME}}",
+  "meta.description": "Wandle .mkv-Video (Matroska) direkt im Browser in .mp4 um. Nichts wird hochgeladen — deine Datei verlässt nie dein Gerät. Gratis, ohne Anmeldung, ohne Wasserzeichen.",
+  "og.title": "MKV in MP4 umwandeln — gratis, ohne Upload",
+  "og.description": ".mkv lokal im Browser in .mp4 ändern. Nichts verlässt dein Gerät.",
+  "hero.eyebrow": "Umwandeln · MKV → MP4",
+  "hero.title": "MKV in MP4 umwandeln — direkt im Browser",
+  "hero.lead": "Leg eine .mkv-Datei (Matroska) ab und erhalte ein Standard-.mp4, das auf Handys, Smart-TVs und in Editoren abspielt, die MKV verweigern. Es wird auf deinem eigenen Gerät umgewandelt und nie hochgeladen.",
+  "convert.format": "mp4",
+  "prose.h2": "Warum MKV in MP4 umwandeln?",
+  "prose.p1": "MKV ist ein flexibler Container, der für hochwertiges Video beliebt ist, aber viele Handys, TVs, Browser und Editoren öffnen ihn nicht. MP4 (H.264) ist der universelle Standard, sodass die Umwandlung dasselbe Video fast überall abspielbar macht.",
+  "prose.p2": "Die meisten Konverter laden deinen Clip zuerst auf einen Server. {{SITE_NAME}} nicht — die Umwandlung läuft lokal in deinem Browser, sodass selbst große MKV-Dateien ohne langsamen Upload umgewandelt werden und nichts gespeichert oder protokolliert wird.",
+  "faq.q1": "Wird meine .mkv-Datei irgendwohin hochgeladen?",
+  "faq.a1": "Nein. Die Umwandlung passiert vollständig in deinem Browser, auf deinem eigenen Gerät. Es gibt keinen Server, der die Datei empfangen könnte — beobachte den Netzwerk-Tab deines Browsers während des Vorgangs und du wirst sehen, dass null Bytes das Gerät verlassen.",
+  "faq.q2": "Verliert das MP4 an Qualität?",
+  "faq.a2": "Die Umwandlung kodiert das Video neu, es gibt also etwas Verlust, aber bei den Standardeinstellungen ist er kaum zu erkennen. Du kannst vor der Umwandlung auch eine Zielgröße oder eine Qualitätsstufe wählen.",
+  "faq.q3": "Und was ist mit großen MKV-Dateien in Spielfilmlänge?",
+  "faq.a3": "In Chrome oder Edge werden Dateien bis etwa 2&nbsp;GB unterstützt. Größere Dateien in anderen Browsern werden womöglich mit einer klaren Meldung abgelehnt, statt stillschweigend zu scheitern — probiere Chrome für die größten Dateien."
+}

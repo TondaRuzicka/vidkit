@@ -35,11 +35,13 @@ test.describe('format conversion → container', () => {
 // Phase 3: conversion landing pages lock the output format (no selector) and
 // must produce that format from whatever is dropped.
 test.describe('conversion landing pages (locked format)', () => {
+  // Locked pages use intent-aware button copy (labels.ts): converter pages say
+  // "Convert", audio pages "Extract audio" — never "Compress video".
   const CASES = [
-    { path: '/mov-to-mp4/', ext: '.mp4', engine: 'fast mode', slow: false },
-    { path: '/mp4-to-mp3/', ext: '.mp3', engine: 'compatibility mode', slow: true },
+    { path: '/mov-to-mp4/', ext: '.mp4', engine: 'fast mode', slow: false, button: 'Convert' },
+    { path: '/mp4-to-mp3/', ext: '.mp3', engine: 'compatibility mode', slow: true, button: 'Extract audio' },
   ];
-  for (const { path, ext, engine, slow } of CASES) {
+  for (const { path, ext, engine, slow, button } of CASES) {
     test(`${path} outputs ${ext}`, async ({ page }) => {
       if (slow) test.slow();
       await page.goto(path);
@@ -49,7 +51,7 @@ test.describe('conversion landing pages (locked format)', () => {
       // mp4 output keeps the size control; audio hides it and uses defaults.
       const target = page.locator('input[name="target-mb"][value="8"]');
       if (await target.isVisible()) await target.check();
-      await page.getByRole('button', { name: 'Compress video' }).click();
+      await page.getByRole('button', { name: button }).click();
       const out = await awaitResult(page, slow ? 600_000 : 150_000);
       expect(out.engineLine).toContain(engine);
       expect((await downloadInfo(page)).name.endsWith(ext)).toBe(true);

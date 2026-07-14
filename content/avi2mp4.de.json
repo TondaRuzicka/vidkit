@@ -1,0 +1,19 @@
+{
+  "meta.title": "AVI in MP4 umwandeln — gratis, im Browser, ohne Upload | {{SITE_NAME}}",
+  "meta.description": "Wandle altes .avi-Video direkt im Browser in modernes .mp4 um. Nichts wird hochgeladen — deine Datei verlässt nie dein Gerät. Gratis, ohne Anmeldung, ohne Wasserzeichen.",
+  "og.title": "AVI in MP4 umwandeln — gratis, ohne Upload",
+  "og.description": ".avi lokal im Browser in .mp4 ändern. Nichts verlässt dein Gerät.",
+  "hero.eyebrow": "Umwandeln · AVI → MP4",
+  "hero.title": "AVI in MP4 umwandeln — direkt im Browser",
+  "hero.lead": "Leg eine alte .avi-Datei ab und erhalte ein modernes .mp4, das auf Handys, im Web und in aktuellen Editoren abspielt. Es wird auf deinem eigenen Gerät umgewandelt, die Datei wird also nie hochgeladen.",
+  "convert.format": "mp4",
+  "prose.h2": "Warum AVI in MP4 umwandeln?",
+  "prose.p1": "AVI ist ein älterer Container — zuverlässig, aber sperrig und oft von Handys, Browsern und modernen Editoren abgelehnt. MP4 (H.264) ist kleiner und spielt fast überall ab, sodass die Umwandlung die Datei verkleinert und die Kompatibilität behebt.",
+  "prose.p2": "Die meisten Konverter laden deinen Clip zuerst auf einen Server. {{SITE_NAME}} nicht — die Umwandlung läuft lokal in deinem Browser, sodass nichts gespeichert oder protokolliert wird. (AVI nutzt die eingebaute Software-Engine, ist also etwas langsamer als neuere Formate.)",
+  "faq.q1": "Wird meine .avi-Datei irgendwohin hochgeladen?",
+  "faq.a1": "Nein. Die Umwandlung passiert vollständig in deinem Browser, auf deinem eigenen Gerät. Es gibt keinen Server, der die Datei empfangen könnte — prüfe den Netzwerk-Tab deines Browsers während des Vorgangs und du wirst sehen, dass null Bytes das Gerät verlassen.",
+  "faq.q2": "Warum dauert die Umwandlung von AVI etwas länger?",
+  "faq.a2": "AVI wird nicht über den schnellen Hardware-Pfad verarbeitet, sondern läuft durch einen eingebauten Software-Encoder in deinem Browser. Es funktioniert weiterhin vollständig offline — es dauert nur etwas länger als bei MP4 oder MOV.",
+  "faq.q3": "Wird das MP4 kleiner?",
+  "faq.a3": "Meist ja — MP4 mit H.264 ist weit effizienter als die meisten AVI-Dateien, sodass du oft eine kleinere Datei bei ähnlicher Qualität bekommst. Du kannst vor der Umwandlung auch eine Zielgröße festlegen."
+}

@@ -56,7 +56,13 @@ function findPage(id: string): PageDef | undefined {
 const ogImagePath = (page: PageDef, locale: Locale): string =>
   `/og/${page.id}-${locale}.png`;
 
-const OG_LOCALE: Record<Locale, string> = { en: 'en_US', cs: 'cs_CZ' };
+const OG_LOCALE: Record<Locale, string> = {
+  en: 'en_US',
+  cs: 'cs_CZ',
+  es: 'es_ES',
+  pt: 'pt_BR',
+  de: 'de_DE',
+};
 
 // <title>, description, canonical, og/twitter tags and hreflang alternates
 // for a page. Values stay as {{placeholders}} — filled by substitute() later.

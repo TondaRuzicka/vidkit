@@ -1,0 +1,22 @@
+{
+  "meta.title": "Video auf 25 MB komprimieren — gratis, ohne Upload | {{SITE_NAME}}",
+  "meta.description": "Verkleinere jedes Video auf unter 25 MB für Discord Nitro Basic sowie Gmail- und Outlook-Anhänge. Läuft im Browser — dein Video wird nie hochgeladen.",
+  "og.title": "Video auf 25 MB komprimieren — gratis, ohne Upload",
+  "og.description": "Bring jedes Video im Browser unter 25 MB. Nichts wird hochgeladen.",
+  "hero.eyebrow": "Vorlage · Ziel 25 MB",
+  "hero.title": "Video auf 25 MB komprimieren",
+  "hero.lead": "25&nbsp;MB ist die magische Zahl für Gmail- und Outlook-Anhänge und das klassische Nitro-Upload-Limit von Discord. Leg dein Video unten ab und es wird auf knapp unter 25&nbsp;MB komprimiert — direkt auf deinem eigenen Gerät, ohne Upload, ohne Konto, ohne Wasserzeichen.",
+  "prose.h2": "Warum 25 MB, und was dich erwartet",
+  "prose.p1": "Gmail und Outlook begrenzen Anhänge beide auf 25&nbsp;MB, und die Stufe Discord Nitro Basic nutzt dasselbe Limit. Die meisten Dienste prüfen die exakte Byte-Zahl, sodass eine „25,1&nbsp;MB“-Datei abprallt. Dieses Tool landet immer <em>unter</em> dem Limit: Es berechnet genau, wie stark zu komprimieren ist, damit das Video passt, lässt Platz fürs Audio, prüft dann das Ergebnis und komprimiert erneut, falls der erste Durchlauf einen Hauch zu groß ausfiel. Du bekommst typischerweise eine Datei zwischen 22 und 25&nbsp;MB — nie darüber.",
+  "prose.p2": "Welche Qualität in 25&nbsp;MB passt, hängt ganz von der Länge ab. Ein 30-Sekunden-Clip bleibt gestochen scharfes 1080p. Ein 5-Minuten-Video landet bei etwa 720p und sieht auf dem Handy weiterhin gut aus. Eine 20-minütige Bildschirmaufnahme wird sichtbar komprimiert — irgendwann senkt das Tool lieber Auflösung und Bildrate, als jedes Einzelbild zu verschmieren. Willst du es vorher wissen? Der <a href=\"{{url.calc}}\">Bitrate-Rechner</a> zeigt dir die exakte Video-Bitrate und beste Auflösung, die 25&nbsp;MB deinem Clip geben. Die Komprimierung läuft lokal in deinem Browser, sodass eine 300&nbsp;MB-Quelle keinen 300&nbsp;MB-Upload braucht, bevor die Arbeit überhaupt beginnt.",
+  "faq.q1": "Ist die Datei wirklich unter 25 MB?",
+  "faq.a1": "Ja. Das Tool prüft die finale Größe und komprimiert bei Bedarf automatisch etwas mehr. Es gibt dir nie eine Datei über dem Ziel.",
+  "faq.q2": "Wird das Video auf einen Server hochgeladen?",
+  "faq.a2": "Nein. Die Komprimierung passiert in deinem Browser auf deinem eigenen Gerät. Es gibt keinen Upload und keine serverseitige Verarbeitung — auch deshalb ist es schnell und kostenlos.",
+  "faq.q3": "Warum lehnt Gmail meine 25-MB-Datei trotzdem ab?",
+  "faq.a3": "E-Mail kodiert Anhänge in einem Format, das rund 33% Overhead hinzufügt, sodass Gmails effektives Anhang-Limit unter 25&nbsp;MB Dateigröße liegt. Wenn deine komprimierte Datei nahe an 25&nbsp;MB liegt und trotzdem abprallt, komprimiere sie stattdessen im <a href=\"{{url.cv}}\">allgemeinen Kompressor</a> auf ein eigenes Ziel von 18&nbsp;MB.",
+  "faq.q4": "Wie lange dauert es?",
+  "faq.a4": "Auf einem typischen Laptop in Chrome schneller als die Laufzeit des Videos selbst — ein 4-Minuten-Video komprimiert in unter 4 Minuten, meist viel weniger, weil es die Video-Hardware deines Geräts nutzt.",
+  "faq.q5": "Kann ich eine andere Größe wählen?",
+  "faq.a5": "Ja — nutze den <a href=\"{{url.cv}}\">vollständigen Kompressor</a>, der Vorlagen für 8, 10, 16, 25 und 50&nbsp;MB sowie ein Feld für eigene Werte hat."
+}

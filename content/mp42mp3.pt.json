@@ -1,0 +1,19 @@
+{
+  "meta.title": "Converter MP4 para MP3 — grátis, no navegador, sem upload | {{SITE_NAME}}",
+  "meta.description": "Extraia o áudio de um vídeo .mp4 para um arquivo .mp3 direto no seu navegador. Nada é enviado — seu arquivo nunca sai do seu dispositivo. Grátis, sem cadastro, sem marca d'água.",
+  "og.title": "Converter MP4 para MP3 — grátis, sem upload",
+  "og.description": "Extraia o áudio de um .mp4 para .mp3, localmente no seu navegador.",
+  "hero.eyebrow": "Converter · MP4 → MP3",
+  "hero.title": "Converter MP4 para MP3 — direto no seu navegador",
+  "hero.lead": "Arraste um vídeo .mp4 e extraia apenas o áudio como um .mp3 — para podcasts, músicas, aulas ou mensagens de voz. É extraído no seu próprio dispositivo, então o arquivo nunca é enviado.",
+  "convert.format": "mp3",
+  "prose.h2": "Por que converter MP4 para MP3?",
+  "prose.p1": "Às vezes você só quer o som: uma música, uma entrevista, uma aula, um recado de voz. Extrair para MP3 descarta o vídeo inteiramente e mantém só o áudio em um arquivo pequeno que reproduz em todo aplicativo de música e em todo dispositivo.",
+  "prose.p2": "A maioria dos conversores envia seu vídeo para um servidor primeiro. O {{SITE_NAME}} não — o áudio é extraído localmente no seu navegador, então nada é armazenado ou registrado, e até gravações longas não precisam de um upload lento.",
+  "faq.q1": "Meu vídeo é enviado para algum lugar?",
+  "faq.a1": "Não. A extração acontece inteiramente no seu navegador, no seu próprio dispositivo. Não há servidor que pudesse receber o arquivo — confira a aba Rede do seu navegador enquanto ele roda e verá zero bytes saindo.",
+  "faq.q2": "Que qualidade de MP3 eu recebo?",
+  "faq.a2": "Você pode escolher a taxa de bits antes de converter — de 128&nbsp;kbps (pequeno) até 320&nbsp;kbps (melhor qualidade). 192&nbsp;kbps é um bom padrão para fala e a maioria das músicas.",
+  "faq.q3": "Consegue lidar com um vídeo longo?",
+  "faq.a3": "Sim. O áudio é minúsculo comparado ao vídeo, então até gravações de uma hora extraem rápido e ficam pequenas."
+}

@@ -1,0 +1,19 @@
+{
+  "meta.title": "Converter AVI para MP4 — grátis, no navegador, sem upload | {{SITE_NAME}}",
+  "meta.description": "Converta vídeo .avi antigo para .mp4 moderno direto no seu navegador. Nada é enviado — seu arquivo nunca sai do seu dispositivo. Grátis, sem cadastro, sem marca d'água.",
+  "og.title": "Converter AVI para MP4 — grátis, sem upload",
+  "og.description": "Mude .avi para .mp4 localmente no seu navegador. Nada sai do seu dispositivo.",
+  "hero.eyebrow": "Converter · AVI → MP4",
+  "hero.title": "Converter AVI para MP4 — direto no seu navegador",
+  "hero.lead": "Arraste um arquivo .avi antigo e receba um .mp4 moderno que reproduz em celulares, na web e em editores atuais. É convertido no seu próprio dispositivo, então o arquivo nunca é enviado.",
+  "convert.format": "mp4",
+  "prose.h2": "Por que converter AVI para MP4?",
+  "prose.p1": "AVI é um contêiner mais antigo — confiável, mas pesado e muitas vezes rejeitado por celulares, navegadores e editores modernos. MP4 (H.264) é menor e reproduz em quase qualquer lugar, então converter reduz o arquivo e resolve a compatibilidade ao mesmo tempo.",
+  "prose.p2": "A maioria dos conversores envia seu clipe para um servidor primeiro. O {{SITE_NAME}} não — a conversão roda localmente no seu navegador, então nada é armazenado ou registrado. (O AVI usa o motor por software embutido, então é um pouco mais lento que formatos mais novos.)",
+  "faq.q1": "Meu arquivo .avi é enviado para algum lugar?",
+  "faq.a1": "Não. A conversão acontece inteiramente no seu navegador, no seu próprio dispositivo. Não há servidor que pudesse receber o arquivo — confira a aba Rede do seu navegador enquanto ele roda e verá zero bytes saindo.",
+  "faq.q2": "Por que o AVI é um pouco mais lento de converter?",
+  "faq.a2": "O AVI não é tratado pelo caminho rápido de hardware, então roda por um codificador de software embutido no seu navegador. Ele continua funcionando totalmente offline — só demora um pouco mais que MP4 ou MOV.",
+  "faq.q3": "O MP4 vai ficar menor?",
+  "faq.a3": "Geralmente, sim — MP4 com H.264 é muito mais eficiente que a maioria dos arquivos AVI, então você costuma obter um arquivo menor com qualidade parecida. Você também pode definir um tamanho alvo antes de converter."
+}

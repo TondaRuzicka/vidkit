@@ -1,0 +1,23 @@
+{
+  "meta.title": "Comprimir vídeo para 10 MB online — grátis, sem upload | {{SITE_NAME}}",
+  "meta.description": "Reduza qualquer vídeo para menos de 10 MB para o limite de upload gratuito do Discord. Roda no seu navegador — seu vídeo nunca sai do seu dispositivo.",
+  "og.title": "Comprimir vídeo para 10 MB — grátis, sem upload",
+  "og.description": "Encaixe qualquer vídeo no limite gratuito de 10 MB do Discord, no seu navegador.",
+  "hero.eyebrow": "Predefinição · alvo de 10 MB",
+  "hero.title": "Comprimir um vídeo para 10 MB",
+  "hero.lead": "O limite de upload gratuito do Discord é 10&nbsp;MB. Arraste seu clipe abaixo e ele será reduzido para pouco menos de 10&nbsp;MB direto no seu dispositivo — sem upload, sem Nitro, sem marca d'água.",
+  "prose.h2": "Encaixando um vídeo no limite gratuito do Discord",
+  "prose.p1": "O Discord verifica a contagem exata de bytes, então 10,2&nbsp;MB falha onde 9,9&nbsp;MB passa tranquilo. Esta ferramenta calcula exatamente quanto comprimir para que a duração do seu vídeo caiba no limite, reserva espaço para o áudio, comprime e depois confere o tamanho final — recodificando automaticamente se a primeira passagem saiu nem que seja um pouco acima. Você sempre obtém um arquivo que o Discord vai aceitar.",
+  "prose.p2": "Seja realista sobre o que cabe em 10&nbsp;MB: um clipe de gameplay de 20–30&nbsp;segundos ainda parece nítido; um clipe de 2 minutos fica em torno de 540–720p e parece bem no chat; um vídeo de 10 minutos em 10&nbsp;MB é fortemente comprimido pela matemática de qualquer ferramenta — para esses, considere se um trecho de destaque cortado não diria melhor. Quando o espaço aperta, a ferramenta reduz a resolução e a taxa de quadros em passos sensatos em vez de borrar cada quadro em blocos. O som é mantido claro o suficiente para não estalar, porque quem assiste perdoa pixels suaves mais rápido do que áudio quebrado.",
+  "prose.p3": "Tudo roda direto no seu navegador, usando a própria capacidade do seu dispositivo, então comprimir geralmente é mais rápido do que assistir ao clipe — e seu vídeo nunca é enviado para lugar nenhum.",
+  "faq.q1": "O Discord vai aceitar o arquivo com certeza?",
+  "faq.a1": "Sim — a saída é verificada para ficar abaixo de 10.000.000 bytes, que é o limite que o Discord aplica para contas gratuitas. A ferramenta recodifica automaticamente se a primeira tentativa ficar acima.",
+  "faq.q2": "Meu clipe é enviado durante a compressão?",
+  "faq.a2": "Não. Todo o processo roda no seu navegador, na sua máquina. Nada é enviado para um servidor — não existe um.",
+  "faq.q3": "Por que meu vídeo longo fica ruim em 10 MB?",
+  "faq.a3": "10&nbsp;MB é um orçamento fixo de dados compartilhado entre cada segundo de vídeo. Um clipe de 30 segundos recebe mais de 2&nbsp;Mbps — bastante. Um vídeo de 10 minutos recebe menos de 100&nbsp;kbps — quase nada, seja qual for a ferramenta que você usar. Clipes mais curtos simplesmente ficam melhores em tamanhos fixos. A <a href=\"{{url.calc}}\">calculadora de bitrate</a> calcula o número exato para a duração do seu clipe.",
+  "faq.q4": "O som conta contra os 10 MB?",
+  "faq.a4": "Sim — o áudio faz parte do arquivo. A ferramenta reserva primeiro uma quantidade sensata para o som e dá todo o resto à imagem. Vídeos sem som encaixam bastante mais qualidade visual nos mesmos 10&nbsp;MB.",
+  "faq.q5": "E os limites maiores do Nitro?",
+  "faq.a5": "O Nitro Basic eleva o teto para 25&nbsp;MB — use o <a href=\"{{url.cv25}}\">compressor de 25&nbsp;MB</a> para isso. O Nitro completo permite 500&nbsp;MB, que raramente precisa de compressão."
+}

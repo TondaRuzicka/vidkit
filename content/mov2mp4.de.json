@@ -1,0 +1,19 @@
+{
+  "meta.title": "MOV in MP4 umwandeln — gratis, im Browser, ohne Upload | {{SITE_NAME}}",
+  "meta.description": "Wandle QuickTime-.mov-Dateien direkt im Browser in universelles .mp4 um. Nichts wird hochgeladen — dein Video verlässt nie dein Gerät. Gratis, ohne Anmeldung, ohne Wasserzeichen.",
+  "og.title": "MOV in MP4 umwandeln — gratis, ohne Upload",
+  "og.description": ".mov lokal im Browser in .mp4 ändern. Nichts verlässt dein Gerät.",
+  "hero.eyebrow": "Umwandeln · MOV → MP4",
+  "hero.title": "MOV in MP4 umwandeln — direkt im Browser",
+  "hero.lead": "Leg eine QuickTime-.mov-Datei ab und erhalte ein universelles .mp4, das überall abspielt — auf Handys, in Discord, per E-Mail, in Editoren. Es wird auf deinem eigenen Gerät umgewandelt, die Datei wird also nie hochgeladen.",
+  "convert.format": "mp4",
+  "prose.h2": "Warum MOV in MP4 umwandeln?",
+  "prose.p1": ".mov ist Apples QuickTime-Format — super auf Macs und iPhones, aber viele Apps, Websites und Windows-Tools hätten lieber .mp4. Die Umwandlung in MP4 (H.264) gibt dir eine Datei, die praktisch überall abspielt, ohne Codec-Überraschungen.",
+  "prose.p2": "Die meisten Konverter laden deinen Clip zuerst auf einen Server. {{SITE_NAME}} nicht — die Umwandlung läuft lokal mit der eingebauten Video-Engine deines Browsers, sodass selbst große Aufnahmen ohne langsamen Upload umgewandelt werden und nichts gespeichert oder protokolliert wird.",
+  "faq.q1": "Wird meine .mov-Datei irgendwohin hochgeladen?",
+  "faq.a1": "Nein. Die Umwandlung passiert vollständig in deinem Browser, auf deinem eigenen Gerät. Es gibt keinen Server, der die Datei empfangen könnte — öffne den Netzwerk-Tab deines Browsers während des Vorgangs und du wirst sehen, dass null Bytes das Gerät verlassen.",
+  "faq.q2": "Verliert das MP4 an Qualität?",
+  "faq.a2": "Die Umwandlung kodiert das Video neu, es gibt also etwas Verlust, aber bei den Standardeinstellungen ist er kaum zu erkennen. Du kannst vor der Umwandlung auch eine Zielgröße oder eine Qualitätsstufe wählen.",
+  "faq.q3": "Funktioniert es für lange iPhone-Aufnahmen?",
+  "faq.a3": "Ja. In Chrome oder Edge werden Dateien bis etwa 2&nbsp;GB unterstützt. Sehr große Dateien in anderen Browsern werden womöglich mit einer klaren Meldung abgelehnt, statt stillschweigend zu scheitern."
+}

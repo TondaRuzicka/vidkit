@@ -1,0 +1,19 @@
+{
+  "meta.title": "Converter MOV para MP4 — grátis, no navegador, sem upload | {{SITE_NAME}}",
+  "meta.description": "Transforme arquivos .mov do QuickTime em .mp4 universais direto no seu navegador. Nada é enviado — seu vídeo nunca sai do seu dispositivo. Grátis, sem cadastro, sem marca d'água.",
+  "og.title": "Converter MOV para MP4 — grátis, sem upload",
+  "og.description": "Mude .mov para .mp4 localmente no seu navegador. Nada sai do seu dispositivo.",
+  "hero.eyebrow": "Converter · MOV → MP4",
+  "hero.title": "Converter MOV para MP4 — direto no seu navegador",
+  "hero.lead": "Arraste um arquivo .mov do QuickTime e receba um .mp4 universal que reproduz em qualquer lugar — celulares, Discord, e-mail, editores. É convertido no seu próprio dispositivo, então o arquivo nunca é enviado.",
+  "convert.format": "mp4",
+  "prose.h2": "Por que converter MOV para MP4?",
+  "prose.p1": ".mov é o formato QuickTime da Apple — ótimo em Macs e iPhones, mas muitos aplicativos, sites e ferramentas do Windows preferem .mp4. Converter para MP4 (H.264) dá a você um arquivo que reproduz em praticamente qualquer lugar, sem surpresas de codec.",
+  "prose.p2": "A maioria dos conversores envia seu clipe para um servidor primeiro. O {{SITE_NAME}} não — a conversão roda localmente usando o motor de vídeo embutido do seu navegador, então até gravações grandes convertem sem um upload lento, e nada é armazenado ou registrado.",
+  "faq.q1": "Meu arquivo .mov é enviado para algum lugar?",
+  "faq.a1": "Não. A conversão acontece inteiramente no seu navegador, no seu próprio dispositivo. Não há servidor que pudesse receber o arquivo — abra a aba Rede do seu navegador enquanto ele roda e verá zero bytes saindo.",
+  "faq.q2": "O MP4 vai perder qualidade?",
+  "faq.a2": "Converter recodifica o vídeo, então há alguma perda, mas com as configurações padrão é difícil de notar. Você também pode escolher um tamanho alvo ou um nível de qualidade antes de converter.",
+  "faq.q3": "Funciona com gravações longas de iPhone?",
+  "faq.a3": "Sim. No Chrome ou Edge, arquivos de até cerca de 2&nbsp;GB são suportados. Arquivos muito grandes em outros navegadores podem ser recusados com uma mensagem clara em vez de falhar em silêncio."
+}

@@ -1,5 +1,8 @@
 import en from '../locales/en.json';
 import cs from '../locales/cs.json';
+import es from '../locales/es.json';
+import pt from '../locales/pt.json';
+import de from '../locales/de.json';
 
 type StringKey = keyof typeof en;
 
@@ -7,7 +10,7 @@ type StringKey = keyof typeof en;
 // each) and are selected at runtime by the page's <html lang>. Every locale
 // must define the same keys as en.json — the `Record<StringKey, string>`
 // annotation makes a missing key a build-time type error.
-const DICTS: Record<string, Record<StringKey, string>> = { en, cs };
+const DICTS: Record<string, Record<StringKey, string>> = { en, cs, es, pt, de };
 
 function activeStrings(): Record<StringKey, string> {
   const lang =

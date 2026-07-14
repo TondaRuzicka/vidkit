@@ -1,0 +1,19 @@
+{
+  "meta.title": "MP4 in WebM umwandeln — gratis, im Browser, ohne Upload | {{SITE_NAME}}",
+  "meta.description": "Wandle .mp4-Video direkt im Browser in .webm um. Kleinere Dateien fürs Web, nichts wird hochgeladen — dein Video verlässt nie dein Gerät. Gratis, ohne Wasserzeichen.",
+  "og.title": "MP4 in WebM umwandeln — gratis, ohne Upload",
+  "og.description": ".mp4 lokal im Browser in .webm ändern. Nichts verlässt dein Gerät.",
+  "hero.eyebrow": "Umwandeln · MP4 → WebM",
+  "hero.title": "MP4 in WebM umwandeln — direkt im Browser",
+  "hero.lead": "Leg ein .mp4 ab und erhalte ein .webm — das offene Format fürs Web, bei gleicher Qualität oft kleiner. Es wird auf deinem eigenen Gerät umgewandelt und nie hochgeladen.",
+  "convert.format": "webm",
+  "prose.h2": "Warum MP4 in WebM umwandeln?",
+  "prose.p1": "WebM ist das offene, lizenzgebührenfreie Format, das fürs Web entworfen wurde. Es ist bei ähnlicher Qualität tendenziell kleiner als MP4 und ideal für Hintergrundvideos, HTML5-<code>&lt;video&gt;</code> und überall, wo du eine leichte, lizenzfreie Datei willst.",
+  "prose.p2": "Die meisten Konverter laden deinen Clip zuerst auf einen Server. {{SITE_NAME}} nicht — die Umwandlung läuft lokal in deinem Browser. WebM nutzt die eingebaute Software-Engine, ist also langsamer als der schnelle MP4-Pfad, aber nichts wird je gespeichert oder protokolliert.",
+  "faq.q1": "Wird meine .mp4-Datei irgendwohin hochgeladen?",
+  "faq.a1": "Nein. Die Umwandlung passiert vollständig in deinem Browser, auf deinem eigenen Gerät. Es gibt keinen Server, der die Datei empfangen könnte — beobachte den Netzwerk-Tab deines Browsers während des Vorgangs und du wirst sehen, dass null Bytes das Gerät verlassen.",
+  "faq.q2": "Warum dauert WebM länger?",
+  "faq.a2": "WebM nutzt einen Software-Encoder, den Browser für die Ausgabe nicht hardwarebeschleunigen können, es ist also langsamer als die Umwandlung in MP4. Halte Clips kurz für die schnellsten Ergebnisse.",
+  "faq.q3": "Spielt es überall ab?",
+  "faq.a3": "WebM spielt in allen modernen Browsern und auf Android ab, aber nicht auf jedem älteren Gerät oder in manchen Editoren. Wenn du stattdessen maximale Kompatibilität brauchst, wandle in MP4 um."
+}

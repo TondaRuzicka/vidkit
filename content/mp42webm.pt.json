@@ -1,0 +1,19 @@
+{
+  "meta.title": "Converter MP4 para WebM — grátis, no navegador, sem upload | {{SITE_NAME}}",
+  "meta.description": "Converta vídeo .mp4 para .webm direto no seu navegador. Arquivos menores para a web, nada enviado — seu vídeo nunca sai do seu dispositivo. Grátis, sem marca d'água.",
+  "og.title": "Converter MP4 para WebM — grátis, sem upload",
+  "og.description": "Mude .mp4 para .webm localmente no seu navegador. Nada sai do seu dispositivo.",
+  "hero.eyebrow": "Converter · MP4 → WebM",
+  "hero.title": "Converter MP4 para WebM — direto no seu navegador",
+  "hero.lead": "Arraste um .mp4 e receba um .webm — o formato aberto feito para a web, muitas vezes menor com a mesma qualidade. É convertido no seu próprio dispositivo e nunca enviado.",
+  "convert.format": "webm",
+  "prose.h2": "Por que converter MP4 para WebM?",
+  "prose.p1": "WebM é o formato aberto e livre de royalties projetado para a web. Ele tende a ser menor que o MP4 com qualidade parecida e é ideal para vídeos de fundo, <code>&lt;video&gt;</code> em HTML5 e lugares onde você quer um arquivo leve e sem licença.",
+  "prose.p2": "A maioria dos conversores envia seu clipe para um servidor primeiro. O {{SITE_NAME}} não — a conversão roda localmente no seu navegador. O WebM usa o motor por software embutido, então é mais lento que o caminho rápido do MP4, mas nada é jamais armazenado ou registrado.",
+  "faq.q1": "Meu arquivo .mp4 é enviado para algum lugar?",
+  "faq.a1": "Não. A conversão acontece inteiramente no seu navegador, no seu próprio dispositivo. Não há servidor que pudesse receber o arquivo — observe a aba Rede do seu navegador enquanto ele roda e verá zero bytes saindo.",
+  "faq.q2": "Por que o WebM demora mais?",
+  "faq.a2": "O WebM usa um codificador de software que os navegadores não conseguem acelerar por hardware na saída, então é mais lento que converter para MP4. Mantenha os clipes curtos para os resultados mais rápidos.",
+  "faq.q3": "Vai reproduzir em qualquer lugar?",
+  "faq.a3": "O WebM reproduz em todos os navegadores modernos e no Android, mas não em todo dispositivo antigo nem em alguns editores. Se você precisa de compatibilidade máxima, converta para MP4."
+}

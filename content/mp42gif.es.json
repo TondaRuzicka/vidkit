@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convertir MP4 a GIF — gratis, en tu navegador, sin subir | {{SITE_NAME}}",
+  "meta.description": "Convierte un video .mp4 en un .gif animado directamente en tu navegador. No se sube nada — tu archivo nunca sale de tu dispositivo. Gratis, sin registro, sin marca de agua.",
+  "og.title": "Convertir MP4 a GIF — gratis, sin subir nada",
+  "og.description": "Crea un GIF animado desde un .mp4, localmente en tu navegador.",
+  "hero.eyebrow": "Convertir · MP4 → GIF",
+  "hero.title": "Convertir MP4 a GIF — directamente en tu navegador",
+  "hero.lead": "Suelta un .mp4 corto y conviértelo en un .gif animado para chats, reacciones y documentos. Se crea en tu propio dispositivo, así que el clip nunca se sube.",
+  "convert.format": "gif",
+  "prose.h2": "¿Por qué convertir MP4 a GIF?",
+  "prose.p1": "Los GIF se reproducen en bucle automáticamente, se ven dentro de todo y no necesitan reproductor — perfectos para reacciones, demos cortas y fragmentos explicativos en chats, incidencias y documentos. Mantén los clips en unos pocos segundos: los GIF no tienen audio real y crecen rápido.",
+  "prose.p2": "La mayoría de los conversores suben tu clip a un servidor primero. {{SITE_NAME}} no — el GIF se crea localmente en tu navegador, así que nada se almacena ni se registra. Elige un ancho y una velocidad de fotogramas para equilibrar la suavidad frente al tamaño del archivo.",
+  "faq.q1": "¿Se sube mi video a algún sitio?",
+  "faq.a1": "No. El GIF se crea por completo en tu navegador, en tu propio dispositivo. No hay ningún servidor que pudiera recibir el archivo — observa la pestaña Red de tu navegador mientras se ejecuta y verás que no salen bytes.",
+  "faq.q2": "¿Por qué mi GIF es tan grande?",
+  "faq.a2": "GIF es un formato antiguo que almacena los fotogramas de forma ineficiente, así que incluso clips cortos pueden ocupar varios megabytes. Usa un ancho menor y una velocidad de fotogramas más baja para reducir el tamaño.",
+  "faq.q3": "¿Cuánto puede durar el clip?",
+  "faq.a3": "Técnicamente cualquier duración, pero los GIF se disparan de tamaño rápido — unos pocos segundos es lo ideal. Para algo más largo, un MP4 o WebM se verá mejor y pesará mucho menos."
+}

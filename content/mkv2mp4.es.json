@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convertir MKV a MP4 — gratis, en tu navegador, sin subir | {{SITE_NAME}}",
+  "meta.description": "Convierte video .mkv (Matroska) a .mp4 directamente en tu navegador. No se sube nada — tu archivo nunca sale de tu dispositivo. Gratis, sin registro, sin marca de agua.",
+  "og.title": "Convertir MKV a MP4 — gratis, sin subir nada",
+  "og.description": "Cambia .mkv a .mp4 localmente en tu navegador. Nada sale de tu dispositivo.",
+  "hero.eyebrow": "Convertir · MKV → MP4",
+  "hero.title": "Convertir MKV a MP4 — directamente en tu navegador",
+  "hero.lead": "Suelta un archivo .mkv (Matroska) y obtén un .mp4 estándar que se reproduce en móviles, smart TVs y en editores que rechazan MKV. Se convierte en tu propio dispositivo y nunca se sube.",
+  "convert.format": "mp4",
+  "prose.h2": "¿Por qué convertir MKV a MP4?",
+  "prose.p1": "MKV es un contenedor flexible y popular para video de alta calidad, pero muchos móviles, televisores, navegadores y editores no lo abren. MP4 (H.264) es el estándar universal por defecto, así que convertir hace que el mismo video se reproduzca casi en todas partes.",
+  "prose.p2": "La mayoría de los conversores suben tu clip a un servidor primero. {{SITE_NAME}} no — la conversión se ejecuta localmente en tu navegador, así que incluso archivos MKV grandes se convierten sin una subida lenta, y nada se almacena ni se registra.",
+  "faq.q1": "¿Se sube mi archivo .mkv a algún sitio?",
+  "faq.a1": "No. La conversión ocurre por completo en tu navegador, en tu propio dispositivo. No hay ningún servidor que pudiera recibir el archivo — observa la pestaña Red de tu navegador mientras se ejecuta y verás que no salen bytes.",
+  "faq.q2": "¿El MP4 perderá calidad?",
+  "faq.a2": "Convertir vuelve a codificar el video, así que hay algo de pérdida, pero con los ajustes por defecto es difícil de notar. También puedes elegir un tamaño objetivo o un nivel de calidad antes de convertir.",
+  "faq.q3": "¿Y los archivos MKV grandes de larga duración?",
+  "faq.a3": "En Chrome o Edge se admiten archivos de hasta unos 2&nbsp;GB. Los archivos más grandes en otros navegadores pueden rechazarse con un mensaje claro en lugar de fallar en silencio — prueba con Chrome para los archivos más grandes."
+}

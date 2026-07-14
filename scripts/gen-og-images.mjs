@@ -16,6 +16,9 @@ const OUT_DIR = join(ROOT, 'public', 'og');
 const PILLS = {
   en: ['100% in your browser', 'Nothing is uploaded', 'Free · No signup'],
   cs: ['100% ve vašem prohlížeči', 'Nic se nenahrává', 'Zdarma · Bez registrace'],
+  es: ['100% en tu navegador', 'Nada se sube', 'Gratis · Sin registro'],
+  pt: ['100% no seu navegador', 'Nada é enviado', 'Grátis · Sem cadastro'],
+  de: ['100% in deinem Browser', 'Nichts wird hochgeladen', 'Kostenlos · Ohne Anmeldung'],
 };
 
 const readJson = (file) => JSON.parse(readFileSync(join(ROOT, 'content', file), 'utf8'));

@@ -1,0 +1,19 @@
+{
+  "meta.title": "Converter MKV para MP4 — grátis, no navegador, sem upload | {{SITE_NAME}}",
+  "meta.description": "Converta vídeo .mkv (Matroska) para .mp4 direto no seu navegador. Nada é enviado — seu arquivo nunca sai do seu dispositivo. Grátis, sem cadastro, sem marca d'água.",
+  "og.title": "Converter MKV para MP4 — grátis, sem upload",
+  "og.description": "Mude .mkv para .mp4 localmente no seu navegador. Nada sai do seu dispositivo.",
+  "hero.eyebrow": "Converter · MKV → MP4",
+  "hero.title": "Converter MKV para MP4 — direto no seu navegador",
+  "hero.lead": "Arraste um arquivo .mkv (Matroska) e receba um .mp4 padrão que reproduz em celulares, smart TVs e em editores que recusam MKV. É convertido no seu próprio dispositivo e nunca enviado.",
+  "convert.format": "mp4",
+  "prose.h2": "Por que converter MKV para MP4?",
+  "prose.p1": "MKV é um contêiner flexível popular para vídeo de alta qualidade, mas muitos celulares, TVs, navegadores e editores não o abrem. MP4 (H.264) é o padrão universal, então converter faz o mesmo vídeo reproduzir em quase qualquer lugar.",
+  "prose.p2": "A maioria dos conversores envia seu clipe para um servidor primeiro. O {{SITE_NAME}} não — a conversão roda localmente no seu navegador, então até arquivos MKV grandes convertem sem um upload lento, e nada é armazenado ou registrado.",
+  "faq.q1": "Meu arquivo .mkv é enviado para algum lugar?",
+  "faq.a1": "Não. A conversão acontece inteiramente no seu navegador, no seu próprio dispositivo. Não há servidor que pudesse receber o arquivo — observe a aba Rede do seu navegador enquanto ele roda e verá zero bytes saindo.",
+  "faq.q2": "O MP4 vai perder qualidade?",
+  "faq.a2": "Converter recodifica o vídeo, então há alguma perda, mas com as configurações padrão é difícil de notar. Você também pode escolher um tamanho alvo ou um nível de qualidade antes de converter.",
+  "faq.q3": "E os arquivos MKV grandes, do tamanho de um filme?",
+  "faq.a3": "No Chrome ou Edge, arquivos de até cerca de 2&nbsp;GB são suportados. Arquivos maiores em outros navegadores podem ser recusados com uma mensagem clara em vez de falhar em silêncio — tente o Chrome para os maiores arquivos."
+}

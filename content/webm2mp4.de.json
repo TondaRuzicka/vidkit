@@ -1,0 +1,19 @@
+{
+  "meta.title": "WebM in MP4 umwandeln — gratis, im Browser, ohne Upload | {{SITE_NAME}}",
+  "meta.description": "Wandle .webm-Video direkt im Browser in .mp4 um. Nichts wird hochgeladen — deine Datei verlässt nie dein Gerät. Gratis, ohne Anmeldung, ohne Wasserzeichen.",
+  "og.title": "WebM in MP4 umwandeln — gratis, ohne Upload",
+  "og.description": ".webm lokal im Browser in .mp4 ändern. Nichts verlässt dein Gerät.",
+  "hero.eyebrow": "Umwandeln · WebM → MP4",
+  "hero.title": "WebM in MP4 umwandeln — direkt im Browser",
+  "hero.lead": "Leg eine .webm-Datei ab — eine Bildschirmaufnahme, einen heruntergeladenen Clip — und erhalte ein Standard-.mp4, das auf Handys, in Editoren und in Social-Apps abspielt. Es wird auf deinem eigenen Gerät umgewandelt und nie hochgeladen.",
+  "convert.format": "mp4",
+  "prose.h2": "Warum WebM in MP4 umwandeln?",
+  "prose.p1": "WebM ist für Web-Video und Bildschirmaufnahmen verbreitet, lässt sich aber in viele Videoeditoren nicht importieren und spielt auf manchen Handys und TVs nicht ab. MP4 (H.264) ist das am breitesten unterstützte Format überhaupt, sodass die Umwandlung die meisten „dieses Video öffnet nicht“-Probleme löst.",
+  "prose.p2": "Die meisten Konverter laden deinen Clip zuerst auf einen Server. {{SITE_NAME}} nicht — die Umwandlung läuft lokal in deinem Browser, sodass selbst große Clips ohne langsamen Upload umgewandelt werden und nichts gespeichert oder protokolliert wird.",
+  "faq.q1": "Wird meine .webm-Datei irgendwohin hochgeladen?",
+  "faq.a1": "Nein. Die Umwandlung passiert vollständig in deinem Browser, auf deinem eigenen Gerät. Es gibt keinen Server, der die Datei empfangen könnte — prüfe den Netzwerk-Tab deines Browsers während des Vorgangs und du wirst sehen, dass null Bytes das Gerät verlassen.",
+  "faq.q2": "Sieht das MP4 gleich aus?",
+  "faq.a2": "Die Umwandlung kodiert das Video neu, es gibt also etwas Verlust, aber bei den Standardeinstellungen ist er kaum zu erkennen. Du kannst vor der Umwandlung auch eine Zielgröße oder eine Qualitätsstufe wählen.",
+  "faq.q3": "Kann es lange Bildschirmaufnahmen umwandeln?",
+  "faq.a3": "Ja. In Chrome oder Edge werden Dateien bis etwa 2&nbsp;GB unterstützt. Sehr große Dateien in anderen Browsern werden womöglich mit einer klaren Meldung abgelehnt, statt stillschweigend zu scheitern."
+}

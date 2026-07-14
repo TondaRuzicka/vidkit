@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convertir MP4 a WebM — gratis, en tu navegador, sin subir | {{SITE_NAME}}",
+  "meta.description": "Convierte video .mp4 a .webm directamente en tu navegador. Archivos más pequeños para la web, sin subir nada — tu video nunca sale de tu dispositivo. Gratis, sin marca de agua.",
+  "og.title": "Convertir MP4 a WebM — gratis, sin subir nada",
+  "og.description": "Cambia .mp4 a .webm localmente en tu navegador. Nada sale de tu dispositivo.",
+  "hero.eyebrow": "Convertir · MP4 → WebM",
+  "hero.title": "Convertir MP4 a WebM — directamente en tu navegador",
+  "hero.lead": "Suelta un .mp4 y obtén un .webm — el formato abierto pensado para la web, a menudo más pequeño con la misma calidad. Se convierte en tu propio dispositivo y nunca se sube.",
+  "convert.format": "webm",
+  "prose.h2": "¿Por qué convertir MP4 a WebM?",
+  "prose.p1": "WebM es el formato abierto y libre de regalías diseñado para la web. Suele ser más pequeño que MP4 con una calidad similar y es ideal para videos de fondo, para el <code>&lt;video&gt;</code> de HTML5 y para casos donde quieres un archivo ligero y sin licencias.",
+  "prose.p2": "La mayoría de los conversores suben tu clip a un servidor primero. {{SITE_NAME}} no — la conversión se ejecuta localmente en tu navegador. WebM usa el motor de software integrado, así que es más lento que la vía rápida de MP4, pero nada se almacena ni se registra jamás.",
+  "faq.q1": "¿Se sube mi archivo .mp4 a algún sitio?",
+  "faq.a1": "No. La conversión ocurre por completo en tu navegador, en tu propio dispositivo. No hay ningún servidor que pudiera recibir el archivo — observa la pestaña Red de tu navegador mientras se ejecuta y verás que no salen bytes.",
+  "faq.q2": "¿Por qué WebM tarda más?",
+  "faq.a2": "WebM usa un codificador por software que los navegadores no pueden acelerar por hardware para la salida, así que es más lento que convertir a MP4. Mantén los clips cortos para los resultados más rápidos.",
+  "faq.q3": "¿Se reproducirá en todas partes?",
+  "faq.a3": "WebM se reproduce en todos los navegadores modernos y en Android, pero no en todos los dispositivos antiguos ni en algunos editores. Si en cambio necesitas la máxima compatibilidad, convierte a MP4."
+}

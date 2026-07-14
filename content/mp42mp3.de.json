@@ -1,0 +1,19 @@
+{
+  "meta.title": "MP4 in MP3 umwandeln — gratis, im Browser, ohne Upload | {{SITE_NAME}}",
+  "meta.description": "Extrahiere den Ton aus .mp4-Video direkt im Browser in eine .mp3-Datei. Nichts wird hochgeladen — deine Datei verlässt nie dein Gerät. Gratis, ohne Anmeldung, ohne Wasserzeichen.",
+  "og.title": "MP4 in MP3 umwandeln — gratis, ohne Upload",
+  "og.description": "Zieh den Ton aus einem .mp4 in .mp3, lokal in deinem Browser.",
+  "hero.eyebrow": "Umwandeln · MP4 → MP3",
+  "hero.title": "MP4 in MP3 umwandeln — direkt im Browser",
+  "hero.lead": "Leg ein .mp4-Video ab und zieh nur den Ton als .mp3 heraus — für Podcasts, Musik, Vorlesungen oder Sprachnotizen. Er wird auf deinem eigenen Gerät extrahiert, die Datei wird also nie hochgeladen.",
+  "convert.format": "mp3",
+  "prose.h2": "Warum MP4 in MP3 umwandeln?",
+  "prose.p1": "Manchmal willst du nur den Ton: einen Song, ein Interview, eine Vorlesung, eine Sprachnotiz. Die Extraktion in MP3 lässt das Video ganz weg und behält nur das Audio in einer kleinen Datei, die in jeder Musik-App und auf jedem Gerät abspielt.",
+  "prose.p2": "Die meisten Konverter laden dein Video zuerst auf einen Server. {{SITE_NAME}} nicht — der Ton wird lokal in deinem Browser extrahiert, sodass nichts gespeichert oder protokolliert wird und selbst lange Aufnahmen keinen langsamen Upload brauchen.",
+  "faq.q1": "Wird mein Video irgendwohin hochgeladen?",
+  "faq.a1": "Nein. Die Extraktion passiert vollständig in deinem Browser, auf deinem eigenen Gerät. Es gibt keinen Server, der die Datei empfangen könnte — prüfe den Netzwerk-Tab deines Browsers während des Vorgangs und du wirst sehen, dass null Bytes das Gerät verlassen.",
+  "faq.q2": "Welche MP3-Qualität bekomme ich?",
+  "faq.a2": "Du kannst die Bitrate vor der Umwandlung wählen — von 128&nbsp;kbps (klein) bis 320&nbsp;kbps (beste Qualität). 192&nbsp;kbps ist ein guter Standard für Sprache und die meiste Musik.",
+  "faq.q3": "Kommt es mit einem langen Video zurecht?",
+  "faq.a3": "Ja. Audio ist im Vergleich zu Video winzig, sodass selbst stundenlange Aufnahmen schnell extrahiert werden und klein bleiben."
+}

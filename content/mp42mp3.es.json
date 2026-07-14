@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convertir MP4 a MP3 — gratis, en tu navegador, sin subir | {{SITE_NAME}}",
+  "meta.description": "Extrae el audio de un video .mp4 a un archivo .mp3 directamente en tu navegador. No se sube nada — tu archivo nunca sale de tu dispositivo. Gratis, sin registro, sin marca de agua.",
+  "og.title": "Convertir MP4 a MP3 — gratis, sin subir nada",
+  "og.description": "Extrae el audio de un .mp4 a .mp3, localmente en tu navegador.",
+  "hero.eyebrow": "Convertir · MP4 → MP3",
+  "hero.title": "Convertir MP4 a MP3 — directamente en tu navegador",
+  "hero.lead": "Suelta un video .mp4 y extrae solo el audio como .mp3 — para pódcasts, música, clases o notas de voz. Se extrae en tu propio dispositivo, así que el archivo nunca se sube.",
+  "convert.format": "mp3",
+  "prose.h2": "¿Por qué convertir MP4 a MP3?",
+  "prose.p1": "A veces solo quieres el sonido: una canción, una entrevista, una clase, una nota de voz. Extraer a MP3 elimina el video por completo y conserva solo el audio en un archivo pequeño que se reproduce en todas las apps de música y en todos los dispositivos.",
+  "prose.p2": "La mayoría de los conversores suben tu video a un servidor primero. {{SITE_NAME}} no — el audio se extrae localmente en tu navegador, así que nada se almacena ni se registra, e incluso las grabaciones largas no necesitan una subida lenta.",
+  "faq.q1": "¿Se sube mi video a algún sitio?",
+  "faq.a1": "No. La extracción ocurre por completo en tu navegador, en tu propio dispositivo. No hay ningún servidor que pudiera recibir el archivo — revisa la pestaña Red de tu navegador mientras se ejecuta y verás que no salen bytes.",
+  "faq.q2": "¿Qué calidad de MP3 obtengo?",
+  "faq.a2": "Puedes elegir el bitrate antes de convertir — desde 128&nbsp;kbps (pequeño) hasta 320&nbsp;kbps (mejor calidad). 192&nbsp;kbps es un buen valor por defecto para voz y para la mayoría de la música.",
+  "faq.q3": "¿Puede con un video largo?",
+  "faq.a3": "Sí. El audio es diminuto comparado con el video, así que incluso las grabaciones de una hora se extraen rápido y quedan pequeñas."
+}
