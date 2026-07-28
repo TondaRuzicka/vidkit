@@ -4,6 +4,7 @@ import es from '../locales/es.json';
 import pt from '../locales/pt.json';
 import de from '../locales/de.json';
 import tr from '../locales/tr.json';
+import zh from '../locales/zh.json';
 
 type StringKey = keyof typeof en;
 
@@ -11,12 +12,14 @@ type StringKey = keyof typeof en;
 // each) and are selected at runtime by the page's <html lang>. Every locale
 // must define the same keys as en.json — the `Record<StringKey, string>`
 // annotation makes a missing key a build-time type error.
-const DICTS: Record<string, Record<StringKey, string>> = { en, cs, es, pt, de, tr };
+const DICTS: Record<string, Record<StringKey, string>> = { en, cs, es, pt, de, tr, zh };
 
 function activeStrings(): Record<StringKey, string> {
   const lang =
     typeof document !== 'undefined' ? document.documentElement.lang : 'en';
-  return DICTS[lang] ?? en;
+  // Only the primary subtag selects a dictionary: <html lang> can carry a
+  // script or region ('zh-Hans'), which hreflang needs but the widget doesn't.
+  return DICTS[lang.split('-')[0]!.toLowerCase()] ?? en;
 }
 
 export function t(

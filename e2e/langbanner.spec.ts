@@ -104,6 +104,25 @@ test.describe('language banner — Turkish browser', () => {
   });
 });
 
+test.describe('language banner — Chinese browser', () => {
+  test.use({ locale: 'zh-CN' });
+
+  test('offers Chinese on an English page and switches on click', async ({ page }) => {
+    await page.goto('/');
+    const banner = page.locator('.lang-banner');
+    await expect(banner).toBeVisible();
+    const sw = banner.locator('.lang-banner__switch');
+    await expect(sw).toHaveAttribute('href', '/zh/');
+    await sw.click();
+    await expect(page).toHaveURL(/\/zh\/$/);
+  });
+
+  test('no banner when the page already matches the browser language', async ({ page }) => {
+    await page.goto('/zh/');
+    await expect(page.locator('.lang-banner')).toHaveCount(0);
+  });
+});
+
 test.describe('language banner — English browser', () => {
   test.use({ locale: 'en-US' });
 

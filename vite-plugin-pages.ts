@@ -3,6 +3,7 @@ import { join, resolve } from 'node:path';
 import type { Plugin } from 'vite';
 import {
   DEFAULT_LOCALE,
+  HREFLANG,
   LEGACY_EN_PATHS,
   LOCALES,
   PAGES,
@@ -63,6 +64,7 @@ const OG_LOCALE: Record<Locale, string> = {
   pt: 'pt_BR',
   de: 'de_DE',
   tr: 'tr_TR',
+  zh: 'zh_CN',
 };
 
 // <title>, description, canonical, og/twitter tags and hreflang alternates
@@ -73,7 +75,7 @@ function metaBlock(page: PageDef, locale: Locale): string {
   const alternates = page.locales
     .map(
       (l) =>
-        `<link rel="alternate" hreflang="${l}" href="${SITE_URL}${pagePath(page, l)}" />`,
+        `<link rel="alternate" hreflang="${HREFLANG[l]}" href="${SITE_URL}${pagePath(page, l)}" />`,
     )
     .join('\n');
   const xDefault = `<link rel="alternate" hreflang="x-default" href="${SITE_URL}${pagePath(page, DEFAULT_LOCALE)}" />`;
@@ -104,6 +106,7 @@ const NATIVE_NAMES: Record<Locale, string> = {
   pt: 'Português',
   de: 'Deutsch',
   tr: 'Türkçe',
+  zh: '简体中文',
 };
 
 // Language switcher: a native <details> dropdown that works fully with
@@ -119,7 +122,7 @@ function langSwitch(page: PageDef, current: Locale): string {
     .map((l) => {
       const href = pagePath(page, l);
       const aria = l === current ? ' aria-current="true"' : '';
-      return `<li><a hreflang="${l}" lang="${l}" href="${href}"${aria}>${NATIVE_NAMES[l]}</a></li>`;
+      return `<li><a hreflang="${HREFLANG[l]}" lang="${HREFLANG[l]}" href="${href}"${aria}>${NATIVE_NAMES[l]}</a></li>`;
     })
     .join('');
   return `<details class="lang-menu"><summary aria-label="Language — ${NATIVE_NAMES[current]}">${globe}<span class="lang-menu__code">${current.toUpperCase()}</span>${chevron}</summary><ul>${items}</ul></details>`;

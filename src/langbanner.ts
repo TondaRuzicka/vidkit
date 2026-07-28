@@ -6,10 +6,10 @@
 // The choice is remembered in localStorage — a functional preference, exempt
 // from EU cookie consent.
 
-const SUPPORTED = ['en', 'cs', 'es', 'pt', 'de', 'tr'] as const;
-type Locale = (typeof SUPPORTED)[number];
+import { HREFLANG, LOCALES, type Locale } from './config';
+
 const isLocale = (s: string): s is Locale =>
-  (SUPPORTED as readonly string[]).includes(s);
+  (LOCALES as readonly string[]).includes(s);
 
 const STORE_KEY = 'vk-lang';
 
@@ -45,8 +45,17 @@ const COPY: Record<Locale, { msg: string; action: string; dismiss: string }> = {
     action: 'Türkçeye geç',
     dismiss: 'İngilizce devam et',
   },
+  zh: {
+    msg: '本页面也提供简体中文版本。',
+    action: '切换到简体中文',
+    dismiss: '继续使用英文',
+  },
 };
 
+// Primary subtag only: 'zh-Hans' (our <html lang>) and 'zh-CN' / 'zh-TW' (a
+// visitor's browser setting) all collapse to 'zh'. Traditional-script readers
+// therefore get offered the Simplified pages — better than nothing while
+// zh-Hant doesn't exist, and it's a suggestion they can ignore.
 function base(tag: string): string {
   return tag.slice(0, 2).toLowerCase();
 }
@@ -87,7 +96,7 @@ function init(): void {
   if (!preferred || preferred === current) return;
 
   const alt = document.querySelector<HTMLLinkElement>(
-    `link[rel="alternate"][hreflang="${preferred}"]`,
+    `link[rel="alternate"][hreflang="${HREFLANG[preferred]}"]`,
   );
   if (!alt?.href) return;
   // Same-origin path, so it works identically on localhost and in production.
