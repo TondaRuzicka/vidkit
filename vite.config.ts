@@ -41,6 +41,15 @@ export default defineConfig({
         webm2mp3: resolve(import.meta.dirname,'webm-to-mp3/index.html'),
         video2mp3: resolve(import.meta.dirname,'video-to-mp3/index.html'),
         extractaudio: resolve(import.meta.dirname,'extract-audio-from-video/index.html'),
+        // Legacy/one-way converter long-tail (English-only)
+        mp42mov: resolve(import.meta.dirname,'mp4-to-mov/index.html'),
+        mp42mkv: resolve(import.meta.dirname,'mp4-to-mkv/index.html'),
+        wmv2mp4: resolve(import.meta.dirname,'wmv-to-mp4/index.html'),
+        vob2mp4: resolve(import.meta.dirname,'vob-to-mp4/index.html'),
+        flv2mp4: resolve(import.meta.dirname,'flv-to-mp4/index.html'),
+        ts2mp4: resolve(import.meta.dirname,'ts-to-mp4/index.html'),
+        '3gp2mp4': resolve(import.meta.dirname,'3gp-to-mp4/index.html'),
+        m4v2mp4: resolve(import.meta.dirname,'m4v-to-mp4/index.html'),
         // Reference content (en + cs)
         limits: resolve(import.meta.dirname,'video-upload-size-limits/index.html'),
         calc: resolve(import.meta.dirname,'video-bitrate-calculator/index.html'),

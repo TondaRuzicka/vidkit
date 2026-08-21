@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert M4V to MP4 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert Apple .m4v video to standard .mp4 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert M4V to MP4 — Free, No Upload",
+  "og.description": "Change Apple .m4v files to .mp4 locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · M4V → MP4",
+  "hero.title": "Convert M4V to MP4 — right in your browser",
+  "hero.lead": "Drop an .m4v file and get a standard .mp4 that any player or editor will accept. It's converted on your own device, so the file is never uploaded.",
+  "convert.format": "mp4",
+  "prose.h2": "Why convert M4V to MP4?",
+  "prose.p1": "M4V is Apple's own spin on MP4, used across iTunes and the Apple TV app. Inside it's near enough the same thing — but the unfamiliar extension is enough to make Windows software, Android phones, editors and upload forms refuse the file, even though they'd happily take the identical video named .mp4.",
+  "prose.p2": "Renaming the file sometimes works and sometimes leaves you with something that won't play. Converting properly gives you a clean, standard .mp4 with the right structure, so it opens the first time everywhere. Because the two formats are so close, this runs on the fast path and finishes quickly, right on your device.",
+  "faq.q1": "Is my .m4v file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Will this convert a film I bought from iTunes?",
+  "faq.a2": "No. Purchased and rented films carry Apple's copy protection, and {{SITE_NAME}} doesn't remove it. This works with unprotected .m4v files — your own exports, recordings and videos added to iTunes yourself.",
+  "faq.q3": "Can't I just rename .m4v to .mp4?",
+  "faq.a3": "Often you can, and it's worth trying first. But renaming only changes the label — if a player still refuses the file, or the sound or chapters come out wrong, converting rebuilds it properly as a standard MP4."
+}

@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert MP4 to MKV — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert .mp4 video to .mkv (Matroska) right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert MP4 to MKV — Free, No Upload",
+  "og.description": "Change .mp4 to .mkv locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · MP4 → MKV",
+  "hero.title": "Convert MP4 to MKV — right in your browser",
+  "hero.lead": "Drop an .mp4 and get an .mkv — the format home media servers and desktop players like best. It's converted on your own device, so the file is never uploaded.",
+  "convert.format": "mkv",
+  "prose.h2": "Why convert MP4 to MKV?",
+  "prose.p1": "MKV is the format of choice for home media libraries. Plex, Jellyfin, Kodi and VLC all handle it natively, and unlike MP4 it was designed to carry several audio tracks and subtitle tracks in one tidy file — handy for a film with more than one language, or a copy you want to keep chaptered.",
+  "prose.p2": "MKV is also an open format that isn't owned by any one company, which is part of why archivists prefer it for long-term storage. The conversion runs locally in your browser on the fast path, so nothing is stored or logged and a full-length film starts converting straight away instead of waiting on an upload.",
+  "faq.q1": "Is my .mp4 file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Will Plex, Kodi or VLC play the result?",
+  "faq.a2": "Yes. VLC, Kodi, Plex and Jellyfin all play MKV without extra software. The main place MKV isn't welcome is Apple's own apps — QuickTime Player won't open it, so keep MP4 or MOV for those.",
+  "faq.q3": "Does converting to MKV lose quality?",
+  "faq.a3": "Very little. MKV holds the same kind of video MP4 does, so the picture survives the move intact. If you'd rather trade some quality for a smaller file, set a target size or quality level before converting."
+}

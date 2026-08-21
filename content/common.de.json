@@ -62,5 +62,21 @@
   "footer.calc": "Video-Bitrate-Rechner",
   "audio.heading": "Audio extrahieren",
   "audio.title": "Audio aus Video extrahieren",
-  "audio.sub": "Brauchst du nur den Ton? Zieh das Audio aus jedem Video — im Browser, nichts wird hochgeladen."
+  "audio.sub": "Brauchst du nur den Ton? Zieh das Audio aus jedem Video — im Browser, nichts wird hochgeladen.",
+  "url.mp42mov": "/mp4-to-mov/",
+  "convert.mp42mov": "MP4 in MOV",
+  "url.mp42mkv": "/mp4-to-mkv/",
+  "convert.mp42mkv": "MP4 in MKV",
+  "url.wmv2mp4": "/wmv-to-mp4/",
+  "convert.wmv2mp4": "WMV in MP4",
+  "url.vob2mp4": "/vob-to-mp4/",
+  "convert.vob2mp4": "VOB in MP4",
+  "url.flv2mp4": "/flv-to-mp4/",
+  "convert.flv2mp4": "FLV in MP4",
+  "url.ts2mp4": "/ts-to-mp4/",
+  "convert.ts2mp4": "TS in MP4",
+  "url.3gp2mp4": "/3gp-to-mp4/",
+  "convert.3gp2mp4": "3GP in MP4",
+  "url.m4v2mp4": "/m4v-to-mp4/",
+  "convert.m4v2mp4": "M4V in MP4"
 }

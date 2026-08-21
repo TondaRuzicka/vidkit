@@ -12,6 +12,16 @@ export interface Dropzone {
 const UPLOAD_ICON = `<svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`;
 
 /**
+ * `video/*` alone hides these in the OS picker: the legacy and broadcast
+ * containers either have no registered MIME type or one the system doesn't
+ * class as video. Each extension here backs a landing page, so omitting one
+ * means arriving from that search and being unable to select your own file.
+ */
+const VIDEO_EXTS =
+  '.mkv,.avi,.mov,.webm,.mp4,.wmv,.flv,.vob,.ts,.m2ts,.mts,.3gp,.3g2,.m4v,.mpg,.mpeg,.ogv';
+const AUDIO_EXTS = '.m4a,.wav,.mp3,.aac,.flac,.ogg,.opus,.wma';
+
+/**
  * A real <button> opens the picker (keyboard-accessible for free); the
  * wrapper accepts drag-and-drop. The file input itself stays visually
  * hidden but functional.
@@ -21,8 +31,8 @@ export function createDropzone(intent: Intent): Dropzone {
     type: 'file',
     accept:
       intent === 'audio'
-        ? 'video/*,audio/*,.mkv,.avi,.mov,.webm,.mp4,.m4a,.wav,.mp3'
-        : 'video/*,.mkv,.avi,.mov,.webm,.mp4',
+        ? `video/*,audio/*,${VIDEO_EXTS},${AUDIO_EXTS}`
+        : `video/*,${VIDEO_EXTS}`,
     class: 'visually-hidden',
     'aria-hidden': 'true',
     tabindex: '-1',

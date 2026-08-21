@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert 3GP to MP4 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert old .3gp phone videos to modern .mp4 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert 3GP to MP4 — Free, No Upload",
+  "og.description": "Change .3gp phone videos to .mp4 locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · 3GP → MP4",
+  "hero.title": "Convert 3GP to MP4 — right in your browser",
+  "hero.lead": "Drop an old .3gp clip from an early phone or a memory card and get an .mp4 that plays today. It's converted on your own device, so the file is never uploaded.",
+  "convert.format": "mp4",
+  "prose.h2": "Why convert 3GP to MP4?",
+  "prose.p1": "3GP was the video format of early mobile phones — the one clips were recorded and sent as picture messages in, back when a phone had a few megabytes to spare. The files are small and low-resolution by design, and modern phones and computers have quietly dropped support for them, so old .3gp clips on a memory card or in a backup often won't open at all.",
+  "prose.p2": "Converting to MP4 brings those clips back to life: the same footage in a format every phone, browser and editor accepts, ready to keep in a photo library or share. 3GP goes through the built-in software engine rather than the fast hardware path, though these clips are usually short, so it doesn't take long — and it all happens on your device.",
+  "faq.q1": "Is my .3gp file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Can converting make an old phone clip look better?",
+  "faq.a2": "No. A .3gp was recorded at a low resolution and that detail was never captured, so nothing can put it back. Converting makes the clip playable and shareable again — it won't sharpen it.",
+  "faq.q3": "Does it handle .3g2 files too?",
+  "faq.a3": "Yes. .3g2 is the closely related format used by older CDMA phones and converts the same way. Drop one in and you'll see its details read back before you start."
+}

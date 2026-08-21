@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert FLV to MP4 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert old Flash .flv video to modern .mp4 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert FLV to MP4 — Free, No Upload",
+  "og.description": "Change .flv to .mp4 locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · FLV → MP4",
+  "hero.title": "Convert FLV to MP4 — right in your browser",
+  "hero.lead": "Drop an old .flv file and get an .mp4 you can actually play again. It's converted on your own device, so the file is never uploaded.",
+  "convert.format": "mp4",
+  "prose.h2": "Why convert FLV to MP4?",
+  "prose.p1": "FLV is Flash Video — the format the whole web used for streaming clips and screen recordings before Flash was retired at the end of 2020. Nothing plays it now: no browser, no phone, no Apple or Windows player. If you've found .flv files in an old backup, a saved lecture or an archived course, converting them is the only way to watch them again.",
+  "prose.p2": "MP4 is the modern replacement and plays everywhere, so an .flv rescued today should stay readable indefinitely. FLV runs through the built-in software engine rather than the fast hardware path, so allow a little extra time — everything still happens on your own device, with nothing uploaded.",
+  "faq.q1": "Is my .flv file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Will an old, low-quality FLV look better as MP4?",
+  "faq.a2": "No — converting can't add detail that was never recorded. What it does is make the file playable on current devices. Expect it to look much as it did in the original Flash player.",
+  "faq.q3": "Why does FLV take longer to convert?",
+  "faq.a3": "Flash video can't use your browser's fast hardware path, so it's handled by a built-in software engine. It works completely offline; it just takes longer than a modern format would."
+}

@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert TS to MP4 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert .ts recordings and stream files to .mp4 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert TS to MP4 — Free, No Upload",
+  "og.description": "Change .ts files to .mp4 locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · TS → MP4",
+  "hero.title": "Convert TS to MP4 — right in your browser",
+  "hero.lead": "Drop a .ts recording — from a TV box, a set-top recorder or a saved stream — and get a tidy .mp4. It's converted on your own device, so the file is never uploaded.",
+  "convert.format": "mp4",
+  "prose.h2": "Why convert TS to MP4?",
+  "prose.p1": "A .ts file is a transport stream: the format digital TV is broadcast in, and what most set-top boxes, TV tuner cards and PVRs write when they record. It's built to survive being sent through the air, not to sit on a hard drive, so it carries extra overhead and many players, editors and phones simply skip past it.",
+  "prose.p2": "MP4 holds the same recording in a form everything understands and takes up less room doing it. Because .ts files usually already contain the kind of video MP4 uses, the conversion runs on the fast path and finishes quickly. It happens locally in your browser, so a multi-gigabyte TV recording starts converting immediately with nothing uploaded.",
+  "faq.q1": "Is my .ts file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Will converting a TV recording lose quality?",
+  "faq.a2": "Barely. The video inside a .ts is usually already the kind MP4 uses, so moving it across keeps the picture essentially as broadcast. You can set a target size first if you'd rather trade some quality for a smaller file.",
+  "faq.q3": "Does it work with .m2ts files from a camcorder?",
+  "faq.a3": "Usually, yes — .m2ts and .mts files from AVCHD camcorders are close cousins of .ts and go through the same conversion. Drop one in and you'll see the details read back before you start."
+}

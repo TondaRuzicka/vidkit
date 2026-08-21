@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert MP4 to MOV — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert .mp4 video to QuickTime .mov right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert MP4 to MOV — Free, No Upload",
+  "og.description": "Change .mp4 to QuickTime .mov locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · MP4 → MOV",
+  "hero.title": "Convert MP4 to MOV — right in your browser",
+  "hero.lead": "Drop an .mp4 and get a QuickTime .mov — the format Final Cut Pro, iMovie and QuickTime Player expect. It's converted on your own device, so the file is never uploaded.",
+  "convert.format": "mov",
+  "prose.h2": "Why convert MP4 to MOV?",
+  "prose.p1": "MOV is Apple's QuickTime format, and some Mac software still prefers it. Final Cut Pro, iMovie and older Apple apps import .mov without complaint, while a stray .mp4 can land in a project with the wrong timing or refuse to import at all. If a Mac editor won't take your file, handing it a .mov is usually the fix.",
+  "prose.p2": "MP4 and MOV are close relatives — they hold the same kind of video, just wrapped differently — so the picture and sound come across intact and the conversion runs on the fast path. It happens locally in your browser, so nothing is stored or logged and even a long recording starts immediately with no upload.",
+  "faq.q1": "Is my .mp4 file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Will the MOV look the same as the MP4?",
+  "faq.a2": "Effectively, yes. The two formats carry video the same way, so nothing is thrown away in translation. You can still set a target size or quality level first if you want a smaller file.",
+  "faq.q3": "Will it open in Final Cut Pro or QuickTime Player?",
+  "faq.a3": "Yes — the result is a standard QuickTime file that opens in QuickTime Player, imports into Final Cut Pro and iMovie, and plays on any Mac without extra software."
+}

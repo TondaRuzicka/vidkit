@@ -62,5 +62,21 @@
   "footer.calc": "Video bitrate hesaplayıcı",
   "audio.heading": "Ses çıkar",
   "audio.title": "Videodan ses çıkar",
-  "audio.sub": "Yalnızca sese mi ihtiyacınız var? Herhangi bir videodan sesi çıkarın — tarayıcınızda, hiçbir şey yüklenmez."
+  "audio.sub": "Yalnızca sese mi ihtiyacınız var? Herhangi bir videodan sesi çıkarın — tarayıcınızda, hiçbir şey yüklenmez.",
+  "url.mp42mov": "/mp4-to-mov/",
+  "convert.mp42mov": "MP4'ten MOV'a",
+  "url.mp42mkv": "/mp4-to-mkv/",
+  "convert.mp42mkv": "MP4'ten MKV'ye",
+  "url.wmv2mp4": "/wmv-to-mp4/",
+  "convert.wmv2mp4": "WMV'den MP4'e",
+  "url.vob2mp4": "/vob-to-mp4/",
+  "convert.vob2mp4": "VOB'dan MP4'e",
+  "url.flv2mp4": "/flv-to-mp4/",
+  "convert.flv2mp4": "FLV'den MP4'e",
+  "url.ts2mp4": "/ts-to-mp4/",
+  "convert.ts2mp4": "TS'den MP4'e",
+  "url.3gp2mp4": "/3gp-to-mp4/",
+  "convert.3gp2mp4": "3GP'den MP4'e",
+  "url.m4v2mp4": "/m4v-to-mp4/",
+  "convert.m4v2mp4": "M4V'den MP4'e"
 }

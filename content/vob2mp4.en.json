@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert VOB to MP4 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert DVD .vob files to modern .mp4 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert VOB to MP4 — Free, No Upload",
+  "og.description": "Change DVD .vob files to .mp4 locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · VOB → MP4",
+  "hero.title": "Convert VOB to MP4 — right in your browser",
+  "hero.lead": "Drop a .vob file from a DVD's VIDEO_TS folder and get an .mp4 you can keep on a phone or laptop. It's converted on your own device, so the file is never uploaded.",
+  "convert.format": "mp4",
+  "prose.h2": "Why convert VOB to MP4?",
+  "prose.p1": "VOB files are what a DVD actually stores its video in — you'll find them inside the VIDEO_TS folder of a disc or a folder copied from one. They only really make sense to a DVD player: the format is tied to the disc structure, files are often split into 1&nbsp;GB chunks, and phones and browsers won't open them.",
+  "prose.p2": "Converting to MP4 turns a home-video disc — a wedding, a school play, old family footage — into an ordinary file you can store, back up and share. It's the practical way to keep those recordings once the discs start to rot. VOB uses the built-in software engine rather than the fast hardware path, so a long title takes a while, and as always it runs entirely on your device.",
+  "faq.q1": "Is my .vob file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Will this work with a commercial film DVD?",
+  "faq.a2": "No. Shop-bought discs are encrypted, and {{SITE_NAME}} doesn't remove that protection. This tool is for unencrypted .vob files — home-made discs, camcorder DVDs and your own recordings.",
+  "faq.q3": "My DVD has several VOB files. What do I do?",
+  "faq.a3": "DVDs split long video into separate parts, usually named VTS_01_1.VOB, VTS_01_2.VOB and so on. Convert each one to MP4 in turn; you'll get one MP4 per part rather than a single joined file."
+}

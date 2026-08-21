@@ -30,6 +30,19 @@ const jobs = [
   [join(dir, 'e2e-10s.mkv'), ['-i', BASE_10, '-c', 'copy']],
   [join(dir, 'e2e-10s.mov'), ['-i', BASE_10, '-c', 'copy']],
   [join(dir, 'e2e-not-a-video.mp4'), ['-f', 'lavfi', '-i', 'color=red:size=64x64:duration=0.04', '-frames:v', '1', '-f', 'mjpeg']],
+  // Legacy/broadcast containers behind the converter landing pages. Each uses
+  // the codec pair you'd actually meet in the wild, not H.264 relabelled, so
+  // the decoders those pages depend on are the ones under test.
+  [join(dir, 'e2e-4s.wmv'), ['-i', BASE_4, '-c:v', 'wmv2', '-b:v', '800k', '-c:a', 'wmav2', '-b:a', '96k']],
+  [join(dir, 'e2e-4s.flv'), ['-i', BASE_4, '-c:v', 'flv1', '-b:v', '800k', '-c:a', 'libmp3lame', '-ar', '44100', '-b:a', '96k']],
+  [join(dir, 'e2e-4s.vob'), ['-i', BASE_4, '-f', 'vob', '-c:v', 'mpeg2video', '-b:v', '1500k', '-c:a', 'ac3', '-b:a', '128k']],
+  [join(dir, 'e2e-4s.ts'), ['-i', BASE_4, '-c:v', 'libx264', '-b:v', '800k', '-c:a', 'aac', '-b:a', '96k', '-f', 'mpegts']],
+  // 3GP only permits certain sizes/rates; H.263 rejects anything else outright.
+  [join(dir, 'e2e-4s.3gp'), ['-i', BASE_4, '-c:v', 'h263', '-s', '352x288', '-r', '15', '-b:v', '400k', '-c:a', 'aac', '-ar', '8000', '-ac', '1', '-b:a', '24k']],
+  [join(dir, 'e2e-4s.m4v'), ['-i', BASE_4, '-c:v', 'libx264', '-b:v', '800k', '-c:a', 'aac', '-b:a', '96k', '-f', 'mp4']],
+  // Related extensions the FAQ copy on /ts-to-mp4/ and /3gp-to-mp4/ promises.
+  [join(dir, 'e2e-4s.m2ts'), ['-i', BASE_4, '-c:v', 'libx264', '-b:v', '800k', '-c:a', 'ac3', '-b:a', '128k', '-f', 'mpegts']],
+  [join(dir, 'e2e-4s.3g2'), ['-i', BASE_4, '-c:v', 'h263', '-s', '176x144', '-r', '15', '-b:v', '200k', '-c:a', 'aac', '-ar', '8000', '-ac', '1', '-b:a', '24k', '-f', '3g2']],
   // Long but tiny: at 240s a 2 MB target is infeasible (the audio floor alone
   // eats the budget), which exercises the targetTooSmall suggestion path.
   // Low res keeps generation and any follow-up encode fast.

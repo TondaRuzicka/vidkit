@@ -84,6 +84,19 @@ export const PAGES: readonly PageDef[] = [
   { id: 'webm2mp3', template: 'convert', locales: ['en'], slugs: { en: 'webm-to-mp3', cs: 'webm-to-mp3', es: 'webm-to-mp3', pt: 'webm-to-mp3', de: 'webm-to-mp3', tr: 'webm-to-mp3', zh: 'webm-to-mp3' } },
   { id: 'video2mp3', template: 'convert', locales: ['en'], slugs: { en: 'video-to-mp3', cs: 'video-to-mp3', es: 'video-to-mp3', pt: 'video-to-mp3', de: 'video-to-mp3', tr: 'video-to-mp3', zh: 'video-to-mp3' } },
   { id: 'extractaudio', template: 'convert', locales: ['en'], slugs: { en: 'extract-audio-from-video', cs: 'extract-audio-from-video', es: 'extract-audio-from-video', pt: 'extract-audio-from-video', de: 'extract-audio-from-video', tr: 'extract-audio-from-video', zh: 'extract-audio-from-video' } },
+  // Legacy/one-way converter long-tail — English-only, same reasoning as the
+  // audio cluster. Inputs mediabunny can't parse (wmv/flv/vob/3gp) fall through
+  // to the ffmpeg probe; ts/m4v stay on the fast path. All verified end-to-end
+  // in e2e/inputformats.spec.ts — that spec is the guard against shipping a
+  // landing page whose widget can't do the thing the page ranks for.
+  { id: 'mp42mov', template: 'convert', locales: ['en'], slugs: { en: 'mp4-to-mov', cs: 'mp4-to-mov', es: 'mp4-to-mov', pt: 'mp4-to-mov', de: 'mp4-to-mov', tr: 'mp4-to-mov', zh: 'mp4-to-mov' } },
+  { id: 'mp42mkv', template: 'convert', locales: ['en'], slugs: { en: 'mp4-to-mkv', cs: 'mp4-to-mkv', es: 'mp4-to-mkv', pt: 'mp4-to-mkv', de: 'mp4-to-mkv', tr: 'mp4-to-mkv', zh: 'mp4-to-mkv' } },
+  { id: 'wmv2mp4', template: 'convert', locales: ['en'], slugs: { en: 'wmv-to-mp4', cs: 'wmv-to-mp4', es: 'wmv-to-mp4', pt: 'wmv-to-mp4', de: 'wmv-to-mp4', tr: 'wmv-to-mp4', zh: 'wmv-to-mp4' } },
+  { id: 'vob2mp4', template: 'convert', locales: ['en'], slugs: { en: 'vob-to-mp4', cs: 'vob-to-mp4', es: 'vob-to-mp4', pt: 'vob-to-mp4', de: 'vob-to-mp4', tr: 'vob-to-mp4', zh: 'vob-to-mp4' } },
+  { id: 'flv2mp4', template: 'convert', locales: ['en'], slugs: { en: 'flv-to-mp4', cs: 'flv-to-mp4', es: 'flv-to-mp4', pt: 'flv-to-mp4', de: 'flv-to-mp4', tr: 'flv-to-mp4', zh: 'flv-to-mp4' } },
+  { id: 'ts2mp4', template: 'convert', locales: ['en'], slugs: { en: 'ts-to-mp4', cs: 'ts-to-mp4', es: 'ts-to-mp4', pt: 'ts-to-mp4', de: 'ts-to-mp4', tr: 'ts-to-mp4', zh: 'ts-to-mp4' } },
+  { id: '3gp2mp4', template: 'convert', locales: ['en'], slugs: { en: '3gp-to-mp4', cs: '3gp-to-mp4', es: '3gp-to-mp4', pt: '3gp-to-mp4', de: '3gp-to-mp4', tr: '3gp-to-mp4', zh: '3gp-to-mp4' } },
+  { id: 'm4v2mp4', template: 'convert', locales: ['en'], slugs: { en: 'm4v-to-mp4', cs: 'm4v-to-mp4', es: 'm4v-to-mp4', pt: 'm4v-to-mp4', de: 'm4v-to-mp4', tr: 'm4v-to-mp4', zh: 'm4v-to-mp4' } },
   // Reference content (linkable assets) — no compressor widget.
   { id: 'limits', template: 'limits', locales: ['en', 'cs', 'es', 'pt', 'de', 'tr', 'zh'], slugs: { en: 'video-upload-size-limits', cs: 'limity-velikosti-videa', es: 'limites-de-tamano-de-video', pt: 'limites-de-tamanho-de-video', de: 'video-groessenlimits', tr: 'video-boyut-limitleri', zh: 'shipin-shangchuan-daxiao-xianzhi' } },
   { id: 'calc', template: 'calculator', locales: ['en', 'cs', 'es', 'pt', 'de', 'tr', 'zh'], slugs: { en: 'video-bitrate-calculator', cs: 'kalkulacka-datoveho-toku', es: 'calculadora-de-bitrate-de-video', pt: 'calculadora-de-bitrate-de-video', de: 'video-bitrate-rechner', tr: 'video-bitrate-hesaplayici', zh: 'shipin-matelv-jisuanqi' } },

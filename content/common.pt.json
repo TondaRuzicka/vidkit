@@ -62,5 +62,21 @@
   "footer.calc": "Calculadora de bitrate de vídeo",
   "audio.heading": "Extrair áudio",
   "audio.title": "Extrair áudio de vídeo",
-  "audio.sub": "Só precisa do som? Extraia o áudio de qualquer vídeo — no seu navegador, nada é enviado."
+  "audio.sub": "Só precisa do som? Extraia o áudio de qualquer vídeo — no seu navegador, nada é enviado.",
+  "url.mp42mov": "/mp4-to-mov/",
+  "convert.mp42mov": "MP4 para MOV",
+  "url.mp42mkv": "/mp4-to-mkv/",
+  "convert.mp42mkv": "MP4 para MKV",
+  "url.wmv2mp4": "/wmv-to-mp4/",
+  "convert.wmv2mp4": "WMV para MP4",
+  "url.vob2mp4": "/vob-to-mp4/",
+  "convert.vob2mp4": "VOB para MP4",
+  "url.flv2mp4": "/flv-to-mp4/",
+  "convert.flv2mp4": "FLV para MP4",
+  "url.ts2mp4": "/ts-to-mp4/",
+  "convert.ts2mp4": "TS para MP4",
+  "url.3gp2mp4": "/3gp-to-mp4/",
+  "convert.3gp2mp4": "3GP para MP4",
+  "url.m4v2mp4": "/m4v-to-mp4/",
+  "convert.m4v2mp4": "M4V para MP4"
 }

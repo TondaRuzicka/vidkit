@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert WMV to MP4 — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert old Windows .wmv video to modern .mp4 right in your browser. Nothing is uploaded — your file never leaves your device. Free, no sign-up, no watermark.",
+  "og.title": "Convert WMV to MP4 — Free, No Upload",
+  "og.description": "Change .wmv to .mp4 locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert · WMV → MP4",
+  "hero.title": "Convert WMV to MP4 — right in your browser",
+  "hero.lead": "Drop an old .wmv file and get an .mp4 that plays on a phone, a Mac or the web. It's converted on your own device, so the file is never uploaded.",
+  "convert.format": "mp4",
+  "prose.h2": "Why convert WMV to MP4?",
+  "prose.p1": "WMV is the Windows Media format that Windows Movie Maker, old camcorders and early screen recorders saved to. It made sense when everything ran on Windows, but it never travelled well: send a .wmv to an iPhone, a Mac or a group chat and it usually won't open, and most websites reject it outright.",
+  "prose.p2": "Turning it into MP4 makes the file playable practically everywhere without hunting down a codec pack, and usually smaller too, since MP4 stores the same picture more efficiently than a decade-old WMV. WMV needs the built-in software engine rather than the fast hardware path, so give it a little longer — it still runs entirely on your device, with nothing uploaded.",
+  "faq.q1": "Is my .wmv file uploaded anywhere?",
+  "faq.a1": "No. The conversion happens entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while it runs and you'll see zero bytes leave.",
+  "faq.q2": "Why does WMV take longer than other formats?",
+  "faq.a2": "WMV can't use the fast hardware path your browser provides, so it runs through a built-in software engine instead. It works fully offline and the result is the same — it just takes longer, especially on a long recording.",
+  "faq.q3": "Will the MP4 play on my iPhone or Mac?",
+  "faq.a3": "Yes. That's the main reason to convert: the .mp4 opens in Photos, QuickTime Player, WhatsApp and any browser, none of which will touch the original .wmv."
+}
