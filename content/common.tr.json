@@ -78,5 +78,16 @@
   "url.3gp2mp4": "/3gp-to-mp4/",
   "convert.3gp2mp4": "3GP'den MP4'e",
   "url.m4v2mp4": "/m4v-to-mp4/",
-  "convert.m4v2mp4": "M4V'den MP4'e"
+  "convert.m4v2mp4": "M4V'den MP4'e",
+  "url.videotools": "/video-tools/",
+  "url.convertvideo": "/convert-video/",
+  "nav.tools": "Tüm araçlar",
+  "related.heading": "İlgili araçlar",
+  "related.all": "Tüm video araçlarını gör",
+  "hub.videotools": "Tüm video araçları",
+  "hub.convertvideo": "Video dönüştürme",
+  "hubgroup.compress": "Video sıkıştırma",
+  "hubgroup.convert": "Biçimler arası dönüştürme",
+  "hubgroup.audio": "Ses çıkarma",
+  "hubgroup.reference": "Rehberler ve hesaplayıcılar"
 }

@@ -78,5 +78,16 @@
   "url.3gp2mp4": "/3gp-to-mp4/",
   "convert.3gp2mp4": "3GP in MP4",
   "url.m4v2mp4": "/m4v-to-mp4/",
-  "convert.m4v2mp4": "M4V in MP4"
+  "convert.m4v2mp4": "M4V in MP4",
+  "url.videotools": "/video-tools/",
+  "url.convertvideo": "/convert-video/",
+  "nav.tools": "Alle Tools",
+  "related.heading": "Ähnliche Tools",
+  "related.all": "Alle Video-Tools ansehen",
+  "hub.videotools": "Alle Video-Tools",
+  "hub.convertvideo": "Video umwandeln",
+  "hubgroup.compress": "Video komprimieren",
+  "hubgroup.convert": "Formate umwandeln",
+  "hubgroup.audio": "Audio extrahieren",
+  "hubgroup.reference": "Ratgeber und Rechner"
 }

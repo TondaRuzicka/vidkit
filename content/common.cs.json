@@ -78,5 +78,16 @@
   "url.3gp2mp4": "/3gp-to-mp4/",
   "convert.3gp2mp4": "3GP na MP4",
   "url.m4v2mp4": "/m4v-to-mp4/",
-  "convert.m4v2mp4": "M4V na MP4"
+  "convert.m4v2mp4": "M4V na MP4",
+  "url.videotools": "/video-tools/",
+  "url.convertvideo": "/convert-video/",
+  "nav.tools": "Všechny nástroje",
+  "related.heading": "Související nástroje",
+  "related.all": "Zobrazit všechny nástroje",
+  "hub.videotools": "Všechny nástroje pro video",
+  "hub.convertvideo": "Převod videa",
+  "hubgroup.compress": "Zmenšení videa",
+  "hubgroup.convert": "Převod mezi formáty",
+  "hubgroup.audio": "Získání zvuku",
+  "hubgroup.reference": "Průvodci a kalkulačky"
 }

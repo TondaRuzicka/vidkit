@@ -11,6 +11,7 @@ import {
   SITE_URL,
   pagePath,
   type Locale,
+  type PageCategory,
   type PageDef,
 } from './src/config';
 
@@ -128,8 +129,191 @@ function langSwitch(page: PageDef, current: Locale): string {
   return `<details class="lang-menu"><summary aria-label="Language — ${NATIVE_NAMES[current]}">${globe}<span class="lang-menu__code">${current.toUpperCase()}</span>${chevron}</summary><ul>${items}</ul></details>`;
 }
 
+// --- Link mesh: hub index, related tools, breadcrumbs --------------------
+// All three are generated from the PAGES registry rather than hand-written
+// lists, so adding a page links it from its hub and its neighbours with no
+// list to update — which is what keeps the crawl reachable as the site grows.
+
+const CATEGORY_ORDER: PageCategory[] = [
+  'compress',
+  'convert',
+  'audio',
+  'reference',
+];
+
+/**
+ * A page's short link text. Reuses the labels the footer and homepage already
+ * ship in every locale — their key prefix varies by cluster, hence the chain.
+ * Throws rather than emitting a blank link: a silent gap here would be an
+ * unlabelled link on every page in the site.
+ */
+function labelFor(pageId: string, dict: Record<string, string>): string {
+  for (const prefix of ['convert', 'audio', 'footer', 'nav', 'hub']) {
+    const v = dict[`${prefix}.${pageId}`];
+    if (v) return v;
+  }
+  throw new Error(
+    `No link label for page '${pageId}'. Add convert.${pageId} (or footer.${pageId}) to content/common.*.json.`,
+  );
+}
+
+function urlFor(pageId: string, dict: Record<string, string>): string {
+  const v = dict[`url.${pageId}`];
+  if (!v) {
+    throw new Error(
+      `No url.${pageId} in content/common.*.json — every linked page needs one.`,
+    );
+  }
+  return v;
+}
+
+const linkItem = (p: PageDef, dict: Record<string, string>): string =>
+  `<li><a href="${urlFor(p.id, dict)}">${labelFor(p.id, dict)}</a></li>`;
+
+/** Tool pages available in this locale, hubs and home excluded. */
+const toolsIn = (locale: Locale): PageDef[] =>
+  PAGES.filter(
+    (p) =>
+      p.category &&
+      p.category !== 'hub' &&
+      (p.locales as readonly string[]).includes(locale),
+  );
+
+/**
+ * Full tool index for a hub page. `scope` is 'all' or a single category,
+ * read from the page's own `hub.scope` key. Group headings come from
+ * `hubgroup.<category>`.
+ */
+function toolIndex(scope: string, locale: Locale, dict: Record<string, string>): string {
+  const cats = scope === 'all' ? CATEGORY_ORDER : [scope as PageCategory];
+  return cats
+    .map((cat) => {
+      const items = toolsIn(locale).filter((p) => p.category === cat);
+      if (items.length === 0) return '';
+      const heading = dict[`hubgroup.${cat}`] ?? cat;
+      return [
+        `<section class="section">`,
+        `<div class="container">`,
+        `<div class="section-head"><h2>${heading}</h2></div>`,
+        `<ul class="convert-links">`,
+        items.map((p) => linkItem(p, dict)).join('\n'),
+        `</ul>`,
+        `</div>`,
+        `</section>`,
+      ].join('\n');
+    })
+    .join('\n');
+}
+
+/** Slug words that carry meaning, used to score how related two tools are. */
+const tokensOf = (p: PageDef): string[] =>
+  p.slugs.en.split('-').filter((t) => t && t !== 'to' && t !== 'from');
+
+/**
+ * Up to six sibling tools, most related first. A shared *input* format counts
+ * double, because that's what the visitor actually has in hand: someone on
+ * MOV→MP4 is far likelier to want MOV→MP3 than yet another X→MP4. Sharing the
+ * output format alone (the near-universal 'mp4') is the weakest signal, so a
+ * same-category tiebreak keeps those groupings sensible.
+ */
+function relatedBlock(page: PageDef, locale: Locale, dict: Record<string, string>): string {
+  if (!page.category || page.category === 'hub') return '';
+  const mine = tokensOf(page);
+  const myInput = mine[0];
+  const mineSet = new Set(mine);
+  const scored = toolsIn(locale)
+    .filter((p) => p.id !== page.id)
+    .map((p) => {
+      const theirs = tokensOf(p);
+      const shared = theirs.filter((t) => mineSet.has(t)).length;
+      const sameInput = myInput && theirs[0] === myInput ? 1 : 0;
+      return {
+        page: p,
+        score: shared + sameInput + (p.category === page.category ? 0.5 : 0),
+      };
+    })
+    .filter((c) => c.score > 0)
+    .sort((a, b) => b.score - a.score);
+  const picks = scored.slice(0, 6).map((c) => c.page);
+  if (picks.length === 0) return '';
+
+  const hubId = page.category === 'convert' ? 'convertvideo' : 'videotools';
+  const hub = findPage(hubId);
+  const showHub = hub && (hub.locales as readonly string[]).includes(locale);
+  // Labelled from the hub it points at, so convert pages read "Convert video"
+  // and everything else "All video tools" — never a link that misnames itself.
+  const allLink = showHub
+    ? `<p class="related-all"><a href="${urlFor(hubId, dict)}">${labelFor(hubId, dict)}</a></p>`
+    : '';
+
+  return [
+    `<section class="section section--tint">`,
+    `<div class="container">`,
+    `<div class="section-head"><h2>${dict['related.heading'] ?? 'Related tools'}</h2></div>`,
+    `<ul class="convert-links">`,
+    picks.map((p) => linkItem(p, dict)).join('\n'),
+    `</ul>`,
+    allLink,
+    `</div>`,
+    `</section>`,
+  ].join('\n');
+}
+
+/**
+ * Home → hub → page. Emitted only for the default locale: the hubs are
+ * English-only, and a trail that switches language mid-way is worse than none.
+ */
+function breadcrumbJsonLd(
+  page: PageDef,
+  locale: Locale,
+  dict: Record<string, string>,
+): string | null {
+  if (locale !== DEFAULT_LOCALE) return null;
+  if (!page.category) return null;
+
+  const trail: { name: string; path: string }[] = [
+    { name: SITE_NAME, path: pagePath(findPage('home')!, locale) },
+  ];
+  if (page.category !== 'hub') {
+    const hubId = page.category === 'convert' ? 'convertvideo' : 'videotools';
+    const hub = findPage(hubId);
+    if (hub && (hub.locales as readonly string[]).includes(locale)) {
+      trail.push({ name: labelFor(hubId, dict), path: pagePath(hub, locale) });
+    }
+  }
+  trail.push({ name: labelFor(page.id, dict), path: pagePath(page, locale) });
+
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((t, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: stripTags(t.name),
+      item: `${SITE_URL}${t.path}`,
+    })),
+  };
+  return `<script type="application/ld+json">${JSON.stringify(ld)}</script>`;
+}
+
+const ENTITIES: Record<string, string> = {
+  '&nbsp;': ' ',
+  '&amp;': '&',
+  '&lt;': '<',
+  '&gt;': '>',
+  '&quot;': '"',
+  '&#39;': "'",
+};
+
+// Structured data carries plain text, not markup: labels like "Compress to
+// 25&nbsp;MB" must reach JSON-LD as real characters, or the entity shows up
+// verbatim in a rich result.
 const stripTags = (s: string) =>
-  s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  s
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;|&amp;|&lt;|&gt;|&quot;|&#39;/g, (e) => ENTITIES[e]!)
+    .replace(/\s+/g, ' ')
+    .trim();
 
 // Builds FAQPage JSON-LD from the visible <details class="faq-item"> markup,
 // so the structured data can never drift from what the page shows.
@@ -179,10 +363,23 @@ function render(rawHtml: string): string {
     page ? langSwitch(page, locale) : '',
   );
 
-  html = substitute(html, dictFor(pageId, locale));
+  const dict = dictFor(pageId, locale);
+
+  // Link-mesh directives resolve before substitute() so the labels and URLs
+  // they pull from the dictionary still get their own {{SITE_NAME}} pass.
+  html = html.replace(/<!--\s*@toolindex\s*-->/g, () =>
+    page ? toolIndex(dict['hub.scope'] ?? 'all', locale, dict) : '',
+  );
+  html = html.replace(/<!--\s*@related\s*-->/g, () =>
+    page ? relatedBlock(page, locale, dict) : '',
+  );
+
+  html = substitute(html, dict);
 
   const ld = faqJsonLd(html);
   if (ld) html = html.replace('</head>', `${ld}\n</head>`);
+  const crumbs = page ? breadcrumbJsonLd(page, locale, dict) : null;
+  if (crumbs) html = html.replace('</head>', `${crumbs}\n</head>`);
   return html;
 }
 

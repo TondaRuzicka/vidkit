@@ -41,6 +41,9 @@ export default defineConfig({
         webm2mp3: resolve(import.meta.dirname,'webm-to-mp3/index.html'),
         video2mp3: resolve(import.meta.dirname,'video-to-mp3/index.html'),
         extractaudio: resolve(import.meta.dirname,'extract-audio-from-video/index.html'),
+        // Category hubs (English-only)
+        videotools: resolve(import.meta.dirname,'video-tools/index.html'),
+        convertvideo: resolve(import.meta.dirname,'convert-video/index.html'),
         // Legacy/one-way converter long-tail (English-only)
         mp42mov: resolve(import.meta.dirname,'mp4-to-mov/index.html'),
         mp42mkv: resolve(import.meta.dirname,'mp4-to-mkv/index.html'),

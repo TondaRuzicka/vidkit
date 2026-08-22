@@ -481,6 +481,11 @@ a { color: inherit; }
 }
 .convert-links a:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
+/* "See all …" link under a chip list (related tools, homepage sections) */
+.related-all { margin-top: var(--space-4); font-size: var(--fs-400); }
+.related-all a { color: var(--color-text-muted); text-underline-offset: 3px; }
+.related-all a:hover { color: var(--color-accent); }
+
 /* Language suggestion banner (injected by langbanner.ts) */
 .lang-banner {
   display: flex; align-items: center; gap: var(--space-3);

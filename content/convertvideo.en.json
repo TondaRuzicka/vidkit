@@ -1,0 +1,19 @@
+{
+  "meta.title": "Convert Video Online — Free, In Your Browser, No Upload | {{SITE_NAME}}",
+  "meta.description": "Convert video between MP4, MOV, MKV, WebM, AVI, WMV and more — free, in your browser. Nothing is uploaded, so your file never leaves your device.",
+  "og.title": "Convert Video Online — Free, No Upload",
+  "og.description": "Change a video's format locally in your browser. Nothing leaves your device.",
+  "hero.eyebrow": "Convert",
+  "hero.title": "Convert video online — without uploading it",
+  "hero.lead": "Pick the conversion you need below. Whichever you choose, the file is converted on your own device — there's no upload, no queue and no size limit set by a server.",
+  "hub.scope": "convert",
+  "prose.h2": "Which format should you convert to?",
+  "prose.p1": "MP4 is the safe answer nearly every time. It plays on phones, browsers, TVs, editors and social platforms, and it's what upload forms expect — which is why most of these tools convert to it. Reach for something else only when you have a reason: MOV for Apple editors like Final Cut Pro, MKV for a home media server that needs several audio or subtitle tracks, WebM for a page that should load fast.",
+  "prose.p2": "Older formats are the other reason people end up here. WMV, FLV, VOB and 3GP files were fine on the software of their day and are close to unplayable now, so converting them to MP4 is often the only way to watch old footage again. Whatever the direction, the conversion happens in your browser — nothing is uploaded, and the original stays exactly where it is.",
+  "faq.q1": "Will converting reduce the quality?",
+  "faq.a1": "A little, since the video is rebuilt in the new format — but at the default settings it's hard to see. Where the two formats store video the same way, such as MP4 to MOV, almost nothing changes.",
+  "faq.q2": "Can I convert a file my computer won't even open?",
+  "faq.a2": "Usually yes. The converter reads far more formats than most desktop players still do, which is the point of the WMV, FLV, VOB and 3GP tools — those files often won't open anywhere else on a modern machine.",
+  "faq.q3": "Is my video uploaded to convert it?",
+  "faq.a3": "No. Every conversion here runs entirely in your browser, on your own device. There's no server that could receive the file — open your browser's Network tab while one runs and you'll see zero bytes leave."
+}

@@ -1,0 +1,19 @@
+{
+  "meta.title": "Free Online Video Tools — No Upload, No Sign-Up | {{SITE_NAME}}",
+  "meta.description": "Every {{SITE_NAME}} tool in one place: compress, convert and extract audio from video. All of it runs in your browser — your files never leave your device.",
+  "og.title": "Free Video Tools That Run in Your Browser",
+  "og.description": "Compress, convert and extract audio — all locally, nothing uploaded.",
+  "hero.eyebrow": "All tools",
+  "hero.title": "Free video tools that run in your browser",
+  "hero.lead": "Every tool {{SITE_NAME}} offers, in one list. They all work the same way: pick a file, it's processed on your own device, and nothing is ever uploaded.",
+  "hub.scope": "all",
+  "prose.h2": "Why browser-based tools?",
+  "prose.p1": "Almost every free video tool online works by uploading your file to someone else's computer, converting it there and handing back a download. That means waiting for the upload, trusting a stranger with your footage, accepting a file-size cap, and hoping the copy on their server really is deleted afterwards.",
+  "prose.p2": "{{SITE_NAME}} skips all of it. Modern browsers can decode and re-encode video directly, so the work happens on the machine already in front of you. There's no upload to wait through, no size limit imposed by a server, no queue, and no copy of your video anywhere but your own device. You can prove it: open your browser's Network tab and watch a conversion run without sending a byte.",
+  "faq.q1": "Are these tools really free?",
+  "faq.a1": "Yes — every tool here is free to use, with no account, no watermark on the result and no limit on how many files you run through it.",
+  "faq.q2": "Is there a file size limit?",
+  "faq.a2": "There's no server limit, because there's no server. In practice the ceiling is your device's memory: on Chrome or Edge, files up to around 2&nbsp;GB work comfortably. Larger files may be declined with a clear message rather than failing part-way.",
+  "faq.q3": "Do these work on a phone?",
+  "faq.a3": "Yes, on current mobile Chrome and Safari. Phones have less memory than laptops, so very large videos are better handled on a computer — but ordinary clips convert fine."
+}
