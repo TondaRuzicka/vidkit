@@ -1,11 +1,11 @@
 {
-  "meta.title": "Her Platform için Video Boyut Limitleri (2026) | {{SITE_NAME}}",
-  "meta.description": "Discord, WhatsApp, Gmail, Instagram, TikTok, Slack ve 20'den fazla platform için güncel maksimum video dosya boyutları — resmi belgelere göre doğrulanmış, düzenli olarak güncellenir.",
-  "og.title": "Video Boyut Limitleri — Her Platform (2026)",
-  "og.description": "Discord, WhatsApp, Gmail, TikTok ve 20'den fazlası — doğrulanmış limitler, tek sayfa.",
+  "meta.title": "Video Boyut Limitleri 2026: WhatsApp 2 GB, Gmail 25 MB | {{SITE_NAME}}",
+  "meta.description": "WhatsApp 2 GB, Gmail 25 MB, Discord'da ücretsiz 10 MB, TikTok ~72 MB. 25+ platform için doğrulanmış limitler — ve 20 MB'lik dosyanın 25 MB'lik kutuya neden girmediği.",
+  "og.title": "Video Boyut Limitleri: WhatsApp 2 GB, Gmail 25 MB",
+  "og.description": "Discord 10 MB, TikTok ~72 MB, YouTube 256 GB — 25+ platform için doğrulanmış limitler, tek sayfa.",
   "hero.eyebrow": "Referans · Güncellendi {{limits.updated}}",
   "hero.title": "Her platform için video boyut limitleri",
-  "hero.lead": "Gerçekten ne kadar büyük bir video gönderebilirsiniz? Aşağıdaki her limit, platformun resmi belgelerine göre, en son doğruladığımız tarihle birlikte kontrol edilir. Dosyanız limitin üzerinde olduğunda, her satır onu sığdıracak şekilde sıkıştıran ücretsiz bir araca bağlanır — tarayıcınızda, hiçbir yere yüklemeden.",
+  "hero.lead": "WhatsApp, videoyu belge olarak gönderirseniz 2&nbsp;GB'a kadar kabul eder. Gmail 25&nbsp;MB'de durur — ek kodlaması hesaba katılınca gerçekte yaklaşık 18&nbsp;MB. Discord'un ücretsiz sürümünde sınır 10&nbsp;MB. Aşağıda 25'ten fazla platformun güncel limitleri var; her biri platformun resmi belgelerine göre, en son doğruladığımız tarihle birlikte kontrol edildi. Dosyanız limitin üzerinde olduğunda, her satır onu sığdıracak şekilde sıkıştıran ücretsiz bir araca bağlanır — tarayıcınızda, hiçbir yere yüklemeden.",
   "limits.updated": "Temmuz 2026",
   "intro.p1": "Platformlar bu sayıları sessizce ve sık sık değiştirir — Discord üç yılda ücretsiz sınırını iki kez değiştirdi, WhatsApp 16&nbsp;MB'den 2&nbsp;GB'ye sıçradı — bu yüzden bulacağınız çoğu makale güncel değildir. Bu sayfa, güncel yanıt olmak için var. Değişmiş bir limit fark ederseniz, <a href=\"https://github.com/TondaRuzicka/vidkit/issues\">bize söyleyin</a>, birkaç gün içinde düzeltelim.",
 
@@ -101,5 +101,9 @@
   "faq.q4": "Bu sayfa ne kadar güncel?",
   "faq.a4": "Her tablo, satırlarının platformun resmi belgelerine göre en son ne zaman doğrulandığını gösterir. Bir platform bir değişiklik duyurduğunda yeniden kontrol eder ve düzenli olarak tam bir tarama yaparız. Güncel olmayan bir şey mi fark ettiniz? <a href=\"https://github.com/TondaRuzicka/vidkit/issues\">GitHub'da bildirin</a>.",
   "faq.q5": "Belirli bir limitin altına inmenin en hızlı yolu nedir?",
-  "faq.a5": "Bir kalite kaydırıcısı yerine hedef boyutu olan bir sıkıştırıcı kullanın. {{SITE_NAME}}'in <a href=\"{{url.cv}}\">boyuta-sıkıştır aracı</a> tam MB sayısını alır, videonuzun uzunluğu için doğru bit hızını hesaplar ve sonucun hedefin altına indiğini doğrular — yerel olarak tarayıcınızda, dolayısıyla 500&nbsp;MB'lik bir kaynak, iş başlamadan önce 500&nbsp;MB'lik bir yükleme gerektirmez."
+  "faq.a5": "Bir kalite kaydırıcısı yerine hedef boyutu olan bir sıkıştırıcı kullanın. {{SITE_NAME}}'in <a href=\"{{url.cv}}\">boyuta-sıkıştır aracı</a> tam MB sayısını alır, videonuzun uzunluğu için doğru bit hızını hesaplar ve sonucun hedefin altına indiğini doğrular — yerel olarak tarayıcınızda, dolayısıyla 500&nbsp;MB'lik bir kaynak, iş başlamadan önce 500&nbsp;MB'lik bir yükleme gerektirmez.",
+  "faq.q6": "Ücretli abonelik olmadan video yükleme limitleri nedir?",
+  "faq.a6": "Yukarıdaki tablolardan ücretsiz kademeler: Discord 10&nbsp;MB, Signal 100&nbsp;MB, Facebook Messenger 100&nbsp;MB, Gmail ve web Outlook 25&nbsp;MB, WhatsApp ve Telegram 2&nbsp;GB, X 512&nbsp;MB, Reddit 1&nbsp;GB, Slack 1&nbsp;GB ve Vimeo hesabın ömrü boyunca 1&nbsp;GB depolama. Ücretli kademeler bunları genelde belirgin şekilde yükseltir — Discord Nitro 500&nbsp;MB'a, Telegram Premium 4&nbsp;GB'a çıkar — ama çoğu klip için dosya sıkıştırıldığında ücretsiz limit yeterlidir.",
+  "faq.q7": "Sohbet eki olarak gönderilen videonun boyut limiti nedir?",
+  "faq.a7": "Sohbet uygulamaları diğer tüm kategorilerden daha fazla değişkenlik gösterir: ücretsiz sürümde Discord 10&nbsp;MB, Signal 100&nbsp;MB, Facebook Messenger 100&nbsp;MB, iMessage yaklaşık 100&nbsp;MB, sohbet ekleri için Microsoft Teams 100&nbsp;MB, Slack 1&nbsp;GB, WhatsApp ve Telegram ise 2&nbsp;GB. Herkesin farklı uygulama kullandığı bir gruba gönderiyorsanız, gruptaki en düşük limit belirleyicidir."
 }

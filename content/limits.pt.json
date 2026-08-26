@@ -1,11 +1,11 @@
 {
-  "meta.title": "Limites de tamanho de vídeo de cada plataforma (2026) | {{SITE_NAME}}",
-  "meta.description": "Tamanhos máximos atuais de arquivo de vídeo para Discord, WhatsApp, Gmail, Instagram, TikTok, Slack e mais de 20 outras plataformas — verificados nos documentos oficiais, atualizados regularmente.",
-  "og.title": "Limites de tamanho de vídeo — cada plataforma (2026)",
-  "og.description": "Discord, WhatsApp, Gmail, TikTok e mais de 20 outros — limites verificados, uma página.",
+  "meta.title": "Limites de tamanho de vídeo 2026: WhatsApp 2 GB, Gmail 25 MB | {{SITE_NAME}}",
+  "meta.description": "WhatsApp 2 GB, Gmail 25 MB, Discord 10 MB grátis, TikTok ~72 MB. Limites verificados de mais de 25 plataformas — e por que um arquivo de 20 MB não passa numa caixa de 25 MB.",
+  "og.title": "Limites de tamanho de vídeo: WhatsApp 2 GB, Gmail 25 MB",
+  "og.description": "Discord 10 MB, TikTok ~72 MB, YouTube 256 GB — limites verificados de mais de 25 plataformas, uma página.",
   "hero.eyebrow": "Referência · Atualizado em {{limits.updated}}",
   "hero.title": "Limites de tamanho de vídeo de cada plataforma",
-  "hero.lead": "Qual é o tamanho de vídeo que você realmente pode enviar? Cada limite abaixo é conferido na documentação oficial da plataforma, com a data em que verificamos por último. Quando seu arquivo passa do limite, cada linha leva a uma ferramenta gratuita que o comprime para caber — no seu navegador, sem enviá-lo para lugar nenhum.",
+  "hero.lead": "O WhatsApp aceita 2&nbsp;GB se você enviar o vídeo como documento. O Gmail para em 25&nbsp;MB — na prática cerca de 18&nbsp;MB, contando a codificação dos anexos. O Discord permite 10&nbsp;MB no plano gratuito. Abaixo estão os limites atuais de mais de 25 plataformas, cada um conferido na documentação oficial da plataforma e com a data em que verificamos por último. Quando seu arquivo passa do limite, cada linha leva a uma ferramenta gratuita que o comprime para caber — no seu navegador, sem enviá-lo para lugar nenhum.",
   "limits.updated": "Julho de 2026",
   "intro.p1": "As plataformas mudam esses números de forma discreta e frequente — o Discord alterou seu limite gratuito duas vezes em três anos, o WhatsApp saltou de 16&nbsp;MB para 2&nbsp;GB — então a maioria dos artigos que você encontra está desatualizada. Esta página existe para ser a resposta atual. Se você notar um limite que mudou, <a href=\"https://github.com/TondaRuzicka/vidkit/issues\">avise-nos</a> e corrigiremos em poucos dias.",
 
@@ -101,5 +101,9 @@
   "faq.q4": "Quão atual é esta página?",
   "faq.a4": "Cada tabela mostra quando suas linhas foram verificadas pela última vez na documentação oficial da plataforma. Reconferimos sempre que uma plataforma anuncia uma mudança e fazemos uma revisão completa regularmente. Notou algo desatualizado? <a href=\"https://github.com/TondaRuzicka/vidkit/issues\">Reporte no GitHub</a>.",
   "faq.q5": "Qual é a forma mais rápida de ficar abaixo de um limite específico?",
-  "faq.a5": "Use um compressor com tamanho alvo em vez de um controle deslizante de qualidade. A <a href=\"{{url.cv}}\">ferramenta de comprimir para um tamanho</a> do {{SITE_NAME}} recebe o número exato em MB, calcula a taxa de bits certa para a duração do seu vídeo e verifica se o resultado fica abaixo do alvo — localmente no seu navegador, então uma fonte de 500&nbsp;MB não precisa de um upload de 500&nbsp;MB antes de o trabalho começar."
+  "faq.a5": "Use um compressor com tamanho alvo em vez de um controle deslizante de qualidade. A <a href=\"{{url.cv}}\">ferramenta de comprimir para um tamanho</a> do {{SITE_NAME}} recebe o número exato em MB, calcula a taxa de bits certa para a duração do seu vídeo e verifica se o resultado fica abaixo do alvo — localmente no seu navegador, então uma fonte de 500&nbsp;MB não precisa de um upload de 500&nbsp;MB antes de o trabalho começar.",
+  "faq.q6": "Quais são os limites de envio de vídeo sem assinatura paga?",
+  "faq.a6": "Os planos gratuitos das tabelas acima: Discord 10&nbsp;MB, Signal 100&nbsp;MB, Facebook Messenger 100&nbsp;MB, Gmail e Outlook web 25&nbsp;MB, WhatsApp e Telegram 2&nbsp;GB, X 512&nbsp;MB, Reddit 1&nbsp;GB, Slack 1&nbsp;GB e Vimeo 1&nbsp;GB de armazenamento para toda a vida da conta. Os planos pagos costumam elevar bastante esses valores — o Discord Nitro chega a 500&nbsp;MB e o Telegram Premium a 4&nbsp;GB — mas, para a maioria dos clipes, o limite gratuito basta depois de comprimir o arquivo.",
+  "faq.q7": "Qual é o limite de tamanho de um vídeo enviado como anexo de chat?",
+  "faq.a7": "Os apps de chat variam mais do que qualquer outra categoria: Discord 10&nbsp;MB no plano gratuito, Signal 100&nbsp;MB, Facebook Messenger 100&nbsp;MB, iMessage por volta de 100&nbsp;MB, Microsoft Teams 100&nbsp;MB para anexos de chat, Slack 1&nbsp;GB, e WhatsApp e Telegram 2&nbsp;GB. Se você envia para um grupo em que cada pessoa usa um app diferente, quem manda é o menor limite do grupo."
 }

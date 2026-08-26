@@ -1,11 +1,11 @@
 {
-  "meta.title": "Limity velikosti videí pro každou platformu (2026) | {{SITE_NAME}}",
-  "meta.description": "Aktuální maximální velikosti video souborů pro Discord, WhatsApp, Gmail, Instagram, TikTok, Slack a 20+ dalších platforem — ověřeno podle oficiální dokumentace, pravidelně aktualizováno.",
-  "og.title": "Limity velikosti videí — každá platforma (2026)",
-  "og.description": "Discord, WhatsApp, Gmail, TikTok a 20+ dalších — ověřené limity na jedné stránce.",
+  "meta.title": "Limity velikosti videí 2026: WhatsApp 2 GB, Gmail 25 MB, Discord 10 MB | {{SITE_NAME}}",
+  "meta.description": "WhatsApp 2 GB, Gmail 25 MB, Discord 10 MB zdarma, TikTok ~72 MB. Ověřené limity pro 25+ platforem — a proč se 20MB soubor stejně nevejde do 25MB schránky.",
+  "og.title": "Limity velikosti videí: WhatsApp 2 GB, Gmail 25 MB",
+  "og.description": "Discord 10 MB, TikTok ~72 MB, YouTube 256 GB — ověřené limity pro 25+ platforem na jedné stránce.",
   "hero.eyebrow": "Přehled · Aktualizováno {{limits.updated}}",
   "hero.title": "Limity velikosti videí pro každou platformu",
-  "hero.lead": "Jak velké video vlastně můžete poslat? Každý limit níže je ověřený podle oficiální dokumentace dané platformy, spolu s datem poslední kontroly. Když je soubor nad limit, každý řádek odkazuje na bezplatný nástroj, který ho zmenší tak, aby se vešel — přímo ve vašem prohlížeči, bez nahrávání kamkoli.",
+  "hero.lead": "WhatsApp zvládne 2&nbsp;GB, pokud video pošlete jako dokument. Gmail končí na 25&nbsp;MB — reálně kolem 18&nbsp;MB, když se započítá kódování příloh. Discord má ve verzi zdarma 10&nbsp;MB. Níže najdete aktuální limity pro 25+ platforem, každý ověřený podle oficiální dokumentace dané platformy a s datem poslední kontroly. Když je soubor nad limit, každý řádek odkazuje na bezplatný nástroj, který ho zmenší tak, aby se vešel — přímo ve vašem prohlížeči, bez nahrávání kamkoli.",
   "limits.updated": "červenec 2026",
   "intro.p1": "Platformy tato čísla mění potichu a často — Discord snížil svůj bezplatný limit za tři roky dvakrát, WhatsApp skočil ze 16&nbsp;MB na 2&nbsp;GB — takže většina článků, které najdete, je zastaralá. Tato stránka má být tou aktuální odpovědí. Pokud narazíte na limit, který se změnil, <a href=\"https://github.com/TondaRuzicka/vidkit/issues\">dejte nám vědět</a> a opravíme to během pár dní.",
 
@@ -101,5 +101,9 @@
   "faq.q4": "Jak aktuální tato stránka je?",
   "faq.a4": "Každá tabulka ukazuje, kdy byly její řádky naposledy ověřeny podle oficiální dokumentace platformy. Překontrolujeme to pokaždé, když platforma oznámí změnu, a pravidelně děláme kompletní revizi. Našli jste něco zastaralého? <a href=\"https://github.com/TondaRuzicka/vidkit/issues\">Nahlaste to na GitHubu</a>.",
   "faq.q5": "Jaký je nejrychlejší způsob, jak se dostat pod konkrétní limit?",
-  "faq.a5": "Použijte kompresor s cílovou velikostí, ne s posuvníkem kvality. <a href=\"{{url.cv}}\">Nástroj pro kompresi na velikost</a> od {{SITE_NAME}} vezme přesný počet MB, spočítá správný datový tok podle délky videa a ověří, že výsledek je pod cílem — lokálně ve vašem prohlížeči, takže 500&nbsp;MB zdroj nepotřebuje před začátkem práce žádné 500&nbsp;MB nahrávání."
+  "faq.a5": "Použijte kompresor s cílovou velikostí, ne s posuvníkem kvality. <a href=\"{{url.cv}}\">Nástroj pro kompresi na velikost</a> od {{SITE_NAME}} vezme přesný počet MB, spočítá správný datový tok podle délky videa a ověří, že výsledek je pod cílem — lokálně ve vašem prohlížeči, takže 500&nbsp;MB zdroj nepotřebuje před začátkem práce žádné 500&nbsp;MB nahrávání.",
+  "faq.q6": "Jaké jsou limity pro nahrávání videa bez placeného předplatného?",
+  "faq.a6": "Bezplatné varianty z tabulek výše: Discord 10&nbsp;MB, Signal 100&nbsp;MB, Facebook Messenger 100&nbsp;MB, Gmail a webový Outlook 25&nbsp;MB, WhatsApp a Telegram 2&nbsp;GB, X 512&nbsp;MB, Reddit 1&nbsp;GB, Slack 1&nbsp;GB a Vimeo 1&nbsp;GB úložiště na celou dobu existence účtu. Placené tarify limity obvykle výrazně zvedají — Discord Nitro na 500&nbsp;MB a Telegram Premium na 4&nbsp;GB — ale u většiny klipů bezplatný limit po zmenšení souboru stačí.",
+  "faq.q7": "Jaký je limit pro video posílané jako příloha v chatu?",
+  "faq.a7": "Chatovací aplikace se liší víc než kterákoli jiná kategorie: Discord 10&nbsp;MB v bezplatné verzi, Signal 100&nbsp;MB, Facebook Messenger 100&nbsp;MB, iMessage přibližně 100&nbsp;MB, Microsoft Teams 100&nbsp;MB u příloh v chatu, Slack 1&nbsp;GB a WhatsApp s Telegramem 2&nbsp;GB. Když píšete do skupiny, kde lidé používají různé aplikace, rozhoduje ten nejnižší limit ve skupině."
 }
