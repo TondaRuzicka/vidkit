@@ -89,5 +89,15 @@
   "hubgroup.compress": "Comprimir vídeo",
   "hubgroup.convert": "Converter entre formatos",
   "hubgroup.audio": "Extrair áudio",
-  "hubgroup.reference": "Guias e calculadoras"
+  "hubgroup.reference": "Guias e calculadoras",
+  "url.discord": "/discord-video-size-limit/",
+  "footer.discord": "Limite de tamanho de vídeo no Discord",
+  "url.whatsapp": "/pt/limite-de-tamanho-de-video-whatsapp/",
+  "footer.whatsapp": "Limite de tamanho de vídeo no WhatsApp",
+  "url.gmail": "/gmail-video-size-limit/",
+  "footer.gmail": "Limite de tamanho de vídeo no Gmail",
+  "url.outlook": "/outlook-attachment-size-limit-video/",
+  "footer.outlook": "Limite de anexo do Outlook para vídeo",
+  "url.imessage": "/imessage-video-size-limit/",
+  "footer.imessage": "Limite de tamanho de vídeo no iMessage"
 }

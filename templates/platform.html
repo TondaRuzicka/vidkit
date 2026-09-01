@@ -1,0 +1,109 @@
+<main id="main">
+  <section class="hero hero--tool">
+    <div class="container container--prose">
+      <p class="eyebrow">{{hero.eyebrow}}</p>
+      <h1>{{hero.title}}</h1>
+      <p class="lead">{{hero.lead}}</p>
+    </div>
+  </section>
+
+  <!-- Answer first: this page ranks for a question, so the figures come
+       before the tool. Every number in the quick-answer table is a key from
+       content/limits.<locale>.json (merged in via sharedContent), so this page
+       can never disagree with the full limits table. -->
+  <section class="section">
+    <div class="container container--prose prose">
+      <h2>{{qa.h2}}</h2>
+      <div class="table-scroll">
+        <table class="ref-table">
+          <caption>{{cap.default}}</caption>
+          <thead>
+            <tr><th>{{qa.th.k}}</th><th>{{qa.th.v}}</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>{{qa.r1.k}}</td><td>{{qa.r1.v}}</td></tr>
+            <tr><td>{{qa.r2.k}}</td><td>{{qa.r2.v}}</td></tr>
+            <tr><td>{{qa.r3.k}}</td><td>{{qa.r3.v}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>{{qa.after}}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--prose prose">
+      <h2>{{tool.h2}}</h2>
+      <p>{{tool.lead}}</p>
+    </div>
+    <div class="container container--prose">
+      <div id="compressor" data-page="platform" data-target-mb="{{widget.targetMb}}" data-locked="{{widget.locked}}">
+        <noscript>
+          <p>{{widget.noscript}}</p>
+        </noscript>
+      </div>
+    </div>
+  </section>
+
+  <!-- Figures from the compressor's own planner (scripts/fit-table.mjs), not
+       estimates — re-run the script if the planner's tunables change. -->
+  <section class="section">
+    <div class="container container--prose prose">
+      <h2>{{fit.h2}}</h2>
+      <p>{{fit.lead}}</p>
+      <div class="table-scroll">
+        <table class="ref-table">
+          <caption>{{fit.caption}}</caption>
+          <thead>
+            <tr><th>{{fit.th.length}}</th><th>{{fit.th.result}}</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>{{fit.r1.len}}</td><td>{{fit.r1.q}}</td></tr>
+            <tr><td>{{fit.r2.len}}</td><td>{{fit.r2.q}}</td></tr>
+            <tr><td>{{fit.r3.len}}</td><td>{{fit.r3.q}}</td></tr>
+            <tr><td>{{fit.r4.len}}</td><td>{{fit.r4.q}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>{{fit.after}}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--prose prose">
+      <h2>{{over.h2}}</h2>
+      <p>{{over.p1}}</p>
+      <p>{{over.p2}}</p>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><h2>{{faq.heading}}</h2></div>
+      <div class="faq">
+        <details class="faq-item">
+          <summary>{{faq.q1}}<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+          <div>{{faq.a1}}</div>
+        </details>
+        <details class="faq-item">
+          <summary>{{faq.q2}}<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+          <div>{{faq.a2}}</div>
+        </details>
+        <details class="faq-item">
+          <summary>{{faq.q3}}<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+          <div>{{faq.a3}}</div>
+        </details>
+        <details class="faq-item">
+          <summary>{{faq.q4}}<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+          <div>{{faq.a4}}</div>
+        </details>
+        <details class="faq-item">
+          <summary>{{faq.q5}}<span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+          <div>{{faq.a5}}</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- @related -->
+</main>

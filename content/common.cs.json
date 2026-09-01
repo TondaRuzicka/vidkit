@@ -89,5 +89,15 @@
   "hubgroup.compress": "Zmenšení videa",
   "hubgroup.convert": "Převod mezi formáty",
   "hubgroup.audio": "Získání zvuku",
-  "hubgroup.reference": "Průvodci a kalkulačky"
+  "hubgroup.reference": "Průvodci a kalkulačky",
+  "url.discord": "/discord-video-size-limit/",
+  "footer.discord": "Limit velikosti videa na Discordu",
+  "url.whatsapp": "/whatsapp-video-size-limit/",
+  "footer.whatsapp": "Limit velikosti videa ve WhatsAppu",
+  "url.gmail": "/gmail-video-size-limit/",
+  "footer.gmail": "Limit velikosti videa v Gmailu",
+  "url.outlook": "/outlook-attachment-size-limit-video/",
+  "footer.outlook": "Limit přílohy v Outlooku pro video",
+  "url.imessage": "/imessage-video-size-limit/",
+  "footer.imessage": "Limit velikosti videa v iMessage"
 }

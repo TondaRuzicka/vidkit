@@ -43,6 +43,13 @@ export interface PageDef {
   readonly locales: readonly Locale[];
   /** Omitted only for the home page. Drives @toolindex / @related grouping. */
   readonly category?: PageCategory;
+  /**
+   * Other pages' content files to merge in under this page's dictionary
+   * (between common and the page's own keys). Lets a page quote figures from
+   * a single source — the platform limit pages read `limits` so a number can
+   * only ever be changed in one place per locale.
+   */
+  readonly sharedContent?: readonly string[];
 }
 export const PAGES: readonly PageDef[] = [
   { id: 'home', template: 'home', locales: ['en', 'cs', 'es', 'pt', 'de', 'tr', 'zh'], slugs: { en: '', cs: '', es: '', pt: '', de: '', tr: '', zh: '' } },
@@ -110,6 +117,16 @@ export const PAGES: readonly PageDef[] = [
   { id: 'convertvideo', category: 'hub', template: 'hub', locales: ['en'], slugs: { en: 'convert-video', cs: 'convert-video', es: 'convert-video', pt: 'convert-video', de: 'convert-video', tr: 'convert-video', zh: 'convert-video' } },
   // Reference content (linkable assets) — no compressor widget.
   { id: 'limits', category: 'reference', template: 'limits', locales: ['en', 'cs', 'es', 'pt', 'de', 'tr', 'zh'], slugs: { en: 'video-upload-size-limits', cs: 'limity-velikosti-videa', es: 'limites-de-tamano-de-video', pt: 'limites-de-tamanho-de-video', de: 'video-groessenlimits', tr: 'video-boyut-limitleri', zh: 'shipin-shangchuan-daxiao-xianzhi' } },
+  // Per-platform answer pages. One question each ("what's the Discord video
+  // size limit?"), answered in the title, with the compressor locked to that
+  // platform's practical target. Figures come from content/limits.*.json via
+  // sharedContent, never retyped. English-only except WhatsApp, whose
+  // localised compress page already ranks in PT/DE/ES.
+  { id: 'discord', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'discord-video-size-limit', cs: 'discord-video-size-limit', es: 'discord-video-size-limit', pt: 'discord-video-size-limit', de: 'discord-video-size-limit', tr: 'discord-video-size-limit', zh: 'discord-video-size-limit' } },
+  { id: 'whatsapp', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en', 'es', 'pt', 'de'], slugs: { en: 'whatsapp-video-size-limit', cs: 'whatsapp-video-size-limit', es: 'limite-de-tamano-de-video-whatsapp', pt: 'limite-de-tamanho-de-video-whatsapp', de: 'whatsapp-video-groessenlimit', tr: 'whatsapp-video-size-limit', zh: 'whatsapp-video-size-limit' } },
+  { id: 'gmail', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'gmail-video-size-limit', cs: 'gmail-video-size-limit', es: 'gmail-video-size-limit', pt: 'gmail-video-size-limit', de: 'gmail-video-size-limit', tr: 'gmail-video-size-limit', zh: 'gmail-video-size-limit' } },
+  { id: 'outlook', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'outlook-attachment-size-limit-video', cs: 'outlook-attachment-size-limit-video', es: 'outlook-attachment-size-limit-video', pt: 'outlook-attachment-size-limit-video', de: 'outlook-attachment-size-limit-video', tr: 'outlook-attachment-size-limit-video', zh: 'outlook-attachment-size-limit-video' } },
+  { id: 'imessage', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'imessage-video-size-limit', cs: 'imessage-video-size-limit', es: 'imessage-video-size-limit', pt: 'imessage-video-size-limit', de: 'imessage-video-size-limit', tr: 'imessage-video-size-limit', zh: 'imessage-video-size-limit' } },
   { id: 'calc', category: 'reference', template: 'calculator', locales: ['en', 'cs', 'es', 'pt', 'de', 'tr', 'zh'], slugs: { en: 'video-bitrate-calculator', cs: 'kalkulacka-datoveho-toku', es: 'calculadora-de-bitrate-de-video', pt: 'calculadora-de-bitrate-de-video', de: 'video-bitrate-rechner', tr: 'video-bitrate-hesaplayici', zh: 'shipin-matelv-jisuanqi' } },
 ];
 

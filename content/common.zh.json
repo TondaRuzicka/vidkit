@@ -89,5 +89,15 @@
   "hubgroup.compress": "视频压缩",
   "hubgroup.convert": "格式转换",
   "hubgroup.audio": "提取音频",
-  "hubgroup.reference": "指南与计算器"
+  "hubgroup.reference": "指南与计算器",
+  "url.discord": "/discord-video-size-limit/",
+  "footer.discord": "Discord 视频大小限制",
+  "url.whatsapp": "/whatsapp-video-size-limit/",
+  "footer.whatsapp": "WhatsApp 视频大小限制",
+  "url.gmail": "/gmail-video-size-limit/",
+  "footer.gmail": "Gmail 视频大小限制",
+  "url.outlook": "/outlook-attachment-size-limit-video/",
+  "footer.outlook": "Outlook 视频附件大小限制",
+  "url.imessage": "/imessage-video-size-limit/",
+  "footer.imessage": "iMessage 视频大小限制"
 }

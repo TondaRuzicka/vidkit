@@ -24,11 +24,11 @@
             <tr><th>{{th.app}}</th><th>{{th.size}}</th><th>{{th.notes}}</th></tr>
           </thead>
           <tbody>
-            <tr><td>Discord</td><td>{{msg.discord.size}}</td><td>{{msg.discord.note}}</td></tr>
-            <tr><td>WhatsApp</td><td>{{msg.whatsapp.size}}</td><td>{{msg.whatsapp.note}}</td></tr>
+            <tr><td><a href="{{url.discord}}">Discord</a></td><td>{{msg.discord.size}}</td><td>{{msg.discord.note}}</td></tr>
+            <tr><td><a href="{{url.whatsapp}}">WhatsApp</a></td><td>{{msg.whatsapp.size}}</td><td>{{msg.whatsapp.note}}</td></tr>
             <tr><td>Telegram</td><td>{{msg.telegram.size}}</td><td>{{msg.telegram.note}}</td></tr>
             <tr><td>Signal</td><td>{{msg.signal.size}}</td><td>{{msg.signal.note}}</td></tr>
-            <tr><td>iMessage</td><td>{{msg.imessage.size}}</td><td>{{msg.imessage.note}}</td></tr>
+            <tr><td><a href="{{url.imessage}}">iMessage</a></td><td>{{msg.imessage.size}}</td><td>{{msg.imessage.note}}</td></tr>
             <tr><td>Facebook Messenger</td><td>{{msg.messenger.size}}</td><td>{{msg.messenger.note}}</td></tr>
           </tbody>
         </table>
@@ -42,8 +42,8 @@
             <tr><th>{{th.provider}}</th><th>{{th.attachment}}</th><th>{{th.notes}}</th></tr>
           </thead>
           <tbody>
-            <tr><td>Gmail</td><td>{{mail.gmail.size}}</td><td>{{mail.gmail.note}}</td></tr>
-            <tr><td>Outlook.com / Microsoft&nbsp;365</td><td>{{mail.outlook.size}}</td><td>{{mail.outlook.note}}</td></tr>
+            <tr><td><a href="{{url.gmail}}">Gmail</a></td><td>{{mail.gmail.size}}</td><td>{{mail.gmail.note}}</td></tr>
+            <tr><td><a href="{{url.outlook}}">Outlook.com / Microsoft&nbsp;365</a></td><td>{{mail.outlook.size}}</td><td>{{mail.outlook.note}}</td></tr>
             <tr><td>Yahoo Mail</td><td>{{mail.yahoo.size}}</td><td>{{mail.yahoo.note}}</td></tr>
             <tr><td>iCloud Mail</td><td>{{mail.icloud.size}}</td><td>{{mail.icloud.note}}</td></tr>
             <tr><td>Proton Mail</td><td>{{mail.proton.size}}</td><td>{{mail.proton.note}}</td></tr>

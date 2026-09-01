@@ -30,22 +30,37 @@ const readJson = (file: string): Record<string, string> =>
   JSON.parse(readFileSync(join(CONTENT_DIR, file), 'utf8'));
 
 // Merged dictionary for a page+locale: site vars + shared (common) strings +
-// page-specific strings. Page keys win over common, common over site vars.
+// any `sharedContent` files the page borrows from + page-specific strings.
+// Later layers win, so a page can override a borrowed key but never
+// accidentally shadow its own.
 function dictFor(pageId: string | null, locale: Locale): Record<string, string> {
   const dict: Record<string, string> = { SITE_NAME, SITE_URL };
   Object.assign(dict, readJson(`common.${locale}.json`));
-  if (pageId) Object.assign(dict, readJson(`${pageId}.${locale}.json`));
+  if (pageId) {
+    for (const shared of findPage(pageId)?.sharedContent ?? []) {
+      Object.assign(dict, readJson(`${shared}.${locale}.json`));
+    }
+    Object.assign(dict, readJson(`${pageId}.${locale}.json`));
+  }
   return dict;
 }
 
-// Resolve {{key}} placeholders from the dictionary. Runs twice so values that
-// themselves contain placeholders (e.g. brand name inside a sentence) resolve.
+// Resolve {{key}} placeholders from the dictionary. Repeats until nothing
+// changes so values that themselves contain placeholders resolve at any
+// depth — a page quoting a limits-table cell that links to a preset page is
+// three levels deep. Bounded, so a self-referencing key can't loop forever.
 function substitute(html: string, dict: Record<string, string>): string {
   const pass = (s: string) =>
     s.replace(/\{\{\s*([\w.]+)\s*\}\}/g, (m, key: string) =>
       key in dict ? dict[key]! : m,
     );
-  return pass(pass(html));
+  let out = html;
+  for (let i = 0; i < 6; i++) {
+    const next = pass(out);
+    if (next === out) break;
+    out = next;
+  }
+  return out;
 }
 
 function findPage(id: string): PageDef | undefined {

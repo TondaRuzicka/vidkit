@@ -53,6 +53,15 @@ export default defineConfig({
         ts2mp4: resolve(import.meta.dirname,'ts-to-mp4/index.html'),
         '3gp2mp4': resolve(import.meta.dirname,'3gp-to-mp4/index.html'),
         m4v2mp4: resolve(import.meta.dirname,'m4v-to-mp4/index.html'),
+        // Per-platform answer pages (English-only; WhatsApp also es/pt/de)
+        discord: resolve(import.meta.dirname,'discord-video-size-limit/index.html'),
+        whatsapp: resolve(import.meta.dirname,'whatsapp-video-size-limit/index.html'),
+        gmail: resolve(import.meta.dirname,'gmail-video-size-limit/index.html'),
+        outlook: resolve(import.meta.dirname,'outlook-attachment-size-limit-video/index.html'),
+        imessage: resolve(import.meta.dirname,'imessage-video-size-limit/index.html'),
+        whatsapp_es: resolve(import.meta.dirname,'es/limite-de-tamano-de-video-whatsapp/index.html'),
+        whatsapp_pt: resolve(import.meta.dirname,'pt/limite-de-tamanho-de-video-whatsapp/index.html'),
+        whatsapp_de: resolve(import.meta.dirname,'de/whatsapp-video-groessenlimit/index.html'),
         // Reference content (en + cs)
         limits: resolve(import.meta.dirname,'video-upload-size-limits/index.html'),
         calc: resolve(import.meta.dirname,'video-bitrate-calculator/index.html'),

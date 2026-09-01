@@ -15,6 +15,32 @@
     </div>
   </div>
 
+  <!-- Answers the informational query this page ranks for ("how long is a video
+       at this size?") before pitching the tool. Figures come from the compressor's
+       own planner, not estimates — see the answer.* keys. -->
+  <section class="section">
+    <div class="container container--prose prose">
+      <h2>{{answer.h2}}</h2>
+      <p>{{answer.lead}}</p>
+      <div class="table-scroll">
+        <table class="ref-table">
+          <caption>{{answer.caption}}</caption>
+          <thead>
+            <tr><th>{{answer.th.length}}</th><th>{{answer.th.result}}</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>{{answer.r1.len}}</td><td>{{answer.r1.q}}</td></tr>
+            <tr><td>{{answer.r2.len}}</td><td>{{answer.r2.q}}</td></tr>
+            <tr><td>{{answer.r3.len}}</td><td>{{answer.r3.q}}</td></tr>
+            <tr><td>{{answer.r4.len}}</td><td>{{answer.r4.q}}</td></tr>
+            <tr><td>{{answer.r5.len}}</td><td>{{answer.r5.q}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>{{answer.after}}</p>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container container--prose prose">
       <h2>{{prose.h2}}</h2>
