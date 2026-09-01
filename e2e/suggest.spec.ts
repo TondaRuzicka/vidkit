@@ -37,6 +37,9 @@ test('infeasible target suggests the minimum feasible size and restarts on click
 test('infeasible target also offers to compress the opening stretch that fits', async ({
   page,
 }) => {
+  // The trimmed job re-encodes ~170 s through ffmpeg.wasm (its 32 kbps audio
+  // floor rules WebCodecs out), which takes Firefox 2–3 minutes single-threaded.
+  test.slow();
   await page.goto('/compress-video/');
   await page.setInputFiles('#compressor input[type=file]', fixture('e2e-240s.mp4'));
   await page.locator('input[name="target-mb"][value="custom"]').check();
@@ -58,7 +61,7 @@ test('infeasible target also offers to compress the opening stretch that fits', 
   await expect(page.locator('.progress-bar')).toBeVisible();
 
   const result = page.locator('.result:not([hidden])');
-  await expect(result).toBeVisible({ timeout: 200_000 });
+  await expect(result).toBeVisible({ timeout: 420_000 });
   await expect(page.locator('.result-note')).toContainText(/Trimmed to the first \d+:\d\d/);
 
   // The output really is the shorter cut, and really is under the target.
