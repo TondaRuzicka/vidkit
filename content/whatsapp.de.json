@@ -20,6 +20,8 @@
   "tool.lead": "Lege das Video unten ab. Es wird auf deinem eigenen Gerät auf knapp unter 16&nbsp;MB komprimiert — nichts wird hochgeladen — mit Einstellungen, die für <em>diesen</em> Clip gewählt sind, sodass WhatsApp keinen Grund hat, es noch einmal zu komprimieren. Heraus kommt ein normales MP4, das auf iPhone und Android direkt im Chat abspielt.",
   "widget.targetMb": "16",
   "widget.locked": "true",
+  "widget.tool": "compress",
+  "widget.formats": "",
   "fit.h2": "Wie viel Video passt in 16 MB?",
   "fit.lead": "Die Länge entscheidet: Dieselben 16&nbsp;MB verteilen sich auf jede Sekunde, ein längeres Video bekommt also ein kleineres Bild. Diese Zeilen zeigen, was dieser Kompressor aus einer typischen Handyaufnahme tatsächlich macht — Full HD, 30 Bilder pro Sekunde, mit Ton.",
   "fit.caption": "Was 16 MB bei verschiedenen Videolängen ergeben",

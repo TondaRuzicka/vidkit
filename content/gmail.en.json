@@ -20,6 +20,8 @@
   "tool.lead": "Drop the video below. It is compressed to just under 18&nbsp;MB on your own device — nothing is uploaded — which leaves room for the encoding overhead and lands the attachment safely under 25&nbsp;MB. If the clip is too long to fit at a watchable quality, you'll be offered the opening stretch that does fit.",
   "widget.targetMb": "18",
   "widget.locked": "true",
+  "widget.tool": "compress",
+  "widget.formats": "",
   "fit.h2": "How much video fits in an email?",
   "fit.lead": "With 18&nbsp;MB to work with, length is what decides the picture size. These rows are what this compressor actually produces from a typical phone recording — full HD, 30 frames a second, with sound.",
   "fit.caption": "What 18 MB gives you at different video lengths",

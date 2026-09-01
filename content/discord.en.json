@@ -20,6 +20,8 @@
   "tool.lead": "Drop the video below. It is compressed to just under 10&nbsp;MB on your own device — nothing is uploaded — and checked so the result never lands over the limit. If the clip is too long to fit at a watchable quality, you'll be offered the opening stretch that does fit instead of a blurry mess.",
   "widget.targetMb": "10",
   "widget.locked": "true",
+  "widget.tool": "compress",
+  "widget.formats": "",
   "fit.h2": "How much video fits in 10 MB?",
   "fit.lead": "It depends on length: the same 10&nbsp;MB is shared across every second of the clip, so a longer video gets a smaller picture. These rows are what this compressor actually produces from a typical phone recording — full HD, 30 frames a second, with sound.",
   "fit.caption": "What 10 MB gives you at different video lengths",

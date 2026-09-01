@@ -20,6 +20,8 @@
   "tool.lead": "Drop the video below. It is compressed to just under 100&nbsp;MB on your own device — nothing is uploaded — at the best quality that size allows, so it sends first time and looks the way you shot it. For a green-bubble recipient, use the <a href=\"{{url.cv}}\">full compressor</a> with a custom target of 3&nbsp;MB instead.",
   "widget.targetMb": "100",
   "widget.locked": "true",
+  "widget.tool": "compress",
+  "widget.formats": "",
   "fit.h2": "How much video fits in 100 MB?",
   "fit.lead": "Plenty — 100&nbsp;MB is roomy compared with email or Discord. These rows are what this compressor actually produces from a typical phone recording — full HD, 30 frames a second, with sound.",
   "fit.caption": "What 100 MB gives you at different video lengths",

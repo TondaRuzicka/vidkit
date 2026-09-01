@@ -20,6 +20,8 @@
   "tool.lead": "Drop the video below and pick the target that matches how you send: 16&nbsp;MB is safe for Outlook.com and the web app, and for the desktop app choose a custom target of 13&nbsp;MB. On a default Microsoft&nbsp;365 account, 25&nbsp;MB fits. Compression runs on your own device — nothing is uploaded — and the result is checked so it never lands over your target.",
   "widget.targetMb": "16",
   "widget.locked": "false",
+  "widget.tool": "compress",
+  "widget.formats": "",
   "fit.h2": "How much video fits in an Outlook attachment?",
   "fit.lead": "With about 16&nbsp;MB to work with on the web, length decides the picture size. These rows are what this compressor actually produces from a typical phone recording — full HD, 30 frames a second, with sound — at a 16&nbsp;MB target.",
   "fit.caption": "What 16 MB gives you at different video lengths",
