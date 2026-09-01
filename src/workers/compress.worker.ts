@@ -1,6 +1,11 @@
 /// <reference lib="webworker" />
 import { compress } from '../core/compress.ts';
-import { minFeasibleTargetMB, WEBCODECS_MIN_AUDIO_BPS } from '../core/targetSize.ts';
+import {
+  applyTrim,
+  maxFeasibleDurationS,
+  minFeasibleTargetMB,
+  WEBCODECS_MIN_AUDIO_BPS,
+} from '../core/targetSize.ts';
 import {
   CompressError,
   type ProbeResult,
@@ -11,6 +16,9 @@ import { FFMPEG_MAX_INPUT_BYTES, FFMPEG_MIN_AUDIO_BPS } from '../engines/ffmpeg.
 
 const post = (msg: WorkerToUi) =>
   (self as DedicatedWorkerGlobalScope).postMessage(msg);
+
+/** Shorter than this and "compress the first N seconds" is not a real offer. */
+const MIN_TRIM_SUGGESTION_S = 10;
 
 const abort = new AbortController();
 let started = false;
@@ -37,11 +45,13 @@ self.onmessage = async (event: MessageEvent<UiToWorker>) => {
       {
         onProbe: (meta) => {
           probed = meta;
-          // Audio-only inputs have no video frames — fall back to a
-          // duration-based denominator so the progress fraction still maps.
+          // Progress is measured over what gets encoded, so a trimmed job
+          // counts the kept range only. Audio-only inputs have no video
+          // frames — fall back to a duration-based denominator.
+          const kept = applyTrim(meta, msg.options.trim);
           frameCount =
-            meta.video?.frameCount ?? Math.max(1, Math.round(meta.durationS * 30));
-          post({ type: 'probe', meta });
+            kept.video?.frameCount ?? Math.max(1, Math.round(kept.durationS * 30));
+          post({ type: 'probe', meta: kept });
         },
         onEngine: (engine) => post({ type: 'engine', engine }),
         onProgress: (fraction, stage, attempt) => {
@@ -72,6 +82,7 @@ self.onmessage = async (event: MessageEvent<UiToWorker>) => {
       // the smallest target this exact video CAN hit (using the most
       // permissive engine that could take the file) so the UI can offer it.
       let suggestedTargetMB: number | undefined;
+      let suggestedTrimS: number | undefined;
       // TS can't see the onProbe-closure assignment, so widen explicitly.
       const meta = probed as ProbeResult | null;
       if (
@@ -85,8 +96,21 @@ self.onmessage = async (event: MessageEvent<UiToWorker>) => {
             : WEBCODECS_MIN_AUDIO_BPS;
         const mb = minFeasibleTargetMB(meta, minAudioBps, msg.options.format);
         if (mb !== null && mb > msg.options.targetMB) suggestedTargetMB = mb;
+        // The other way out: keep the target, keep less of the video. Only
+        // offered when the job wasn't already a trim and the fitting stretch
+        // is long enough to be worth having.
+        if (!msg.options.trim) {
+          const s = maxFeasibleDurationS(meta, msg.options.targetMB, minAudioBps, msg.options.format);
+          if (s !== null && s >= MIN_TRIM_SUGGESTION_S && s < meta.durationS) suggestedTrimS = s;
+        }
       }
-      post({ type: 'error', code: err.code, detail: err.message, suggestedTargetMB });
+      post({
+        type: 'error',
+        code: err.code,
+        detail: err.message,
+        suggestedTargetMB,
+        suggestedTrimS,
+      });
     } else {
       post({ type: 'error', code: 'unknown', detail: String(err) });
     }

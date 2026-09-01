@@ -9,6 +9,8 @@ export interface ResultView {
   show(originalFile: File, blob: Blob, stats: ResultStats): void;
   /** Revoke object URLs and stop playback. */
   reset(): void;
+  /** One extra line under the size boxes (e.g. "trimmed to…"); null hides it. */
+  setNote(text: string | null): void;
   onAgain: () => void;
 }
 
@@ -45,6 +47,7 @@ export function createResult(intent: Intent): ResultView {
   );
 
   const dims = h('p', { class: 'result-dims' });
+  const note = h('p', { class: 'result-note', hidden: true });
 
   const videoOriginal = h('video', { muted: true, playsinline: true, loop: true, 'aria-label': t('result.original') });
   const videoCompressed = h('video', { muted: true, playsinline: true, loop: true, 'aria-label': outLabel });
@@ -82,6 +85,7 @@ export function createResult(intent: Intent): ResultView {
     banner,
     sizes,
     sizeCompare,
+    note,
     compareWrap,
     audioPreview,
     gifPreview,
@@ -172,6 +176,10 @@ export function createResult(intent: Intent): ResultView {
       for (const url of urls) URL.revokeObjectURL(url);
       urls = [];
       el.hidden = true;
+    },
+    setNote(text) {
+      note.hidden = text === null;
+      note.textContent = text ?? '';
     },
     onAgain: () => {},
   };

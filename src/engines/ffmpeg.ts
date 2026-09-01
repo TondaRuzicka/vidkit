@@ -4,7 +4,14 @@ import type { Engine } from './types.ts';
 /** ffmpeg.wasm exec args for one plan, branched by output kind/codec. */
 function buildArgs(plan: EncodePlan, inPath: string, outName: string): string[] {
   const o = plan.output;
-  const base = ['-hide_banner', '-i', inPath];
+  // Trim as INPUT options: seeking before demux skips the unwanted head
+  // instead of decoding it, and since every path below re-encodes, the cut
+  // is still frame-accurate. `-t` (not `-to`) because timestamps restart at
+  // the seek point when -ss precedes -i.
+  const trimArgs = plan.trim
+    ? ['-ss', String(plan.trim.startS), '-t', String(plan.trim.endS - plan.trim.startS)]
+    : [];
+  const base = ['-hide_banner', ...trimArgs, '-i', inPath];
 
   if (o.kind === 'audio') {
     const codec = o.audioCodec === 'mp3' ? 'libmp3lame' : 'aac';
@@ -208,8 +215,14 @@ export const ffmpegEngine: Engine = {
     const ffmpeg = await getFFmpeg();
     const path = await mountInput(ffmpeg, file);
 
-    const onProgressEvent = ({ progress }: { progress: number }) =>
-      onProgress(Math.min(Math.max(progress, 0), 1));
+    // ffmpeg.wasm's `progress` is out_time over the INPUT's duration, so a
+    // trimmed job would stall at keptS/fullS. Derive the fraction from the
+    // output time and the kept length instead when trimming.
+    const keptS = plan.trim ? plan.trim.endS - plan.trim.startS : null;
+    const onProgressEvent = ({ progress, time }: { progress: number; time: number }) => {
+      const fraction = keptS ? time / 1_000_000 / keptS : progress;
+      onProgress(Math.min(Math.max(fraction, 0), 1));
+    };
     ffmpeg.on('progress', onProgressEvent);
 
     const outName = `out.${plan.output.ext}`;

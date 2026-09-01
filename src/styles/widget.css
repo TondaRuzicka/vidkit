@@ -283,6 +283,7 @@
 .compare-slider:focus-visible ~ .compare__divider { box-shadow: 0 0 0 3px var(--color-accent-ring); }
 
 .result-dims { font-family: var(--font-mono); font-size: var(--fs-300); color: var(--color-text-muted); margin: 0 0 var(--space-2); }
+.result-note { font-size: var(--fs-300); color: var(--color-text-muted); margin: 0 0 var(--space-3); }
 .compare-hint { font-size: var(--fs-300); color: var(--color-text-faint); margin: 0 0 var(--space-3); }
 
 /* Audio-only and GIF result previews */

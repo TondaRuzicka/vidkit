@@ -49,6 +49,12 @@ const jobs = [
   [join(dir, 'e2e-240s.mp4'), ['-f', 'lavfi', '-i', 'testsrc2=duration=240:size=320x180:rate=30',
              '-f', 'lavfi', '-i', 'sine=frequency=440:duration=240',
              '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-b:v', '500k', '-c:a', 'aac', '-b:a', '96k', '-shortest']],
+  // 15 minutes, tiny: infeasible at the locked 10 MB preset (audio floor +
+  // minimum video bitrate exceed the budget), which exercises the trim
+  // recovery on a locked page. Kept small so generation stays quick.
+  [join(dir, 'e2e-900s.mp4'), ['-f', 'lavfi', '-i', 'testsrc2=duration=900:size=160x90:rate=30',
+             '-f', 'lavfi', '-i', 'sine=frequency=440:duration=900',
+             '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-b:v', '200k', '-c:a', 'aac', '-b:a', '64k', '-shortest']],
 ];
 
 for (const [out, args] of jobs) {

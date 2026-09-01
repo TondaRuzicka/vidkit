@@ -1,5 +1,11 @@
 import { formatOf, type FormatId } from './formats.ts';
-import { CompressError, type CompressOptions, type EncodePlan, type ProbeResult } from './types.ts';
+import {
+  CompressError,
+  type CompressOptions,
+  type EncodePlan,
+  type ProbeResult,
+  type TrimRange,
+} from './types.ts';
 
 // All tunables in one place — adjust here after measuring real encoders.
 export const SAFETY_FACTOR = 0.95; // fraction of target we budget for
@@ -105,19 +111,45 @@ export function pickLadderRung(
 }
 
 /**
+ * The probe as it would read for just the kept range: duration and frame
+ * count scale, everything else (dimensions, fps, bitrates) is unchanged.
+ * Clamps the range to the file; an empty range is a caller bug, not a
+ * user-facing condition.
+ */
+export function applyTrim(probe: ProbeResult, trim: TrimRange | undefined): ProbeResult {
+  if (!trim) return probe;
+  const startS = Math.max(0, trim.startS);
+  const endS = Math.min(probe.durationS, trim.endS);
+  const keptS = endS - startS;
+  if (!(keptS > 0)) throw new CompressError('unknown', `empty trim range ${startS}-${endS}`);
+  const ratio = keptS / probe.durationS;
+  return {
+    ...probe,
+    durationS: keptS,
+    video: probe.video
+      ? { ...probe.video, frameCount: Math.max(1, Math.round(probe.video.frameCount * ratio)) }
+      : null,
+  };
+}
+
+/**
  * Turn user options + probe data into a concrete encode plan.
  * Pure function — unit-testable without a browser.
  */
 export function buildPlan(
   options: CompressOptions,
-  probe: ProbeResult,
+  fullProbe: ProbeResult,
   /** Override for retry passes; first pass leaves it undefined. */
   videoBpsOverride?: number,
   /** Engine capability: lowest audio re-encode bitrate it can do safely. */
   minAudioBps: number = WEBCODECS_MIN_AUDIO_BPS,
 ): BudgetPlan {
+  // Budget for what will actually be encoded. Every rule below keys off
+  // durationS/frameCount, so trimming up front leaves the planner untouched.
+  const probe = applyTrim(fullProbe, options.trim);
   const { durationS, video, audio } = probe;
   const output = formatOf(options.format);
+  const trim = options.trim;
 
   // Audio extraction: fixed bitrate, no video, no verify loop.
   if (options.mode === 'audio') {
@@ -130,6 +162,7 @@ export function buildPlan(
       audioBps: options.audioKbps * 1000,
       keyFrameIntervalS: 2,
       targetBytes: null,
+      trim,
     };
   }
 
@@ -149,6 +182,7 @@ export function buildPlan(
       audioBps: null,
       keyFrameIntervalS: 2,
       targetBytes: null,
+      trim,
     };
   }
 
@@ -168,6 +202,7 @@ export function buildPlan(
       audioBps: audio && audio.codec !== output.audioCodec ? 128_000 : null,
       keyFrameIntervalS: 2,
       targetBytes: null,
+      trim,
     };
   }
 
@@ -228,6 +263,7 @@ export function buildPlan(
     audioBps,
     keyFrameIntervalS: 2,
     targetBytes,
+    trim,
   };
 }
 
@@ -269,6 +305,48 @@ export function minFeasibleTargetMB(
     const mid = (lo + hi) >> 1;
     if (feasible(mid)) hi = mid;
     else lo = mid + 1;
+  }
+  return lo;
+}
+
+/**
+ * Longest opening stretch (whole seconds) of this video that buildPlan will
+ * accept at `targetMB`, or null if not even one second fits. The "keep the
+ * target, shorten the video" counterpart to minFeasibleTargetMB — same idea:
+ * binary search over buildPlan itself, so the answer can never disagree with
+ * what the planner will then be asked to do. Returns the full duration when
+ * no trim is needed.
+ */
+export function maxFeasibleDurationS(
+  probe: ProbeResult,
+  targetMB: number,
+  minAudioBps: number,
+  format?: FormatId,
+): number | null {
+  const feasible = (endS: number): boolean => {
+    try {
+      buildPlan(
+        { format, mode: 'target', targetMB, trim: { startS: 0, endS } },
+        probe,
+        undefined,
+        minAudioBps,
+      );
+      return true;
+    } catch {
+      return false;
+    }
+  };
+  const full = Math.floor(probe.durationS);
+  if (full < 1) return null;
+  if (feasible(probe.durationS)) return probe.durationS;
+  if (!feasible(1)) return null;
+  // Invariant: feasible(lo) is true, feasible(hi) is false.
+  let lo = 1;
+  let hi = full;
+  while (hi - lo > 1) {
+    const mid = (lo + hi) >> 1;
+    if (feasible(mid)) lo = mid;
+    else hi = mid;
   }
   return lo;
 }

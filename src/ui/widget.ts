@@ -1,7 +1,14 @@
 import type { FormatId } from '../core/formats';
-import type { EngineName, ErrorCode, UiToWorker, WorkerToUi } from '../core/types';
+import type {
+  CompressOptions,
+  EngineName,
+  ErrorCode,
+  TrimRange,
+  UiToWorker,
+  WorkerToUi,
+} from '../core/types';
 import { createControls } from './controls';
-import { h, icon } from './dom';
+import { formatClock, h, icon } from './dom';
 import { createDropzone } from './dropzone';
 import { t } from './i18n';
 import { intentOf, wl } from './labels';
@@ -55,13 +62,17 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
   // One-click recovery for targetTooSmall: pre-set the smallest feasible
   // target and restart. Hidden unless the worker sent a suggestion.
   const suggestBtn = h('button', { type: 'button', class: 'button-primary', hidden: true });
+  // The other recovery: keep the target, compress only the opening stretch
+  // that fits. Offered on locked pages too — there the target is the page's
+  // promise, so this is the only way out that keeps it.
+  const trimBtn = h('button', { type: 'button', class: 'button-primary', hidden: true });
   const errorBox = h(
     'div',
     { class: 'widget-error error-state', role: 'alert', hidden: true },
     h('span', { class: 'error-state__icon' }, icon(ERROR_ICON)),
     h('h3', {}, t('error.heading')),
     errorText,
-    h('div', { class: 'error-actions' }, suggestBtn, retryBtn),
+    h('div', { class: 'error-actions' }, suggestBtn, trimBtn, retryBtn),
   );
 
   const setupSection = h(
@@ -78,6 +89,8 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
   let state: State = 'idle';
   let file: File | null = null;
   let worker: Worker | null = null;
+  // Set by the trim recovery for the next run only; cleared once consumed.
+  let pendingTrim: TrimRange | null = null;
 
   function setEngineStatus(text: string): void {
     engineStatus.textContent = text;
@@ -129,7 +142,10 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
 
   startBtn.addEventListener('click', () => {
     if (!file || state === 'working') return;
-    const options = controls.getOptions();
+    const options: CompressOptions = pendingTrim
+      ? { ...controls.getOptions(), trim: pendingTrim }
+      : controls.getOptions();
+    pendingTrim = null;
     setState('working');
     progress.reset();
     // Tool choices only — no file data. Counts how many actually start a job.
@@ -159,11 +175,16 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
           cleanupWorker();
           setState('done');
           result.show(file!, msg.blob, msg.stats);
+          result.setNote(
+            msg.stats.trimmedS !== undefined && options.mode === 'target'
+              ? t('result.trimmed', { time: formatClock(msg.stats.trimmedS), mb: options.targetMB })
+              : null,
+          );
           track('compressor_completed', { format: msg.stats.format, engine: msg.stats.engine });
           break;
         case 'error':
           cleanupWorker();
-          showError(msg.code, msg.suggestedTargetMB);
+          showError(msg.code, msg.suggestedTargetMB, msg.suggestedTrimS);
           track('compressor_failed', { code: msg.code });
           break;
       }
@@ -192,20 +213,43 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
   };
 
   let suggestedMB: number | null = null;
+  let suggestedTrimS: number | null = null;
 
-  function showError(code: ErrorCode, suggestMB?: number): void {
+  function showError(code: ErrorCode, suggestMB?: number, trimS?: number): void {
     suggestedMB = suggestMB ?? null;
+    suggestedTrimS = trimS ?? null;
     // Locked pages keep their promised target — show the explanation but not
     // the switch-target action.
     const canApply = suggestedMB !== null && config.lockedTargetMB === null;
-    errorText.textContent =
+    const current = controls.getOptions();
+    const targetMB =
+      config.lockedTargetMB ?? (current.mode === 'target' ? current.targetMB : 0);
+    const parts = [
       suggestedMB !== null
         ? t('error.targetTooSmall.suggest', { mb: suggestedMB })
-        : t(`error.${code}`);
+        : t(`error.${code}`),
+    ];
+    if (suggestedTrimS !== null) {
+      parts.push(t('error.targetTooSmall.trim', { mb: targetMB, time: formatClock(suggestedTrimS) }));
+    }
+    errorText.textContent = parts.join(' ');
     suggestBtn.hidden = !canApply;
     if (canApply) suggestBtn.textContent = t('error.useSuggested', { mb: suggestedMB! });
+    trimBtn.hidden = suggestedTrimS === null;
+    if (suggestedTrimS !== null) {
+      trimBtn.textContent = t('error.useTrim', { time: formatClock(suggestedTrimS) });
+    }
     setState('error');
   }
+
+  trimBtn.addEventListener('click', () => {
+    if (suggestedTrimS === null || !file) return;
+    pendingTrim = { startS: 0, endS: suggestedTrimS };
+    setState('ready');
+    // Tool choice only — the kept length is file metadata and never leaves.
+    track('compressor_trim_used');
+    startBtn.click();
+  });
 
   suggestBtn.addEventListener('click', () => {
     if (suggestedMB === null || !file) return;

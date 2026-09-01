@@ -34,3 +34,13 @@ export function formatBytes(bytes: number): string {
   if (bytes >= 1e6) return (bytes / 1e6).toFixed(1) + ' MB';
   return Math.max(1, Math.round(bytes / 1e3)) + ' kB';
 }
+
+/** Seconds → "m:ss" (or "h:mm:ss"), for durations shown to the user. */
+export function formatClock(totalS: number): string {
+  const s = Math.max(0, Math.round(totalS));
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+  const mm = h > 0 ? String(m).padStart(2, '0') : String(m);
+  return `${h > 0 ? h + ':' : ''}${mm}:${String(sec).padStart(2, '0')}`;
+}

@@ -188,6 +188,9 @@ export function createCompress(deps: CompressDeps) {
         engine: engineName,
         attempts,
         wallMs: Math.round(deps.now() - t0),
+        ...(options.trim
+          ? { trimmedS: Math.min(options.trim.endS, meta.durationS) - Math.max(0, options.trim.startS) }
+          : {}),
       },
     };
   };

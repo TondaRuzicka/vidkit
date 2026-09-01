@@ -2,8 +2,10 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { CompressError, type ProbeResult } from './types.ts';
 import {
+  applyTrim,
   buildPlan,
   fitToLongEdge,
+  maxFeasibleDurationS,
   minFeasibleTargetMB,
   pickLadderRung,
   retryVideoBps,
@@ -229,4 +231,53 @@ test('non-audio mode on an audio-only input throws notVideo', () => {
       `expected notVideo for mode ${opts.mode}`,
     );
   }
+});
+
+test('applyTrim scales duration and frame count, clamps to the file', () => {
+  const full = probe({ durationS: 600 });
+  const cut = applyTrim(full, { startS: 0, endS: 150 });
+  assert.equal(cut.durationS, 150);
+  assert.equal(cut.video!.frameCount, 4500);
+  // dimensions and bitrates describe the source, not the range — unchanged
+  assert.equal(cut.video!.width, 1920);
+  assert.equal(cut.video!.bitrate, full.video!.bitrate);
+  // range past the end clamps rather than inventing footage
+  assert.equal(applyTrim(full, { startS: 500, endS: 900 }).durationS, 100);
+  assert.equal(applyTrim(full, undefined), full);
+  assert.throws(() => applyTrim(full, { startS: 10, endS: 10 }));
+});
+
+test('a trimmed plan budgets for the kept range only and carries the range', () => {
+  const full = probe({ durationS: 1200 });
+  // 20 min into 8 MB is refused (see above) …
+  assert.throws(() => buildPlan({ mode: 'target', targetMB: 8 }, full, undefined, 24_000));
+  // … but the first 60 s of the same file is an ordinary job.
+  const plan = buildPlan(
+    { mode: 'target', targetMB: 8, trim: { startS: 0, endS: 60 } },
+    full,
+    undefined,
+    24_000,
+  );
+  assert.deepEqual(plan.trim, { startS: 0, endS: 60 });
+  assert.equal(plan.targetBytes, 8_000_000);
+  const sameAsShortClip = buildPlan({ mode: 'target', targetMB: 8 }, probe({ durationS: 60 }), undefined, 24_000);
+  assert.equal(plan.videoBps, sameAsShortClip.videoBps);
+  assert.equal(plan.width, sameAsShortClip.width);
+});
+
+test('maxFeasibleDurationS sits exactly on the feasibility boundary', () => {
+  const full = probe({ durationS: 1200 });
+  const s = maxFeasibleDurationS(full, 8, 24_000);
+  assert.ok(s !== null && s >= 10 && s < 1200, `s=${s}`);
+  const at = (endS: number) =>
+    buildPlan({ mode: 'target', targetMB: 8, trim: { startS: 0, endS } }, full, undefined, 24_000);
+  assert.doesNotThrow(() => at(s!));
+  assert.throws(() => at(s! + 1), (e: unknown) => e instanceof CompressError && e.code === 'targetTooSmall');
+});
+
+test('maxFeasibleDurationS returns the full length when no trim is needed, null when hopeless', () => {
+  const short = probe({ durationS: 30 });
+  assert.equal(maxFeasibleDurationS(short, 25, 96_000), 30);
+  // 1 s of 1080p30 needs more than a few kilobytes: nothing fits in 0.01 MB
+  assert.equal(maxFeasibleDurationS(short, 0.01, 24_000), null);
 });

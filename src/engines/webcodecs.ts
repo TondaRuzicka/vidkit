@@ -111,6 +111,8 @@ export const webcodecsEngine: Engine = {
       conversion = await Conversion.init({
         input,
         output,
+        // Frame-accurate because forceTranscode is on for video below.
+        ...(plan.trim ? { trim: { start: plan.trim.startS, end: plan.trim.endS } } : {}),
         video: {
           codec: videoCodec,
           width: plan.width,

@@ -1,12 +1,22 @@
 import type { FormatId, OutputFormat } from './formats.ts';
 
+/**
+ * Keep only [startS, endS) of the source. Optional on every mode: the planner
+ * budgets for the kept length and the engines cut while re-encoding, so a cut
+ * is frame-accurate rather than keyframe-snapped.
+ */
+export interface TrimRange {
+  startS: number;
+  endS: number;
+}
+
 export type CompressOptions =
-  | { format?: FormatId; mode: 'target'; targetMB: number }
-  | { format?: FormatId; mode: 'quality'; level: 'high' | 'medium' | 'low' }
+  | { format?: FormatId; mode: 'target'; targetMB: number; trim?: TrimRange }
+  | { format?: FormatId; mode: 'quality'; level: 'high' | 'medium' | 'low'; trim?: TrimRange }
   // Audio extraction (m4a/mp3): a fixed audio bitrate, no video budget.
-  | { format: FormatId; mode: 'audio'; audioKbps: number }
+  | { format: FormatId; mode: 'audio'; audioKbps: number; trim?: TrimRange }
   // Animated GIF: width (long-edge cap) + frame rate; size is a result.
-  | { format: FormatId; mode: 'gif'; width: number; fps: number };
+  | { format: FormatId; mode: 'gif'; width: number; fps: number; trim?: TrimRange };
 
 export type EngineName = 'webcodecs' | 'ffmpeg';
 
@@ -49,6 +59,8 @@ export interface EncodePlan {
   /** null = passthrough the source audio unchanged */
   audioBps: number | null;
   keyFrameIntervalS: number;
+  /** Present when the output is a cut of the source (see TrimRange). */
+  trim?: TrimRange;
 }
 
 export interface ResultStats {
@@ -64,6 +76,8 @@ export interface ResultStats {
   engine: EngineName;
   attempts: number;
   wallMs: number;
+  /** Seconds of source kept when the job was trimmed; absent otherwise. */
+  trimmedS?: number;
 }
 
 export type UiToWorker =
@@ -87,6 +101,11 @@ export type WorkerToUi =
       detail?: string;
       /** For targetTooSmall: smallest whole-MB target this video can hit. */
       suggestedTargetMB?: number;
+      /**
+       * For targetTooSmall: longest opening stretch (whole seconds) that fits
+       * the requested target — the "keep the target, cut the video" way out.
+       */
+      suggestedTrimS?: number;
     };
 
 export class CompressError extends Error {
