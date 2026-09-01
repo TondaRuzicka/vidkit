@@ -1,6 +1,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/icons/icon-180.png" />
+<!-- Installable as an app (Add to Home Screen / Install). Static manifest, no
+     service worker: a file share_target would need one to intercept the POST,
+     and if it ever weren't running the browser would upload the video for
+     real — which the privacy promise forbids. -->
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#0c8e84" />
 <meta property="og:site_name" content="{{SITE_NAME}}" />
 <meta property="og:type" content="website" />
 <link rel="stylesheet" href="/src/styles/tokens.css" />
