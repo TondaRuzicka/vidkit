@@ -103,6 +103,9 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
   );
   const body = h('div', { class: 'compressor__body' }, setupSection, progress.el, result.el, errorBox);
   root.append(head, body);
+  // Lifts the CSS height reservation (widget.css, generated block): the
+  // content now has the idle height itself, so later states size freely.
+  root.dataset.mounted = '';
 
   let state: State = 'idle';
   let file: File | null = null;
