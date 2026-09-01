@@ -13,6 +13,8 @@ export interface ControlsConfig {
   defaultFormat: FormatId;
   /** Formats offered in the selector; null/≤1 entries = no selector shown. */
   formatChoices: readonly FormatId[] | null;
+  /** Initial mode for video outputs. The trim tool starts in quality mode. */
+  defaultMode?: 'target' | 'quality';
 }
 
 /** Short display label for a format (universal, not translated). */
@@ -60,9 +62,9 @@ export function createControls(config: ControlsConfig): Controls {
     };
   }
 
-  let mode: 'target' | 'quality' = 'target';
+  let mode: 'target' | 'quality' = config.defaultMode ?? 'target';
   let targetMB = config.defaultTargetMB;
-  let quality: 'high' | 'medium' | 'low' = 'medium';
+  let quality: 'high' | 'medium' | 'low' = mode === 'quality' ? 'high' : 'medium';
   let format: FormatId = config.lockedFormat ?? config.defaultFormat;
   let audioKbps = 192;
   let gifWidth = GIF_WIDTHS[0]!;
@@ -191,12 +193,12 @@ export function createControls(config: ControlsConfig): Controls {
     h(
       'div',
       { class: 'control-pills' },
-      radio('mode', 'target', t('controls.mode.target'), true, () => {
+      radio('mode', 'target', t('controls.mode.target'), mode === 'target', () => {
         mode = 'target';
         targetFieldset.hidden = false;
         qualityFieldset.hidden = true;
       }),
-      radio('mode', 'quality', t('controls.mode.quality'), false, () => {
+      radio('mode', 'quality', t('controls.mode.quality'), mode === 'quality', () => {
         mode = 'quality';
         targetFieldset.hidden = true;
         qualityFieldset.hidden = false;

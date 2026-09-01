@@ -53,6 +53,9 @@ export default defineConfig({
         ts2mp4: resolve(import.meta.dirname,'ts-to-mp4/index.html'),
         '3gp2mp4': resolve(import.meta.dirname,'3gp-to-mp4/index.html'),
         m4v2mp4: resolve(import.meta.dirname,'m4v-to-mp4/index.html'),
+        // Editing tools (English-only)
+        trim: resolve(import.meta.dirname,'trim-video/index.html'),
+        cut: resolve(import.meta.dirname,'cut-video/index.html'),
         // Per-platform answer pages (English-only; WhatsApp also es/pt/de)
         discord: resolve(import.meta.dirname,'discord-video-size-limit/index.html'),
         whatsapp: resolve(import.meta.dirname,'whatsapp-video-size-limit/index.html'),
@@ -62,6 +65,13 @@ export default defineConfig({
         whatsapp_es: resolve(import.meta.dirname,'es/limite-de-tamano-de-video-whatsapp/index.html'),
         whatsapp_pt: resolve(import.meta.dirname,'pt/limite-de-tamanho-de-video-whatsapp/index.html'),
         whatsapp_de: resolve(import.meta.dirname,'de/whatsapp-video-groessenlimit/index.html'),
+        instagram: resolve(import.meta.dirname,'instagram-reels-length-limit/index.html'),
+        tiktok: resolve(import.meta.dirname,'tiktok-video-size-limit/index.html'),
+        snapchat: resolve(import.meta.dirname,'snapchat-video-length-limit/index.html'),
+        x: resolve(import.meta.dirname,'x-twitter-video-length-limit/index.html'),
+        telegram: resolve(import.meta.dirname,'telegram-video-size-limit/index.html'),
+        messenger: resolve(import.meta.dirname,'messenger-video-size-limit/index.html'),
+        signal: resolve(import.meta.dirname,'signal-video-size-limit/index.html'),
         // Reference content (en + cs)
         limits: resolve(import.meta.dirname,'video-upload-size-limits/index.html'),
         calc: resolve(import.meta.dirname,'video-bitrate-calculator/index.html'),

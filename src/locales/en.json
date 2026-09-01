@@ -94,5 +94,17 @@
   "calc.verdict.tight": "Even 360p would look blocky at this bitrate. Trim the clip, drop the audio, or allow a larger file.",
   "calc.verdict.tooSmall": "This size is too small to hold the audio and container for a clip this long. Increase the size or shorten the clip.",
   "calc.cta": "Compress a video to {mb} MB",
-  "calc.cta.generic": "Open the compressor"
+  "calc.cta.generic": "Open the compressor",
+  "widget.title.trim": "Video trimmer",
+  "controls.start.trim": "Trim video",
+  "result.heading.trim": "Done — your trimmed video is ready",
+  "result.again.trim": "Trim another video",
+  "progress.stage.encode.trim": "Trimming…",
+  "trim.legend": "Trim",
+  "trim.start": "Start",
+  "trim.end": "End",
+  "trim.keep": "Keeping {len} of {total}",
+  "trim.optional": "Trim the video first (optional)",
+  "trim.unavailable": "This format can't be previewed in your browser, so it can't be trimmed here. Convert it to MP4 first, then trim the result.",
+  "result.trimmedRange": "Kept {start} to {end} — {len} of the original."
 }

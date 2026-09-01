@@ -94,5 +94,17 @@
   "calc.verdict.tight": "I 360p by při tomto datovém toku bylo kostrbaté. Zkraťte klip, vypněte zvuk nebo povolte větší soubor.",
   "calc.verdict.tooSmall": "Tato velikost je pro takto dlouhý klip příliš malá i na zvuk a kontejner. Zvětšete velikost nebo zkraťte klip.",
   "calc.cta": "Zmenšit video na {mb} MB",
-  "calc.cta.generic": "Otevřít kompresor"
+  "calc.cta.generic": "Otevřít kompresor",
+  "widget.title.trim": "Ořez videa",
+  "controls.start.trim": "Oříznout video",
+  "result.heading.trim": "Hotovo — oříznuté video je připravené",
+  "result.again.trim": "Oříznout další video",
+  "progress.stage.encode.trim": "Ořezávám…",
+  "trim.legend": "Ořez",
+  "trim.start": "Začátek",
+  "trim.end": "Konec",
+  "trim.keep": "Zachová se {len} z {total}",
+  "trim.optional": "Nejdřív video oříznout (volitelné)",
+  "trim.unavailable": "Tento formát nejde v prohlížeči přehrát, a proto ho tu nelze oříznout. Nejdřív ho převeďte na MP4 a ořízněte výsledek.",
+  "result.trimmedRange": "Zachováno od {start} do {end} — {len} z původního videa."
 }

@@ -94,5 +94,17 @@
   "calc.verdict.tight": "Bu bit hızında 360p bile bloklu görünür. Klibi kırpın, sesi kaldırın ya da daha büyük bir dosyaya izin verin.",
   "calc.verdict.tooSmall": "Bu boyut, bu uzunluktaki bir klibin sesini ve kapsayıcısını tutamayacak kadar küçük. Boyutu artırın ya da klibi kısaltın.",
   "calc.cta": "Bir videoyu {mb} MB'ye sıkıştır",
-  "calc.cta.generic": "Sıkıştırıcıyı aç"
+  "calc.cta.generic": "Sıkıştırıcıyı aç",
+  "widget.title.trim": "Video kesici",
+  "controls.start.trim": "Videoyu kes",
+  "result.heading.trim": "Tamam — kesilmiş videonuz hazır",
+  "result.again.trim": "Başka bir video kes",
+  "progress.stage.encode.trim": "Kesiliyor…",
+  "trim.legend": "Kesme",
+  "trim.start": "Başlangıç",
+  "trim.end": "Bitiş",
+  "trim.keep": "{total} içinden {len} tutuluyor",
+  "trim.optional": "Önce videoyu kes (isteğe bağlı)",
+  "trim.unavailable": "Bu biçim tarayıcınızda oynatılamıyor, bu yüzden burada kesilemez. Önce MP4'e dönüştürün, sonra sonucu kesin.",
+  "result.trimmedRange": "{start} ile {end} arası tutuldu — orijinalin {len}'lik kısmı."
 }

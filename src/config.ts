@@ -28,7 +28,7 @@ export const HREFLANG: Record<Locale, string> = {
 
 // Groups a page for the hub index, the related-tools block and breadcrumbs.
 // 'hub' pages are the category landing pages themselves; 'home' has none.
-export type PageCategory = 'compress' | 'convert' | 'audio' | 'reference' | 'hub';
+export type PageCategory = 'compress' | 'convert' | 'audio' | 'edit' | 'reference' | 'hub';
 
 // Pages rendered from templates/ + content/. Slugs are per-locale so the URL
 // keyword is localized too ('' is the home page). `locales` lists which
@@ -110,6 +110,11 @@ export const PAGES: readonly PageDef[] = [
   { id: 'ts2mp4', category: 'convert', template: 'convert', locales: ['en'], slugs: { en: 'ts-to-mp4', cs: 'ts-to-mp4', es: 'ts-to-mp4', pt: 'ts-to-mp4', de: 'ts-to-mp4', tr: 'ts-to-mp4', zh: 'ts-to-mp4' } },
   { id: '3gp2mp4', category: 'convert', template: 'convert', locales: ['en'], slugs: { en: '3gp-to-mp4', cs: '3gp-to-mp4', es: '3gp-to-mp4', pt: '3gp-to-mp4', de: '3gp-to-mp4', tr: '3gp-to-mp4', zh: '3gp-to-mp4' } },
   { id: 'm4v2mp4', category: 'convert', template: 'convert', locales: ['en'], slugs: { en: 'm4v-to-mp4', cs: 'm4v-to-mp4', es: 'm4v-to-mp4', pt: 'm4v-to-mp4', de: 'm4v-to-mp4', tr: 'm4v-to-mp4', zh: 'm4v-to-mp4' } },
+  // Editing tools — the first product line beyond compress/convert. Both
+  // pages mount the same trim widget; the slugs match the two ways people
+  // phrase the search. English-only for the same reason as the converters.
+  { id: 'trim', category: 'edit', template: 'trim', locales: ['en'], slugs: { en: 'trim-video', cs: 'trim-video', es: 'trim-video', pt: 'trim-video', de: 'trim-video', tr: 'trim-video', zh: 'trim-video' } },
+  { id: 'cut', category: 'edit', template: 'trim', locales: ['en'], slugs: { en: 'cut-video', cs: 'cut-video', es: 'cut-video', pt: 'cut-video', de: 'cut-video', tr: 'cut-video', zh: 'cut-video' } },
   // Category hubs. These exist for crawl reach as much as for search: their
   // tool lists are generated from this registry by @toolindex, so a new page
   // is linked from a hub the moment it lands here — no list to keep in sync.
@@ -127,6 +132,14 @@ export const PAGES: readonly PageDef[] = [
   { id: 'gmail', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'gmail-video-size-limit', cs: 'gmail-video-size-limit', es: 'gmail-video-size-limit', pt: 'gmail-video-size-limit', de: 'gmail-video-size-limit', tr: 'gmail-video-size-limit', zh: 'gmail-video-size-limit' } },
   { id: 'outlook', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'outlook-attachment-size-limit-video', cs: 'outlook-attachment-size-limit-video', es: 'outlook-attachment-size-limit-video', pt: 'outlook-attachment-size-limit-video', de: 'outlook-attachment-size-limit-video', tr: 'outlook-attachment-size-limit-video', zh: 'outlook-attachment-size-limit-video' } },
   { id: 'imessage', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'imessage-video-size-limit', cs: 'imessage-video-size-limit', es: 'imessage-video-size-limit', pt: 'imessage-video-size-limit', de: 'imessage-video-size-limit', tr: 'imessage-video-size-limit', zh: 'imessage-video-size-limit' } },
+  // Batch B — duration-limited platforms hand off to the trim tool instead.
+  { id: 'instagram', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'instagram-reels-length-limit', cs: 'instagram-reels-length-limit', es: 'instagram-reels-length-limit', pt: 'instagram-reels-length-limit', de: 'instagram-reels-length-limit', tr: 'instagram-reels-length-limit', zh: 'instagram-reels-length-limit' } },
+  { id: 'tiktok', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'tiktok-video-size-limit', cs: 'tiktok-video-size-limit', es: 'tiktok-video-size-limit', pt: 'tiktok-video-size-limit', de: 'tiktok-video-size-limit', tr: 'tiktok-video-size-limit', zh: 'tiktok-video-size-limit' } },
+  { id: 'snapchat', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'snapchat-video-length-limit', cs: 'snapchat-video-length-limit', es: 'snapchat-video-length-limit', pt: 'snapchat-video-length-limit', de: 'snapchat-video-length-limit', tr: 'snapchat-video-length-limit', zh: 'snapchat-video-length-limit' } },
+  { id: 'x', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'x-twitter-video-length-limit', cs: 'x-twitter-video-length-limit', es: 'x-twitter-video-length-limit', pt: 'x-twitter-video-length-limit', de: 'x-twitter-video-length-limit', tr: 'x-twitter-video-length-limit', zh: 'x-twitter-video-length-limit' } },
+  { id: 'telegram', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'telegram-video-size-limit', cs: 'telegram-video-size-limit', es: 'telegram-video-size-limit', pt: 'telegram-video-size-limit', de: 'telegram-video-size-limit', tr: 'telegram-video-size-limit', zh: 'telegram-video-size-limit' } },
+  { id: 'messenger', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'messenger-video-size-limit', cs: 'messenger-video-size-limit', es: 'messenger-video-size-limit', pt: 'messenger-video-size-limit', de: 'messenger-video-size-limit', tr: 'messenger-video-size-limit', zh: 'messenger-video-size-limit' } },
+  { id: 'signal', category: 'reference', template: 'platform', sharedContent: ['limits'], locales: ['en'], slugs: { en: 'signal-video-size-limit', cs: 'signal-video-size-limit', es: 'signal-video-size-limit', pt: 'signal-video-size-limit', de: 'signal-video-size-limit', tr: 'signal-video-size-limit', zh: 'signal-video-size-limit' } },
   { id: 'calc', category: 'reference', template: 'calculator', locales: ['en', 'cs', 'es', 'pt', 'de', 'tr', 'zh'], slugs: { en: 'video-bitrate-calculator', cs: 'kalkulacka-datoveho-toku', es: 'calculadora-de-bitrate-de-video', pt: 'calculadora-de-bitrate-de-video', de: 'video-bitrate-rechner', tr: 'video-bitrate-hesaplayici', zh: 'shipin-matelv-jisuanqi' } },
 ];
 

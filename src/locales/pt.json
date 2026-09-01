@@ -94,5 +94,17 @@
   "calc.verdict.tight": "Até 360p ficaria quadriculado nesta taxa de bits. Corte o clipe, remova o áudio ou permita um arquivo maior.",
   "calc.verdict.tooSmall": "Este tamanho é pequeno demais para conter o áudio e o contêiner de um clipe tão longo. Aumente o tamanho ou encurte o clipe.",
   "calc.cta": "Comprimir um vídeo para {mb} MB",
-  "calc.cta.generic": "Abrir o compressor"
+  "calc.cta.generic": "Abrir o compressor",
+  "widget.title.trim": "Cortador de vídeo",
+  "controls.start.trim": "Cortar vídeo",
+  "result.heading.trim": "Pronto — seu vídeo cortado está preparado",
+  "result.again.trim": "Cortar outro vídeo",
+  "progress.stage.encode.trim": "Cortando…",
+  "trim.legend": "Corte",
+  "trim.start": "Início",
+  "trim.end": "Fim",
+  "trim.keep": "Mantendo {len} de {total}",
+  "trim.optional": "Cortar o vídeo antes (opcional)",
+  "trim.unavailable": "Este formato não pode ser reproduzido no seu navegador, então não dá para cortá-lo aqui. Converta para MP4 primeiro e corte o resultado.",
+  "result.trimmedRange": "Mantido de {start} a {end} — {len} do original."
 }

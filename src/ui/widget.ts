@@ -15,8 +15,13 @@ import { intentOf, wl } from './labels';
 import { createProgress } from './progress';
 import { createResult } from './result';
 import { track } from './track';
+import { createTrimControls } from './trim';
 
 export interface WidgetConfig {
+  /** 'trim' = the trim tool: range controls shown, quality mode first. */
+  tool: 'compress' | 'trim';
+  /** Compress pages can offer trimming behind a collapsed row. */
+  trimOptional: boolean;
   lockedTargetMB: number | null;
   defaultTargetMB: number;
   lockedFormat: FormatId | null;
@@ -34,9 +39,21 @@ const ENGINE_SHORT: Record<EngineName, string> = {
 };
 
 export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
-  const intent = intentOf(config.lockedFormat);
+  const intent = intentOf(config.lockedFormat, config.tool);
   const dropzone = createDropzone(intent);
-  const controls = createControls(config);
+  const controls = createControls({
+    ...config,
+    defaultMode: config.tool === 'trim' ? 'quality' : 'target',
+  });
+  // Range controls: always on the trim tool, behind a <details> when optional.
+  const trim = config.tool === 'trim' || config.trimOptional ? createTrimControls() : null;
+  const trimBlock =
+    trim && config.trimOptional && config.tool !== 'trim'
+      ? h('details', { class: 'trim-optional' }, h('summary', {}, t('trim.optional')), trim.el)
+      : trim?.el ?? null;
+  // Sliders at 0:00–0:00 mean nothing before a file is picked; show the block
+  // once there is a duration to slide over.
+  if (trimBlock) trimBlock.hidden = true;
   const progress = createProgress(intent);
   const result = createResult(intent);
 
@@ -79,6 +96,7 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
     'div',
     { class: 'widget-setup' },
     dropzone.el,
+    trimBlock,
     controls.el,
     notice,
     h('div', { class: 'control-foot' }, startBtn),
@@ -104,6 +122,7 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
     errorBox.hidden = next !== 'error';
     startBtn.disabled = next !== 'ready';
     controls.setDisabled(next === 'working');
+    trim?.setDisabled(next === 'working');
     if (next === 'idle' || next === 'ready') setEngineStatus(t('widget.status.ready'));
   }
 
@@ -129,6 +148,8 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
   dropzone.onFile = (picked) => {
     file = picked;
     dropzone.setFile(picked);
+    trim?.setFile(picked);
+    if (trimBlock) trimBlock.hidden = false;
     updateNotice();
     setState('ready');
     track('compressor_file_selected'); // earliest "tried to use it" signal
@@ -142,14 +163,23 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
 
   startBtn.addEventListener('click', () => {
     if (!file || state === 'working') return;
-    const options: CompressOptions = pendingTrim
-      ? { ...controls.getOptions(), trim: pendingTrim }
+    // A recovery trim (keep the target, cut the video) wins over the range
+    // controls; otherwise a user-chosen range applies when it isn't the whole file.
+    const userTrim = trim?.getRange() ?? null;
+    const range: TrimRange | null = pendingTrim ?? userTrim;
+    const trimSource: 'recovery' | 'range' | null = pendingTrim ? 'recovery' : userTrim ? 'range' : null;
+    const options: CompressOptions = range
+      ? { ...controls.getOptions(), trim: range }
       : controls.getOptions();
     pendingTrim = null;
     setState('working');
     progress.reset();
     // Tool choices only — no file data. Counts how many actually start a job.
-    track('compressor_started', { format: options.format ?? 'mp4', mode: options.mode });
+    track('compressor_started', {
+      format: options.format ?? 'mp4',
+      mode: options.mode,
+      trimmed: trimSource !== null,
+    });
     let frameTotal = 0;
 
     worker = new Worker(new URL('../workers/compress.worker.ts', import.meta.url), {
@@ -176,9 +206,15 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
           setState('done');
           result.show(file!, msg.blob, msg.stats);
           result.setNote(
-            msg.stats.trimmedS !== undefined && options.mode === 'target'
-              ? t('result.trimmed', { time: formatClock(msg.stats.trimmedS), mb: options.targetMB })
-              : null,
+            msg.stats.trimmedS === undefined
+              ? null
+              : trimSource === 'recovery' && options.mode === 'target'
+                ? t('result.trimmed', { time: formatClock(msg.stats.trimmedS), mb: options.targetMB })
+                : t('result.trimmedRange', {
+                    start: formatClock(range!.startS, true),
+                    end: formatClock(range!.endS, true),
+                    len: formatClock(msg.stats.trimmedS, true),
+                  }),
           );
           track('compressor_completed', { format: msg.stats.format, engine: msg.stats.engine });
           break;
@@ -268,6 +304,8 @@ export function mountWidget(root: HTMLElement, config: WidgetConfig): void {
     result.reset();
     file = null;
     dropzone.setFile(null);
+    trim?.setFile(null);
+    if (trimBlock) trimBlock.hidden = true;
     updateNotice();
     setState('idle');
   };

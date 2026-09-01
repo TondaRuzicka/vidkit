@@ -94,5 +94,17 @@
   "calc.verdict.tight": "Selbst 360p würde bei dieser Bitrate klotzig aussehen. Kürze den Clip, lass das Audio weg oder erlaube eine größere Datei.",
   "calc.verdict.tooSmall": "Diese Größe ist zu klein, um Audio und Container für einen so langen Clip zu fassen. Erhöhe die Größe oder kürze den Clip.",
   "calc.cta": "Video auf {mb} MB komprimieren",
-  "calc.cta.generic": "Kompressor öffnen"
+  "calc.cta.generic": "Kompressor öffnen",
+  "widget.title.trim": "Video kürzen",
+  "controls.start.trim": "Video kürzen",
+  "result.heading.trim": "Fertig — dein gekürztes Video ist bereit",
+  "result.again.trim": "Weiteres Video kürzen",
+  "progress.stage.encode.trim": "Kürzen…",
+  "trim.legend": "Kürzen",
+  "trim.start": "Anfang",
+  "trim.end": "Ende",
+  "trim.keep": "Behalten: {len} von {total}",
+  "trim.optional": "Video vorher kürzen (optional)",
+  "trim.unavailable": "Dieses Format kann der Browser nicht abspielen, darum lässt es sich hier nicht kürzen. Wandle es zuerst in MP4 um und kürze dann das Ergebnis.",
+  "result.trimmedRange": "Behalten von {start} bis {end} — {len} des Originals."
 }

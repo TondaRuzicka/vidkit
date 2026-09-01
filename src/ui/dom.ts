@@ -35,12 +35,17 @@ export function formatBytes(bytes: number): string {
   return Math.max(1, Math.round(bytes / 1e3)) + ' kB';
 }
 
-/** Seconds → "m:ss" (or "h:mm:ss"), for durations shown to the user. */
-export function formatClock(totalS: number): string {
-  const s = Math.max(0, Math.round(totalS));
+/**
+ * Seconds → "m:ss" (or "h:mm:ss"), for durations shown to the user. With
+ * `tenths`, "m:ss.t" — for trim points, where a whole second is too coarse.
+ */
+export function formatClock(totalS: number, tenths = false): string {
+  const total = Math.max(0, tenths ? Math.round(totalS * 10) / 10 : Math.round(totalS));
+  const s = Math.floor(total);
   const h = Math.floor(s / 3600);
   const m = Math.floor((s % 3600) / 60);
   const sec = s % 60;
   const mm = h > 0 ? String(m).padStart(2, '0') : String(m);
-  return `${h > 0 ? h + ':' : ''}${mm}:${String(sec).padStart(2, '0')}`;
+  const frac = tenths ? '.' + Math.round((total - s) * 10) : '';
+  return `${h > 0 ? h + ':' : ''}${mm}:${String(sec).padStart(2, '0')}${frac}`;
 }

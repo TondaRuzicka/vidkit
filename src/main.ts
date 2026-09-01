@@ -19,7 +19,13 @@ if (mount) {
     ? mount.dataset.format
     : lockedFormat ?? choices[0] ?? DEFAULT_FORMAT;
 
+  // data-tool="trim" → the trim tool (range controls, quality mode first);
+  // data-trim="optional" → a collapsed trim row on a compress page.
+  const tool = mount.dataset.tool === 'trim' ? 'trim' : 'compress';
+
   mountWidget(mount, {
+    tool,
+    trimOptional: mount.dataset.trim === 'optional',
     lockedTargetMB:
       mount.dataset.locked === 'true' && Number.isFinite(targetMb) ? targetMb : null,
     defaultTargetMB: Number.isFinite(targetMb) && targetMb > 0 ? targetMb : 25,

@@ -153,6 +153,7 @@ const CATEGORY_ORDER: PageCategory[] = [
   'compress',
   'convert',
   'audio',
+  'edit',
   'reference',
 ];
 

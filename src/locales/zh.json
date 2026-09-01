@@ -94,5 +94,17 @@
   "calc.verdict.tight": "在这个码率下，连 360p 都会出色块。请剪短片段、去掉音频，或者放宽文件大小。",
   "calc.verdict.tooSmall": "对这么长的片段来说，这个大小连音频和封装都装不下。请加大文件大小或缩短片段。",
   "calc.cta": "把视频压缩到 {mb} MB",
-  "calc.cta.generic": "打开压缩工具"
+  "calc.cta.generic": "打开压缩工具",
+  "widget.title.trim": "视频裁剪",
+  "controls.start.trim": "裁剪视频",
+  "result.heading.trim": "完成——裁剪后的视频已就绪",
+  "result.again.trim": "裁剪另一个视频",
+  "progress.stage.encode.trim": "正在裁剪…",
+  "trim.legend": "裁剪",
+  "trim.start": "开始",
+  "trim.end": "结束",
+  "trim.keep": "保留 {len}（共 {total}）",
+  "trim.optional": "先裁剪视频（可选）",
+  "trim.unavailable": "浏览器无法预览这种格式，因此无法在此裁剪。请先转换为 MP4，再裁剪结果。",
+  "result.trimmedRange": "保留了 {start} 到 {end}——原视频的 {len}。"
 }
